@@ -1,8 +1,19 @@
-# SOUL.MD
+<p align="center">
+  <img src="img/soul.png" alt="SOUL.md" width="120" />
+</p>
 
-The best way to build a personality for your agent. Let Claude Code / OpenClaw ingest your data & build your AI soul.
+<h1 align="center">SOUL.MD</h1>
+
+<p align="center">
+  <strong>The best way to build a personality for your agent.</strong><br>
+  Let Claude Code / OpenClaw ingest your data & build your AI soul.
+</p>
+
+---
 
 ## What Is This?
+
+<img src="img/soul-identity.png" alt="Soul Identity" width="100%" />
 
 A soul file captures who you are in a format AI agents can embody. Not a chatbot that talks *about* you—an AI that thinks and speaks *as* you.
 
@@ -14,6 +25,8 @@ A soul file captures who you are in a format AI agents can embody. Not a chatbot
 - **Scale yourself** for content, responses, brainstorming
 
 ## Quick Start
+
+<img src="img/soul-builder.png" alt="Soul Builder Flow" width="100%" />
 
 ### Option 1: Build from scratch (no existing data)
 
@@ -46,6 +59,8 @@ Read the templates and fill them out yourself:
 4. Add examples to `examples/`
 
 ## File Structure
+
+<img src="img/soul-stack.png" alt="Soul Stack" width="100%" />
 
 ```
 your-soul/
@@ -99,5 +114,9 @@ The goal: someone reading your SOUL.md should be able to predict your takes on n
 - **Update regularly**: Your soul should evolve as you do
 - **Test and iterate**: Generate outputs, compare to your real voice, refine
 
-Your digital identity is now composable, forkable, evolvable.
-Works with Claude Code, OpenClaw, and any agent that can read markdown.
+---
+
+<p align="center">
+  <em>Your digital identity is now composable, forkable, evolvable.</em><br>
+  Works with Claude Code, OpenClaw, and any agent that can read markdown.
+</p>
