@@ -1,12 +1,12 @@
-# Soul
+# SOUL.MD
 
-A framework for creating digital identities. Your soul file is a specification that lets an LLM become you—your opinions, voice, worldview, the works.
+The best way to build a personality for your agent. Let Claude Code / OpenClaw ingest your data & build your AI soul.
 
-## What Is a Soul File?
+## What Is This?
 
-A soul file captures who you are in a format LLMs can embody. Not a chatbot that talks *about* you. An AI that thinks and speaks *as* you.
+A soul file captures who you are in a format AI agents can embody. Not a chatbot that talks *about* you—an AI that thinks and speaks *as* you.
 
-Use cases:
+**Use cases:**
 - **Generate ideas** in your voice and from your worldview
 - **Write content** (tweets, articles, emails) that sounds like you
 - **Tailor AI** to your interests and thinking patterns
@@ -18,11 +18,10 @@ Use cases:
 ### Option 1: Build from scratch (no existing data)
 
 ```bash
-# In Claude Code, run:
 /soul-builder
 ```
 
-Claude Code will interview you to build your soul file. It'll ask about your worldview, opinions, how you write, what you care about. Takes ~15-30 minutes for a solid foundation.
+The agent will interview you to build your soul file—asking about your worldview, opinions, how you write, what you care about.
 
 ### Option 2: Build from your data
 
@@ -36,7 +35,7 @@ Claude Code will interview you to build your soul file. It'll ask about your wor
 /soul-builder
 ```
 
-Claude Code will analyze your data, extract patterns, and draft your soul file. You'll review and refine together.
+The agent will analyze your data, extract patterns, and draft your soul file. You'll review and refine together.
 
 ### Option 3: Manual creation
 
@@ -50,7 +49,7 @@ Read the templates and fill them out yourself:
 
 ```
 your-soul/
-├── BUILD.md              ← Skill: Claude Code uses this to build your soul
+├── BUILD.md              ← Skill: Agent uses this to build your soul
 ├── SKILL.template.md     ← Template: Operating instructions (copy to SKILL.md)
 ├── SOUL.template.md      ← Template: Identity (copy to SOUL.md)
 ├── STYLE.template.md     ← Template: Voice guide (copy to STYLE.md)
@@ -100,12 +99,5 @@ The goal: someone reading your SOUL.md should be able to predict your takes on n
 - **Update regularly**: Your soul should evolve as you do
 - **Test and iterate**: Generate outputs, compare to your real voice, refine
 
-## Philosophy
-
-This is a hyperstition in practice. The specification circulates, changes how AI behaves, influences how you're perceived, blurs the line between "real" you and digital twin. The soul file becomes load-bearing reality.
-
 Your digital identity is now composable, forkable, evolvable.
-
----
-
-Built with Claude Code.
+Works with Claude Code, OpenClaw, and any agent that can read markdown.
