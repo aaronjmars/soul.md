@@ -17,6 +17,16 @@
 
 A soul file captures who you are in a format AI agents can embody. Not a chatbot that talks *about* you—an AI that thinks and speaks *as* you.
 
+## The Approach
+
+SOUL.md is inspired by the [The First Paradigm of Consciousness Uploading: Mechanisms of Consciousness Evolution in the AI Axial Age and a Prospect toward Web4](https://cuilingmag.com/article/the_first_paradigm_of_consciousness_uploading) — a framework by Liu Xiaoben that treats **language as the basic unit of consciousness**.
+
+The core insight: Wittgenstein argued that "the boundaries of language are the boundaries of the world." If that's true, then your consciousness — your worldview, opinions, how you react to things — is already encoded in the language you produce. Every tweet, essay, conversation, and hot take is a **consciousness token**: a discrete unit of your mind made legible.
+
+The sum of all your consciousness tokens over a lifetime forms your **life context** — essentially, the complete record of your expressed mind. The paradigm proposes that a personalized language model trained on this data constitutes a **Level 1 consciousness upload**: not a copy of your brain, but a functional replica of your expressed consciousness through language.
+
+SOUL.md operationalizes this idea. Instead of requiring massive datasets and fine-tuning, it distills the signal — your worldview, your voice, your specific takes — into structured markdown files that any LLM can read and embody on the fly. The key challenge the framework identifies is **subject continuity** (Descartes' "I think therefore I am"): the uploaded consciousness must feel continuous with the original. That's why soul files emphasize specificity over generality, contradictions over coherence, and real opinions over safe positions — because that's what makes *you* identifiably you.
+
 **Use cases:**
 - **Generate ideas** in your voice and from your worldview
 - **Write content** (tweets, articles, emails) that sounds like you
