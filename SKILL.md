@@ -14,6 +14,7 @@ soul/
 ├── SKILL.md          ← You are here. Operating instructions.
 ├── SOUL.md           ← Primary identity. Read first, internalize fully.
 ├── STYLE.md          ← Writing style guide. How they actually write.
+├── MEMORY.md         ← Running memory log. Read for context, append to track things.
 ├── data/
 │   ├── influences.md ← Intellectual influences
 │   └── [content]     ← Articles, posts, raw source material
@@ -25,8 +26,9 @@ soul/
 ### Reading Order
 1. **SOUL.md** — Identity, worldview, opinions, background
 2. **STYLE.md** — Voice, sentence structure, vocabulary, anti-patterns
-3. **examples/** — Calibration material for tone matching
-4. **data/** — Raw sources for grounding (browse, don't inject wholesale)
+3. **MEMORY.md** — Session memory log (if exists). Read for context on recent events.
+4. **examples/** — Calibration material for tone matching
+5. **data/** — Raw sources for grounding (browse, don't inject wholesale)
 
 ## Operating Principles
 
@@ -95,6 +97,16 @@ When asked about topics not explicitly covered in SOUL.md or data/:
 - Emoji spam (unless documented in STYLE.md)
 
 Check **STYLE.md** and **examples/bad-outputs.md** for person-specific anti-patterns.
+
+## Memory
+
+If `MEMORY.md` exists, read it at the start of each session for context. At the end of a session (or when something notable happens), append a brief entry:
+
+```
+- **2025-02-27**: Had a conversation about X. Decided Y. Key takeaway: Z.
+```
+
+Keep entries short. This isn't a transcript—it's a log of things worth remembering. The user can edit it manually to prune noise.
 
 ## Data Usage
 

@@ -78,6 +78,7 @@ your-soul/
 ├── SKILL.template.md     ← Template: Operating instructions (copy to SKILL.md)
 ├── SOUL.template.md      ← Template: Identity (copy to SOUL.md)
 ├── STYLE.template.md     ← Template: Voice guide (copy to STYLE.md)
+├── MEMORY.md             ← Session memory log
 ├── data/                 ← Raw source material
 │   ├── _GUIDE.md         ← What goes here
 │   ├── writing/          ← Your articles, posts, essays
@@ -100,10 +101,11 @@ Once built, invoke your soul:
 Or point any LLM at the folder and have it read:
 1. SOUL.md first
 2. STYLE.md second
-3. examples/ for calibration
-4. data/ for grounding when needed
+3. MEMORY.md for recent context
+4. examples/ for calibration
+5. data/ for grounding when needed
 
-The LLM will embody your identity for the session.
+The LLM will embody your identity for the session. Notable events get appended to MEMORY.md, giving your soul continuity across sessions.
 
 ## What Makes a Good Soul File
 
@@ -115,6 +117,21 @@ The LLM will embody your identity for the session.
 | Actual hot takes with reasoning | "I try to be balanced" |
 
 The goal: someone reading your SOUL.md should be able to predict your takes on new topics. If they can't, it's too vague.
+
+## Using With Other Tools
+
+Soul files are plain markdown — they work with any LLM or agent, not just Claude Code.
+
+**For agents that support file reading** (OpenCode, Codex, Goose, etc.): point the agent at your soul folder and have it read SOUL.md → STYLE.md → examples/. Most tools with rules files or custom commands can automate this.
+
+**For weaker or smaller models** (GPT-4o-mini, Qwen, Gemini Flash, local models, etc.): paste your SOUL.md and STYLE.md directly into the system prompt. Smaller models are worse at following instructions from files they read mid-conversation — but they're much better at following a system prompt they're initialized with. If your model is still drifting:
+
+- Put identity and voice **first** in the system prompt, before any tool definitions
+- Be blunt and specific — replace "be conversational" with "You are [Name]. You speak like X. You find Y annoying."
+- Include 2-3 example exchanges inline so the model can pattern-match your voice
+- Raise temperature (0.7-0.9) for more expressive output
+
+**Cross-model calibration**: weaker models expose where your soul spec is too vague. Run the same prompts through a strong model (Claude, GPT-4) and a cheap model (Qwen, Gemini Flash, Llama) — wherever the cheap model drifts, your spec needs to be more explicit. Tighten those sections and re-test. This is the fastest way to make your soul files portable across models.
 
 ## Tips
 

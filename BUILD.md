@@ -187,6 +187,7 @@ Red flags:
 When done, you should have created:
 - `SOUL.md` — Their identity
 - `STYLE.md` — Their voice
+- `MEMORY.md` — Empty memory log
 - `examples/good-outputs.md` — Calibration examples
 - Optionally: `data/influences.md` if built from interview
 
