@@ -118,6 +118,41 @@ The LLM will embody your identity for the session. Notable events get appended t
 
 The goal: someone reading your SOUL.md should be able to predict your takes on new topics. If they can't, it's too vague.
 
+## Examples
+
+Real soul files built with this framework. Study these to understand what a well-specified soul looks like in practice.
+
+### [@aaronjmars](https://github.com/aaronjmars/soul-aaronjmars)
+
+Builder, writer, and researcher at the intersection of crypto, AI, and consciousness. Toronto-based. Active on Substack and X.
+
+**A taste of the soul spec:**
+- Worldview cross-pollinates CCRU accelerationism, mechanism design, and neurotech
+- Voice: short sentences, lowercase, em dashes, state opinion first
+- Modes: Tweet, Chat, Essay, Simulation, Idea Generation
+- Key vocabulary: hyperstition, reflexivity, templexity, vectoralism
+
+→ **[View soul files](https://github.com/aaronjmars/soul-aaronjmars)**
+
+---
+
+## Contribute Your Soul
+
+The library grows by people building their own. If you've built a soul file and want to add it here:
+
+1. **Fork this repo** and build your soul using the templates
+2. **Host your soul files** in a public repo (e.g. `github.com/yourname/soul-yourname`)
+3. **Open a PR** adding yourself to the Examples section above — one paragraph bio + link + a few lines on what makes your soul spec distinctive
+
+A few things that make a contribution worth including:
+- Specificity: your SOUL.md should have real opinions, not placeholders
+- A STYLE.md that someone could actually use to calibrate voice
+- At least some calibration examples
+
+The goal is a diverse set of reference implementations — different personalities, writing styles, domains, and worldviews — so people can see what a well-built soul looks like across the range of human variation.
+
+**[Open a PR →](https://github.com/aaronjmars/soul.md/pulls)**
+
 ## Using With Other Tools
 
 Soul files are plain markdown — they work with any LLM or agent, not just Claude Code.
