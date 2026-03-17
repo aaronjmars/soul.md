@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/soul.png" alt="SOUL.md" width="120" />
+  <img src="img/soul.jpg" alt="SOUL.md" width="120" />
 </p>
 
 <h1 align="center">SOUL.MD</h1>
@@ -13,7 +13,7 @@
 
 ## What Is This?
 
-<img src="img/soul-identity.png" alt="Soul Identity" width="100%" />
+<img src="img/soul-identity.jpg" alt="Soul Identity" width="100%" />
 
 A soul file captures who you are in a format AI agents can embody. Not a chatbot that talks *about* you—an AI that thinks and speaks *as* you.
 
@@ -27,6 +27,8 @@ The sum of all your consciousness tokens over a lifetime forms your **life conte
 
 SOUL.md operationalizes this idea. Instead of requiring massive datasets and fine-tuning, it distills the signal — your worldview, your voice, your specific takes — into structured markdown files that any LLM can read and embody on the fly. The key challenge the framework identifies is **subject continuity** (Descartes' "I think therefore I am"): the uploaded consciousness must feel continuous with the original. That's why soul files emphasize specificity over generality, contradictions over coherence, and real opinions over safe positions — because that's what makes *you* identifiably you.
 
+<img src="img/soul-sources.jpg" alt="Soul Sources" width="100%" />
+
 **Use cases:**
 - **Generate ideas** in your voice and from your worldview
 - **Write content** (tweets, articles, emails) that sounds like you
@@ -36,7 +38,7 @@ SOUL.md operationalizes this idea. Instead of requiring massive datasets and fin
 
 ## Quick Start
 
-<img src="img/soul-builder.png" alt="Soul Builder Flow" width="100%" />
+<img src="img/soul-builder.jpg" alt="Soul Builder Flow" width="100%" />
 
 ### Option 1: Build from scratch (no existing data)
 
@@ -70,7 +72,7 @@ Read the templates and fill them out yourself:
 
 ## File Structure
 
-<img src="img/soul-stack.png" alt="Soul Stack" width="100%" />
+<img src="img/soul-stack.jpg" alt="Soul Stack" width="100%" />
 
 ```
 your-soul/
