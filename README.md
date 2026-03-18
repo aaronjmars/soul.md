@@ -15,60 +15,69 @@
 
 <img src="img/soul-identity.jpg" alt="Soul Identity" width="100%" />
 
-A soul file captures who you are in a format AI agents can embody. Not a chatbot that talks *about* you—an AI that thinks and speaks *as* you.
+A soul file captures who you are in a format AI agents can embody. Not a chatbot that *talks about you* — an AI that *thinks and speaks as you*.
 
-## The Approach
+Dump your tweets, essays, and posts into a folder. The agent reads everything, extracts your worldview and voice, and builds a set of markdown files any LLM can load to write as you.
 
-SOUL.md is inspired by [The First Paradigm of Consciousness Uploading: Mechanisms of Consciousness Evolution in the AI Axial Age and a Prospect toward Web4](https://cuilingmag.com/article/the_first_paradigm_of_consciousness_uploading) — a framework by Liu Xiaoben that treats **language as the basic unit of consciousness**.
-
-Wittgenstein argued that "the boundaries of language are the boundaries of the world." If that's true, then your consciousness — your worldview, opinions, how you react to things — is already encoded in the language you produce. Every tweet, essay, conversation, and hot take is a **consciousness token**: a discrete unit of your mind made legible.
-
-The sum of all your consciousness tokens over a lifetime forms your **life context** — essentially, the complete record of your expressed mind. The paradigm proposes that a personalized language model trained on this data constitutes a **Level 1 consciousness upload**: not a copy of your brain, but a functional replica of your expressed consciousness through language.
-
-SOUL.md operationalizes this idea. Instead of requiring massive datasets and fine-tuning, it distills the signal — your worldview, your voice, your specific takes — into structured markdown files that any LLM can read and embody on the fly. The key challenge the framework identifies is **subject continuity** (Descartes' "I think therefore I am"): the uploaded consciousness must feel continuous with the original. That's why soul files emphasize specificity over generality, contradictions over coherence, and real opinions over safe positions — because that's what makes *you* identifiably you.
-
-<img src="img/soul-sources.jpg" alt="Soul Sources" width="100%" />
+The goal: someone reading your `SOUL.md` should be able to predict your takes on new topics. If they can't, it's too vague.
 
 **Use cases:**
-- **Generate ideas** in your voice and from your worldview
-- **Write content** (tweets, articles, emails) that sounds like you
-- **Tailor AI** to your interests and thinking patterns
-- **Explore your own thinking** by talking to a version of yourself
-- **Scale yourself** for content, responses, brainstorming
+- Generate ideas from your worldview
+- Write content (tweets, articles, emails) that sounds like you
+- Tailor AI to your interests and thinking patterns
+- Scale yourself for content, responses, brainstorming
+
+---
 
 ## Quick Start
 
 <img src="img/soul-builder.jpg" alt="Soul Builder Flow" width="100%" />
 
-### Option 1: Build from scratch (no existing data)
-
-```bash
+**Option 1 — Build from scratch**
+```
 /soul-builder
 ```
+The agent interviews you: worldview, opinions, how you write, what you care about.
 
-The agent will interview you to build your soul file—asking about your worldview, opinions, how you write, what you care about.
+**Option 2 — Build from your data**
 
-### Option 2: Build from your data
+Drop your content into `data/`:
+```
+data/x/          ← Twitter/X export
+data/writing/    ← Blog posts, essays
+```
+Then run `/soul-builder`. It analyzes your data, extracts patterns, and drafts your soul file. You review and refine together.
 
-1. Add your data to the `data/` folder:
-   - Twitter/X export → `data/x/`
-   - Blog posts, essays → `data/writing/`
-   - Any other content that represents your voice
+**Option 3 — Manual**
 
-2. Run the builder:
-```bash
-/soul-builder
+Copy the templates and fill them in:
+```
+SOUL.template.md  → SOUL.md
+STYLE.template.md → STYLE.md
+SKILL.template.md → SKILL.md
 ```
 
-The agent will analyze your data, extract patterns, and draft your soul file. You'll review and refine together.
+---
 
-### Option 3: Manual creation
+## Data Sources
 
-Read the templates and fill them out yourself:
-1. Copy `SOUL.template.md` → `SOUL.md`
-2. Copy `STYLE.template.md` → `STYLE.md`
-3. Copy `SKILL.template.md` → `SKILL.md`
-4. Add examples to `examples/`
+<img src="img/soul-sources.jpg" alt="Soul Sources" width="100%" />
+
+Feed the builder anything you've written. The more signal, the sharper the output.
+
+| Category | Platforms |
+|----------|-----------|
+| **Social** | Twitter/X, Bluesky, Farcaster, Mastodon, Threads, LinkedIn, Reddit |
+| **Writing** | Substack, Medium, Ghost, WordPress, Mirror.xyz, Paragraph.xyz |
+| **Messaging** | Discord, Telegram, Slack, iMessage exports |
+| **Notes** | Notion, Obsidian, Roam Research, Logseq, Apple Notes |
+| **Video/Audio** | YouTube transcripts, podcast transcripts, Loom recordings |
+| **Code/Dev** | GitHub activity, Hacker News comments, Stack Overflow answers |
+| **Other** | PDFs, plain text, CSV/JSON, RSS feeds, GDPR data exports |
+
+No existing data? Option 1 (interview mode) still builds a solid soul file from scratch.
+
+---
 
 ## File Structure
 
@@ -76,38 +85,20 @@ Read the templates and fill them out yourself:
 
 ```
 your-soul/
-├── BUILD.md              ← Skill: Agent uses this to build your soul
-├── SKILL.template.md     ← Template: Operating instructions (copy to SKILL.md)
-├── SOUL.template.md      ← Template: Identity (copy to SOUL.md)
-├── STYLE.template.md     ← Template: Voice guide (copy to STYLE.md)
-├── MEMORY.md             ← Session memory log
-├── data/                 ← Raw source material
-│   ├── _GUIDE.md         ← What goes here
-│   ├── writing/          ← Your articles, posts, essays
-│   ├── x/                ← Twitter/X archive
-│   └── influences.md     ← Who shaped your thinking
-└── examples/             ← Calibration material
-    ├── _GUIDE.md         ← What goes here
-    ├── good-outputs.md   ← Examples of your voice done right
-    └── bad-outputs.md    ← What NOT to sound like (optional)
+├── SOUL.md           ← Who you are (identity, worldview, opinions)
+├── STYLE.md          ← How you write (voice, syntax, patterns)
+├── SKILL.md          ← Operating modes (tweet, essay, chat, etc.)
+├── MEMORY.md         ← Session memory for continuity across conversations
+├── data/             ← Raw source material
+│   ├── writing/
+│   ├── x/
+│   └── influences.md
+└── examples/
+    ├── good-outputs.md
+    └── bad-outputs.md
 ```
 
-## Using Your Soul
-
-Once built, invoke your soul:
-
-```bash
-/soul
-```
-
-Or point any LLM at the folder and have it read:
-1. SOUL.md first
-2. STYLE.md second
-3. MEMORY.md for recent context
-4. examples/ for calibration
-5. data/ for grounding when needed
-
-The LLM will embody your identity for the session. Notable events get appended to MEMORY.md, giving your soul continuity across sessions.
+---
 
 ## What Makes a Good Soul File
 
@@ -118,69 +109,96 @@ The LLM will embody your identity for the session. Notable events get appended t
 | Specific book references, named influences | "I read widely" |
 | Actual hot takes with reasoning | "I try to be balanced" |
 
-The goal: someone reading your SOUL.md should be able to predict your takes on new topics. If they can't, it's too vague.
+Real people have inconsistent views. Include contradictions — they're what make you identifiably you.
+
+---
+
+## Using Your Soul
+
+Once built, invoke your soul:
+```
+/soul
+```
+
+Or point any LLM at your folder and have it read:
+1. `SOUL.md` — identity
+2. `STYLE.md` — voice
+3. `MEMORY.md` — recent context
+4. `examples/` — calibration
+5. `data/` — grounding when needed
+
+Notable events get appended to `MEMORY.md`, giving your soul continuity across sessions.
+
+---
+
+## Using With Other Tools
+
+Soul files are plain markdown — they work with any LLM or agent.
+
+**For agents that support file reading** (OpenCode, Codex, Goose, etc.): point the agent at your soul folder and have it read `SOUL.md` → `STYLE.md` → `examples/`.
+
+**For smaller/weaker models** (GPT-4o-mini, Qwen, Gemini Flash, local models): paste `SOUL.md` and `STYLE.md` directly into the system prompt. Tips if the model still drifts:
+- Put identity and voice *before* tool definitions
+- Be blunt: replace "be conversational" with "You are [Name]. You speak like X. You find Y annoying."
+- Include 2–3 inline example exchanges for pattern-matching
+- Raise temperature (0.7–0.9) for more expressive output
+
+**Cross-model calibration tip:** Run the same prompts through a strong model (Claude, GPT-4) and a cheap one (Qwen, Llama). Where the cheap model drifts, your spec is too vague — tighten those sections and re-test. This is the fastest way to make your soul files portable.
+
+---
 
 ## Examples
 
-Real soul files built with this framework. Study these to understand what a well-specified soul looks like in practice.
+Real soul files built with this framework.
 
-### [@aaronjmars](https://github.com/aaronjmars/soul-aaronjmars)
-
+### @aaronjmars
 Builder, writer, and researcher at the intersection of crypto, AI, and consciousness. Toronto-based. Active on Substack and X.
 
-**A taste of the soul spec:**
-- Worldview cross-pollinates CCRU accelerationism, mechanism design, and neurotech
-- Voice: short sentences, lowercase, em dashes, state opinion first
-- Modes: Tweet, Chat, Essay, Simulation, Idea Generation
-- Key vocabulary: hyperstition, reflexivity, templexity, vectoralism
+A taste of the soul spec: worldview cross-pollinates CCRU accelerationism, mechanism design, and neurotech. Voice: short sentences, lowercase, em dashes, state opinion first. Key vocabulary: hyperstition, reflexivity, templexity, vectoralism.
 
-→ **[View soul files](https://github.com/aaronjmars/soul-aaronjmars)**
+→ [View soul files](#)
 
 ---
 
 ## Contribute Your Soul
 
-The library grows by people building their own. If you've built a soul file and want to add it here:
+Fork this repo, build your soul using the templates, host it publicly, and open a PR adding yourself to the Examples section — one paragraph bio + link + a few lines on what makes your soul spec distinctive.
 
-1. **Fork this repo** and build your soul using the templates
-2. **Host your soul files** in a public repo (e.g. `github.com/yourname/soul-yourname`)
-3. **Open a PR** adding yourself to the Examples section above — one paragraph bio + link + a few lines on what makes your soul spec distinctive
+What makes a contribution worth including: real opinions (not placeholders), a `STYLE.md` someone could actually calibrate from, and at least some examples.
 
-A few things that make a contribution worth including:
-- Specificity: your SOUL.md should have real opinions, not placeholders
-- A STYLE.md that someone could actually use to calibrate voice
-- At least some calibration examples
+[Open a PR →](#)
 
-The goal is a diverse set of reference implementations — different personalities, writing styles, domains, and worldviews — so people can see what a well-built soul looks like across the range of human variation.
+---
 
-**[Open a PR →](https://github.com/aaronjmars/soul.md/pulls)**
+## The Theory (Optional Background)
 
-## Using With Other Tools
+SOUL.md is inspired by *The First Paradigm of Consciousness Uploading* by Liu Xiaoben — a framework that treats language as the basic unit of consciousness. Wittgenstein argued that "the boundaries of language are the boundaries of the world." If that's true, your consciousness is already encoded in the language you produce.
 
-Soul files are plain markdown — they work with any LLM or agent, not just Claude Code.
+The paradigm proposes that a model trained on a lifetime of your language output constitutes a Level 1 consciousness upload — not a copy of your brain, but a functional replica of your expressed consciousness. SOUL.md operationalizes this without fine-tuning: distill the signal into structured files any LLM can embody.
 
-**For agents that support file reading** (OpenCode, Codex, Goose, etc.): point the agent at your soul folder and have it read SOUL.md → STYLE.md → examples/. Most tools with rules files or custom commands can automate this.
+The key challenge is *subject continuity*: the uploaded consciousness must feel continuous with the original. That's why soul files emphasize specificity over generality, contradictions over coherence, and real opinions over safe positions.
 
-**For weaker or smaller models** (GPT-4o-mini, Qwen, Gemini Flash, local models, etc.): paste your SOUL.md and STYLE.md directly into the system prompt. Smaller models are worse at following instructions from files they read mid-conversation — but they're much better at following a system prompt they're initialized with. If your model is still drifting:
+## Compatible Frameworks
 
-- Put identity and voice **first** in the system prompt, before any tool definitions
-- Be blunt and specific — replace "be conversational" with "You are [Name]. You speak like X. You find Y annoying."
-- Include 2-3 example exchanges inline so the model can pattern-match your voice
-- Raise temperature (0.7-0.9) for more expressive output
+Soul files are plain markdown — if an agent can read files, it can embody you. Tested with:
 
-**Cross-model calibration**: weaker models expose where your soul spec is too vague. Run the same prompts through a strong model (Claude, GPT-4) and a cheap model (Qwen, Gemini Flash, Llama) — wherever the cheap model drifts, your spec needs to be more explicit. Tighten those sections and re-test. This is the fastest way to make your soul files portable across models.
+| Framework | Language | Stars |
+|-----------|----------|-------|
+| [OpenClaw](https://github.com/openclaw/openclaw) | TypeScript | 322k |
+| [Nanobot](https://github.com/HKUDS/nanobot) | Python | 34.6k |
+| [ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw) | Rust | 27.8k |
+| [PicoClaw](https://github.com/sipeed/picoclaw) | Go | 25.3k |
+| [NanoClaw](https://github.com/qwibitai/nanoclaw) | TypeScript | 24k |
+| [OpenFang](https://github.com/RightNow-AI/openfang) | Rust | 14.9k |
+| [IronClaw](https://github.com/nearai/ironclaw) | Rust | 10.4k |
+| [Hermes Agent](https://github.com/NousResearch/hermes-agent) | Python | 8.7k |
+| Claude Code · OpenCode · Codex · Goose | various | — |
 
-## Tips
-
-- **Be specific**: Vague descriptions = generic output
-- **Include contradictions**: Real people have inconsistent views
-- **Add texture**: Specific anecdotes beat abstract descriptions
-- **Update regularly**: Your soul should evolve as you do
-- **Test and iterate**: Generate outputs, compare to your real voice, refine
+Also works with any model via system prompt — see [Using With Other Tools](#using-with-other-tools).
 
 ---
 
 <p align="center">
-  <em>Your digital identity is now composable, forkable, evolvable.</em><br>
+  <em>Your identity is now composable. Forkable. Evolvable.</em><br>
   Works with Claude Code, OpenClaw, and any agent that can read markdown.
 </p>
