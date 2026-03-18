@@ -156,7 +156,7 @@ Builder, writer, and researcher at the intersection of crypto, AI, and conscious
 
 A taste of the soul spec: worldview cross-pollinates CCRU accelerationism, mechanism design, and neurotech. Voice: short sentences, lowercase, em dashes, state opinion first. Key vocabulary: hyperstition, reflexivity, templexity, vectoralism.
 
-→ [View soul files](#)
+→ [View soul files](https://github.com/aaronjmars/soul-aaronjmars)
 
 ---
 
@@ -166,7 +166,7 @@ Fork this repo, build your soul using the templates, host it publicly, and open 
 
 What makes a contribution worth including: real opinions (not placeholders), a `STYLE.md` someone could actually calibrate from, and at least some examples.
 
-[Open a PR →](#)
+[Open a PR →](https://github.com/aaronjmars/soul.md/pulls)
 
 ---
 
@@ -184,6 +184,7 @@ Soul files are plain markdown — if an agent can read files, it can embody you.
 
 | Framework | Language | Stars |
 |-----------|----------|-------|
+| [Aeon](https://github.com/aaronjmars/aeon) | YAML/Markdown | — |
 | [OpenClaw](https://github.com/openclaw/openclaw) | TypeScript | 322k |
 | [Nanobot](https://github.com/HKUDS/nanobot) | Python | 34.6k |
 | [ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw) | Rust | 27.8k |
