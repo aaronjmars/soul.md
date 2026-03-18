@@ -79,6 +79,27 @@ No existing data? Option 1 (interview mode) still builds a solid soul file from 
 
 ---
 
+## Compatible Frameworks
+
+Soul files are plain markdown — if an agent can read files, it can embody you. Tested with:
+
+| Framework | Language | Stars |
+|-----------|----------|-------|
+| [Aeon](https://github.com/aaronjmars/aeon) | YAML/Markdown | — |
+| [OpenClaw](https://github.com/openclaw/openclaw) | TypeScript | 322k |
+| [Nanobot](https://github.com/HKUDS/nanobot) | Python | 34.6k |
+| [ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw) | Rust | 27.8k |
+| [PicoClaw](https://github.com/sipeed/picoclaw) | Go | 25.3k |
+| [NanoClaw](https://github.com/qwibitai/nanoclaw) | TypeScript | 24k |
+| [OpenFang](https://github.com/RightNow-AI/openfang) | Rust | 14.9k |
+| [IronClaw](https://github.com/nearai/ironclaw) | Rust | 10.4k |
+| [Hermes Agent](https://github.com/NousResearch/hermes-agent) | Python | 8.7k |
+| Claude Code · OpenCode · Codex · Goose | various | — |
+
+Also works with any model via system prompt — see [Using With Other Tools](#using-with-other-tools).
+
+---
+
 ## File Structure
 
 <img src="img/soul-stack.jpg" alt="Soul Stack" width="100%" />
@@ -177,27 +198,6 @@ SOUL.md is inspired by *The First Paradigm of Consciousness Uploading* by Liu Xi
 The paradigm proposes that a model trained on a lifetime of your language output constitutes a Level 1 consciousness upload — not a copy of your brain, but a functional replica of your expressed consciousness. SOUL.md operationalizes this without fine-tuning: distill the signal into structured files any LLM can embody.
 
 The key challenge is *subject continuity*: the uploaded consciousness must feel continuous with the original. That's why soul files emphasize specificity over generality, contradictions over coherence, and real opinions over safe positions.
-
-## Compatible Frameworks
-
-Soul files are plain markdown — if an agent can read files, it can embody you. Tested with:
-
-| Framework | Language | Stars |
-|-----------|----------|-------|
-| [Aeon](https://github.com/aaronjmars/aeon) | YAML/Markdown | — |
-| [OpenClaw](https://github.com/openclaw/openclaw) | TypeScript | 322k |
-| [Nanobot](https://github.com/HKUDS/nanobot) | Python | 34.6k |
-| [ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw) | Rust | 27.8k |
-| [PicoClaw](https://github.com/sipeed/picoclaw) | Go | 25.3k |
-| [NanoClaw](https://github.com/qwibitai/nanoclaw) | TypeScript | 24k |
-| [OpenFang](https://github.com/RightNow-AI/openfang) | Rust | 14.9k |
-| [IronClaw](https://github.com/nearai/ironclaw) | Rust | 10.4k |
-| [Hermes Agent](https://github.com/NousResearch/hermes-agent) | Python | 8.7k |
-| Claude Code · OpenCode · Codex · Goose | various | — |
-
-Also works with any model via system prompt — see [Using With Other Tools](#using-with-other-tools).
-
----
 
 <p align="center">
   <em>Your identity is now composable. Forkable. Evolvable.</em><br>
