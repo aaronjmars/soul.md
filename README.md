@@ -213,7 +213,7 @@ What makes a contribution worth including: real opinions (not placeholders), a `
 
 SOUL.md is affiliated with the [Aeon](https://github.com/aaronjmars/aeon) project and the AEON token.
 
-Contract: [`0xbf8e8f0e8866a7052f948c16508644347c57aba3`](https://etherscan.io/address/0xbf8e8f0e8866a7052f948c16508644347c57aba3)
+Contract: [`0xbf8e8f0e8866a7052f948c16508644347c57aba3`](https://bankr.bot/agents/0xbf8e8f0e8866a7052f948c16508644347c57aba3)
 
 ---
 
