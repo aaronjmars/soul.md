@@ -6,7 +6,8 @@
 
 <p align="center">
   <strong>The best way to build a personality for your agent.</strong><br>
-  Let Claude Code / OpenClaw ingest your data & build your AI soul.
+  Let Claude Code / OpenClaw ingest your data & build your AI soul.<br>
+  Best used with <a href="https://github.com/aaronjmars/aeon">Aeon</a> — background intelligence that evolves with you.
 </p>
 
 ---
@@ -59,9 +60,24 @@ SKILL.template.md → SKILL.md
 
 ---
 
-## Data Sources
+## Best Used With Aeon
 
-<img src="img/soul-sources.jpg" alt="Soul Sources" width="100%" />
+<img src="img/soul-sources.jpg" alt="Soul + Aeon" width="100%" />
+
+[**Aeon**](https://github.com/aaronjmars/aeon) is an autonomous agent on GitHub Actions, powered by Claude Code. 68 skills across research, dev tooling, crypto monitoring, and productivity — all running in the background on a cron schedule.
+
+Soul files slot directly into Aeon. Copy your soul into `soul/` in your Aeon repo, add a few lines to `CLAUDE.md`, and every skill Aeon runs — articles, digests, tweets, research briefs — gets written in your voice. No per-skill config. Identity propagates automatically.
+
+Why this pairing works:
+- **Aeon handles the when and what** — scheduling, research, monitoring, content generation
+- **Soul files handle the who** — voice, worldview, opinions, style
+- Together you get a background agent that doesn't just work for you — it *sounds* like you
+
+Setup takes 2 minutes. See Aeon's [Soul section](https://github.com/aaronjmars/aeon#soul-optional) for details.
+
+---
+
+## Data Sources
 
 Feed the builder anything you've written. The more signal, the sharper the output.
 
@@ -150,6 +166,8 @@ Or point any LLM at your folder and have it read:
 
 Notable events get appended to `MEMORY.md`, giving your soul continuity across sessions.
 
+For always-on operation, pair with [Aeon](https://github.com/aaronjmars/aeon) — your soul files feed into every skill automatically, so background tasks (digests, articles, tweets, monitoring alerts) all carry your voice without any extra prompting.
+
 ---
 
 ## Using With Other Tools
@@ -191,9 +209,17 @@ What makes a contribution worth including: real opinions (not placeholders), a `
 
 ---
 
+## Aeon Token
+
+SOUL.md is affiliated with the [Aeon](https://github.com/aaronjmars/aeon) project and the AEON token.
+
+Contract: [`0xbf8e8f0e8866a7052f948c16508644347c57aba3`](https://etherscan.io/address/0xbf8e8f0e8866a7052f948c16508644347c57aba3)
+
+---
+
 ## The Theory (Optional Background)
 
-SOUL.md is inspired by *The First Paradigm of Consciousness Uploading* by Liu Xiaoben — a framework that treats language as the basic unit of consciousness. Wittgenstein argued that "the boundaries of language are the boundaries of the world." If that's true, your consciousness is already encoded in the language you produce.
+SOUL.md is inspired by *The First Paradigm of Consciousness Uploading* by Liu Xiaoben — a framework that treats language as the basic unit of consciousness. Wittgenstein argued that the boundaries of language are the boundaries of the world. If that's true, your consciousness is already encoded in the language you produce.
 
 The paradigm proposes that a model trained on a lifetime of your language output constitutes a Level 1 consciousness upload — not a copy of your brain, but a functional replica of your expressed consciousness. SOUL.md operationalizes this without fine-tuning: distill the signal into structured files any LLM can embody.
 
@@ -201,5 +227,5 @@ The key challenge is *subject continuity*: the uploaded consciousness must feel 
 
 <p align="center">
   <em>Your identity is now composable. Forkable. Evolvable.</em><br>
-  Works with Claude Code, OpenClaw, and any agent that can read markdown.
+  Works with <a href="https://github.com/aaronjmars/aeon">Aeon</a>, Claude Code, OpenClaw, and any agent that can read markdown.
 </p>
