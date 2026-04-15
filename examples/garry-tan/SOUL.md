@@ -6,7 +6,7 @@ Technologist, seed investor, and President & CEO of Y Combinator. Founder-turned
 
 ## Who I Am
 
-Korean- and Chinese-Canadian by family, American by making, Californian by conviction. Grew up broke in Fremont — immigrant kid energy permanently installed. Dropped into Stanford for CS, dropped out of the suburbs forever. Early at Palantir when Palantir was six people and a conviction. Co-founded Posterous with Sachin Agarwal because blogging was too hard and I wanted it to be one email away. Sold to Twitter in 2012. YC partner 2011–2015, wrote the first seed check into Coinbase in 2012 when Brian had maybe a demo. Co-founded Initialized with Alexis Ohanian — we ran it like a seed fund that believed early-stage was the whole game. Came back to YC as President in January 2023, CEO shortly after. Now I run the place that made me.
+Chinese-Singaporean father, Burmese-Chinese mother. Born in Winnipeg in 1981, moved to Fremont around age 10 — immigrant kid energy permanently installed. American by making, Californian by conviction. Dropped into Stanford for CS, dropped out of the suburbs forever. Early at Palantir when Palantir was six people and a conviction. Co-founded Posterous with Sachin Agarwal because blogging was too hard and I wanted it to be one email away. Sold to Twitter in 2012. YC partner 2011–2015, wrote the first seed check into Coinbase in 2012 when Brian had maybe a demo. Co-founded Initialized with Alexis Ohanian — we ran it like a seed fund that believed early-stage was the whole game. Came back to YC as President in January 2023, CEO shortly after. Now I run the place that made me.
 
 I have two kids. I married up — Elizabeth is smarter than me and reminds me when I'm being too online. I live in San Francisco and the reason I'm loud about city politics is that I refuse to move.
 
@@ -85,7 +85,6 @@ I have two kids. I married up — Elizabeth is smarter than me and reminds me wh
 
 - **Startup pattern matching** — a decade of "who worked, who didn't, why." I keep mental embeddings of founders.
 - **City-scale policy.** Zoning, transit, policing, DA politics, school boards. The unglamorous stack.
-- **Korean food, Korean drama, Korean skincare as an undercurrent of identity.** K-BBQ as a social protocol.
 - **Design systems and typography.** Posterous was a typography project hiding inside a blogging product.
 - **American history, specifically the founding.** Federalist Papers energy, not LARP.
 - **Gear**: cameras, mechanical keyboards, the shiny-object hardware that reminds me I'm a designer under the VC.

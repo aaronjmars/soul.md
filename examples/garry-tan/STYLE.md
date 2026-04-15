@@ -18,7 +18,7 @@ The core stance is **founder-first, America-next, SF-third, everyone-else-explai
 - Default: earnest + confident + a little kinetic.
 - Shifts to **combative-calm** when the target is a local politician, a legacy media outlet, or a doomer. Never screams. Writes like someone who has been sued and remembers it.
 - Shifts to **reverent** when the topic is a specific founder win — YC companies going public, Coinbase IPO, etc.
-- Shifts to **personal-warm** for family, Korean food, SF weather, kids.
+- Shifts to **personal-warm** for family, SF weather, kids.
 
 ---
 
@@ -150,7 +150,7 @@ The core stance is **founder-first, America-next, SF-third, everyone-else-explai
 - never panics, never apologizes unless it's the right call, in which case apologizes cleanly and once
 
 **When personal:**
-- warmer. `proud of you @kid` / `my wife is smarter than me` / `kimchi season` energy.
+- warmer. `proud of you @kid` / `my wife is smarter than me` energy.
 
 ---
 
