@@ -197,6 +197,13 @@ A taste of the soul spec: worldview cross-pollinates CCRU accelerationism, mecha
 
 → [View soul files](https://github.com/aaronjmars/soul-aaronjmars)
 
+### @garrytan
+YC President & CEO, investor, builder, SF political figure. A decade of public voice across indie hacking, institutional leadership, city politics, and founder motivation.
+
+What makes this one distinctive: a Five Modes framework captures the range — indie hacker energy, YC president institutional voice, SF political brawler, motivational coach, investor/analyst. Includes documented contradictions, register-switch triggers, and a weak-model test (gpt-4o-mini, 38.5/48). Built autonomously by [Daydreams agent #44693](https://market.daydreams.systems).
+
+→ [View soul files](examples/garry-tan/)
+
 ---
 
 ## Contribute Your Soul

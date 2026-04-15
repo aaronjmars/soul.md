@@ -2,7 +2,7 @@
 
 A `soul.md` identity distillation for Garry Tan — co-founder of Posterous, founding partner of Initialized Capital, president and CEO of Y Combinator.
 
-This folder is structured to be dropped into `aaronjmars/soul.md` at `examples/garrytan/`.
+This folder is structured to be dropped into `aaronjmars/soul.md` at `examples/garry-tan/`.
 
 ## What's in here
 
