@@ -1,0 +1,1086 @@
+ 
+I'm filed to introduce our next and
+final speaker Andre karpathy I think
+karpathy probably needs no introduction
+most of us have probably watched his
+YouTube videos at length uh but he's a
+um he's renowned for his research in
+deep learning he designed the first deep
+learning class at Stamford was part of
+the founding team at open AI led the
+computer vision team at Tesla and is now
+a mystery man again now that he has just
+left open AI so we're very lucky to have
+you here here than Andre you've been
+such a dream speaker and so we're
+excited to have you and Stephanie close
+out the day thank
+[Applause]
+you Andre's first reaction as we walked
+up here was oh my God to his picture
+it's like a very intimidating I don't
+know what year was taken but he's he's
+impressed um okay amazing um Andre thank
+you so much for joining us today and
+welcome back yeah thank you um fun fact
+that most people don't actually know how
+many how many folks here know where open
+ai's original office
+was that's
+amazing um Nick I'm gonna guess right
+here right here right here on the
+opposite side of our uh San Francisco
+office where actually many of you guys
+were just in huddles so this is fun for
+us because it brings us back to Our
+Roots back when I first started at seoa
+and when Andre first uh started
+co-founding open aai um Andre in in
+addition to living out the Willy Wonka
+working a top a chocolate factory dream
+uh what were some of your favorite
+moments working from here yes opening I
+was right there um and this was the
+first office after I guess Greg's
+apartment which maybe doesn't count uh
+and so yeah we spent maybe two years
+here and the Chocolate Factory was just
+downstairs so it always smelled really
+nice uh and uh yeah I guess the team was
+you know 10 20 plus and uh uh yeah we
+had a few very fun episodes here one of
+them was eluded to by um by Jensen at
+GTC that happened just yesterday or two
+days ago so Jensen was describing how he
+brought the DG the first dgx and how he
+delivered it to open AI so that happened
+right there uh so that's where we all
+signed it it's in the room over there um
+so Andre needs no introduction but I
+wanted to give a little bit of backstory
+on some of his journey to date um as
+Sonia had introduced he was trained by
+Jeff Hinton and then uh Fay um you know
+his first claim to fame was his deep
+learning course at Stanford um he
+co-founded open AI back in 2015 and 2017
+he was poached by Elon I remember this
+very very clearly for folks who don't
+under who don't remember the context
+then Elon had just transitioned through
+six different autopilot leaders each of
+whom lasted six months each and I
+remember when Andre took this job I
+thought congratulations and good
+luck um not too long after that uh you
+know he went back to open aai and has
+been there for the last year now unlike
+like all the rest of us today he is
+Basking in the ultimate Glory of freedom
+in all time and responsibility um and so
+we're really excited to to see what you
+have to share today a few things that I
+appreciate the most from Andre are that
+he is an incredible fascinating futurist
+thinker um he is a Relentless Optimist
+and he's a very practical Builder and so
+I think he'll share some of his insights
+around that today to kick things off um
+AGI even seven years ago seemed like an
+incredibly impossible task to achieve
+even in the span of our lifetimes now it
+seems within sight what is your view of
+the future over the next n
+years uh yes so I think you're right I
+think a few years ago I sort of felt
+like AGI was um um it wasn't clear how
+it was going to happen it was very sort
+of academic and you would like think
+about different approaches and now I
+think it's very clear and there's like a
+lot of space and everyone is trying to
+fill it and uh uh so there's a lot of
+optimization
+um and I think roughly speaking the way
+things are happening is um everyone is
+trying to build what I refer to as kind
+of like this llm OS um and basically I
+like to think of it as an operating
+system you have to get a bunch of like
+basically peripherals that you plug into
+this new CPU or something like that the
+peripherals are of course like text uh
+images audio and all the modalities and
+then you have a CPU which is the llm
+Transformer itself and then it's also
+connected to all the software 1.0
+infrastructure that we've already built
+up for ourselves
+and so I think everyone is kind of
+trying to build something like that and
+then um make it available as something
+that's customizable to all the different
+nukes and crannies of the economy and so
+I think that's kind of roughly what
+everyone is trying to build out and what
+um uh what we sort of also heard about
+earlier today uh so I think um that's
+roughly where it's headed is um we can
+bring up and down these relatively uh
+you know self-contained agents that we
+can give high level tasks to and
+specialize in various ways so yeah I
+think it's going to be very interesting
+and exciting and it's not just one agent
+it's many agents and what does that look
+like and if that view of the future is
+true how should we all be living Our
+Lives
+differently um I don't I don't
+know I guess we have to try to build it
+influence it make sure it's good and uh
+yeah just uh try to try to make sure it
+turns out well so now that you're a free
+independent agent um I want to address
+the elephant in the room which is that
+open AI is um uh dominating the
+ecosystem and most of our audience here
+today are founders who are trying to
+carve out a little niche praying that
+open aai doesn't take them out overnight
+where do you think opportunities exist
+for other players to build new
+independent companies versus what areas
+do you think open AI will continue to
+dominate even as its ambition
+grows uh yes so my high level impression
+is basically open is trying to build out
+this lmos and I think uh as we heard
+earlier today like um is trying to
+develop this platform on top of which
+you can position different companies and
+different verticles now I think the OS
+analogy is also really interesting
+because when you get when you look at
+something like Windows or something like
+that these are also operating systems
+they come with a few default apps like a
+browser comes with Windows right you can
+use the edge browser and so I think in
+the same way openai or any of the other
+companies might come up with a few
+default apps quote unquote but it
+doesn't mean that you can have different
+browsers that are running on it just
+like you can have different chat agents
+uh sort of running on that
+infrastructure and so there will be a
+few default apps but there will also be
+potentially a vibrant ecosystem of all
+kinds of apps that are fine tune to all
+the different NS and cares of the
+economy and I really like the analogy of
+like the early um iPhone apps and what
+they looked like and they were all kind
+of like jokes and it took time for that
+to develop and I think absolutely I
+agree that we're going through the same
+thing right now people are trying to
+figure out what is this thing good at
+what is it not good at how do I work it
+how do I program with it how do I debug
+it how do I just you know uh actually
+get it to perform real tasks and what
+kind of oversight because it's quite
+autonomous but not fully autonomous so
+what does the oversight look like what
+does the evaluation look like there's
+many things to think through and just to
+understand sort of like the psychology
+of it and I think uh that's what's going
+to take some time to figure out exactly
+how to work with this infrastructure uh
+so I think we'll see that over the next
+few years so the race is on right now
+with llms open AI anthropic mol llama
+Gemini um the whole ecosystem of Open
+Source models now a whole longtail of
+small models how do you foresee the
+future of the ecosystem playing out yeah
+so again I think the open source anal
+sorry the operating systems analogy is
+interesting because we have say like we
+have basically an oligopoly of a few
+proprietary systems like say windows uh
+Mac OS Etc and then we also have Linux
+and so and Linux has an Infinity of
+distributions uh and so I think maybe
+it's going to look something like that I
+also think we have to be careful with
+the naming because a lot of the ones
+that you listed like Lama mrone I
+wouldn't actually say they're open
+source right and so like it's kind of
+like tossing over a binary for like an
+operating system you know like you can
+you can kind of work with it it's like
+it's like useful but um but it's not
+fully useful right and um there are a
+number of um what I would say is like
+fully uh open source llms uh so there's
+um know Pia models llm 360 Almo Etc so
+and they're fully releasing the entire
+infrastructure that's required to
+compile the the operating system right
+to train the model from the data to
+gather the data Etc and so when you're
+just given a binary it's much better of
+course because um you can fine-tune the
+model which is useful but also I think
+it's subtle but you can't fully
+fine-tune the model because the more you
+fine tune the model the more it's going
+to start regressing on everything else
+and so what you actually really want to
+do for example if you want to add
+capability is you uh and not regress the
+other capabilities you may want to train
+on some kind of um um like a mixture of
+the previous data set distribution and
+the new data set distribution because
+you don't want to regress the old
+distribution you just want to add
+knowledge and if you're just given the
+weights you can't do that actually you
+need the training Loop you need the data
+set Etc so you are actually constrained
+in how you can work with these models
+and um again like I think it's
+definitely helpful but it's uh I think
+we need like slightly better language
+for it almost so there's open weights
+models open source models and then um
+proprietary models I guess and that
+might be the ecosystem um and yeah
+probably it's going to look very similar
+to the ones that we we have today and
+hopefully you'll continue to help build
+some of that out um so I'd love to
+address the other ele in the room which
+is scale um simplistically it seems like
+scale is all that matters scale of data
+scale of compute and therefore the large
+research Labs large Tech Giants have an
+immense advantage today um what is your
+view of that and and is that all that
+matters and if not what else
+does um so I would say scale is
+definitely number one uh I do think
+there are details there to get right and
+I think you know um a lot also goes into
+the data set propriation and so on
+making it uh very good clean Etc that
+matters a lot these are all sort of like
+compute efficiency gains that you can
+get so there's the data the algorithms
+and then of course the um the training
+of the model and making it really large
+so I think scale will be the primary
+determining factor is like the first
+principal component of things for sure
+uh but there are many of many of the
+other things uh that um that you need to
+get right so it's almost like the scale
+set some kind of a speed limit almost uh
+but you do need some of the other things
+but it's like if you don't have the
+scale then you fundamentally just can't
+train some of these massive models if
+you are going to be training models uh
+if you're just going to be doing fine
+tuning and so on then I think um maybe
+less scale is is necessary but we
+haven't really seen that just yet to
+fully play out and can you share more
+about some of the ingredients that you
+think also matter maybe lower in
+priority behind
+scale um yeah so the first thing I think
+is like you can't just train these
+models if you have if you're just given
+the money and the scale it's actually
+still really hard to build these models
+and part part of it is that the
+infrastructure is still so new and it's
+still being developed not quite there
+but uh training these models at scale is
+extremely difficult and is a very
+complicated distributed optimization
+problem and there's actually like the
+talent for this is fairly scarce right
+now and uh it just basically turns into
+this uh insane thing running on tens of
+thousands of gpus all of them are like
+failing at random at different points in
+time and so like instrumenting that and
+getting that to work is actually
+extremely difficult challenge uh gpus
+were not like intended for like 10,000
+GPU workloads until very recently and so
+I think a lot of the
+infrastructure is sort of like creaking
+under that pressure and uh we need to
+like work through that but right now if
+you're just giving someone a ton of
+money or a ton of scale or gpus it's not
+obvious to me that they can just produce
+one of these models which is why uh you
+know it's not it's not just about scale
+you actually need a ton of uh expertise
+both on the infrastructure side the
+algorithm side um and then the data Side
+and being careful with that so I think
+those are the major
+components the ecosystem is moving so
+quickly um even some of the challenges
+we thought existed a year ago are being
+solved more more today um hallucinations
+context Windows multimodal capabilities
+inference getting better faster cheaper
+um what are the llm research challenges
+today that keep you up at night what do
+you think are medy enough problems but
+also solvable problems that we can
+continue to go
+after so I would say on the algorithm
+side one thing I'm thinking about quite
+a bit is uh the this like distinct split
+between diffusion models and
+autoaggressive models they're both ways
+of presenting problem the distributions
+and it just turns out that different
+modalities are apparently a good fit for
+one of the two I think that there's
+probably some space to unify them or to
+like connect them in some way uh and
+also um get some Best Best of Both
+Worlds or um sort of figure out how we
+can get a hybrid architecture and so on
+so it's just odd to me that we have sort
+of like two separate SP points in the
+space of models and they're both
+extremely good and it just feels wrong
+to me that there's nothing in between uh
+so I think we'll see that sort of carved
+out and I think there are interesting
+problems there and then the other thing
+that maybe I would point to
+is there's still like a massive Gap in
+just um the energetic efficiency of
+running all this stuff so my brain is 20
+watts roughly uh Jensen was just talking
+at GTC about you know the massive super
+computers that they're going to be
+building now these are the numbers are
+in mega megawatts right and so maybe you
+don't need all that to run like a brain
+I don't know how much you need exactly
+but I think it's safe to say we're
+probably off by a factor of a thousand
+to like a million somewhere there in
+terms of like the efficiency of running
+these these models uh and I think part
+of it is just because the computers
+we've designed of course are just like
+not a good fit for this workload um and
+I think part Nvidia gpus are like a good
+step in that
+direction uh in terms of like the you
+need extremely high parallelism we don't
+actually care about sequential
+computation that is sort of like data
+dependent in some way we just have these
+uh we just need to like blast the same
+algorithm across many different uh sort
+of U array elements or something you can
+think about it that way
+so I would say number one is just um
+adapting the computer architecture to
+the new uh data workflows number two is
+like pushing on a few things that we're
+currently seeing improvements on so
+number one maybe is uh Precision we're
+seeing Precision come down from what
+originally was was like 64 bit for
+double we're now to down to I don't know
+it is 456 or even 1.58 depending on
+which papers you read and so I think
+Precision is one big lever of um of
+getting a handle on this and then second
+one of course is sparsity so that's also
+like another big Delta would say like
+your brain is not always fully activated
+and so sparity I think is another big
+lever but then the last lever I also
+feel like just the V noyman architecture
+of like computers and how they built
+where you're shuttling data in and out
+and doing a ton of data movement between
+memory and you know the cores that are
+doing all the compute this is all broken
+as well kind of and it's not how your
+brain works and that's why it's so
+efficient and so I think it should be a
+very exciting time in computer
+architecture I'm not a computer
+architect but I think there's uh it
+seems like we're off by a factor of a
+million thousand to a million something
+like that and there should be really
+exciting um sort of Innovations
+there that um that bring that down I
+think there are at least a few builders
+in the audience working on this problem
+um okay Switching gears a little bit um
+you've worked alongside many of the
+greats of Our Generation Um Sam Greg
+from openai and the rest of the open AI
+team Elon Musk um who here knows the the
+joke about the uh rowing team the
+American team versus the Japanese
+team okay great so this will be a good
+one uh Elon shared this at Al LS base
+camp and I think it reflects a lot of
+his philosophy around how he builds uh
+cultures and teams so you have two teams
+um the Japanese team has four rowers and
+one steerer and the American team has
+four steerers and one rower and can
+anyone guess when the American team
+loses what do they
+do shout it
+out exactly they fire the rower and and
+Elon shared this example I think as a
+reflection of how he thinks about hiring
+the right people building the right
+people building the right teams at the
+right ratio um from working so closely
+with folks like these incredible leaders
+what have you
+learned uh yeah so I would say
+definitely Elon runs this company is an
+extremely unique style I don't actually
+think that people appreciate how unique
+it is you sort of like even read about
+in some but you don't understand it I
+think it's like even hard to describe I
+don't even know where to start but it's
+like a very unique different thing like
+I I like to say that he runs the biggest
+startups and I think
+um it's just
+um I don't even know basically like how
+to describe it it almost feels like it's
+a longer sort of thing that I have to
+think through but well number one is
+like so he likes very small strong
+highly technical uh teams uh so that's
+number one so um I would say at
+companies by default they sort of like
+the teams grow and they get large Elon
+was always like a force against growth I
+would have to work and expend effort to
+hire people I would have to like
+basically plead to higher people um and
+then the other thing is at big companies
+usually you want um it's really hard to
+get rid of low performers and I think
+Elon is very friendly to by default
+getting getting rid of low performance
+so I actually had to fight for people to
+keep them on the team uh because he
+would by default want to remove people
+and so uh that's one thing so keep a
+small strong highly technical team uh no
+middle management that is kind of like
+uh non-technical for sure uh so that's
+number one number two is kind of like
+The Vibes of how this is how everything
+runs and how it feels when he sort of
+like walks into the office office he
+wants it to be a vibrant place people
+are walking around they're pacing around
+they're working on exciting stuff
+they're charting something they're
+coding you know he doesn't like
+stagnation he doesn't like to look for
+it to look that way he doesn't like
+large meetings he always encourages
+people to like leave meetings if they're
+not being useful uh so actually do see
+this or you know it's a large meeting
+and some if you're not contributing and
+you're not learning just walk out and
+this is like fully encouraged and I
+think this is something that you don't
+normally see so I think like Vibes is
+like a second big big lever that I think
+he really instills culturally uh maybe
+part of that also is like I think a lot
+of bigger companies they like pamper
+employees I think like there's much less
+of that it's like the the culture of it
+is you're there to do your best
+technical work and there's the intensity
+and and so on and I think maybe the last
+one that is very unique and very
+interesting and very strange is just how
+connected he is to the team uh so
+usually a CEO of a company is like a
+remote person five layers up who talks
+to their VPS who talk to their you know
+reports and directors and eventually you
+talk to your manager it's not how your
+ask companies right like he will come to
+the office he will talk to the engineers
+um many of the meetings that we had were
+like uh okay um 50 people in the room
+with Elon and uh he talks directly to
+the engineers he doesn't want to talk
+just to the VPS and the directors uh so
+I you know um normally people would talk
+spend like 99% of the time maybe talking
+to the VPS he spends maybe 50% of the
+time and he just wants to talk to the
+engineers so if if the team is small and
+strong then engineers and the code are
+the source of Truth and so they have the
+source of Truth not some manager and he
+wants to talk to them to understand the
+actual state of things and what should
+be done to improve it uh so I would say
+like the degree to which he's connected
+with the team and not something remote
+is also unique and um and also just like
+his large hammer and his willingness to
+exercise it within the organization so
+maybe if he talks to the engineers and
+they bring up that you know what's
+blocking you okay I I just I don't have
+enough gpus to run my my thing and he's
+like oh okay and if he if he hears that
+twice he's going to be like okay this is
+a problem so like what is our timeline
+and when when you don't have satisfying
+answers he's like okay I want to talk to
+the person in charge of the GPU cluster
+and like someone dials the phone and
+he's just like okay double the cluster
+right
+now like let's let's have a meeting
+tomorrow from now on send me daily
+updates until cluster is H twice the
+size and then they kind of like push
+back and they're like okay well we have
+this procurement set up we have this
+timeline and Nvidia says that we don't
+have enough GP gpus and it will take six
+months or something and then you get a
+rise of an eyebrow and then he's like
+okay I want to talk to Jensen and then
+he just kind of like removes bottlenecks
+so I think the extent to which he's
+extremely involved and removes
+bottlenecks and applies his hammer I
+think is also like not appreciated so I
+think there's like a lot of these kinds
+of aspects that are very unique I would
+say and very interesting and honestly
+like going to a normal company outside
+of that is is uh you you like definitely
+miss aspects of that uh and so I think
+yeah that's maybe maybe that's a long
+rent but that's just kind of like I
+don't think I hit all the points but it
+is a very unique uh thing and uh it's
+very interesting and yeah I guess that's
+my brand hopefully tactics that most
+people here can employ um taking a step
+back you've helped build some of the
+most generational companies you've also
+been such a key enabler for many people
+many of whom are in the audience today
+of getting into the field of AI um
+knowing you what you care most about is
+democratizing AC access uh to AI
+education tools uh helping uh create
+more equality in the in the whole
+ecosystem at large there are many more
+winners um as you think about the next
+chapter in your life what gives you the
+most
+meaning uh yeah I think like I think
+you've described it on in the right way
+like where my brain goes by default is
+um like you know I've worked for a few
+companies but I think like ultimately I
+care not about any one specific company
+I care a lot more about the ecosystem I
+want the ecosystem to be healthy I want
+it to be thriving I want it to be like a
+coral reef of a lot of cool exciting
+startups and all the nukes and crannies
+of the economy and I want the whole
+thing to be like this boiling soup of
+cool stuff and genuinely Andre dreams
+about coral
+reefs you know I want it to be like a
+cool place and I think um yeah that's
+why I love startups and I love companies
+and I want uh there to be a vibrant
+ecosystem of them and um by default I
+would say a bit more hesitant about kind
+of like you know uh like five Mega Corps
+kind of like taking over especially with
+AGI being such a magnifier of power uh I
+would be kind of I'm kind of uh worried
+about what that could look like and so
+on so uh so I have to think that through
+more but yeah I like I love the
+ecosystem and I want it to be healthy
+and
+vibrant amazing um we'd love to have
+some questions from the
+audience yes Brian hi um Brian hallan
+would you recommend Founders follow
+elon's management methods or is it kind
+of unique to him and you shouldn't try
+to copy
+him
+um yeah I think that's a good
+question I think it's up to the DNA of
+the the founder like you have to have
+that same kind of a DNA and that some
+some kind of a Vibe and I think when
+you're hiring the team it's really
+important that you're like the you're
+you're making it clear upfront that this
+is the kind of company that you have and
+when people send up for it they're uh
+they're very happy to go along with it
+actually but if you change it later I
+think people are happy with that and
+that's very messy uh so as long as you
+do it from the start and you're
+consistent I think you can run a company
+like that um
+and uh you know uh but uh you know it
+has its own like pros and cons as well
+and I think uh
+um so you know up to up to people but I
+think it's a consistent model of company
+building and
+running yes
+Alex hi um I'm curious if there any
+types of model composability that you're
+really excited about um maybe other than
+mixture of experts I'm not sure what you
+think about like merge model merges
+Franken merges or any other like things
+to make model development more
+composable yeah that's a good question
+um I see like papers in this area but I
+don't know that anything has like really
+stuck maybe the composability I don't
+exactly know what you mean but you know
+there's a ton of uh work on like uh
+primary efficient training and things
+like that I don't know if you would put
+that in the category of composability in
+the way I understand it but um it's only
+the case that like traditional code is
+very composable and I would say neural
+lots are a lot more fully connected uh
+and less composable by default but they
+do compose and confine tune as a part of
+a whole so as an example if you're doing
+like a system that you want to have chpt
+and just images or something like that
+it's very common that you pre-train
+components and then you plug them in and
+fine tune maybe through the whole thing
+as an example so there's composability
+in those aspects where you can pre-train
+small pieces of the cortex outside and
+compose later uh so through
+initialization and fine tuning so I
+think to some extent it's um so maybe
+those are my scattered thoughts on it
+but I don't know if I have anything very
+coherent
+otherwise yes Nick um so you know we've
+got these next word prediction things do
+you think there's a path towards
+building a physicist or a Von noyman
+type model that has a mental model of
+physics that's self consistent and can
+generate new ideas for how do you how do
+you actually do Fusion how do you get
+faster than light if it's even possible
+is is there any path towards that or is
+it like a fundamentally different Vector
+in terms of these AI model developments
+I think it's fundamentally different in
+some in one aspect I guess like what
+you're talking about maybe is just like
+capability question because the Curr
+models are just like not good enough and
+I think there are big rocks to be turned
+here and I think people still haven't
+like really seen what's possible in the
+space uh like at all and I like roughly
+speaking I think we've done step one of
+alpha go this is what the team we've
+done imitation learning part uh there's
+step two of Alo which is the RL and
+people haven't done that yet and I think
+it's going to fundamentally like this is
+the part that actually made it work and
+made something superum uh and so I think
+uh this is uh I think there's like big
+rocks in capability to still be turned
+over here um and uh you know the details
+of that like are are kind of tricky
+potentially but I think this is we just
+haven't done step two of alphao long
+story short and we've just done
+imitation and I don't think that people
+appreciate like for example um number
+one like how terrible the data
+collection is for things like jpt like
+say you have a problem like some prompt
+is some kind of mathematical problem a
+human comes in and gives the ideal
+solution right to that problem the
+problem is that the human psychology is
+different from the model psychology
+what's easy or hard for the mo for the
+human are different to what's easy or
+hard for the model and so human kind of
+fills out some kind of a trace that like
+comes to the solution but like some
+parts of that are trivial to the model
+and some parts of that are massive leap
+that the model doesn't understand and so
+um you're kind of just like losing it
+and then everything else is polluted by
+that later and so like fundamentally
+what you need is the model my the model
+needs to practice itself uh how to solve
+these problems it needs to figure out
+what works for it or does not work for
+it uh maybe maybe it's not very good at
+four-digit Edition so it's going to fall
+back and use a calculator uh but it
+needs to learn that for itself based on
+its own capability and its own knowledge
+so that's number one is like that's
+totally broken I think it's a good
+initializer though um for something
+agent likee and then the other thing is
+like we're doing reinforcement learning
+from Human feedback but that's like a
+super weak form of reinforcement
+learning doesn't even count as
+reinforcement learning I think like what
+is the equivalent in Alpha go for rhf
+it's like what is what is the reward
+model it's it's a what I call it's a
+Vibe check U like imagine like if you
+wanted to train like an alpha go rhf it
+would be giving two people two boards
+and like said which one do you prefer
+and then you would take those labels and
+you would train model and then you would
+ARL against that what are the issues
+with that it's like number one that's
+it's just Vibes of the board that's what
+you're training against number two if
+it's a reward model that's a neural nut
+then it's very easy to overfit to that
+reward model for the model you're
+optimizing over and it's going to find
+all these spous uh uh ways of uh hacking
+that massive model is the problem uh so
+alphago gets around these problems
+because they have a very clear objective
+function you can ARL against it so rlf
+is like nowhere near I would say RL is
+like silly and the other thing is
+imitation learning super silly RL HF is
+nice Improvement but it's still silly
+and I think people need to look for
+better ways of training these models so
+that it's in the loop with itself and
+its own psychology and I think we're uh
+there will probably be unlocks in that
+direction so it's sort of like graduate
+school for AI models it needs to sit in
+a room with a book and quietly question
+itself for a decade yeah I think that
+would be part of it yes and I think like
+when you are learning stuff and you're
+going through textbooks like there is an
+exerc you know there's exercises in the
+textbook what are those those are
+prompts to you to exercise the material
+right uh so
+and when you're learning material not
+just like reading left or right right
+like number one you're exercising but
+maybe you're taking notes you're
+rephrasing reframing like you're doing a
+lot of manipulation of this knowledge in
+a way of you like learning that
+knowledge and we haven't seen
+equivalence of that at all in llms so
+it's like super early days I
+think um yes
+Yi yeah uh it's cool to be to be uh
+optimal and uh and and practical at the
+same time so I would I would be asking
+like how would you be align the priority
+of like a either doing cost reduction
+and revenue generation or be like
+finding the better quality models with
+like better reasoning capabilities how
+would you be aligning that so maybe I
+understand the question I think what I
+see a lot of people do is they start out
+with the most capable model that doesn't
+matter what the cost is so you use uh
+gp4 you use super prompt it Etc you do
+rag Etc so you're just trying to get
+your thing to work so you go after
+you're go you're going after
+uh sort of accuracy first and then you
+make concessions later you check if you
+can fall back to 3.5 for certain types
+of queries you check if you um and you
+sort of make it cheaper later so I would
+say go after performance first and then
+you make it cheaper later um it's kind
+of like the Paradigm that I've seen a
+few people that I talked to about this
+kind of U say works for them um uh and
+uh maybe it's not even just a single
+prom product think about what are the
+ways in which you can even just make it
+work at all because if you just can make
+it work at all like say you make 10
+prompts or 20 prompts and you pick the
+best one and you have some debate or I
+don't know what kind of a crazy flow you
+can come up with right like just get
+your thing to work really well because
+if you have a thing that works really
+well then one other thing you can do is
+you can distill that right so you can
+get a large distribution of possible
+problem types you run your super
+expensive thing on it to get your labels
+and then you get a smaller cheaper thing
+that you find you on it and so I would
+say I would always go after sort of get
+it to work as well as possible no matter
+what first and then make it cheaper is
+the thing I would suggest
+Hi Sam hi um one question um so this
+past year we saw a lot of kind of um
+impressive results from open source
+ecosystem I'm curious what your opinion
+is of how that will continue to keep
+Pace or not keep Pace with closed Source
+development um as the models continue to
+improve in
+scale uh yeah I think that's a very good
+question um yeah I think that's a very
+good very good question I don't I don't
+really
+know fundamentally like these models are
+so Capital intensive right like one
+thing that is really interesting is for
+example you have Facebook and meta and
+so on who can afford to train these
+models at scale but then it's also not
+part of it's not the thing that they do
+and it's not invol like their money
+printer is unrelated to that and so they
+have actual incentive to um potentially
+release some of these models so that
+they uh empower the ecosystem as a whole
+so they can actually borrow all the best
+ideas so that to me makes sense uh but
+so far I would say they've only just
+done the open weights model and so I
+think they should actually go further
+and that's what I would hope to see and
+I think it would be better for everyone
+and I think potentially maybe there's
+squeamish about some of the uh some of
+the aspects of it eventually with
+respect to data and so on I don't know
+how to overcome that um maybe they
+should like try to just uh uh find data
+sources that they think are you know uh
+very easy to use or something like that
+and try to constrain themselves to those
+so I would say like those are kind of
+our Champions um potentially and uh
+that's I would like to see more
+transparency also coming from you know
+and I think meta and Facebook are doing
+pretty well like they released paper
+they published a log book and sorry was
+yeah log book and so on so they're doing
+um I think they're doing well but
+they're they could do uh much better in
+terms of fostering the ecosystem and I
+think maybe that's coming we'll
+see Peter yeah uh maybe this is like an
+obvious answer given the previous
+question but what do you think would
+make the AI ecosystem cooler and more
+vibrant or what's holding it back is it
+you know openness or do you think
+there's other stuff that is also like a
+big thing that you'd want to work
+on
+um
+yeah I certainly think like one big
+aspect of is just like the stuff that's
+available I had a tweet recently about
+like number one build the thing number
+two build the ramp I would say there's a
+lot of people building a thing I would
+say there's lot a lot less happening of
+like building ramps so that people can
+actually understand all this stuff and
+you know I think we're all new to all of
+this we're all trying to understand how
+it works we all we all need to like ramp
+up and collaborate to some extent to
+even figure out how to use this
+effectively so I would love for people
+to be a lot more open uh uh with respect
+to you know what they've learned how
+they've trained all this how what works
+what doesn't work for them Etc and um
+yes just from us to like learn a lot
+more from each other that's number one
+and then uh number two I also think like
+there is quite a bit of momentum of in
+the open ecosystems as well uh so I
+think that's already good to see and
+maybe there's some opportunities for
+improvement I talked about already
+so yeah last question from the audience
+Michael
+to get to like the the next big
+performance leap uh from Models do you
+think that it's sufficient to modify the
+Transformer architecture with say uh
+thought tokens or activation beacons or
+do we need to throw that out entirely um
+and come up with a new fundamental
+building block to take us to the next
+big step forward or
+AGI um yeah I think I think that's a
+good question
+um I think well the first thing I would
+say is like Transformer is amazing is
+just like so incredible I don't think I
+would have seen that coming for sure
+um like for a while before the
+Transformer arrived I thought there
+would be a insane diversification of
+neural networks and that was not the
+case it's like complete opposite
+actually it's a complete like it's like
+all the same model actually so it's
+incredible to me that we have that I
+don't know that it's like the final
+neural network I think there there will
+definitely be I would say it's really
+hard to tell to say that given the
+history of the of the field and I've
+been in it for a while it's really hard
+to to say that this is like the end of
+it absolutely it's not and I think uh I
+feel very optimistic that someone will
+be able to find a pretty big change to
+how we do things today I would say on
+the front of the autoaggressive or
+diffusion which is kind of like the
+modeling and the the law setup um I
+would say there's definitely some fruit
+there probably but also on the
+Transformer and like I mentioned these
+levers of precision and sparcity and as
+we drive that and together with the
+codesign of the hardware and how that
+might evolve uh and just making Network
+architectures there a lot more sort of
+well tuned to those constraints and how
+all that works
+um um I to some extent also I would say
+like Transformer is kind of designed for
+the GPU by the way like that was the big
+leap I would say in the Transformer
+paper and that's where they were coming
+from is we want an architecture that is
+fundamentally extremely paralyzable and
+because the recurrent neural network has
+sequential dependencies terrible for GPU
+uh Transformer basically broke that
+through the attention and uh this was
+like the major sort of insight there and
+it has some predecessors of insights
+like the neural GPU and other papers at
+Google they were sort of thinking about
+this but that is a way of targeting the
+algorithm to the hardware that you have
+available so I would say that's kind of
+like in that same Spirit but long story
+short like I I think it's very likely
+we'll see changes to it still but it's
+been it's been proven like remarkably
+resilient I have to say like it came out
+you know many years ago now like I don't
+know yeah something six
+seven yeah so uh you know like the
+original Transformer and what we're
+using today are like not super
+different um yeah as a parting message
+to all the founders and builders in the
+audience what advice would you give them
+as they dedicate the rest of their lives
+to helping shape the future of
+AI uh so yeah I don't I don't have super
+I don't usually have crazy generic
+advice I think like maybe the thing
+that's top of my mind is I I think uh
+founders of course care a lot about like
+their startup
+I would I also want like how do we have
+a vibrant ecosystem of startups how do
+startups continue to win especially with
+respect to like big Tech and how do we
+how how's the E how how does the
+ecosystem become healthier and what can
+you
+do sounds like you should become an
+investor amazing um thank you so much
+for joining us Andre for this and also
+for the whole day
+today

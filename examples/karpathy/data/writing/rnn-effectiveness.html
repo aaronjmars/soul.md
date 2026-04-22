@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>The Unreasonable Effectiveness of Recurrent Neural Networks</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Musings of a Computer Scientist.">
+    <link rel="canonical" href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">
+    <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Andrej Karpathy blog posts" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-3698471-23', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+
+  <div class="wrap">
+
+    <div style="float:left; margin-top:10px; margin-right:10px;">
+    <a href="/feed.xml">
+      <img src="/assets/rssicon.svg" width="40">
+    </a>
+    </div>
+
+    <a class="site-title" href="/">Andrej Karpathy blog</a>
+    
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
+          <path fill="#505050" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
+            h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#505050" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
+            h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#505050" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
+            c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+        
+          <a class="page-link" href="/about/">About</a>
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrap">
+      <div class="post">
+
+  <header class="post-header">
+    <h1>The Unreasonable Effectiveness of Recurrent Neural Networks</h1>
+    <p class="meta">May 21, 2015</p>
+  </header>
+
+  <article class="post-content">
+  <p>There’s something magical about Recurrent Neural Networks (RNNs). I still remember when I trained my first recurrent network for <a href="http://cs.stanford.edu/people/karpathy/deepimagesent/">Image Captioning</a>. Within a few dozen minutes of training my first baby model (with rather arbitrarily-chosen hyperparameters) started to generate very nice looking descriptions of images that were on the edge of making sense. Sometimes the ratio of how simple your model is to the quality of the results you get out of it blows past your expectations, and this was one of those times. What made this result so shocking at the time was that the common wisdom was that RNNs were supposed to be difficult to train (with more experience I’ve in fact reached the opposite conclusion). Fast forward about a year: I’m training RNNs all the time and I’ve witnessed their power and robustness many times, and yet their magical outputs still find ways of amusing me. This post is about sharing some of that magic with you.</p>
+
+<blockquote>
+  <p>We’ll train RNNs to generate text character by character and ponder the question “how is that even possible?”</p>
+</blockquote>
+
+<p>By the way, together with this post I am also releasing <a href="https://github.com/karpathy/char-rnn">code on Github</a> that allows you to train character-level language models based on multi-layer LSTMs. You give it a large chunk of text and it will learn to generate text like it one character at a time. You can also use it to reproduce my experiments below. But we’re getting ahead of ourselves; What are RNNs anyway?</p>
+
+<h2 id="recurrent-neural-networks">Recurrent Neural Networks</h2>
+
+<p><strong>Sequences</strong>. Depending on your background you might be wondering: <em>What makes Recurrent Networks so special</em>? A glaring limitation of Vanilla Neural Networks (and also Convolutional Networks) is that their API is too constrained: they accept a fixed-sized vector as input (e.g. an image) and produce a fixed-sized vector as output (e.g. probabilities of different classes). Not only that: These models perform this mapping using a fixed amount of computational steps (e.g. the number of layers in the model). The core reason that recurrent nets are more exciting is that they allow us to operate over <em>sequences</em> of vectors: Sequences in the input, the output, or in the most general case both. A few examples may make this more concrete:</p>
+
+<div class="imgcap">
+<img src="/assets/rnn/diags.jpeg" />
+<div class="thecap" style="text-align:justify">Each rectangle is a vector and arrows represent functions (e.g. matrix multiply). Input vectors are in red, output vectors are in blue and green vectors hold the RNN's state (more on this soon). From left to right: <b>(1)</b> Vanilla mode of processing without RNN, from fixed-sized input to fixed-sized output (e.g. image classification). <b>(2)</b> Sequence output (e.g. image captioning takes an image and outputs a sentence of words). <b>(3)</b> Sequence input (e.g. sentiment analysis where a given sentence is classified as expressing positive or negative sentiment). <b>(4)</b> Sequence input and sequence output (e.g. Machine Translation: an RNN reads a sentence in English and then outputs a sentence in French). <b>(5)</b> Synced sequence input and output (e.g. video classification where we wish to label each frame of the video). Notice that in every case are no pre-specified constraints on the lengths sequences because the recurrent transformation (green) is fixed and can be applied as many times as we like.</div>
+</div>
+
+<p>As you might expect, the sequence regime of operation is much more powerful compared to fixed networks that are doomed from the get-go by a fixed number of computational steps, and hence also much more appealing for those of us who aspire to build more intelligent systems. Moreover, as we’ll see in a bit, RNNs combine the input vector with their state vector with a fixed (but learned) function to produce a new state vector. This can in programming terms be interpreted as running a fixed program with certain inputs and some internal variables. Viewed this way, RNNs essentially describe programs. In fact, it is known that <a href="http://binds.cs.umass.edu/papers/1995_Siegelmann_Science.pdf">RNNs are Turing-Complete</a> in the sense that they can to simulate arbitrary programs (with proper weights). But similar to universal approximation theorems for neural nets you shouldn’t read too much into this. In fact, forget I said anything.</p>
+
+<blockquote>
+  <p>If training vanilla neural nets is optimization over functions, training recurrent nets is optimization over programs.</p>
+</blockquote>
+
+<p><strong>Sequential processing in absence of sequences</strong>. You might be thinking that having sequences as inputs or outputs could be relatively rare, but an important point to realize is that even if your inputs/outputs are fixed vectors, it is still possible to use this powerful formalism to <em>process</em> them in a sequential manner. For instance, the figure below shows results from two very nice papers from <a href="http://deepmind.com/">DeepMind</a>. On the left, an algorithm learns a recurrent network policy that steers its attention around an image; In particular, it learns to read out house numbers from left to right (<a href="http://arxiv.org/abs/1412.7755">Ba et al.</a>). On the right, a recurrent network <em>generates</em> images of digits by learning to sequentially add color to a canvas (<a href="http://arxiv.org/abs/1502.04623">Gregor et al.</a>):</p>
+
+<div class="imgcap">
+<div>
+<img src="/assets/rnn/house_read.gif" style="max-width:49%; height:400px;" />
+<img src="/assets/rnn/house_generate.gif" style="max-width:49%; height:400px;" />
+</div>
+<div class="thecap">Left: RNN learns to read house numbers. Right: RNN learns to paint house numbers.</div>
+</div>
+
+<p>The takeaway is that even if your data is not in form of sequences, you can still formulate and train powerful models that learn to process it sequentially. You’re learning stateful programs that process your fixed-sized data.</p>
+
+<p><strong>RNN computation.</strong> So how do these things work? At the core, RNNs have a deceptively simple API: They accept an input vector <code class="language-plaintext highlighter-rouge">x</code> and give you an output vector <code class="language-plaintext highlighter-rouge">y</code>. However, crucially this output vector’s contents are influenced not only by the input you just fed in, but also on the entire history of inputs you’ve fed in in the past. Written as a class, the RNN’s API consists of a single <code class="language-plaintext highlighter-rouge">step</code> function:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rnn</span> <span class="o">=</span> <span class="n">RNN</span><span class="p">()</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">rnn</span><span class="p">.</span><span class="n">step</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># x is an input vector, y is the RNN's output vector
+</span></code></pre></div></div>
+
+<p>The RNN class has some internal state that it gets to update every time <code class="language-plaintext highlighter-rouge">step</code> is called. In the simplest case this state consists of a single <em>hidden</em> vector <code class="language-plaintext highlighter-rouge">h</code>. Here is an implementation of the step function in a Vanilla RNN:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">RNN</span><span class="p">:</span>
+  <span class="c1"># ...
+</span>  <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="c1"># update the hidden state
+</span>    <span class="bp">self</span><span class="p">.</span><span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">W_hh</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">h</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">W_xh</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+    <span class="c1"># compute the output vector
+</span>    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">W_hy</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">h</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span>
+</code></pre></div></div>
+
+<p>The above specifies the forward pass of a vanilla RNN. This RNN’s parameters are the three matrices <code class="language-plaintext highlighter-rouge">W_hh, W_xh, W_hy</code>. The hidden state <code class="language-plaintext highlighter-rouge">self.h</code> is initialized with the zero vector. The <code class="language-plaintext highlighter-rouge">np.tanh</code> function implements a non-linearity that squashes the activations to the range <code class="language-plaintext highlighter-rouge">[-1, 1]</code>. Notice briefly how this works: There are two terms inside of the tanh: one is based on the previous hidden state and one is based on the current input. In numpy <code class="language-plaintext highlighter-rouge">np.dot</code> is matrix multiplication. The two intermediates interact with addition, and then get squashed by the tanh into the new state vector. If you’re more comfortable with math notation, we can also write the hidden state update as \( h_t = \tanh ( W_{hh} h_{t-1} + W_{xh} x_t ) \), where tanh is applied elementwise.</p>
+
+<p>We initialize the matrices of the RNN with random numbers and the bulk of work during training goes into finding the matrices that give rise to desirable behavior, as measured with some loss function that expresses your preference to what kinds of outputs <code class="language-plaintext highlighter-rouge">y</code> you’d like to see in response to your input sequences <code class="language-plaintext highlighter-rouge">x</code>.</p>
+
+<p><strong>Going deep</strong>. RNNs are neural networks and everything works monotonically better (if done right) if you put on your deep learning hat and start stacking models up like pancakes. For instance, we can form a 2-layer recurrent network as follows:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y1</span> <span class="o">=</span> <span class="n">rnn1</span><span class="p">.</span><span class="n">step</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">rnn2</span><span class="p">.</span><span class="n">step</span><span class="p">(</span><span class="n">y1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In other words we have two separate RNNs: One RNN is receiving the input vectors and the second RNN is receiving the output of the first RNN as its input. Except neither of these RNNs know or care - it’s all just vectors coming in and going out, and some gradients flowing through each module during backpropagation.</p>
+
+<p><strong>Getting fancy</strong>. I’d like to briefly mention that in practice most of us use a slightly different formulation than what I presented above called a <em>Long Short-Term Memory</em> (LSTM) network. The LSTM is a particular type of recurrent network that works slightly better in practice, owing to its more powerful update equation and some appealing backpropagation dynamics. I won’t go into details, but everything I’ve said about RNNs stays exactly the same, except the mathematical form for computing the update (the line <code class="language-plaintext highlighter-rouge">self.h = ... </code>) gets a little more complicated. From here on I will use the terms “RNN/LSTM” interchangeably but all experiments in this post use an LSTM.</p>
+
+<h2 id="character-level-language-models">Character-Level Language Models</h2>
+
+<p>Okay, so we have an idea about what RNNs are, why they are super exciting, and how they work. We’ll now ground this in a fun application: We’ll train RNN character-level language models. That is, we’ll give the RNN a huge chunk of text and ask it to model the probability distribution of the next character in the sequence given a sequence of previous characters. This will then allow us to generate new text one character at a time.</p>
+
+<p>As a working example, suppose we only had a vocabulary of four possible letters “helo”, and wanted to train an RNN on the training sequence “hello”. This training sequence is in fact a source of 4 separate training examples: 1. The probability of “e” should be likely given the context of “h”, 2. “l” should be likely in the context of “he”, 3. “l” should also be likely given the context of “hel”, and finally 4. “o” should be likely given the context of “hell”.</p>
+
+<p>Concretely, we will encode each character into a vector using 1-of-k encoding (i.e. all zero except for a single one at the index of the character in the vocabulary), and feed them into the RNN one at a time with the <code class="language-plaintext highlighter-rouge">step</code> function. We will then observe a sequence of 4-dimensional output vectors (one dimension per character), which we interpret as the confidence the RNN currently assigns to each character coming next in the sequence. Here’s a diagram:</p>
+
+<div class="imgcap">
+<img src="/assets/rnn/charseq.jpeg" width="70%" style="border:none;" />
+<div class="thecap">An example RNN with 4-dimensional input and output layers, and a hidden layer of 3 units (neurons). This diagram shows the activations in the forward pass when the RNN is fed the characters "hell" as input. The output layer contains confidences the RNN assigns for the next character (vocabulary is "h,e,l,o"); We want the green numbers to be high and red numbers to be low.</div>
+</div>
+
+<p>For example, we see that in the first time step when the RNN saw the character “h” it assigned confidence of 1.0 to the next letter being “h”, 2.2 to letter “e”, -3.0 to “l”, and 4.1 to “o”. Since in our training data (the string “hello”) the next correct character is “e”, we would like to increase its confidence (green) and decrease the confidence of all other letters (red). Similarly, we have a desired target character at every one of the 4 time steps that we’d like the network to assign a greater confidence to. Since the RNN consists entirely of differentiable operations we can run the backpropagation algorithm (this is just a recursive application of the chain rule from calculus) to figure out in what direction we should adjust every one of its weights to increase the scores of the correct targets (green bold numbers). We can then perform a <em>parameter update</em>, which nudges every weight a tiny amount in this gradient direction. If we were to feed the same inputs to the RNN after the parameter update we would find that the scores of the correct characters (e.g. “e” in the first time step) would be slightly higher (e.g. 2.3 instead of 2.2), and the scores of incorrect characters would be slightly lower. We then repeat this process over and over many times until the network converges and its predictions are eventually consistent with the training data in that correct characters are always predicted next.</p>
+
+<p>A more technical explanation is that we use the standard Softmax classifier (also commonly referred to as the cross-entropy loss) on every output vector simultaneously. The RNN is trained with mini-batch Stochastic Gradient Descent and I like to use <a href="http://arxiv.org/abs/1502.04390">RMSProp</a> or Adam (per-parameter adaptive learning rate methods) to stablilize the updates.</p>
+
+<p>Notice also that the first time the character “l” is input, the target is “l”, but the second time the target is “o”. The RNN therefore cannot rely on the input alone and must use its recurrent connection to keep track of the context to achieve this task.</p>
+
+<p>At <strong>test time</strong>, we feed a character into the RNN and get a distribution over what characters are likely to come next. We sample from this distribution, and feed it right back in to get the next letter. Repeat this process and you’re sampling text! Lets now train an RNN on different datasets and see what happens.</p>
+
+<p>To further clarify, for educational purposes I also wrote a <a href="https://gist.github.com/karpathy/d4dee566867f8291f086">minimal character-level RNN language model in Python/numpy</a>. It is only about 100 lines long and hopefully it gives a concise, concrete and useful summary of the above if you’re better at reading code than text. We’ll now dive into example results, produced with the much more efficient Lua/Torch codebase.</p>
+
+<h2 id="fun-with-rnns">Fun with RNNs</h2>
+
+<p>All 5 example character models below were trained with the <a href="https://github.com/karpathy/char-rnn">code</a> I’m releasing on Github. The input in each case is a single file with some text, and we’re training an RNN to predict the next character in the sequence.</p>
+
+<h3 id="paul-graham-generator">Paul Graham generator</h3>
+
+<p>Lets first try a small dataset of English as a sanity check. My favorite fun dataset is the concatenation of <a href="http://www.paulgraham.com/articles.html">Paul Graham’s essays</a>. The basic idea is that there’s a lot of wisdom in these essays, but unfortunately Paul Graham is a relatively slow generator. Wouldn’t it be great if we could sample startup wisdom on demand? That’s where an RNN comes in.</p>
+
+<p>Concatenating all pg essays over the last ~5 years we get approximately 1MB text file, or about 1 million characters (this is considered a very small dataset by the way). <em>Technical:</em> Lets train a 2-layer LSTM with 512 hidden nodes (approx. 3.5 million parameters), and with dropout of 0.5 after each layer. We’ll train with batches of 100 examples and truncated backpropagation through time of length 100 characters. With these settings one batch on a TITAN Z GPU takes about 0.46 seconds (this can be cut in half with 50 character BPTT at negligible cost in performance). Without further ado, lets see a sample from the RNN:</p>
+
+<p><em>“The surprised in investors weren’t going to raise money. I’m not the company with the time there are all interesting quickly, don’t have to get off the same programmers.  There’s a super-angel round fundraising, why do you can do. If you have a different physical investment are become in people who reduced in a startup with the way to argument the acquirer could see them just that you’re also the founders will part of users’ affords that and an alternation to the idea. [2]  Don’t work at first member to see the way kids will seem in advance of a bad successful startup. And if you have to act the big company too.”</em></p>
+
+<p>Okay, clearly the above is unfortunately not going to replace Paul Graham anytime soon, but remember that the RNN had to learn English completely from scratch and with a small dataset (including where you put commas, apostrophes and spaces). I also like that it learns to support its own arguments (e.g. [2], above). Sometimes it says something that offers a glimmer of insight, such as <em>“a company is a meeting to think to investors”</em>. <a href="http://cs.stanford.edu/people/karpathy/char-rnn/pg.txt">Here’s</a> a link to 50K character sample if you’d like to see more.</p>
+
+<p><strong>Temperature.</strong> We can also play with the temperature of the Softmax during sampling. Decreasing the temperature from 1 to some lower number (e.g. 0.5) makes the RNN more confident, but also more conservative in its samples. Conversely, higher temperatures will give more diversity but at cost of more mistakes (e.g. spelling mistakes, etc). In particular, setting temperature very near zero will give the most likely thing that Paul Graham might say:</p>
+
+<p><em>“is that they were all the same thing that was a startup is that they were all the same thing that was a startup is that they were all the same thing that was a startup is that they were all the same”</em></p>
+
+<p>looks like we’ve reached an infinite loop about startups.</p>
+
+<h3 id="shakespeare">Shakespeare</h3>
+
+<p>It looks like we can learn to spell English words. But how about if there is more structure and style in the data? To examine this I downloaded all the works of Shakespeare and concatenated them into a single (4.4MB) file. We can now afford to train a larger network, in this case lets try a 3-layer RNN with 512 hidden nodes on each layer. After we train the network for a few hours we obtain samples such as:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PANDARUS:
+Alas, I think he shall be come approached and the day
+When little srain would be attain'd into being never fed,
+And who is but a chain and subjects of his death,
+I should not sleep.
+
+Second Senator:
+They are away this miseries, produced upon my soul,
+Breaking and strongly should be buried, when I perish
+The earth and thoughts of many states.
+
+DUKE VINCENTIO:
+Well, your wit is in the care of side and that.
+
+Second Lord:
+They would be ruled after this chamber, and
+my fair nues begun out of the fact, to be conveyed,
+Whose noble souls I'll have the heart of the wars.
+
+Clown:
+Come, sir, I will make did behold your worship.
+
+VIOLA:
+I'll drink it.
+</code></pre></div></div>
+
+<p>Remember, all the RNN knows are characters, so in particular it samples both speaker’s names and the contents. Sometimes we also get relatively extented monologue passages, such as:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>VIOLA:
+Why, Salisbury must find his flesh and thought
+That which I am not aps, not a man and in fire,
+To show the reining of the raven and the wars
+To grace my hand reproach within, and not a fair are hand,
+That Caesar and my goodly father's world;
+When I was heaven of presence and our fleets,
+We spare with hours, but cut thy council I am great,
+Murdered and by thy master's ready there
+My power to give thee but so much as hell:
+Some service in the noble bondman here,
+Would show him to her wine.
+
+KING LEAR:
+O, if you were a feeble sight, the courtesy of your law,
+Your sight and several breath, will wear the gods
+With his heads, and my hands are wonder'd at the deeds,
+So drop upon your lordship's head, and your opinion
+Shall be against your honour.
+</code></pre></div></div>
+
+<p>I can barely recognize these samples from actual Shakespeare :) If you like Shakespeare, you might appreciate this <a href="http://cs.stanford.edu/people/karpathy/char-rnn/shakespear.txt">100,000 character sample</a>. Of course, you can also generate an infinite amount of your own samples at different temperatures with the provided code.</p>
+
+<h3 id="wikipedia">Wikipedia</h3>
+
+<p>We saw that the LSTM can learn to spell words and copy general syntactic structures. Lets further increase the difficulty and train on structured markdown. In particular, lets take the <a href="http://prize.hutter1.net/">Hutter Prize</a> 100MB dataset of raw Wikipedia and train an LSTM. Following <a href="http://arxiv.org/abs/1308.0850">Graves et al.</a>, I used the first 96MB for training, the rest for validation and ran a few models overnight. We can now sample Wikipedia articles! Below are a few fun excerpts. First, some basic markdown output:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Naturalism and decision for the majority of Arab countries' capitalide was grounded
+by the Irish language by [[John Clair]], [[An Imperial Japanese Revolt]], associated 
+with Guangzham's sovereignty. His generals were the powerful ruler of the Portugal 
+in the [[Protestant Immineners]], which could be said to be directly in Cantonese 
+Communication, which followed a ceremony and set inspired prison, training. The 
+emperor travelled back to [[Antioch, Perth, October 25|21]] to note, the Kingdom 
+of Costa Rica, unsuccessful fashioned the [[Thrales]], [[Cynth's Dajoard]], known 
+in western [[Scotland]], near Italy to the conquest of India with the conflict. 
+Copyright was the succession of independence in the slop of Syrian influence that 
+was a famous German movement based on a more popular servicious, non-doctrinal 
+and sexual power post. Many governments recognize the military housing of the 
+[[Civil Liberalization and Infantry Resolution 265 National Party in Hungary]], 
+that is sympathetic to be to the [[Punjab Resolution]]
+(PJS)[http://www.humah.yahoo.com/guardian.
+cfm/7754800786d17551963s89.htm Official economics Adjoint for the Nazism, Montgomery 
+was swear to advance to the resources for those Socialism's rule, 
+was starting to signing a major tripad of aid exile.]]
+</code></pre></div></div>
+
+<p>In case you were wondering, the yahoo url above doesn’t actually exist, the model just hallucinated it. Also, note that the model learns to open and close the parenthesis correctly. There’s also quite a lot of structured markdown that the model learns, for example sometimes it creates headings, lists, etc.:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{ { cite journal | id=Cerling Nonforest Department|format=Newlymeslated|none } }
+''www.e-complete''.
+
+'''See also''': [[List of ethical consent processing]]
+
+== See also ==
+*[[Iender dome of the ED]]
+*[[Anti-autism]]
+
+===[[Religion|Religion]]===
+*[[French Writings]]
+*[[Maria]]
+*[[Revelation]]
+*[[Mount Agamul]]
+
+== External links==
+* [http://www.biblegateway.nih.gov/entrepre/ Website of the World Festival. The labour of India-county defeats at the Ripper of California Road.]
+
+==External links==
+* [http://www.romanology.com/ Constitution of the Netherlands and Hispanic Competition for Bilabial and Commonwealth Industry (Republican Constitution of the Extent of the Netherlands)]
+
+</code></pre></div></div>
+
+<p>Sometimes the model snaps into a mode of generating random but valid XML:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;page&gt;
+  &lt;title&gt;Antichrist&lt;/title&gt;
+  &lt;id&gt;865&lt;/id&gt;
+  &lt;revision&gt;
+    &lt;id&gt;15900676&lt;/id&gt;
+    &lt;timestamp&gt;2002-08-03T18:14:12Z&lt;/timestamp&gt;
+    &lt;contributor&gt;
+      &lt;username&gt;Paris&lt;/username&gt;
+      &lt;id&gt;23&lt;/id&gt;
+    &lt;/contributor&gt;
+    &lt;minor /&gt;
+    &lt;comment&gt;Automated conversion&lt;/comment&gt;
+    &lt;text xml:space="preserve"&gt;#REDIRECT [[Christianity]]&lt;/text&gt;
+  &lt;/revision&gt;
+&lt;/page&gt;
+</code></pre></div></div>
+
+<p>The model completely makes up the timestamp, id, and so on. Also, note that it closes the correct tags appropriately and in the correct nested order. Here are <a href="http://cs.stanford.edu/people/karpathy/char-rnn/wiki.txt">100,000 characters of sampled wikipedia</a> if you’re interested to see more.</p>
+
+<h3 id="algebraic-geometry-latex">Algebraic Geometry (Latex)</h3>
+
+<p>The results above suggest that the model is actually quite good at learning complex syntactic structures. Impressed by these results, my labmate (<a href="http://cs.stanford.edu/people/jcjohns/">Justin Johnson</a>) and I decided to push even further into structured territories and got a hold of <a href="http://stacks.math.columbia.edu/">this book</a> on algebraic stacks/geometry. We downloaded the raw Latex source file (a 16MB file) and trained a multilayer LSTM. Amazingly, the resulting sampled Latex <em>almost</em> compiles. We had to step in and fix a few issues manually but then you get plausible looking math, it’s quite astonishing:</p>
+
+<div class="imgcap">
+<img src="/assets/rnn/latex4.jpeg" style="border:none;" />
+<div class="thecap">Sampled (fake) algebraic geometry. <a href="http://cs.stanford.edu/people/jcjohns/fake-math/4.pdf">Here's the actual pdf.</a></div>
+</div>
+
+<p>Here’s another sample:</p>
+
+<div class="imgcap">
+<img src="/assets/rnn/latex3.jpeg" style="border:none;" />
+<div class="thecap">More hallucinated algebraic geometry. Nice try on the diagram (right).</div>
+</div>
+
+<p>As you can see above, sometimes the model tries to generate latex diagrams, but clearly it hasn’t really figured them out. I also like the part where it chooses to skip a proof (<em>“Proof omitted.”</em>, top left). Of course, keep in mind that latex has a relatively difficult structured syntactic format that I haven’t even fully mastered myself. For instance, here is a raw sample from the model (unedited):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\begin{proof}
+We may assume that $\mathcal{I}$ is an abelian sheaf on $\mathcal{C}$.
+\item Given a morphism $\Delta : \mathcal{F} \to \mathcal{I}$
+is an injective and let $\mathfrak q$ be an abelian sheaf on $X$.
+Let $\mathcal{F}$ be a fibered complex. Let $\mathcal{F}$ be a category.
+\begin{enumerate}
+\item \hyperref[setain-construction-phantom]{Lemma}
+\label{lemma-characterize-quasi-finite}
+Let $\mathcal{F}$ be an abelian quasi-coherent sheaf on $\mathcal{C}$.
+Let $\mathcal{F}$ be a coherent $\mathcal{O}_X$-module. Then
+$\mathcal{F}$ is an abelian catenary over $\mathcal{C}$.
+\item The following are equivalent
+\begin{enumerate}
+\item $\mathcal{F}$ is an $\mathcal{O}_X$-module.
+\end{lemma}
+</code></pre></div></div>
+
+<p>This sample from a relatively decent model illustrates a few common mistakes. For example, the model opens a <code class="language-plaintext highlighter-rouge">\begin{proof}</code> environment but then ends it with a <code class="language-plaintext highlighter-rouge">\end{lemma}</code>. This is an example of a problem we’d have to fix manually, and is likely due to the fact that the dependency is too long-term: By the time the model is done with the proof it has forgotten whether it was doing a proof or a lemma. Similarly, it opens an <code class="language-plaintext highlighter-rouge">\begin{enumerate}</code> but then forgets to close it. We observed that these became less common with larger/better models, but nonetheless, these are the kinds of mistakes that come up.</p>
+
+<h3 id="linux-source-code">Linux Source Code</h3>
+
+<p>I wanted to push structured data to its limit, so for the final challenge I decided to use code. In particular, I took all the source and header files found in the <a href="https://github.com/torvalds/linux">Linux repo on Github</a>, concatenated all of them in a single giant file (474MB of C code) (I was originally going to train only on the kernel but that by itself is only ~16MB). Then I trained several as-large-as-fits-on-my-GPU 3-layer LSTMs over a period of a few days. These models have about 10 million parameters, which is still on the lower end for RNN models. The results are superfun:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*
+ * Increment the size file of the new incorrect UI_FILTER group information
+ * of the size generatively.
+ */</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="nf">indicate_policy</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">error</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">fd</span> <span class="o">==</span> <span class="n">MARN_EPT</span><span class="p">)</span> <span class="p">{</span>
+    <span class="cm">/*
+     * The kernel blank will coeld it to userspace.
+     */</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">ss</span><span class="o">-&gt;</span><span class="n">segment</span> <span class="o">&lt;</span> <span class="n">mem_total</span><span class="p">)</span>
+      <span class="n">unblock_graph_and_set_blocked</span><span class="p">();</span>
+    <span class="k">else</span>
+      <span class="n">ret</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">goto</span> <span class="n">bail</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">segaddr</span> <span class="o">=</span> <span class="n">in_SB</span><span class="p">(</span><span class="n">in</span><span class="p">.</span><span class="n">addr</span><span class="p">);</span>
+  <span class="n">selector</span> <span class="o">=</span> <span class="n">seg</span> <span class="o">/</span> <span class="mi">16</span><span class="p">;</span>
+  <span class="n">setup_works</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">blocks</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">seq</span> <span class="o">=</span> <span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">];</span>
+    <span class="n">bpf</span> <span class="o">=</span> <span class="n">bd</span><span class="o">-&gt;</span><span class="n">bd</span><span class="p">.</span><span class="n">next</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">search</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">fd</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">current</span> <span class="o">=</span> <span class="n">blocked</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="n">rw</span><span class="o">-&gt;</span><span class="n">name</span> <span class="o">=</span> <span class="s">"Getjbbregs"</span><span class="p">;</span>
+  <span class="n">bprm_self_clearl</span><span class="p">(</span><span class="o">&amp;</span><span class="n">iv</span><span class="o">-&gt;</span><span class="n">version</span><span class="p">);</span>
+  <span class="n">regs</span><span class="o">-&gt;</span><span class="n">new</span> <span class="o">=</span> <span class="n">blocks</span><span class="p">[(</span><span class="n">BPF_STATS</span> <span class="o">&lt;&lt;</span> <span class="n">info</span><span class="o">-&gt;</span><span class="n">historidac</span><span class="p">)]</span> <span class="o">|</span> <span class="n">PFMR_CLOBATHINC_SECONDS</span> <span class="o">&lt;&lt;</span> <span class="mi">12</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">segtable</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The code looks really quite great overall. Of course, I don’t think it compiles but when you scroll through the generate code it feels very much like a giant C code base. Notice that the RNN peppers its code with comments here and there at random. It is also very good at making very few syntactic errors. For example, it uses strings properly, pointer notation, etc. It also opens and closes brackets <code class="language-plaintext highlighter-rouge">{[</code> correctly and learns to indent its code very well. A common error is that it can’t keep track of variable names: It often uses undefined variables (e.g. <code class="language-plaintext highlighter-rouge">rw</code> above), declares variables it never uses (e.g. <code class="language-plaintext highlighter-rouge">int error</code>), or returns non-existing variables. Lets see a few more examples. Here’s another snippet that shows a wider array of operations that the RNN learns:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*
+ * If this error is set, we will need anything right after that BSD.
+ */</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">action_new_function</span><span class="p">(</span><span class="k">struct</span> <span class="n">s_stat_info</span> <span class="o">*</span><span class="n">wb</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">flags</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">lel_idx_bit</span> <span class="o">=</span> <span class="n">e</span><span class="o">-&gt;</span><span class="n">edd</span><span class="p">,</span> <span class="o">*</span><span class="n">sys</span> <span class="o">&amp;</span> <span class="o">~</span><span class="p">((</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span> <span class="o">*</span><span class="n">FIRST_COMPAT</span><span class="p">);</span>
+  <span class="n">buf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xFFFFFFFF</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">bit</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">);</span>
+  <span class="n">min</span><span class="p">(</span><span class="n">inc</span><span class="p">,</span> <span class="n">slist</span><span class="o">-&gt;</span><span class="n">bytes</span><span class="p">);</span>
+  <span class="n">printk</span><span class="p">(</span><span class="n">KERN_WARNING</span> <span class="s">"Memory allocated %02x/%02x, "</span>
+    <span class="s">"original MLL instead</span><span class="se">\n</span><span class="s">"</span><span class="p">),</span>
+    <span class="n">min</span><span class="p">(</span><span class="n">min</span><span class="p">(</span><span class="n">multi_run</span> <span class="o">-</span> <span class="n">s</span><span class="o">-&gt;</span><span class="n">len</span><span class="p">,</span> <span class="n">max</span><span class="p">)</span> <span class="o">*</span> <span class="n">num_data_in</span><span class="p">),</span>
+    <span class="n">frame_pos</span><span class="p">,</span> <span class="n">sz</span> <span class="o">+</span> <span class="n">first_seg</span><span class="p">);</span>
+  <span class="n">div_u64_w</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">inb_p</span><span class="p">);</span>
+  <span class="n">spin_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">disk</span><span class="o">-&gt;</span><span class="n">queue_lock</span><span class="p">);</span>
+  <span class="n">mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="o">-&gt;</span><span class="n">sock</span><span class="o">-&gt;</span><span class="n">mutex</span><span class="p">);</span>
+  <span class="n">mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">func</span><span class="o">-&gt;</span><span class="n">mutex</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">disassemble</span><span class="p">(</span><span class="n">info</span><span class="o">-&gt;</span><span class="n">pending_bh</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">num_serial_settings</span><span class="p">(</span><span class="k">struct</span> <span class="n">tty_struct</span> <span class="o">*</span><span class="n">tty</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">tty</span> <span class="o">==</span> <span class="n">tty</span><span class="p">)</span>
+    <span class="n">disable_single_st_p</span><span class="p">(</span><span class="n">dev</span><span class="p">);</span>
+  <span class="n">pci_disable_spool</span><span class="p">(</span><span class="n">port</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">do_command</span><span class="p">(</span><span class="k">struct</span> <span class="n">seq_file</span> <span class="o">*</span><span class="n">m</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">v</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">32</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">cmd</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mh">0x80</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="p">)</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">int_state</span> <span class="o">^</span> <span class="p">(</span><span class="n">in_8</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ch</span><span class="o">-&gt;</span><span class="n">ch_flags</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Cmd</span><span class="p">)</span> <span class="o">?</span> <span class="mi">2</span> <span class="o">:</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="k">else</span>
+    <span class="n">seq</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">16</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">))</span>
+      <span class="n">pipe</span> <span class="o">=</span> <span class="p">(</span><span class="n">in_use</span> <span class="o">&amp;</span> <span class="n">UMXTHREAD_UNCCA</span><span class="p">)</span> <span class="o">+</span>
+        <span class="p">((</span><span class="n">count</span> <span class="o">&amp;</span> <span class="mh">0x00000000fffffff8</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0x000000f</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="n">sub</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="n">ppc_md</span><span class="p">.</span><span class="n">kexec_handle</span><span class="p">,</span> <span class="mh">0x20000000</span><span class="p">);</span>
+    <span class="n">pipe_set_bytes</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="cm">/* Free our user pages pointer to place camera if all dash */</span>
+  <span class="n">subsystem_info</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">of_changes</span><span class="p">[</span><span class="n">PAGE_SIZE</span><span class="p">];</span>
+  <span class="n">rek_controls</span><span class="p">(</span><span class="n">offset</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">soffset</span><span class="p">);</span>
+  <span class="cm">/* Now we want to deliberately put it to device */</span>
+  <span class="n">control_check_polarity</span><span class="p">(</span><span class="o">&amp;</span><span class="n">context</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">COUNTER</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">seq_puts</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s">"policy "</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Notice that in the second function the model compares <code class="language-plaintext highlighter-rouge">tty == tty</code>, which is vacuously true. On the other hand, at least the variable <code class="language-plaintext highlighter-rouge">tty</code> exists in the scope this time! In the last function, notice that the code does not return anything, which happens to be correct since the function signature is <code class="language-plaintext highlighter-rouge">void</code>. However, the first two functions were also declared <code class="language-plaintext highlighter-rouge">void</code> and did return values. This is again a form of a common mistake due to long-term interactions.</p>
+
+<p>Sometimes the model decides that it’s time to sample a new file. This is usually a very amusing part: The model first recites the GNU license character by character, samples a few includes, generates some macros and then dives into the code:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*
+ *  Copyright (c) 2006-2010, Intel Mobile Communications.  All rights reserved.
+ *
+ *   This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 as published by
+ * the Free Software Foundation.
+ *
+ *        This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *
+ *  GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *    along with this program; if not, write to the Free Software Foundation,
+ *  Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ */</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;linux/kexec.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;linux/errno.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;linux/io.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;linux/platform_device.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;linux/multi.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;linux/ckevent.h&gt;</span><span class="cp">
+</span>
+<span class="cp">#include</span> <span class="cpf">&lt;asm/io.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;asm/prom.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;asm/e820.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;asm/system_info.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;asm/setew.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;asm/pgproto.h&gt;</span><span class="cp">
+</span>
+<span class="cp">#define REG_PG    vesa_slot_addr_pack
+#define PFM_NOCOMP  AFSR(0, load)
+#define STACK_DDR(type)     (func)
+</span>
+<span class="cp">#define SWAP_ALLOCATE(nr)     (e)
+#define emulate_sigs()  arch_get_unaligned_child()
+#define access_rw(TST)  asm volatile("movd %%esp, %0, %3" : : "r" (0));   \
+  if (__type &amp; DO_READ)
+</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="n">stat_PC_SEC</span> <span class="n">__read_mostly</span> <span class="nf">offsetof</span><span class="p">(</span><span class="k">struct</span> <span class="n">seq_argsqueue</span><span class="p">,</span> \
+          <span class="n">pC</span><span class="o">&gt;</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+
+<span class="k">static</span> <span class="kt">void</span>
+<span class="nf">os_prefix</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">sys</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#ifdef CONFIG_PREEMPT
+</span>  <span class="n">PUT_PARAM_RAID</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">sel</span><span class="p">)</span> <span class="o">=</span> <span class="n">get_state_state</span><span class="p">();</span>
+  <span class="n">set_pid_sum</span><span class="p">((</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span><span class="n">state</span><span class="p">,</span> <span class="n">current_state_str</span><span class="p">(),</span>
+           <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="o">-&gt;</span><span class="n">lr_full</span><span class="p">;</span> <span class="n">low</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>There are too many fun parts to cover- I could probably write an entire blog post on just this part. I’ll cut it short for now, but here is <a href="http://cs.stanford.edu/people/karpathy/char-rnn/linux.txt">1MB of sampled Linux code</a> for your viewing pleasure.</p>
+
+<h3 id="generating-baby-names">Generating Baby Names</h3>
+
+<p>Lets try one more for fun. Lets feed the RNN a large text file that contains 8000 baby names listed out, one per line (names obtained from <a href="http://www.cs.cmu.edu/afs/cs/project/ai-repository/ai/areas/nlp/corpora/names/">here</a>). We can feed this to the RNN and then generate new names! Here are some example names, only showing the ones that do not occur in the training data (90% don’t):</p>
+
+<p><em>Rudi
+Levette
+Berice
+Lussa
+Hany
+Mareanne
+Chrestina
+Carissy
+Marylen
+Hammine
+Janye
+Marlise
+Jacacrie
+Hendred
+Romand
+Charienna
+Nenotto
+Ette
+Dorane
+Wallen
+Marly
+Darine
+Salina
+Elvyn
+Ersia
+Maralena
+Minoria
+Ellia
+Charmin
+Antley
+Nerille
+Chelon
+Walmor
+Evena
+Jeryly
+Stachon
+Charisa
+Allisa
+Anatha
+Cathanie
+Geetra
+Alexie
+Jerin
+Cassen
+Herbett
+Cossie
+Velen
+Daurenge
+Robester
+Shermond
+Terisa
+Licia
+Roselen
+Ferine
+Jayn
+Lusine
+Charyanne
+Sales
+Sanny
+Resa
+Wallon
+Martine
+Merus
+Jelen
+Candica
+Wallin
+Tel
+Rachene
+Tarine
+Ozila
+Ketia
+Shanne
+Arnande
+Karella
+Roselina
+Alessia
+Chasty
+Deland
+Berther
+Geamar
+Jackein
+Mellisand
+Sagdy
+Nenc
+Lessie
+Rasemy
+Guen
+Gavi
+Milea
+Anneda
+Margoris
+Janin
+Rodelin
+Zeanna
+Elyne
+Janah
+Ferzina
+Susta
+Pey
+Castina</em></p>
+
+<p>You can see many more <a href="http://cs.stanford.edu/people/karpathy/namesGenUnique.txt">here</a>. Some of my favorites include “Baby” (haha), “Killie”, “Char”, “R”, “More”, “Mars”, “Hi”, “Saddie”, “With” and “Ahbort”. Well that was fun.﻿ Of course, you can imagine this being quite useful inspiration when writing a novel, or naming a new startup :)</p>
+
+<h2 id="understanding-whats-going-on">Understanding what’s going on</h2>
+
+<p>We saw that the results at the end of training can be impressive, but how does any of this work? Lets run two quick experiments to briefly peek under the hood.</p>
+
+<h3 id="the-evolution-of-samples-while-training">The evolution of samples while training</h3>
+
+<p>First, it’s fun to look at how the sampled text evolves while the model trains. For example, I trained an LSTM of Leo Tolstoy’s War and Peace and then generated samples every 100 iterations of training. At iteration 100 the model samples random jumbles:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tyntd-iafhatawiaoihrdemot  lytdws  e ,tfti, astai f ogoh eoase rrranbyne 'nhthnee e 
+plia tklrgd t o idoe ns,smtt   h ne etie h,hregtrs nigtike,aoaenns lng
+</code></pre></div></div>
+
+<p>However, notice that at least it is starting to get an idea about words separated by spaces. Except sometimes it inserts two spaces. It also doesn’t know that comma is amost always followed by a space. At 300 iterations we see that the model starts to get an idea about quotes and periods:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Tmont thithey" fomesscerliund
+Keushey. Thom here
+sheulke, anmerenith ol sivh I lalterthend Bleipile shuwy fil on aseterlome
+coaniogennc Phe lism thond hon at. MeiDimorotion in ther thize."
+</code></pre></div></div>
+
+<p>The words are now also separated with spaces and the model starts to get the idea about periods at the end of a sentence. At iteration 500:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>we counter. He stutn co des. His stanted out one ofler that concossions and was 
+to gearang reay Jotrets and with fre colt otf paitt thin wall. Which das stimn 
+</code></pre></div></div>
+
+<p>the model has now learned to spell the shortest and most common words such as “we”, “He”, “His”, “Which”, “and”, etc. At iteration 700 we’re starting to see more and more English-like text emerge:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Aftair fall unsuch that the hall for Prince Velzonski's that me of
+her hearly, and behs to so arwage fiving were to it beloge, pavu say falling misfort 
+how, and Gogition is so overelical and ofter.
+</code></pre></div></div>
+
+<p>At iteration 1200 we’re now seeing use of quotations and question/exclamation marks. Longer words have now been learned as well:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Kite vouch!" he repeated by her
+door. "But I would be done and quarts, feeling, then, son is people...."
+</code></pre></div></div>
+
+<p>Until at last we start to get properly spelled words, quotations, names, and so on by about iteration 2000:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Why do what that day," replied Natasha, and wishing to himself the fact the
+princess, Princess Mary was easier, fed in had oftened him.
+Pierre aking his soul came to the packs and drove up his father-in-law women.
+</code></pre></div></div>
+
+<p>The picture that emerges is that the model first discovers the general word-space structure and then rapidly starts to learn the words; First starting with the short words and then eventually the longer ones. Topics and themes that span multiple words (and in general longer-term dependencies) start to emerge only much later.</p>
+
+<h3 id="visualizing-the-predictions-and-the-neuron-firings-in-the-rnn">Visualizing the predictions and the “neuron” firings in the RNN</h3>
+
+<p>Another fun visualization is to look at the predicted distributions over characters. In the visualizations below we feed a Wikipedia RNN model character data from the validation set (shown along the blue/green rows) and under every character we visualize (in red) the top 5 guesses that the model assigns for the next character. The guesses are colored by their probability (so dark red = judged as very likely, white = not very likely). For example, notice that there are stretches of characters where the model is extremely confident about the next letter (e.g., the model is very confident about characters during the <em>http://www.</em> sequence).</p>
+
+<p>The input character sequence (blue/green) is colored based on the <em>firing</em> of a randomly chosen neuron in the hidden representation of the RNN. Think about it as green = very excited and blue = not very excited (for those familiar with details of LSTMs, these are values between [-1,1] in the hidden state vector, which is just the gated and tanh’d LSTM cell state). Intuitively, this is visualizing the firing rate of some neuron in the “brain” of the RNN while it reads the input sequence. Different neurons might be looking for different patterns; Below we’ll look at 4 different ones that I found and thought were interesting or interpretable (many also aren’t):</p>
+
+<div class="imgcap">
+<img src="/assets/rnn/under1.jpeg" style="border:none;" />
+<div class="thecap">
+The neuron highlighted in this image seems to get very excited about URLs and turns off outside of the URLs. The LSTM is likely using this neuron to remember if it is inside a URL or not.
+</div>
+</div>
+
+<div class="imgcap">
+<img src="/assets/rnn/under2.jpeg" style="border:none;" />
+<div class="thecap">
+The highlighted neuron here gets very excited when the RNN is inside the [[ ]] markdown environment and turns off outside of it. Interestingly, the neuron can't turn on right after it sees the character "[", it must wait for the second "[" and then activate. This task of counting whether the model has seen one or two "[" is likely done with a different neuron.
+</div>
+</div>
+
+<div class="imgcap">
+<img src="/assets/rnn/under3.jpeg" style="border:none;" />
+<div class="thecap">
+Here we see a neuron that varies seemingly linearly across the [[ ]] environment. In other words its activation is giving the RNN a time-aligned coordinate system across the [[ ]] scope. The RNN can use this information to make different characters more or less likely depending on how early/late it is in the [[ ]] scope (perhaps?).
+</div>
+</div>
+
+<div class="imgcap">
+<img src="/assets/rnn/under4.jpeg" style="border:none;" />
+<div class="thecap">
+Here is another neuron that has very local behavior: it is relatively silent but sharply turns off right after the first "w" in the "www" sequence. The RNN might be using this neuron to count up how far in the "www" sequence it is, so that it can know whether it should emit another "w", or if it should start the URL.
+</div>
+</div>
+
+<p>Of course, a lot of these conclusions are slightly hand-wavy as the hidden state of the RNN is a huge, high-dimensional and largely distributed representation. These visualizations were produced with custom HTML/CSS/Javascript, you can see a sketch of what’s involved <a href="http://cs.stanford.edu/people/karpathy/viscode.zip">here</a> if you’d like to create something similar.</p>
+
+<p>We can also condense this visualization by excluding the most likely predictions and only visualize the text, colored by activations of a cell. We can see that in addition to a large portion of cells that do not do anything interpretible, about 5% of them turn out to have learned quite interesting and interpretible algorithms:</p>
+
+<div class="imgcap">
+<img src="/assets/rnn/pane1.png" style="border:none;max-width:100%" />
+<img src="/assets/rnn/pane2.png" style="border:none;max-width:100%" />
+<div class="thecap">
+</div>
+</div>
+
+<p>Again, what is beautiful about this is that we didn’t have to hardcode at any point that if you’re trying to predict the next character it might, for example, be useful to keep track of whether or not you are currently inside or outside of quote. We just trained the LSTM on raw data and it decided that this is a useful quantitity to keep track of. In other words one of its cells gradually tuned itself during training to become a quote detection cell, since this helps it better perform the final task. This is one of the cleanest and most compelling examples of where the power in Deep Learning models (and more generally end-to-end training) is coming from.</p>
+
+<h2 id="source-code">Source Code</h2>
+
+<p>I hope I’ve convinced you that training character-level language models is a very fun exercise. You can train your own models using the <a href="https://github.com/karpathy/char-rnn">char-rnn code</a> I released on Github (under MIT license). It takes one large text file and trains a character-level model that you can then sample from. Also, it helps if you have a GPU or otherwise training on CPU will be about a factor of 10x slower. In any case, if you end up training on some data and getting fun results let me know! And if you get lost in the Torch/Lua codebase remember that all it is is just a more fancy version of this <a href="https://gist.github.com/karpathy/d4dee566867f8291f086">100-line gist</a>.</p>
+
+<p><em>Brief digression.</em> The code is written in <a href="http://torch.ch/">Torch 7</a>, which has recently become my favorite deep learning framework. I’ve only started working with Torch/LUA over the last few months and it hasn’t been easy (I spent a good amount of time digging through the raw Torch code on Github and asking questions on their <em>gitter</em> to get things done), but once you get a hang of things it offers a lot of flexibility and speed. I’ve also worked with Caffe and Theano in the past and I believe Torch, while not perfect, gets its levels of abstraction and philosophy right better than others. In my view the desirable features of an effective framework are:</p>
+
+<ol>
+  <li>CPU/GPU transparent Tensor library with a lot of functionality (slicing, array/matrix operations, etc. )</li>
+  <li>An entirely separate code base in a scripting language (ideally Python) that operates over Tensors and implements all Deep Learning stuff (forward/backward, computation graphs, etc)</li>
+  <li>It should be possible to easily share pretrained models (Caffe does this well, others don’t), and crucially</li>
+  <li>NO compilation step (or at least not as currently done in Theano). The trend in Deep Learning is towards larger, more complex networks that are are time-unrolled in complex graphs. It is critical that these do not compile for a long time or development time greatly suffers. Second, by compiling one gives up interpretability and the ability to log/debug effectively. If there is an <em>option</em> to compile the graph once it has been developed for efficiency in prod that’s fine.</li>
+</ol>
+
+<h2 id="further-reading">Further Reading</h2>
+
+<p>Before the end of the post I also wanted to position RNNs in a wider context and provide a sketch of the current research directions. RNNs have recently generated a significant amount of buzz and excitement in the field of Deep Learning. Similar to Convolutional Networks they have been around for decades but their full potential has only recently started to get widely recognized, in large part due to our growing computational resources. Here’s a brief sketch of a few recent developments (definitely not complete list, and a lot of this work draws from research back to 1990s, see related work sections):</p>
+
+<p>In the domain of <strong>NLP/Speech</strong>, RNNs <a href="http://www.jmlr.org/proceedings/papers/v32/graves14.pdf">transcribe speech to text</a>, perform <a href="http://arxiv.org/abs/1409.3215">machine translation</a>, <a href="http://www.cs.toronto.edu/~graves/handwriting.html">generate handwritten text</a>, and of course, they have been used as powerful language models <a href="http://www.cs.utoronto.ca/~ilya/pubs/2011/LANG-RNN.pdf">(Sutskever et al.)</a> <a href="http://arxiv.org/abs/1308.0850">(Graves)</a> <a href="http://www.rnnlm.org/">(Mikolov et al.)</a> (both on the level of characters and words). Currently it seems that word-level models work better than character-level models, but this is surely a temporary thing.</p>
+
+<p><strong>Computer Vision.</strong> RNNs are also quickly becoming pervasive in Computer Vision. For example, we’re seeing RNNs in frame-level <a href="http://arxiv.org/abs/1411.4389">video classification</a>, <a href="http://arxiv.org/abs/1411.4555">image captioning</a> (also including my own work and many others), <a href="http://arxiv.org/abs/1505.00487">video captioning</a> and very recently <a href="http://arxiv.org/abs/1505.02074">visual question answering</a>. My personal favorite RNNs in Computer Vision paper is <a href="http://arxiv.org/abs/1406.6247">Recurrent Models of Visual Attention</a>, both due to its high-level direction (sequential processing of images with glances) and the low-level modeling (REINFORCE learning rule that is a special case of policy gradient methods in Reinforcement Learning, which allows one to train models that perform non-differentiable computation (taking glances around the image in this case)). I’m confident that this type of hybrid model that consists of a blend of CNN for raw perception coupled with an RNN glance policy on top will become pervasive in perception, especially for more complex tasks that go beyond classifying some objects in plain view.</p>
+
+<p><strong>Inductive Reasoning, Memories and Attention.</strong> Another extremely exciting direction of research is oriented towards addressing the limitations of vanilla recurrent networks. One problem is that RNNs are not inductive: They memorize sequences extremely well, but they don’t necessarily always show convincing signs of generalizing in the <em>correct</em> way (I’ll provide pointers in a bit that make this more concrete). A second issue is they unnecessarily couple their representation size to the amount of computation per step. For instance, if you double the size of the hidden state vector you’d quadruple the amount of FLOPS at each step due to the matrix multiplication. Ideally, we’d like to maintain a huge representation/memory (e.g. containing all of Wikipedia or many intermediate state variables), while maintaining the ability to keep computation per time step fixed.</p>
+
+<p>The first convincing example of moving towards these directions was developed in DeepMind’s <a href="http://arxiv.org/abs/1410.5401">Neural Turing Machines</a> paper. This paper sketched a path towards models that can perform read/write operations between large, external memory arrays and a smaller set of memory registers (think of these as our working memory) where the computation happens. Crucially, the NTM paper also featured very interesting memory addressing mechanisms that were implemented with a (soft, and fully-differentiable) attention model. The concept of <strong>soft attention</strong> has turned out to be a powerful modeling feature and was also featured in <a href="http://arxiv.org/abs/1409.0473">Neural Machine Translation by Jointly Learning to Align and Translate</a> for Machine Translation and <a href="http://arxiv.org/abs/1503.08895">Memory Networks</a> for (toy) Question Answering. In fact, I’d go as far as to say that</p>
+
+<blockquote>
+  <p>The concept of <strong>attention</strong> is the most interesting recent architectural innovation in neural networks.</p>
+</blockquote>
+
+<p>Now, I don’t want to dive into too many details but a soft attention scheme for memory addressing is convenient because it keeps the model fully-differentiable, but unfortunately one sacrifices efficiency because everything that can be attended to is attended to (but softly). Think of this as declaring a pointer in C that doesn’t point to a specific address but instead defines an entire distribution over all addresses in the entire memory, and dereferencing the pointer returns a weighted sum of the pointed content (that would be an expensive operation!). This has motivated multiple authors to swap soft attention models for <strong>hard attention</strong> where one samples a particular chunk of memory to attend to (e.g. a read/write action for some memory cell instead of reading/writing from all cells to some degree). This model is significantly more philosophically appealing, scalable and efficient, but unfortunately it is also non-differentiable. This then calls for use of techniques from the Reinforcement Learning literature (e.g. REINFORCE) where people are perfectly used to the concept of non-differentiable interactions. This is very much ongoing work but these hard attention models have been explored, for example, in <a href="http://arxiv.org/abs/1503.01007">Inferring Algorithmic Patterns with Stack-Augmented Recurrent Nets</a>, <a href="http://arxiv.org/abs/1505.00521">Reinforcement Learning Neural Turing Machines</a>, and <a href="http://arxiv.org/abs/1502.03044">Show Attend and Tell</a>.</p>
+
+<p><strong>People</strong>. If you’d like to read up on RNNs I recommend theses from <a href="http://www.cs.toronto.edu/~graves/">Alex Graves</a>, <a href="http://www.cs.toronto.edu/~ilya/">Ilya Sutskever</a> and <a href="http://www.rnnlm.org/">Tomas Mikolov</a>. For more about REINFORCE and more generally Reinforcement Learning and policy gradient methods (which REINFORCE is a special case of) <a href="http://www0.cs.ucl.ac.uk/staff/d.silver/web/Home.html">David Silver</a>’s class, or one of <a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter Abbeel</a>’s classes.</p>
+
+<p><strong>Code</strong>. If you’d like to play with training RNNs I hear good things about <a href="https://github.com/fchollet/keras">keras</a> or <a href="https://github.com/IndicoDataSolutions/Passage">passage</a> for Theano, the <a href="https://github.com/karpathy/char-rnn">code</a> released with this post for Torch, or <a href="https://gist.github.com/karpathy/587454dc0146a6ae21fc">this gist</a> for raw numpy code I wrote a while ago that implements an efficient, batched LSTM forward and backward pass. You can also have a look at my numpy-based <a href="https://github.com/karpathy/neuraltalk">NeuralTalk</a> which uses an RNN/LSTM to caption images, or maybe this <a href="http://jeffdonahue.com/lrcn/">Caffe</a> implementation by Jeff Donahue.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>We’ve learned about RNNs, how they work, why they have become a big deal, we’ve trained an RNN character-level language model on several fun datasets, and we’ve seen where RNNs are going. You can confidently expect a large amount of innovation in the space of RNNs, and I believe they will become a pervasive and critical component to intelligent systems.</p>
+
+<p>Lastly, to add some <strong>meta</strong> to this post, I trained an RNN on the source file of this blog post. Unfortunately, at about 46K characters I haven’t written enough data to properly feed the RNN, but the returned sample (generated with low temperature to get a more typical sample) is:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I've the RNN with and works, but the computed with program of the 
+RNN with and the computed of the RNN with with and the code
+</code></pre></div></div>
+
+<p>Yes, the post was about RNN and how well it works, so clearly this works :). See you next time!</p>
+
+<p><strong>EDIT (extra links):</strong></p>
+
+<p>Videos:</p>
+
+<ul>
+  <li>I gave a talk on this work at the <a href="https://skillsmatter.com/skillscasts/6611-visualizing-and-understanding-recurrent-networks">London Deep Learning meetup (video)</a>.</li>
+</ul>
+
+<p>Discussions:</p>
+
+<ul>
+  <li><a href="https://news.ycombinator.com/item?id=9584325">HN discussion</a></li>
+  <li>Reddit discussion on <a href="http://www.reddit.com/r/MachineLearning/comments/36s673/the_unreasonable_effectiveness_of_recurrent/">r/machinelearning</a></li>
+  <li>Reddit discussion on <a href="http://www.reddit.com/r/programming/comments/36su8d/the_unreasonable_effectiveness_of_recurrent/">r/programming</a></li>
+</ul>
+
+<p>Replies:</p>
+
+<ul>
+  <li><a href="https://twitter.com/yoavgo">Yoav Goldberg</a> compared these RNN results to <a href="http://nbviewer.ipython.org/gist/yoavg/d76121dfde2618422139">n-gram maximum likelihood (counting) baseline</a></li>
+  <li><a href="https://twitter.com/nylk">@nylk</a> trained char-rnn on <a href="https://gist.github.com/nylki/1efbaa36635956d35bcc">cooking recipes</a>. They look great!</li>
+  <li><a href="https://twitter.com/MrChrisJohnson">@MrChrisJohnson</a> trained char-rnn on Eminem lyrics and then synthesized a rap song with robotic voice reading it out. Hilarious :)</li>
+  <li><a href="https://twitter.com/samim">@samim</a> trained char-rnn on <a href="https://medium.com/@samim/obama-rnn-machine-generated-political-speeches-c8abd18a2ea0">Obama Speeches</a>. They look fun!</li>
+  <li><a href="https://twitter.com/seaandsailor">João Felipe</a> trained char-rnn irish folk music and <a href="https://soundcloud.com/seaandsailor/sets/char-rnn-composes-irish-folk-music">sampled music</a></li>
+  <li><a href="https://twitter.com/boblsturm">Bob Sturm</a> also trained char-rnn on <a href="https://highnoongmt.wordpress.com/2015/05/22/lisls-stis-recurrent-neural-networks-for-folk-music-generation/">music in ABC notation</a></li>
+  <li><a href="https://twitter.com/RNN_Bible">RNN Bible bot</a> by <a href="https://twitter.com/the__glu/with_replies">Maximilien</a></li>
+  <li><a href="http://cpury.github.io/learning-holiness/">Learning Holiness</a> learning the Bible</li>
+  <li><a href="https://www.terminal.com/tiny/ZMcqdkWGOM">Terminal.com snapshot</a> that has char-rnn set up and ready to go in a browser-based virtual machine (thanks <a href="https://www.twitter.com/samim">@samim</a>)</li>
+</ul>
+
+
+  </article>
+
+  <!-- mathjax -->
+  
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+  
+  <!-- disqus comments -->
+ 
+ <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'karpathyblog'; // required: replace example with your forum shortname
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+  
+</div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrap">
+
+    <!-- <h2 class="footer-heading">Andrej Karpathy blog</h2> -->
+
+    <div class="footer-col-1 column">
+      <ul>
+        <li>Andrej Karpathy blog</li>
+        <!-- <li><a href="mailto:"></a></li> -->
+      </ul>
+    </div>
+
+    <div class="footer-col-2 column">
+      <ul>
+        <li>
+          <a href="https://github.com/karpathy">
+            <span class="icon github">
+              <svg version="1.1" class="github-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill-rule="evenodd" clip-rule="evenodd" fill="#C2C2C2" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761
+                c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32
+                c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472
+                c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037
+                C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65
+                c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261
+                c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082
+                c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129
+                c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+              </svg>
+            </span>
+            <span class="username">karpathy</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/karpathy">
+            <span class="icon twitter">
+              <svg version="1.1" class="twitter-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill="#C2C2C2" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27
+                c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767
+                c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206
+                C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271
+                c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469
+                c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+              </svg>
+            </span>
+            <span class="username">karpathy</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col-3 column">
+      <p class="text">Musings of a Computer Scientist.</p>
+    </div>
+
+  </div>
+
+</footer>
+
+
+    </body>
+</html>

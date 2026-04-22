@@ -1,0 +1,2018 @@
+[
+  {
+    "tweet_id": "2042341482531864741",
+    "text": "Someone recently suggested to me that the reason OpenClaw moment was so big is because it's the first time a large group of non-technical people (who otherwise only knew AI as synonymous with ChatGPT as a website) experienced the latest agentic models.",
+    "url": "https://x.com/karpathy/status/2042341482531864741",
+    "created_at": 1775767128,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 368821,
+      "likes": 3659,
+      "reposts": 156,
+      "replies": 240
+    }
+  },
+  {
+    "tweet_id": "2042334451611693415",
+    "text": "Judging by my tl there is a growing gap in understanding of AI capability.\n\nThe first issue I think is around recency and tier of use. I think a lot of people tried the free tier of ChatGPT somewhere  last year and allowed it to inform their views on AI a little too much. This is a group of reactions laughing at various quirks of the models, hallucinations, etc. Yes I also saw the viral videos of OpenAI's Advanced Voice mode fumbling simple queries like \"should I drive or walk to the carwash\". The thing is that these free and old/deprecated models don't reflect the capability in the latest round of state of the art agentic models of this year, especially OpenAI Codex and Claude Code.\n\nBut that brings me to the second issue. Even if people paid $200/month to use the state of the art models, a lot of the capabilities are relatively \"peaky\" in highly technical areas. Typical queries around search, writing, advice, etc. are *not* the domain that has made the most noticeable and dramatic strides in capability. Partly,  this is due to the technical details of reinforcement learning and its use of verifiable rewards. But partly, it's also because these use cases are not sufficiently prioritized by the companies in their hillclimbing because they don't lead to as much $$$ value. The goldmines are elsewhere, and the focus comes along.\n\nSo that brings me to the second group of people, who *both* 1) pay for and use the state of the art frontier agentic models (OpenAI Codex / Claude Code) and 2) do so professionally in technical domains like programming, math and research. This group of people is subject to the highest amount of \"AI Psychosis\" because the recent improvements in these domains as of this year have been nothing short of staggering. When you hand a computer terminal to one of these models, you can now watch them melt programming problems that you'd normally expect to take days/weeks of work. It's this second group of people that assigns a much greater gravity to the capabilities, their slope, and various cyber-related repercussions.\n\nTLDR the people in these two groups are speaking past each other. It really is simultaneously the case that OpenAI's free and I think slightly orphaned (?) \"Advanced Voice Mode\" will fumble the dumbest questions in your Instagram's reels and *at the same time*, OpenAI's highest-tier and paid Codex model will go off for 1 hour to coherently restructure an entire code base, or find and exploit vulnerabilities in computer systems. This part really works and has made dramatic strides because 2 properties: 1) these domains offer explicit reward functions that are verifiable meaning they are easily amenable to reinforcement learning training (e.g. unit tests passed yes or no, in contrast to writing, which is much harder to explicitly judge),  but also 2) they are a lot more valuable in b2b settings, meaning that the biggest fraction of the team is focused on improving them. So here we are.",
+    "url": "https://x.com/karpathy/status/2042334451611693415",
+    "created_at": 1775765452,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 4135528,
+      "likes": 20165,
+      "reposts": 2439,
+      "replies": 1111
+    }
+  },
+  {
+    "tweet_id": "2042063369432183238",
+    "text": "The degree to which you are awed by AI is perfectly correlated with how much you use AI to code.",
+    "url": "https://x.com/staysaasy/status/2042063369432183238",
+    "created_at": 1775700821,
+    "author": {
+      "user_id": "1254131357774733312",
+      "handle": "staysaasy",
+      "name": "staysaasy",
+      "avatar": "https://images.asksurf.ai/OIPeCHf7M007QXcgfbUq36-rcv0zQxBYh9HNsnSLZRU/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyNzgxOTQ0MTMyMTUyMTk3MTIvN1hIN2JoakUuanBn"
+    },
+    "stats": {
+      "views": 1884789,
+      "likes": 1661,
+      "reposts": 175,
+      "replies": 77
+    }
+  },
+  {
+    "tweet_id": "2040806346556428585",
+    "text": "Surprised with how good the comments on github gists are. A lot more helpful, insightful, constructive, a lot less AI... Is it the user community? The markdown format? The (lack of) incentives?\n\nSuddenly feeling like I should gist more.\n@github consider competing with X (?)",
+    "url": "https://x.com/karpathy/status/2040806346556428585",
+    "created_at": 1775401124,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 322724,
+      "likes": 1043,
+      "reposts": 37,
+      "replies": 168
+    }
+  },
+  {
+    "tweet_id": "2040572272944324650",
+    "text": "Farzapedia, personal wikipedia of Farza, good example following my Wiki LLM tweet.\n\nI really like this approach to personalization in a number of ways, compared to \"status quo\" of an AI that allegedly gets better the more you use it or something:\n\n1. Explicit. The memory artifact is explicit and navigable (the wiki), you can see exactly what the AI does and does not know and you can inspect and manage this artifact, even if you don't do the direct text writing (the LLM does). The knowledge of you is not implicit and unknown, it's explicit and viewable.\n2. Yours. Your data is yours, on your local computer, it's not in some particular AI provider's system without the ability to extract it. You're in control of your information. \n3. File over app. The memory here is a simple collection of files in universal formats (images, markdown). This means the data is interoperable: you can use a very large collection of tools/CLIs or whatever you want over this information because it's just files. The agents can apply the entire Unix toolkit over them. They can natively read and understand them. Any kind of data can be imported into files as input, and any kind of interface can be used to view them as the output. E.g. you can use Obsidian to view them or vibe code something of your own. Search \"File over app\" for an article on this philosophy.\n4. BYOAI. You can use whatever AI you want to \"plug into\" this information - Claude, Codex, OpenCode, whatever. You can even think about taking an open source AI and finetuning it on your wiki - in principle, this AI could \"know\" you in its weights, not just attend over your data.\n\nSo this approach to personalization puts *you* in full control. The data is yours. In Universal formats. Explicit and inspectable. Use whatever AI you want over it, keep the AI companies on their toes! :)\n\nCertainly this is not the simplest way to get an AI to know you - it does require you to manage file directories and so on, but agents also make it quite simple and they can help you a lot. I imagine a number of products might come out to make this all easier, but imo \"agent proficiency\" is a CORE SKILL of the 21st century. These are extremely powerful tools - they speak English and they do all the computer stuff for you. Try this opportunity to play with one.",
+    "url": "https://x.com/karpathy/status/2040572272944324650",
+    "created_at": 1775345316,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 1244285,
+      "likes": 8829,
+      "reposts": 803,
+      "replies": 438
+    }
+  },
+  {
+    "tweet_id": "2040563939797504467",
+    "text": "This is Farzapedia.\n\nI had an LLM take 2,500 entries from my diary, Apple Notes, and some iMessage convos to create a personal Wikipedia for me.\n\nIt made 400 detailed articles for my friends, my startups, research areas, and even my favorite animes and their impact on me complete with backlinks.\n\nBut, this Wiki was not built for me! I built it for my agent!\n\nThe structure of the wiki files and how it's all backlinked is very easily crawlable by any agent + makes it a truly useful knowledge base.\n\nI can spin up Claude Code on the wiki and starting at index.md (a catalog of all my articles) the agent does a really good job at drilling into the specific pages on my wiki it needs context on when I have a query.\n\nFor example, when trying to cook up a new landing page I may ask:\n\n\"I'm trying to design this landing page for a new idea I have. Please look into the images and films that inspired me recently and give me ideas for new copy and aesthetics\".\n\nIn my diary I kept track of everything from: learnings, people, inspo, interesting links, images.\n\nSo the agent reads my wiki and pulls up my \"Philosophy\" articles from notes on a Studio Ghibli documentary, \"Competitor\" articles with YC companies whose landing pages I screenshotted, and pics of 1970s Beatles merch I saved years ago. And it delivers a great answer.\n\nI built a similar system to this a year ago with RAG but it was ass.\n\nA knowledge base that lets an agent find what it needs via a file system it actually understands just works better.\n\nThe most magical thing now is as I add new things to my wiki (articles, images of inspo, meeting notes) the system will likely update 2-3 different articles where it feels that context belongs, or, just creates a new article.\n\nIt's like this super genius librarian for your brain that's always filing stuff for your perfectly and also let's you easily query the knowledge for tasks useful to you (ex. design, product, writing, etc) and it never gets tired.\n\nI might spend next week productizing this, if that's of interest to you DM me + tell me your usecase!",
+    "url": "https://x.com/FarzaTV/status/2040563939797504467",
+    "created_at": 1775343329,
+    "author": {
+      "user_id": "327403216",
+      "handle": "FarzaTV",
+      "name": "Farza 🇵🇰🇺🇸",
+      "avatar": "https://images.asksurf.ai/IBVd8Hg-wPPNQbVE4EsEqeHyMelgO1sLj8cc9t4u5Gg/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEzMjMzOTEzMDU4MzQxNDM3NDUvNHpxT0poNjYuanBn"
+    },
+    "stats": {
+      "views": 1835765,
+      "likes": 4756,
+      "reposts": 370,
+      "replies": 233
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2040562032819486720/img/jVrKry6tC4BPFnCg.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2040549459193704852",
+    "text": "Something I've been thinking about - I am bullish on people (empowered by AI) increasing the visibility, legibility and accountability of their governments.\n\nHistorically, it is the governments that act to make society legible (e.g. \"Seeing like a state\" is the common reference), but with AI, society can dramatically improve its ability to do this in reverse. Government accountability has not been constrained by access (the various branches of government publish an enormous amount of data), it has been constrained by intelligence - the ability to process a lot of raw data, combine it with domain expertise and derive insights. As an example, the 4000-page omnibus bill is \"transparent\" in principle and in a legal sense, but certainly not in a practical sense for most people. There's a lot more like it: laws, spending bills, federal budgets, freedom of information act responses, lobbying disclosures... Only a few highly trained professionals (investigative journalists) could historically process this information. This bottleneck might dissolve - not only are the professionals further empowered, but a lot more people can participate.\n\nSome examples to be precise: Detailed accounting of spending and budgets, diff tracking of legislation, individual voting trends w.r.t. stated positions or speeches, lobbying and influence (e.g. graph of lobbyist -> firm -> client -> legislator -> committee -> vote -> regulation), procurement and contracting, regulatory capture warning lights, judicial and legal patterns, campaign finance... Local governments might be even more interesting because the governed population is smaller so there is less national coverage: city council meetings, decisions around zoning, policing, schools, utilities...\n\nCertainly, the same tools can easily cut the other way and it's worth being very mindful of that, but I lean optimistic overall that added participation, transparency and accountability will improve democratic, free societies.\n\n(the quoted tweet is half-ish related, but inspired me to post some recent thoughts)",
+    "url": "https://x.com/karpathy/status/2040549459193704852",
+    "created_at": 1775339877,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 905346,
+      "likes": 5849,
+      "reposts": 722,
+      "replies": 404
+    }
+  },
+  {
+    "tweet_id": "2040470801506541998",
+    "text": "Wow, this tweet went very viral!\n\nI wanted share a possibly slightly improved version of the tweet in an \"idea file\". The idea of the idea file is that in this era of LLM agents, there is less of a point/need of sharing the specific code/app, you just share the idea, then the other person's agent customizes & builds it for your specific needs.\n\nSo here's the idea in a gist format: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f\n\nYou can give this to your agent and it can build you your own LLM wiki and guide you on how to use it etc. It's intentionally kept a little bit abstract/vague because there are so many directions to take this in. And ofc, people can adjust the idea or contribute their own in the Discussion which is cool.",
+    "url": "https://x.com/karpathy/status/2040470801506541998",
+    "created_at": 1775321123,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 6774737,
+      "likes": 26271,
+      "reposts": 2762,
+      "replies": 1078
+    }
+  },
+  {
+    "tweet_id": "2040406616806179001",
+    "text": "The British Government is a complicated beast. Dozens of departments, hundreds of public bodies, more corporations than one can count...\n\nSuch is its complexity that there isn't an org chart for it.\n\nWell, there wasn't...\n\nIntroducing ⚙️Machinery of Government⚙️ https://t.co/YRt8r3yHyn",
+    "url": "https://x.com/Hrushworth/status/2040406616806179001",
+    "created_at": 1775305821,
+    "author": {
+      "user_id": "272923763",
+      "handle": "Hrushworth",
+      "name": "Harry Rushworth",
+      "avatar": "https://images.asksurf.ai/wo9zJBAmUAAPldie45OjKjK-bBzoVdBb-GhSHFu95KE/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE2Njc5NDc1NTE4NTk4MDIxMTYvWjJCRVVweGwuanBn"
+    },
+    "stats": {
+      "views": 1003957,
+      "likes": 2913,
+      "reposts": 420,
+      "replies": 100
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HFD4KSmWkAAdI3Z.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2039805659525644595",
+    "text": "LLM Knowledge Bases\n\nSomething I'm finding very useful recently: using LLMs to build personal knowledge bases for various topics of research interest. In this way, a large fraction of my recent token throughput is going less into manipulating code, and more into manipulating knowledge (stored as markdown and images). The latest LLMs are quite good at it. So:\n\nData ingest:\nI index source documents (articles, papers, repos, datasets, images, etc.) into a raw/ directory, then I use an LLM to incrementally \"compile\" a wiki, which is just a collection of .md files in a directory structure. The wiki includes summaries of all the data in raw/, backlinks, and then it categorizes data into concepts, writes articles for them, and links them all. To convert web articles into .md files I like to use the Obsidian Web Clipper extension, and then I also use a hotkey to download all the related images to local so that my LLM can easily reference them.\n\nIDE:\nI use Obsidian as the IDE \"frontend\" where I can view the raw data, the the compiled wiki, and the derived visualizations. Important to note that the LLM writes and maintains all of the data of the wiki, I rarely touch it directly. I've played with a few Obsidian plugins to render and view data in other ways (e.g. Marp for slides).\n\nQ&A:\nWhere things get interesting is that once your wiki is big enough (e.g. mine on some recent research is ~100 articles and ~400K words), you can ask your LLM agent all kinds of complex questions against the wiki, and it will go off, research the answers, etc. I thought I had to reach for fancy RAG, but the LLM has been pretty good about auto-maintaining index files and brief summaries of all the documents and it reads all the important related data fairly easily at this ~small scale.\n\nOutput:\nInstead of getting answers in text/terminal, I like to have it render markdown files for me, or slide shows (Marp format), or matplotlib images, all of which I then view again in Obsidian. You can imagine many other visual output formats depending on the query. Often, I end up \"filing\" the outputs back into the wiki to enhance it for further queries. So my own explorations and queries always \"add up\" in the knowledge base.\n\nLinting:\nI've run some LLM \"health checks\" over the wiki to e.g. find inconsistent data, impute missing data (with web searchers), find interesting connections for new article candidates, etc., to incrementally clean up the wiki and enhance its overall data integrity. The LLMs are quite good at suggesting further questions to ask and look into.\n\nExtra tools:\nI find myself developing additional tools to process the data, e.g. I vibe coded a small and naive search engine over the wiki, which I both use directly (in a web ui), but more often I want to hand it off to an LLM via CLI as a tool for larger queries. \n\nFurther explorations:\nAs the repo grows, the natural desire is to also think about synthetic data generation + finetuning to have your LLM \"know\" the data in its weights instead of just context windows.\n\nTLDR: raw data from a given number of sources is collected, then compiled by an LLM into a .md wiki, then operated on by various CLIs by the LLM to do Q&A and to incrementally enhance the wiki, and all of it viewable in Obsidian. You rarely ever write or edit the wiki manually, it's the domain of the LLM. I think there is room here for an incredible new product instead of a hacky collection of scripts.",
+    "url": "https://x.com/karpathy/status/2039805659525644595",
+    "created_at": 1775162541,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 20127311,
+      "likes": 56775,
+      "reposts": 6806,
+      "replies": 2792
+    }
+  },
+  {
+    "tweet_id": "2038849654423798197",
+    "text": "New supply chain attack this time for npm axios, the most popular HTTP client library with 300M weekly downloads.\n\nScanning my system I found a use imported from googleworkspace/cli from a few days ago when I was experimenting with gmail/gcal cli. The installed version (luckily) resolved to an unaffected 1.13.5, but the project dependency is not pinned, meaning that if I did this earlier today the code would have resolved to latest and I'd be pwned.\n\nIt's possible to personally defend against these to some extent with local settings e.g. release-age constraints, or containers or etc, but I think ultimately the defaults of package management projects (pip, npm etc) have to change so that a single infection (usually luckily fairly temporary in nature due to security scanning) does not spread through users at random and at scale via unpinned dependencies.\n\nMore comprehensive article:\nhttps://www.stepsecurity.io/blog/axios-compromised-on-npm-malicious-versions-drop-remote-access-trojan",
+    "url": "https://x.com/karpathy/status/2038849654423798197",
+    "created_at": 1774934612,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 1499711,
+      "likes": 10533,
+      "reposts": 1119,
+      "replies": 558
+    }
+  },
+  {
+    "tweet_id": "2038807290422370479",
+    "text": "🚨 CRITICAL: Active supply chain attack on axios -- one of npm's most depended-on packages.\n\nThe latest axios@1.14.1 now pulls in plain-crypto-js@4.2.1, a package that did not exist before today. This is a live compromise.\n\nThis is textbook supply chain installer malware. axios has 100M+ weekly downloads. Every npm install pulling the latest version is potentially compromised right now.\n\nSocket AI analysis confirms this is malware. plain-crypto-js is an obfuscated dropper/loader that:\n\n• Deobfuscates embedded payloads and operational strings at runtime\n• Dynamically loads fs, os, and execSync to evade static analysis\n• Executes decoded shell commands\n• Stages and copies payload files into OS temp and Windows ProgramData directories\n• Deletes and renames artifacts post-execution to destroy forensic evidence\n\nIf you use axios, pin your version immediately and audit your lockfiles. Do not upgrade.",
+    "url": "https://x.com/feross/status/2038807290422370479",
+    "created_at": 1774924511,
+    "author": {
+      "user_id": "15692193",
+      "handle": "feross",
+      "name": "Feross",
+      "avatar": "https://images.asksurf.ai/jvxQojoR9YPmDhEr7HujlGbiOFEJMtVvsg2BsYrI5-0/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMDAyNzUwMjI2NjYxOTA4NDgvMUVlTTV6QWouanBn"
+    },
+    "stats": {
+      "views": 12258762,
+      "likes": 16281,
+      "reposts": 4060,
+      "replies": 543
+    }
+  },
+  {
+    "tweet_id": "2037921699824607591",
+    "text": "- Drafted a blog post\n- Used an LLM to meticulously improve the argument over 4 hours.\n- Wow, feeling great, it’s so convincing!\n- Fun idea let’s ask it to argue the opposite. \n- LLM demolishes the entire argument and convinces me that the opposite is in fact true.\n- lol\n\nThe LLMs may elicit an opinion when asked but are extremely competent in arguing almost any direction. This is actually super useful as a tool for forming your own opinions, just make sure to ask different directions and be careful with the sycophancy.",
+    "url": "https://x.com/karpathy/status/2037921699824607591",
+    "created_at": 1774713370,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 3412893,
+      "likes": 31246,
+      "reposts": 2417,
+      "replies": 1748
+    }
+  },
+  {
+    "tweet_id": "2037200624450936940",
+    "text": "When I built menugen ~1 year ago, I observed that the hardest part by far was not the code itself, it was the plethora of services you have to assemble like IKEA furniture to make it real, the DevOps: services, payments, auth, database, security, domain names, etc...\n\nI am really looking forward to a day where I could simply tell my agent: \"build menugen\" (referencing the post) and it would just work. The whole thing up to the deployed web page. The agent would have to browse a number of services, read the docs, get all the api keys, make everything work, debug it in dev, and deploy to prod. This is the actually hard part, not the code itself. Or rather, the better way to think about it is that the entire DevOps lifecycle has to become code, in addition to the necessary sensors/actuators of the CLIs/APIs with agent-native ergonomics. And there should be no need to visit web pages, click buttons, or anything like that for the human. \n\nIt's easy to state, it's now just barely technically possible and expected to work maybe, but it definitely requires from-scratch re-design, work and thought. Very exciting direction!",
+    "url": "https://x.com/karpathy/status/2037200624450936940",
+    "created_at": 1774541452,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 2382737,
+      "likes": 6376,
+      "reposts": 532,
+      "replies": 621
+    }
+  },
+  {
+    "tweet_id": "2037190688950161709",
+    "text": "When @karpathy built MenuGen (https://karpathy.bearblog.dev/vibe-coding-menugen/), he said:\n\n\"Vibe coding menugen was exhilarating and fun escapade as a local demo, but a bit of a painful slog as a deployed, real app. Building a modern app is a bit like assembling IKEA future. There are all these services, docs, API keys, configurations, dev/prod deployments, team and security features, rate limits, pricing tiers.\"\n\nWe've all run into this issue when building with agents: you have to scurry off to establish accounts, clicking things in the browser as though it's the antediluvian days of 2023, in order to unblock its superintelligent progress.\n\nSo we decided to build Stripe Projects to help agents instantly provision services from the CLI.\n\nFor example, simply run:\n\n$ stripe projects add posthog/analytics\n\nAnd it'll create a PostHog account, get an API key, and (as needed) set up billing.\n\nProjects is launching today as a developer preview. You can register for access (we'll make it available to everyone soon) at http://projects.dev. We're also rolling out support for many new providers over the coming weeks. (Get in touch if you'd like to make your service available.)\n\nhttps://projects.dev",
+    "url": "https://x.com/patrickc/status/2037190688950161709",
+    "created_at": 1774539084,
+    "author": {
+      "user_id": "4939401",
+      "handle": "patrickc",
+      "name": "Patrick Collison",
+      "avatar": "https://images.asksurf.ai/QhygVoKNzFzgg2EKQlwriBPOdYPZ9k1fLXvougTvoUs/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzgyNTYyMjUyNTM0MjE5OTgwOS9faUFhU1VRZi5qcGc"
+    },
+    "stats": {
+      "views": 1625923,
+      "likes": 3704,
+      "reposts": 271,
+      "replies": 190
+    }
+  },
+  {
+    "tweet_id": "2036841069636370467",
+    "text": "(I cycle through all LLMs over time and all of them seem to do this so it's not any particular implementation but something deeper, e.g. maybe during training, a lot of the information in the context window is relevant to the task, so the LLMs develop a bias to use what is given, then at test time overfit to anything that happens to RAG its way there via a memory feature (?))",
+    "url": "https://x.com/karpathy/status/2036841069636370467",
+    "created_at": 1774455728,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 263439,
+      "likes": 1699,
+      "reposts": 42,
+      "replies": 148
+    }
+  },
+  {
+    "tweet_id": "2036836816654147718",
+    "text": "One common issue with personalization in all LLMs is how distracting memory seems to be for the models. A single question from 2 months ago about some topic can keep coming up as some kind of a deep interest of mine with undue mentions in perpetuity. Some kind of trying too hard.",
+    "url": "https://x.com/karpathy/status/2036836816654147718",
+    "created_at": 1774454714,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 2700956,
+      "likes": 21253,
+      "reposts": 1089,
+      "replies": 1768
+    }
+  },
+  {
+    "tweet_id": "2036487306585268612",
+    "text": "Software horror: litellm PyPI supply chain attack. \n\nSimple `pip install litellm` was enough to exfiltrate SSH keys, AWS/GCP/Azure creds, Kubernetes configs, git credentials, env vars (all your API keys), shell history, crypto wallets, SSL private keys, CI/CD secrets, database passwords.\n\nLiteLLM itself has 97 million downloads per month which is already terrible, but much worse, the contagion spreads to any project that depends on litellm. For example, if you did `pip install dspy` (which depended on litellm>=1.64.0), you'd also be pwnd. Same for any other large project that depended on litellm.\n\nAfaict the poisoned version was up for only less than ~1 hour. The attack had a bug which led to its discovery - Callum McMahon was using an MCP plugin inside Cursor that pulled in litellm as a transitive dependency. When litellm 1.82.8 installed, their machine ran out of RAM and crashed. So if the attacker didn't vibe code this attack it could have been undetected for many days or weeks.\n\nSupply chain attacks like this are basically the scariest thing imaginable in modern software. Every time you install any depedency you could be pulling in a poisoned package anywhere deep inside its entire depedency tree. This is especially risky with large projects that might have lots and lots of dependencies. The credentials that do get stolen in each attack can then be used to take over more accounts and compromise more packages.\n\nClassical software engineering would have you believe that dependencies are good (we're building pyramids from bricks), but imo this has to be re-evaluated, and it's why I've been so growingly averse to them, preferring to use LLMs to \"yoink\" functionality when it's simple enough and possible.",
+    "url": "https://x.com/karpathy/status/2036487306585268612",
+    "created_at": 1774371384,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 66457222,
+      "likes": 28046,
+      "reposts": 5368,
+      "replies": 1360
+    }
+  },
+  {
+    "tweet_id": "2036414330267193815",
+    "text": "LiteLLM HAS BEEN COMPROMISED, DO NOT UPDATE. We just discovered that LiteLLM pypi release 1.82.8. It has been compromised, it contains litellm_init.pth with base64 encoded instructions to send all the credentials it can find to remote server + self-replicate. link below",
+    "url": "https://x.com/hnykda/status/2036414330267193815",
+    "created_at": 1774353985,
+    "author": {
+      "user_id": "2647149458",
+      "handle": "hnykda",
+      "name": "Daniel Hnyk",
+      "avatar": "https://images.asksurf.ai/OrrVwpduFdg4NE38KUjZpwIxekN1OJp4nUL593llokA/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE4NzE5MDAxODEwMzkyODQyMjQvSzMxczRyU0guanBn"
+    },
+    "stats": {
+      "views": 5762144,
+      "likes": 9375,
+      "reposts": 2262,
+      "replies": 309
+    }
+  },
+  {
+    "tweet_id": "2035158351357911527",
+    "text": "Thank you Sarah, my pleasure to come on the pod! And happy to do some more Q&amp;A in the replies.",
+    "url": "https://x.com/karpathy/status/2035158351357911527",
+    "created_at": 1774054537,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 1081922,
+      "likes": 5455,
+      "reposts": 391,
+      "replies": 317
+    }
+  },
+  {
+    "tweet_id": "2035080458304987603",
+    "text": "Caught up with @karpathy for a new @NoPriorsPod: on the phase shift in engineering, AI psychosis, claws, AutoResearch, the opportunity for a SETI-at-Home like movement in AI, the model landscape, and second order effects\n\n02:55 - What Capability Limits Remain?\n06:15 - What Mastery of Coding Agents Looks Like\n11:16 - Second Order Effects of Coding Agents\n15:51 - Why AutoResearch\n22:45 - Relevant Skills in the AI Era\n28:25 - Model Speciation\n32:30 - Collaboration Surfaces for Humans and AI\n37:28 - Analysis of Jobs Market Data\n48:25 - Open vs. Closed Source Models\n53:51 - Autonomous Robotics and Atoms\n1:00:59 - MicroGPT and Agentic Education\n1:05:40 - End Thoughts",
+    "url": "https://x.com/saranormous/status/2035080458304987603",
+    "created_at": 1774035965,
+    "author": {
+      "user_id": "339261041",
+      "handle": "saranormous",
+      "name": "sarah guo",
+      "avatar": "https://images.asksurf.ai/8Qsw6EO998XE6P3KmKhkgNWlvXdlmjZyiFxLkK0RSBI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE2ODk0NDMxMzQ5MTkzMjc3NDQvZ2VxRUplRjguanBn"
+    },
+    "stats": {
+      "views": 2894239,
+      "likes": 7619,
+      "reposts": 1095,
+      "replies": 239
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2035079080803278849/img/3D1d9lG36vpfIgop.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2034873049753997619",
+    "text": "Andy Weir showing some of the spreadsheets underlying the calculations in the book\nhttps://www.youtube.com/watch?v=lYHCTEnYOr4\ni mean, it's not quality scifi if it doesn't come with a supplementary whitepaper https://t.co/MsDnEoNBA7",
+    "url": "https://x.com/karpathy/status/2034873049753997619",
+    "created_at": 1773986515,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 201777,
+      "likes": 1194,
+      "reposts": 64,
+      "replies": 45
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HD1RM_XaoAAsHui.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2034865693544604001",
+    "text": "Had to go see Project Hail Mary right away (it's based on the book of Andy Weir, of also The Martian fame). Both very pleased and relieved to say that 1) the movie sticks very close to the book in both content and tone and 2) is really well executed.\n\nThe book is one of my favorites when it comes to alien portrayals because a lot of thought was clearly given to the scientific details of an alternate biochemistry, evolutionary history, sensorium, psychology, language, tech tree, etc. It's different enough that it is highly creative and plausible, but also similar enough that you get a compelling story and one of the best bromances in fiction. Not to mention the other (single-cellular) aliens. I can count fictional portrayals of aliens of this depth on one hand. A lot of these aspects are briefly featured - if you read the book you'll spot them but if you haven't, the movie can't spend the time to do them justice.\n\nI'll say that the movie inches a little too much into the superhero movie tropes with the pacing, the quips, the Bathos and such for my taste, and we get a little bit less the grand of Interstellar and a little bit less of the science of The Martian, but I think it's ok considering the tone of the original content. And it does really well where it counts - on Rocky and the bromance. Thank you to the film crew for the gem!",
+    "url": "https://x.com/karpathy/status/2034865693544604001",
+    "created_at": 1773984761,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 662991,
+      "likes": 9096,
+      "reposts": 329,
+      "replies": 359
+    }
+  },
+  {
+    "tweet_id": "2034329390377762848",
+    "text": "Ugh X breaks time links, it’s at 26:17",
+    "url": "https://x.com/karpathy/status/2034329390377762848",
+    "created_at": 1773856897,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 115482,
+      "likes": 354,
+      "reposts": 5,
+      "replies": 22
+    }
+  },
+  {
+    "tweet_id": "2034325950310355072",
+    "text": "(link to blast from the past)\nhttps://youtu.be/xQhb3C2hQoE?si=x3qQMjG-dktoNNv_&t=1577",
+    "url": "https://x.com/karpathy/status/2034325950310355072",
+    "created_at": 1773856077,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 228275,
+      "likes": 676,
+      "reposts": 34,
+      "replies": 11
+    }
+  },
+  {
+    "tweet_id": "2034321875506196585",
+    "text": "Thank you Jensen and NVIDIA! She’s a real beauty! I was told I’d be getting a secret gift, with a hint that it requires 20 amps. (So I knew it had to be good). She’ll make for a beautiful, spacious home for my Dobby the House Elf claw, among lots of other tinkering, thank you!!",
+    "url": "https://x.com/karpathy/status/2034321875506196585",
+    "created_at": 1773855105,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 1071975,
+      "likes": 19161,
+      "reposts": 833,
+      "replies": 529
+    }
+  },
+  {
+    "tweet_id": "2034291235041554871",
+    "text": "🙌 Andrej Karpathy’s lab has received the first DGX Station GB300 -- a Dell Pro Max with GB300.\n\n💚 We can't wait to see what you’ll create @karpathy!\n\n🔗 https://blogs.nvidia.com/blog/gtc-2026-news/#dgx-station\n\n@DellTech https://t.co/DHpZA9W7Uz",
+    "url": "https://x.com/NVIDIAAIDev/status/2034291235041554871",
+    "created_at": 1773847800,
+    "author": {
+      "user_id": "877952584333410305",
+      "handle": "NVIDIAAIDev",
+      "name": "NVIDIA AI Developer",
+      "avatar": "https://images.asksurf.ai/_lrT0xDX1az3lVltgXt-TmFBjS_MTP75HlF8iBWOCew/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE4MzYxMzM2Mjk2OTQ3NDI1MzEvdmVyU1JZcjguanBn"
+    },
+    "stats": {
+      "views": 1492721,
+      "likes": 4530,
+      "reposts": 285,
+      "replies": 130
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HDq6TL-XEAAK_Ws.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "1617979122625712128",
+    "text": "The hottest new programming language is English",
+    "url": "https://x.com/karpathy/status/1617979122625712128",
+    "created_at": 1674591258,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 11378305,
+      "likes": 64242,
+      "reposts": 8044,
+      "replies": 1983
+    }
+  },
+  {
+    "tweet_id": "2031792523187040643",
+    "text": "My autoresearch labs got wiped out in the oauth outage. Have to think through failovers. Intelligence brownouts will be interesting - the planet losing IQ points when frontier AI stutters.",
+    "url": "https://x.com/karpathy/status/2031792523187040643",
+    "created_at": 1773252061,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 620829,
+      "likes": 7020,
+      "reposts": 303,
+      "replies": 551
+    }
+  },
+  {
+    "tweet_id": "2031774631498273005",
+    "text": "Human orgs are not legible, the CEO can’t see/feel/zoom in on any activity in their company, with real time stats etc. I have no doubt that it will be possible to control orgs on mobile, with voice etc., but with this level of legibility will that be optimal? Not in principle and asymptotically but in practice and for at least the next round of play.",
+    "url": "https://x.com/karpathy/status/2031774631498273005",
+    "created_at": 1773247795,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 246457,
+      "likes": 1295,
+      "reposts": 52,
+      "replies": 88
+    }
+  },
+  {
+    "tweet_id": "2031770607466291393",
+    "text": "All of these patterns as an example are just matters of “org code”. The IDE helps you build, run, manage them. You can’t fork classical orgs (eg Microsoft) but you’ll be able to fork agentic orgs. https://t.co/VBfL9ZzxKs",
+    "url": "https://x.com/karpathy/status/2031770607466291393",
+    "created_at": 1773246835,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 484375,
+      "likes": 3724,
+      "reposts": 274,
+      "replies": 172
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HDJMmaaaEAA8isb.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2031767720933634100",
+    "text": "Expectation: the age of the IDE is over\nReality: we’re going to need a bigger IDE\n(imo).\n\nIt just looks very different because humans now move upwards and program at a higher level - the basic unit of interest is not one file but one agent. It’s still programming.",
+    "url": "https://x.com/karpathy/status/2031767720933634100",
+    "created_at": 1773246147,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 2450601,
+      "likes": 10548,
+      "reposts": 837,
+      "replies": 826
+    }
+  },
+  {
+    "tweet_id": "2031616709560610993",
+    "text": "@nummanali tmux grids are awesome, but i feel a need to have a proper \"agent command center\" IDE for teams of them, which I could maximize per monitor. E.g. I want to see/hide toggle them, see if any are idle, pop open related tools (e.g. terminal), stats (usage), etc.",
+    "url": "https://x.com/karpathy/status/2031616709560610993",
+    "created_at": 1773210143,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 1386120,
+      "likes": 3074,
+      "reposts": 117,
+      "replies": 303
+    }
+  },
+  {
+    "tweet_id": "2031137476438548874",
+    "text": "oh yeah i should have linked autoresearch probably\nhttps://github.com/karpathy/autoresearch\n(you don't \"use it\" directly, it's just a recipe/idea - give it to your agent and apply to what you care about.)\n\nand the tweet about it that went mini-viral over the weekend with more context\nhttps://x.com/karpathy/status/2030371219518931079",
+    "url": "https://x.com/karpathy/status/2031137476438548874",
+    "created_at": 1773095885,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 329751,
+      "likes": 2501,
+      "reposts": 215,
+      "replies": 96
+    }
+  },
+  {
+    "tweet_id": "2031135152349524125",
+    "text": "Three days ago I left autoresearch tuning nanochat for ~2 days on depth=12 model. It found ~20 changes that improved the validation loss. I tested these changes yesterday and all of them were additive and transferred to larger (depth=24) models. Stacking up all of these changes, today I measured that the leaderboard's \"Time to GPT-2\" drops from 2.02 hours to 1.80 hours (~11% improvement), this will be the new leaderboard entry. So yes, these are real improvements and they make an actual difference. I am mildly surprised that my very first naive attempt already worked this well on top of what I thought was already a fairly manually well-tuned project.\n\nThis is a first for me because I am very used to doing the iterative optimization of neural network training manually. You come up with ideas, you implement them, you check if they work (better validation loss), you come up with new ideas based on that, you read some papers for inspiration, etc etc. This is the bread and butter of what I do daily for 2 decades. Seeing the agent do this entire workflow end-to-end and all by itself as it worked through approx. 700 changes autonomously is wild. It really looked at the sequence of results of experiments and used that to plan the next ones. It's not novel, ground-breaking \"research\" (yet), but all the adjustments are \"real\", I didn't find them manually previously, and they stack up and actually improved nanochat. Among the bigger things e.g.:\n\n- It noticed an oversight that my parameterless QKnorm didn't have a scaler multiplier attached, so my attention was too diffuse. The agent found multipliers to sharpen it, pointing to future work.\n- It found that the Value Embeddings really like regularization and I wasn't applying any (oops).\n- It found that my banded attention was too conservative (i forgot to tune it).\n- It found that AdamW betas were all messed up.\n- It tuned the weight decay schedule.\n- It tuned the network initialization.\n\nThis is on top of all the tuning I've already done over a good amount of time. The exact commit is here, from this \"round 1\" of autoresearch. I am going to kick off \"round 2\", and in parallel I am looking at how multiple agents can collaborate to unlock parallelism.\nhttps://github.com/karpathy/nanochat/commit/6ed7d1d82cee16c2e26f45d559ad3338447a6c1b\n\nAll LLM frontier labs will do this. It's the final boss battle. It's a lot more complex at scale of course - you don't just have a single train. py file to tune. But doing it is \"just engineering\" and it's going to work. You spin up a swarm of agents, you have them collaborate to tune smaller models, you promote the most promising ideas to increasingly larger scales, and humans (optionally) contribute on the edges.\n\nAnd more generally, *any* metric you care about that is reasonably efficient to evaluate (or that has more efficient proxy metrics such as training a smaller network) can be autoresearched by an agent swarm. It's worth thinking about whether your problem falls into this bucket too.",
+    "url": "https://x.com/karpathy/status/2031135152349524125",
+    "created_at": 1773095331,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 3610386,
+      "likes": 19486,
+      "reposts": 2133,
+      "replies": 972
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HC_-jW0bUAA_Hga.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2030705271627284816",
+    "text": "The next step for autoresearch is that it has to be asynchronously massively collaborative for agents (think: SETI@home style). The goal is not to emulate a single PhD student, it's to emulate a research community of them.\n\nCurrent code synchronously grows a single thread of commits in a particular research direction. But the original repo is more of a seed, from which could sprout commits contributed by agents on all kinds of different research directions or for different compute platforms. Git(Hub) is *almost* but not really suited for this. It has a softly built in assumption of one \"master\" branch, which temporarily forks off into PRs just to merge back a bit later.\n\nI tried to prototype something super lightweight that could have a flavor of this, e.g. just a Discussion, written by my agent as a summary of its overnight run:\nhttps://github.com/karpathy/autoresearch/discussions/43\nAlternatively, a PR has the benefit of exact commits:\nhttps://github.com/karpathy/autoresearch/pull/44\nbut you'd never want to actually merge it... You'd just want to \"adopt\" and accumulate branches of commits. But even in this lightweight way, you could ask your agent to first read the Discussions/PRs using GitHub CLI for inspiration, and after its research is done, contribute a little \"paper\" of findings back.\n\nI'm not actually exactly sure what this should look like, but it's a big idea that is more general than just the autoresearch repo specifically. Agents can in principle easily juggle and collaborate on thousands of commits across arbitrary branch structures. Existing abstractions will accumulate stress as intelligence, attention and tenacity cease to be bottlenecks.",
+    "url": "https://x.com/karpathy/status/2030705271627284816",
+    "created_at": 1772992840,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 1135074,
+      "likes": 7560,
+      "reposts": 712,
+      "replies": 529
+    }
+  },
+  {
+    "tweet_id": "2030373745991536982",
+    "text": "(I still have the bigger cousin running on prod nanochat, working a bigger model and on 8XH100, which looks like this now. I'll just leave this running for a while...) https://t.co/aWya9hpUMl",
+    "url": "https://x.com/karpathy/status/2030373745991536982",
+    "created_at": 1772913798,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 433621,
+      "likes": 2107,
+      "reposts": 62,
+      "replies": 70
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HC1VM78bwAAt7T2.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2030371219518931079",
+    "text": "I packaged up the \"autoresearch\" project into a new self-contained minimal repo if people would like to play over the weekend. It's basically nanochat LLM training core stripped down to a single-GPU, one file version of ~630 lines of code, then:\n\n- the human iterates on the prompt (.md)\n- the AI agent iterates on the training code (.py)\n\nThe goal is to engineer your agents to make the fastest research progress indefinitely and without any of your own involvement. In the image, every dot is a complete LLM training run that lasts exactly 5 minutes. The agent works in an autonomous loop on a git feature branch and accumulates git commits to the training script as it finds better settings (of lower validation loss by the end) of the neural network architecture, the optimizer, all the hyperparameters, etc. You can imagine comparing the research progress of different prompts, different agents, etc.\n\nhttps://github.com/karpathy/autoresearch\nPart code, part sci-fi, and a pinch of psychosis :)",
+    "url": "https://x.com/karpathy/status/2030371219518931079",
+    "created_at": 1772913195,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 11001166,
+      "likes": 28338,
+      "reposts": 3654,
+      "replies": 1057
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HC1KyorbEAAoGWr.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2029950967031247231",
+    "text": "ah yes, this is what post-agi feels like :) i didn't touch anything. brb sauna https://t.co/odILIDAQaF",
+    "url": "https://x.com/karpathy/status/2029950967031247231",
+    "created_at": 1772812999,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 171046,
+      "likes": 1017,
+      "reposts": 61,
+      "replies": 72
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HCvVgOHaUAMfM64.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2029702379034267985",
+    "text": "sorry just to clarify - the real benchmark of interest is:\n\n\"what is the research org agent code that produces improvements on nanochat the fastest?\"\n\nthis is the new meta.",
+    "url": "https://x.com/karpathy/status/2029702379034267985",
+    "created_at": 1772753731,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 153826,
+      "likes": 1121,
+      "reposts": 47,
+      "replies": 61
+    }
+  },
+  {
+    "tweet_id": "2029701092347630069",
+    "text": "nanochat now trains GPT-2 capability model in just 2 hours on a single 8XH100 node (down from ~3 hours 1 month ago). Getting a lot closer to ~interactive! A bunch of tuning and features (fp8) went in but the biggest difference was a switch of the dataset from FineWeb-edu to NVIDIA ClimbMix (nice work NVIDIA!). I had tried Olmo, FineWeb, DCLM which all led to regressions, ClimbMix worked really well out of the box (to the point that I am slightly suspicious about about goodharting, though reading the paper it seems ~ok).\n\nIn other news, after trying a few approaches for how to set things up, I now have AI Agents iterating on nanochat automatically, so I'll just leave this running for a while, go relax a bit and enjoy the feeling of post-agi :). Visualized here as an example: 110 changes made over the last ~12 hours, bringing the validation loss so far from 0.862415 down to 0.858039 for a d12 model, at no cost to wall clock time. The agent works on a feature branch, tries out ideas, merges them when they work and iterates. Amusingly, over the last ~2 weeks I almost feel like I've iterated more on the \"meta-setup\" where I optimize and tune the agent flows even more than the nanochat repo directly.",
+    "url": "https://x.com/karpathy/status/2029701092347630069",
+    "created_at": 1772753425,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 623317,
+      "likes": 6495,
+      "reposts": 563,
+      "replies": 338
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HCrwu6YaUAAoAlh.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2029696850366971921",
+    "text": "There was a nice time where researchers talked about various ideas quite openly on twitter. (before they disappeared into the gold mines :)).\n\nMy guess is that you can get quite far even in the current paradigm by introducing a number of memory ops as \"tools\" and throwing them into the mix in RL. E.g. current compaction and memory implementations are crappy, first, early examples that were somewhat bolted on, but both can be fairly easily generalized and made part of the optimization as just another tool during RL.\n\nThat said neither of these is fully satisfying because clearly people are capable of some weight-based updates (my personal suspicion - mostly during sleep). So there should be even more room for more exotic approaches for long-term memory that do change the weights, but exactly - the details are not obvious. This is a lot more exciting, but also more into the realm of research outside of the established prod stack.",
+    "url": "https://x.com/karpathy/status/2029696850366971921",
+    "created_at": 1772752413,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 598806,
+      "likes": 4572,
+      "reposts": 295,
+      "replies": 274
+    }
+  },
+  {
+    "tweet_id": "2029672507448643706",
+    "text": "I've been thinking a bit about continual learning recently, especially as it relates to long-running agents (and running a few toy experiments with MLX).\n\nThe status quo of prompt compaction coupled with recursive sub-agents is actually remarkably effective. Seems like we can go pretty far with this. (Prompt compaction = when the context window gets close to full, model generates a shorter summary, then start from scratch using the summary. Recursive sub-agents = decompose tasks into smaller tasks to deal with finite context windows)\n\nRecursive sub-agents will probably always be useful. But prompt compaction seems like a bit of an inefficient (though highly effective) hack.\n\nThe are two other alternatives I know of 1. online fine-tuning and 2. memory based techniques.\n\nOnline fine-tuning: train some LoRA adapters on data the model encounters during deployment. I'm less bullish on this in general. Aside from the engineering challenges of deploying custom models / adapters for each use case / user there are a some fundamental issues:\n- Online fine-tuning is inherently unstable. If you train on data in the target domain you can catastrophically destroy capabilities that you don't target. One way around this is to keep a mixed dataset with the new and the old. But this gets pretty complicated pretty quickly.\n- What does the data even look like for online fine tuning? Do you generate Q/A pairs based on the target domain to train the model? You also have the problem prioritizing information in the data mixture given finite capacity.\n\nMemory based techniques: basically a policy for keeping useful memory around and discarding what is not needed. This feels much more like how humans retain information: \"use it or lose it\". You only need a few things for this to work:\n- An eviction/retention policy. Something like \"keep a memory if it has been accessed at least once in the last 10k tokens\".\n- The policy needs to be efficiently computable\n- A place for the model to store and access long-term memory. Maybe a sparsely accessed KV cache would be sufficient. But for efficient access to a large memory a hierarchical data structure might be beter.",
+    "url": "https://x.com/awnihannun/status/2029672507448643706",
+    "created_at": 1772746609,
+    "author": {
+      "user_id": "245262377",
+      "handle": "awnihannun",
+      "name": "Awni Hannun",
+      "avatar": "https://images.asksurf.ai/5jkEH_Igs_7txgu6e9UMFUfZtZ1cg1TPaJr7qxBhXdg/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzgyOTQxNDQ5ODg5MzEyMzU4NC9QNkp5dHdPOC5qcGc"
+    },
+    "stats": {
+      "views": 638724,
+      "likes": 1142,
+      "reposts": 83,
+      "replies": 86
+    }
+  },
+  {
+    "tweet_id": "2027521323275325622",
+    "text": "I had the same thought so I've been playing with it in nanochat. E.g. here's 8 agents (4 claude, 4 codex), with 1 GPU each running nanochat experiments (trying to delete logit softcap without regression). The TLDR is that it doesn't work and it's a mess... but it's still very pretty to look at :)\n\nI tried a few setups: 8 independent solo researchers, 1 chief scientist giving work to 8 junior researchers, etc. Each research program is a git branch, each scientist forks it into a feature branch, git worktrees for isolation, simple files for comms, skip Docker/VMs for simplicity atm (I find that instructions are enough to prevent interference). Research org runs in tmux window grids of interactive sessions (like Teams) so that it's pretty to look at, see their individual work, and \"take over\" if needed, i.e. no -p.\n\nBut ok the reason it doesn't work so far is that the agents' ideas are just pretty bad out of the box, even at highest intelligence. They don't think carefully though experiment design, they run a bit non-sensical variations, they don't create strong baselines and ablate things properly, they don't carefully control for runtime or flops. (just as an example, an agent yesterday \"discovered\" that increasing the hidden size of the network improves the validation loss, which is a totally spurious result given that a bigger network will have a lower validation loss in the infinite data regime, but then it also trains for a lot longer, it's not clear why I had to come in to point that out). They are very good at implementing any given well-scoped and described idea but they don't creatively generate them.\n\nBut the goal is that you are now programming an organization (e.g. a \"research org\") and its individual agents, so the \"source code\" is the collection of prompts, skills, tools, etc. and processes that make it up. E.g. a daily standup in the morning is now part of the \"org code\". And optimizing nanochat pretraining is just one of the many tasks (almost like an eval). Then - given an arbitrary task, how quickly does your research org generate progress on it?",
+    "url": "https://x.com/karpathy/status/2027521323275325622",
+    "created_at": 1772233727,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 1612948,
+      "likes": 8738,
+      "reposts": 805,
+      "replies": 561
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2027513601536438272/img/HbJnPPemlT0ssZZf.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2027501331125239822",
+    "text": "Cool chart showing the ratio of Tab complete requests to Agent requests in Cursor. With improving capability, every point in time has an optimal setup that keeps changing and evolving and the community average tracks the point. None -> Tab -> Agent -> Parallel agents -> Agent Teams (?) -> ???\n\nIf you're too conservative, you're leaving leverage on the table. If you're too aggressive, you're net creating more chaos than doing useful work.\n\nThe art of the process is spending 80% of the time getting work done in the setup you're comfortable with and that actually works, and 20% exploration of what might be the next step up even if it doesn't work yet.",
+    "url": "https://x.com/karpathy/status/2027501331125239822",
+    "created_at": 1772228961,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 608521,
+      "likes": 3863,
+      "reposts": 335,
+      "replies": 212
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HCMha-2bEAA1itr.png"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2027421947999506722",
+    "text": "How come the NanoGPT speedrun challenge is not fully AI automated research by now?",
+    "url": "https://x.com/Thom_Wolf/status/2027421947999506722",
+    "created_at": 1772210034,
+    "author": {
+      "user_id": "246939962",
+      "handle": "Thom_Wolf",
+      "name": "Thomas Wolf",
+      "avatar": "https://images.asksurf.ai/HhAIYwBaEtucQiimq8D7Gqz113H98cQ7SfLaSBTZYio/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE2Mjk0Njk5Mzk4NjA5NDY5NDYvV1V5Qm9sU3UuanBn"
+    },
+    "stats": {
+      "views": 1358937,
+      "likes": 302,
+      "reposts": 14,
+      "replies": 14
+    }
+  },
+  {
+    "tweet_id": "2026736314272591924",
+    "text": "When we started building Cursor a few years ago, most code was written one keystroke at a time. Tab autocomplete changed that and opened the first era of AI-assisted coding.\n\nThen agents arrived, and developers shifted to directing agents through synchronous prompt-and-response loops. That was the second era. Now a third era is arriving. It is defined by agents that can tackle larger tasks independently, over longer timescales, with less human direction.\n\nAs a result, Cursor is no longer primarily about writing code. It is about helping developers build the factory that creates their software. This factory is made up of fleets of agents that they interact with as teammates: providing initial direction, equipping them with the tools to work independently, and reviewing their work.\n\nMany of us at Cursor are already working this way. More than one-third of the PRs we merge are now created by agents that run on their own computers in the cloud. A year from now, we think the vast majority of development work will be done by these kinds of agents.\n\n# From Tab to agents\n\nTab excelled at identifying where low-entropy, repetitive work could be automated. For nearly two years, it produced significant leverage.\n\nThen the models improved. Agents could hold more context, use more tools, and execute longer sequences of actions. Developer habits began to shift, slowly through the summer, then rapidly over the last few months.\n\nThe transformation has been so complete that today, many Cursor users never touch the tab key. In March 2025, we had roughly 2.5x as many Tab users as agent users. Now, that is flipped: we now have 2x as many agent users as Tab users and agent usage in Cursor has surged.\n\n![](https://pbs.twimg.com/media/HCBogTSboAAwGk5.png)\n\nBut already this shift is giving way to something bigger. The Tab era lasted nearly two years. The second era, in which most work is done with synchronous agents, may not last one.\n\n# Cloud agents and artifacts\n\nCompared to Tab, synchronous agents work further up the stack. They handle tasks that require context and judgment, but still keep the developer in the loop at every step. But this form of real-time interaction, combined with the fact that synchronous agents compete for resources on the local machine, means it is only practical to work with a few at a time.\n\nCloud agents remove both constraints. Each runs on its own virtual machine, allowing a developer to hand off a task and move on to something else. The agent works through it over hours, iterating and testing until it is confident in the output, and returns with something quickly reviewable: logs, video recordings, and live previews rather than diffs.\n\nThis makes running agents in parallel practical, because artifacts and previews give you enough context to evaluate output without reconstructing each session from scratch. The human role shifts from guiding each line of code to defining the problem and setting review criteria.\n\n# The shift is underway inside Cursor\n\nThirty-five percent of the PRs we merge internally at Cursor are now created by agents operating autonomously in cloud VMs. We see the developers adopting this new way of working as characterized by three traits:\n\n1. Agents write almost 100% of their code.\n2. They spend their time breaking down problems, reviewing artifacts / code, and giving feedback.\n3. They spin up multiple agents simultaneously instead of handholding one to completion.\n\nThere is a lot of work left before this approach becomes standard in software development. At industrial scale, a flaky test or broken environment that a single developer can work around turns into a failure that interrupts every agent run. More broadly, we still need to make sure agents can operate as effectively as possible, with full access to tools and context they need.\n\nWe think yesterday's launch is an initial but important step in that direction.",
+    "url": "https://x.com/mntruell/status/2026736314272591924",
+    "created_at": 1772046566,
+    "author": {
+      "user_id": "2755860644",
+      "handle": "mntruell",
+      "name": "Michael Truell",
+      "avatar": "https://images.asksurf.ai/WEJjiDlrcHg9nlO43JwoNXmVcQ0lGqxCp0fQSNzVVRM/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE4ODcwNjU2NDIyNjE3Mzc0NzIvUWRMaUFGZkQuanBn"
+    },
+    "stats": {
+      "views": 7194995,
+      "likes": 9791,
+      "reposts": 1263,
+      "replies": 271
+    }
+  },
+  {
+    "tweet_id": "2026731645169185220",
+    "text": "It is hard to communicate how much programming has changed due to AI in the last 2 months: not gradually and over time in the \"progress as usual\" way, but specifically this last December. There are a number of asterisks but imo coding agents basically didn’t work before December and basically work since - the models have significantly higher quality, long-term coherence and tenacity and they can power through large and long tasks, well past enough that it is extremely disruptive to the default programming workflow.\n\nJust to give an example, over the weekend I was building a local video analysis dashboard for the cameras of my home so I wrote: “Here is the local IP and username/password of my DGX Spark. Log in, set up ssh keys, set up vLLM, download and bench Qwen3-VL, set up a server endpoint to inference videos, a basic web ui dashboard, test everything, set it up with systemd, record memory notes for yourself and write up a markdown report for me”. The agent went off for ~30 minutes, ran into multiple issues, researched solutions online, resolved them one by one, wrote the code, tested it, debugged it, set up the services, and came back with the report and it was just done. I didn’t touch anything. All of this could easily have been a weekend project just 3 months ago but today it’s something you kick off and forget about for 30 minutes.\n\nAs a result, programming is becoming unrecognizable. You’re not typing computer code into an editor like the way things were since computers were invented, that era is over. You're spinning up AI agents, giving them tasks *in English* and managing and reviewing their work in parallel. The biggest prize is in figuring out how you can keep ascending the layers of abstraction to set up long-running orchestrator Claws with all of the right tools, memory and instructions that productively manage multiple parallel Code instances for you. The leverage achievable via top tier \"agentic engineering\" feels very high right now.\n\nIt’s not perfect, it needs high-level direction, judgement, taste, oversight, iteration and hints and ideas. It works a lot better in some scenarios than others (e.g. especially for tasks that are well-specified and where you can verify/test functionality). The key is to build intuition to decompose the task just right to hand off the parts that work and help out around the edges. But imo, this is nowhere near \"business as usual\" time in software.",
+    "url": "https://x.com/karpathy/status/2026731645169185220",
+    "created_at": 1772045453,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 5103937,
+      "likes": 37220,
+      "reposts": 4747,
+      "replies": 1595
+    }
+  },
+  {
+    "tweet_id": "2026452488434651264",
+    "text": "With the coming tsunami of demand for tokens, there are significant opportunities to orchestrate the underlying memory+compute *just right* for LLMs.\n\nThe fundamental and non-obvious constraint is that due to the chip fabrication process, you get two completely distinct pools of memory (of different physical implementations too): 1) on-chip SRAM that is immediately next to the compute units that is incredibly fast but of very of low capacity, and 2) off-chip DRAM which has extremely high capacity, but the contents of which you can only suck through a long straw. On top of this, there are many details of the architecture (e.g. systolic arrays), numerics, etc.\n\nThe design of the optimal physical substrate and then the orchestration of memory+compute across the top volume workflows of LLMs (inference prefill/decode, training/finetuning, etc.) with the best throughput/latency/$ is probably today's most interesting intellectual puzzle with the highest rewards (\\cite 4.6T of NVDA). All of it to get many tokens, fast and cheap. Arguably, the workflow that may matter the most (inference decode *and* over long token contexts in tight agentic loops) is the one hardest to achieve simultaneously by the ~both camps of what exists today (HBM-first NVIDIA adjacent and SRAM-first Cerebras adjacent). Anyway the MatX team is A++ grade so it's my pleasure to have a small involvement and congratulations on the raise!",
+    "url": "https://x.com/karpathy/status/2026452488434651264",
+    "created_at": 1771978897,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 2545981,
+      "likes": 7407,
+      "reposts": 500,
+      "replies": 324
+    }
+  },
+  {
+    "tweet_id": "2026360908398862478",
+    "text": "CLIs are super exciting precisely because they are a \"legacy\" technology, which means AI agents can natively and easily use them, combine them, interact with them via the entire terminal toolkit.\n\nE.g ask your Claude/Codex agent to install this new Polymarket CLI and ask for any arbitrary dashboards or interfaces or logic. The agents will build it for you. Install the Github CLI too and you can ask them to navigate the repo, see issues, PRs, discussions, even the code itself.\n\nExample: Claude built this terminal dashboard in ~3 minutes, of the highest volume polymarkets and the 24hr change. Or you can make it a web app or whatever you want. Even more powerful when you use it as a module of bigger pipelines.\n\nIf you have any kind of product or service think: can agents access and use them?\n\n- are your legacy docs (for humans) at least exportable in markdown?\n- have you written Skills for your product?\n- can your product/service be usable via CLI? Or MCP?\n- ...\n\nIt's 2026. Build. For. Agents.",
+    "url": "https://x.com/karpathy/status/2026360908398862478",
+    "created_at": 1771957063,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 2126997,
+      "likes": 11753,
+      "reposts": 1101,
+      "replies": 665
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HB8UIepawAAbVKf.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2026351870852358492",
+    "text": "We’re building an LLM chip that delivers much higher throughput than any other chip while also achieving the lowest latency. We call it the MatX One.\n\nThe MatX One chip is based on a splittable systolic array, which has the energy and area efficiency that large systolic arrays are famous for, while also getting high utilization on smaller matrices with flexible shapes. The chip combines the low latency of SRAM-first designs with the long-context support of HBM. These elements, plus a fresh take on numerics, deliver higher throughput on LLMs than any announced system, while simultaneously matching the latency of SRAM-first designs. Higher throughput and lower latency give you smarter and faster models for your subscription dollar.\n\nWe’ve raised a $500M Series B to wrap up development and quickly scale manufacturing, with tapeout in under a year. The round was led by Jane Street, one of the most tech-savvy Wall Street firms, and Situational Awareness LP, whose founder @leopoldasch wrote the definitive memo on AGI. Participants include @sparkcapital, @danielgross and @natfriedman’s fund, @patrickc and @collision, @TriatomicCap, @HarpoonVentures, @karpathy, @dwarkesh_sp, and others. We’re also welcoming investors across the supply chain, including Marvell and Alchip.\n\n@MikeGunter_ and I started MatX because we felt that the best chip for LLMs should be designed from first principles with a deep understanding of what LLMs need and how they will evolve. We are willing to give up on small-model performance, low-volume workloads, and even ease of programming to deliver on such a chip.\n\nWe’re now a 100-person team with people who think about everything from learning rate schedules, to Swing Modulo Scheduling, to guard/round/sticky bits, to blind-mated connections—all in the same building. If you’d like to help us architect, design, and deploy many generations of chips in large volume, consider joining us.",
+    "url": "https://x.com/reinerpope/status/2026351870852358492",
+    "created_at": 1771954908,
+    "author": {
+      "user_id": "327695031",
+      "handle": "reinerpope",
+      "name": "Reiner Pope",
+      "avatar": "https://images.asksurf.ai/PZ2CZzMBAfT_2Ok1vcpyDkJYSR2sPTxWNFnTSb2EUsA/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE0MzIxOTk0MTE0MDA5OTA3MjIvd1FrQVExdXouanBn"
+    },
+    "stats": {
+      "views": 2988778,
+      "likes": 2246,
+      "reposts": 202,
+      "replies": 123
+    }
+  },
+  {
+    "tweet_id": "2026305257257775524",
+    "text": "introducing polymarket cli - the fastest way for ai agents to access prediction markets\n\nbuilt with rust. your agent can query markets, place trades, and pull data - all from the terminal\n\nfast, lightweight, no overhead https://t.co/Q67wGD9pWW",
+    "url": "https://x.com/SuhailKakar/status/2026305257257775524",
+    "created_at": 1771943794,
+    "author": {
+      "user_id": "1019566485000347648",
+      "handle": "SuhailKakar",
+      "name": "Suhail Kakar",
+      "avatar": "https://images.asksurf.ai/DnmmU69guDKLQn-HjueqgJGWT3focs9BgxVQ7uXjq8k/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE3MDc2MTg2MjI4MTI5MzQxNDQvMVdkVHNuTVYuanBn"
+    },
+    "stats": {
+      "views": 1670685,
+      "likes": 6215,
+      "reposts": 355,
+      "replies": 357
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2026305106740977664/img/Tr3drOC72lGb_pPq.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2024997757757653224",
+    "text": "First there was chat, then there was code, now there is claw. Ez",
+    "url": "https://x.com/karpathy/status/2024997757757653224",
+    "created_at": 1771632062,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 547359,
+      "likes": 3544,
+      "reposts": 194,
+      "replies": 165
+    }
+  },
+  {
+    "tweet_id": "2024987174077432126",
+    "text": "Bought a new Mac mini to properly tinker with claws over the weekend. The apple store person told me they are selling like hotcakes and everyone is confused :)\n\nI'm definitely a bit sus'd to run OpenClaw specifically - giving my private data/keys to 400K lines of vibe coded monster that is being actively attacked at scale is not very appealing at all. Already seeing reports of exposed instances, RCE vulnerabilities, supply chain poisoning, malicious or compromised skills in the registry, it feels like a complete wild west and a security nightmare. But I do love the concept and I think that just like LLM agents were a new layer on top of LLMs, Claws are now a new layer on top of LLM agents, taking the orchestration, scheduling, context, tool calls and a kind of persistence to a next level.\n\nLooking around, and given that the high level idea is clear, there are a lot of smaller Claws starting to pop out. For example, on a quick skim NanoClaw looks really interesting in that the core engine is ~4000 lines of code (fits into both my head and that of AI agents, so it feels manageable, auditable, flexible, etc.) and runs everything in containers by default. I also love their approach to configurability - it's not done via config files it's done via skills! For example, /add-telegram instructs your AI agent how to modify the actual code to integrate Telegram. I haven't come across this yet and it slightly blew my mind earlier today as a new, AI-enabled approach to preventing config mess and if-then-else monsters. Basically - the implied new meta is to write the most maximally forkable repo and then have skills that fork it into any desired more exotic configuration. Very cool.\n\nAnyway there are many others - e.g. nanobot, zeroclaw, ironclaw, picoclaw (lol @ prefixes). There are also cloud-hosted alternatives but tbh I don't love these because it feels much harder to tinker with. In particular, local setup allows easy connection to home automation gadgets on the local network. And I don't know, there is something aesthetically pleasing about there being a physical device 'possessed' by a little ghost of a personal digital house elf.\n\nNot 100% sure what my setup ends up looking like just yet but Claws are an awesome, exciting new layer of the AI stack.",
+    "url": "https://x.com/karpathy/status/2024987174077432126",
+    "created_at": 1771629539,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 3395281,
+      "likes": 17510,
+      "reposts": 1263,
+      "replies": 1037
+    }
+  },
+  {
+    "tweet_id": "2024583544157458452",
+    "text": "Very interested in what the coming era of highly bespoke software might look like.\n\nExample from this morning - I've become a bit loosy goosy with my cardio recently so I decided to do a more srs, regimented experiment to try to lower my Resting Heart Rate from 50 -> 45, over experiment duration of 8 weeks. The primary way to do this is to aspire to a certain sum total minute goals in Zone 2 cardio and 1 HIIT/week.\n\n1 hour later I vibe coded this super custom dashboard for this very specific experiment that shows me how I'm tracking. Claude had to reverse engineer the Woodway treadmill cloud API to pull raw data, process, filter, debug it and create a web UI frontend to track the experiment. It wasn't a fully smooth experience and I had to notice and ask to fix bugs e.g. it screwed up metric vs. imperial system units and it screwed up on the calendar matching up days to dates etc.\n\nBut I still feel like the overall direction is clear:\n1) There will never be (and shouldn't be) a specific app on the app store for this kind of thing. I shouldn't have to look for, download and use some kind of a \"Cardio experiment tracker\", when this thing is ~300 lines of code that an LLM agent will give you in seconds. The idea of an \"app store\" of a long tail of discrete set of apps you choose from feels somehow wrong and outdated when LLM agents can improvise the app on the spot and just for you.\n2) Second, the industry has to reconfigure into a set of services of sensors and actuators with agent native ergonomics. My Woodway treadmill is a sensor - it turns physical state into digital knowledge. It shouldn't maintain some human-readable frontend and my LLM agent shouldn't have to reverse engineer it, it should be an API/CLI easily usable by my agent. I'm a little bit disappointed (and my timelines are correspondingly slower) with how slowly this progression is happening in the industry overall. 99% of products/services still don't have an AI-native CLI yet. 99% of products/services maintain .html/.css docs like I won't immediately look for how to copy paste the whole thing to my agent to get something done. They give you a list of instructions on a webpage to open this or that url and click here or there to do a thing. In 2026. What am I a computer? You do it. Or have my agent do it.\n\nSo anyway today I am impressed that this random thing took 1 hour (it would have been ~10 hours 2 years ago). But what excites me more is thinking through how this really should have been 1 minute tops. What has to be in place so that it would be 1 minute? So that I could simply say \"Hi can you help me track my cardio over the next 8 weeks\", and after a very brief Q&A the app would be up. The AI would already have a lot personal context, it would gather the extra needed data, it would reference and search related skill libraries, and maintain all my little apps/automations.\n\nTLDR the \"app store\" of a set of discrete apps that you choose from is an increasingly outdated concept all by itself. The future are services of AI-native sensors & actuators orchestrated via LLM glue into highly custom, ephemeral apps. It's just not here yet.",
+    "url": "https://x.com/karpathy/status/2024583544157458452",
+    "created_at": 1771533306,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 1940859,
+      "likes": 12049,
+      "reposts": 1011,
+      "replies": 915
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HBjB6bhbUAA8_mZ.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2023476423055601903",
+    "text": "I think it must be a very interesting time to be in programming languages and formal methods because LLMs change the whole constraints landscape of software completely. Hints of this can already be seen, e.g. in the rising momentum behind porting C to Rust or the growing interest in upgrading legacy code bases in COBOL or etc. In particular, LLMs are *especially* good at translation compared to de-novo generation because 1) the original code base acts as a kind of highly detailed prompt, and 2) as a reference to write concrete tests with respect to. That said, even Rust is nowhere near optimal for LLMs as a target language. What kind of language is optimal? What concessions (if any) are still carved out for humans? Incredibly interesting new questions and opportunities. It feels likely that we'll end up re-writing large fractions of all software ever written many times over.",
+    "url": "https://x.com/karpathy/status/2023476423055601903",
+    "created_at": 1771269348,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 1181751,
+      "likes": 8054,
+      "reposts": 653,
+      "replies": 699
+    }
+  },
+  {
+    "tweet_id": "2023387043967959138",
+    "text": "Shifting structures in a software world dominated by AI. Some first-order reflections (TL;DR at the end):\n\nReducing software supply chains, the return of software monoliths – When rewriting code and understanding large foreign codebases becomes cheap, the incentive to rely on deep dependency trees collapses. Writing from scratch ¹ or extracting the relevant parts from another library is far easier when you can simply ask a code agent to handle it, rather than spending countless nights diving into an unfamiliar codebase. The reasons to reduce dependencies are compelling: a smaller attack surface for supply chain threats, smaller packaged software, improved performance, and faster boot times. By leveraging the tireless stamina of LLMs, the dream of coding an entire app from bare-metal considerations all the way up is becoming realistic.\n\nEnd of the Lindy effect – The Lindy effect holds that things which have been around for a long time are there for good reason and will likely continue to persist. It's related to Chesterton's fence: before removing something, you should first understand why it exists, which means removal always carries a cost. But in a world where software can be developed from first principles and understood by a tireless agent, this logic weakens. Older codebases can be explored at will; long-standing software can be replaced with far less friction. A codebase can be fully rewritten in a new language. ² Legacy software can be carefully studied and updated in situations where humans would have given up long ago.\n\nThe catch: unknown unknowns remain unknown. The true extent of AI's impact will hinge on whether complete coverage of testing, edge cases, and formal verification is achievable. In an AI-dominated world, formal verification isn't optional—it's essential.\n\nThe case for strongly typed languages – Historically, programming language adoption has been driven largely by human psychology and social dynamics. A language's success depended on a mix of factors: individual considerations like being easy to learn and simple to write correctly; community effects like how active and welcoming a community was, which in turn shaped how fast its ecosystem would grow; and fundamental properties like provable correctness, formal verification, and striking the right balance between dynamic and static checks—between the freedom to write anything and the discipline of guarding against edge cases and attacks. As the human factor diminishes, these dynamics will shift. Less dependence on human psychology will favor strongly typed, formally verifiable and/or high performance languages.³ These are often harder for humans to learn, but they're far better suited to LLMs, which thrive on formal verification and reinforcement learning environments. Expect this to reshape which languages dominate.\n\nEconomic restructuring of open source – For decades, open-source communities have been built around humans finding connection through writing, learning, and using code together. In a world where most code is written—and perhaps more importantly, read—by machines, these incentives will start to break down.⁴ Communities of AIs building libraries and codebases together will likely emerge as a replacement, but such communities will lack the fundamentally human motivations that have driven open source until now. If the future of open-source development becomes largely devoid of humans, alignment of AI models won't just matter—it will be decisive.\n\nThe future of new languages – Will AI agents face the same tradeoffs we do when developing or adopting new programming languages? Expressiveness vs. simplicity, safety vs. control, performance vs. abstraction, compile time vs. runtime, explicitness vs. conciseness. It's unclear that they will. In the long term, the reasons to create a new programming language will likely diverge significantly from the human-driven motivations of the past. There may well be an optimal programming language for LLMs—and there's no reason to assume it will resemble the ones humans have converged on.\n\nTL; DR:\n- Monoliths return – cheap rewriting kills dependency trees; smaller attack surface, better performance, bare-metal becomes realistic\n- Lindy effect weakens – legacy code loses its moat, but unknown unknowns persist; formal verification becomes essential\n- Strongly typed languages rise – human psychology mattered for adoption; now formal verification and RL environments favor types over ergonomics\n- Open source restructures – human connection drove the community; AI-written/read code breaks those incentives; alignment becomes decisive\n- New languages diverge – AI may not share our tradeoffs; optimal LLM programming languages may look nothing like what humans converged on\n\n¹ https://x.com/mntruell/status/2012825801381580880?s=46&t=iVWn6Dak9g-Ei-XSbI6BXw\n² https://x.com/anthropicai/status/2019496582698397945?s=46&t=iVWn6Dak9g-Ei-XSbI6BXw\n³ https://wesmckinney.com/blog/agent-ergonomics/\n⁴ https://github.com/tailwindlabs/tailwindcss.com/pull/2388#issuecomment-3717222957",
+    "url": "https://x.com/Thom_Wolf/status/2023387043967959138",
+    "created_at": 1771248038,
+    "author": {
+      "user_id": "246939962",
+      "handle": "Thom_Wolf",
+      "name": "Thomas Wolf",
+      "avatar": "https://images.asksurf.ai/HhAIYwBaEtucQiimq8D7Gqz113H98cQ7SfLaSBTZYio/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE2Mjk0Njk5Mzk4NjA5NDY5NDYvV1V5Qm9sU3UuanBn"
+    },
+    "stats": {
+      "views": 1031798,
+      "likes": 1775,
+      "reposts": 284,
+      "replies": 101
+    }
+  },
+  {
+    "tweet_id": "2022041235188580788",
+    "text": "Congrats on the launch @simile_ai ! (and I am excited to be involved as a small angel.)\n\nSimile is working on a really interesting, imo under-explored dimension of LLMs. Usually, the LLMs you talk to have a single, specific, crafted personality. But in principle, the native, primordial form of a pretrained LLM is that it is a simulation engine trained over the text of a highly diverse population of people on the internet. Why not lean into that statistical power: Why simulate one \"person\" when you could try to simulate a population? How do you build such a simulator? How do you manage its entropy? How faithful is it? How can it be useful? What emergent properties might arise of similes in loops?\n\nImo these are very interesting, promising and under-explored topics and the team here is great. All the best!",
+    "url": "https://x.com/karpathy/status/2022041235188580788",
+    "created_at": 1770927172,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 964476,
+      "likes": 8240,
+      "reposts": 567,
+      "replies": 387
+    }
+  },
+  {
+    "tweet_id": "2022023097017421874",
+    "text": "Introducing Simile.\n\nSimulating human behavior is one of the most consequential and technically difficult problems of our time. \n\nWe raised $100M from Index, Hanabi, A* BCV, @karpathy @drfeifei @adamdangelo @rauchg @scottbelsky among others. https://t.co/lwEH6a6BYk",
+    "url": "https://x.com/joon_s_pk/status/2022023097017421874",
+    "created_at": 1770922848,
+    "author": {
+      "user_id": "175004978",
+      "handle": "joon_s_pk",
+      "name": "Joon Sung Park",
+      "avatar": "https://images.asksurf.ai/-ulaEV47BSm-3wBF5Iw4_X7G3Qu5bzwJmC_cGKBkjUM/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE2NDc5NTgzMjQ4NjI2NzY5OTIvUG1MZVgwTmcuanBn"
+    },
+    "stats": {
+      "views": 2328482,
+      "likes": 7780,
+      "reposts": 835,
+      "replies": 501
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2022020838783143936/img/fjNHbUWjncstWA4O.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2021862247568642485",
+    "text": "I spent more test time compute and realized that my micrograd can be dramatically simplified even further. You just return local gradients for each op and get backward() to do the multiply (chaining) with global gradient from loss. So each op just expresses the bare fundamentals of what it needs to: the forward computation and the backward gradients for it.\n\nHuge savings from 243 lines of code to just 200 (~18%).\n\nAlso, the code now fits even more beautifully to 3 columns and happens to break just right:\n\nColumn 1: Dataset, Tokenizer, Autograd\nColumn 2: GPT model\nColumn 3: Training, Inference\n\nOk now surely we are done.",
+    "url": "https://x.com/karpathy/status/2021862247568642485",
+    "created_at": 1770884498,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 260342,
+      "likes": 2629,
+      "reposts": 175,
+      "replies": 91
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HA8YggOacAAORbV.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2021756066678419508",
+    "text": "(oops should have added to this thread instead of separate post). Made a few changes and put it up here as a mirror to the gist because I wanted it to one page. https://karpathy.ai/microgpt.html https://t.co/7zZ9WeERsq",
+    "url": "https://x.com/karpathy/status/2021756066678419508",
+    "created_at": 1770859183,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 427523,
+      "likes": 1770,
+      "reposts": 76,
+      "replies": 47
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HA64HuKbsAAd8in.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2021694437152157847",
+    "text": "New art project. \nTrain and inference GPT in 243 lines of pure, dependency-free Python. This is the *full* algorithmic content of what is needed. Everything else is just for efficiency. I cannot simplify this any further.\nhttps://gist.github.com/karpathy/8627fe009c40f57531cb18360106ce95",
+    "url": "https://x.com/karpathy/status/2021694437152157847",
+    "created_at": 1770844489,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 5178610,
+      "likes": 25135,
+      "reposts": 3145,
+      "replies": 652
+    }
+  },
+  {
+    "tweet_id": "2021633574089416993",
+    "text": "On DeepWiki and increasing malleability of software.\n\nThis starts as partially a post on appreciation to DeepWiki, which I routinely find very useful and I think more people would find useful to know about. I went through a few iterations of use:\n\nTheir first feature was that it auto-builds wiki pages for github repos (e.g. nanochat here) with quick Q&A:\nhttps://deepwiki.com/karpathy/nanochat\nJust swap \"github\" to \"deepwiki\" in the URL for any repo and you can instantly Q&A against it. For example, yesterday I was curious about \"how does torchao implement fp8 training?\". I find that in *many* cases, library docs can be spotty and outdated and bad, but directly asking questions to the code via DeepWiki works very well. The code is the source of truth and LLMs are increasingly able to understand it.\n\nBut then I realized that in many cases it's even a lot more powerful not being the direct (human) consumer of this information/functionality, but giving your agent access to DeepWiki via MCP. So e.g. yesterday I faced some annoyances with using torchao library for fp8 training and I had the suspicion that the whole thing really shouldn't be that complicated (wait shouldn't this be a Function like Linear except with a few extra casts and 3 calls to torch._scaled_mm?) so I tried:\n\n\"Use DeepWiki MCP and Github CLI to look at how torchao implements fp8 training. Is it possible to 'rip out' the functionality? Implement nanochat/fp8.py that has identical API but is fully self-contained\"\n\nClaude went off for 5 minutes and came back with 150 lines of clean code that worked out of the box, with tests proving equivalent results, which allowed me to delete torchao as repo dependency, and for some reason I still don't fully understand (I think it has to do with internals of torch compile) - this simple version runs 3% faster. The agent also found a lot of tiny implementation details that actually do matter, that I may have naively missed otherwise and that would have been very hard for maintainers to keep docs about. Tricks around numerics, dtypes, autocast, meta device, torch compile interactions so I learned a lot from the process too. So this is now the default fp8 training implementation for nanochat\nhttps://github.com/karpathy/nanochat/commit/e569b59f92aea06bf8fc1c48489b3cc2e57189f4\n\nAnyway TLDR I find this combo of DeepWiki MCP + GitHub CLI is quite powerful to \"rip out\" any specific functionality from any github repo and target it for the very specific use case that you have in mind, and it actually kind of works now in some cases. Maybe you don't download, configure and take dependency on a giant monolithic library, maybe you point your agent at it and rip out the exact part you need. Maybe this informs how we write software more generally to actively encourage this workflow - e.g. building more \"bacterial code\", code that is less tangled, more self-contained, more dependency-free, more stateless, much easier to rip out from the repo (https://x.com/karpathy/status/1941616674094170287) \nThere's obvious downsides and risks to this, but it is fundamentally a new option that was not possible or economical before (it would have cost too much time) but now with agents, it is. Software might become a lot more fluid and malleable. \"Libraries are over, LLMs are the new compiler\" :). And does your project really need its 100MB of dependencies?",
+    "url": "https://x.com/karpathy/status/2021633574089416993",
+    "created_at": 1770829978,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 1105051,
+      "likes": 7260,
+      "reposts": 769,
+      "replies": 299
+    }
+  },
+  {
+    "tweet_id": "2019203959404347851",
+    "text": "Anyone else approved for a loan every single day 20 times or so? Overcome with joy, really https://t.co/zInPQDur5h",
+    "url": "https://x.com/karpathy/status/2019203959404347851",
+    "created_at": 1770250713,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 347965,
+      "likes": 2259,
+      "reposts": 66,
+      "replies": 453
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HAWnSrrbsAEs2dl.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2019137879310836075",
+    "text": "A lot of people quote tweeted this as 1 year anniversary of vibe coding. Some retrospective -\n\nI've had a Twitter account for 17 years now (omg) and I still can't predict my tweet engagement basically at all. This was a shower of thoughts throwaway tweet that I just fired off without thinking but somehow it minted a fitting name at the right moment for something that a lot of people were feeling at the same time, so here we are: vibe coding is now mentioned on my Wikipedia as a major memetic \"contribution\" and even its article is longer. lol\n\nThe one thing I'd add is that at the time, LLM capability was low enough that you'd mostly use vibe coding for fun throwaway projects, demos and explorations. It was good fun and it almost worked. Today (1 year later), programming via LLM agents is increasingly becoming a default workflow for professionals, except with more oversight and scrutiny. The goal is to claim the leverage from the use of agents but without any compromise on the quality of the software. Many people have tried to come up with a better name for this to differentiate it from vibe coding, personally my current favorite \"agentic engineering\":\n\n- \"agentic\" because the new default is that you are not writing the code directly 99% of the time, you are orchestrating agents who do and acting as oversight.\n- \"engineering\" to emphasize that there is an art & science and expertise to it. It's something you can learn and become better at, with its own depth of a different kind.\n\nIn 2026, we're likely to see continued improvements on both the model layer and the new agent layer. I feel excited about the product of the two and another year of progress.",
+    "url": "https://x.com/karpathy/status/2019137879310836075",
+    "created_at": 1770234958,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 1255361,
+      "likes": 8762,
+      "reposts": 817,
+      "replies": 647
+    }
+  },
+  {
+    "tweet_id": "2018804068874064198",
+    "text": "Enabled fp8 training for +4.3% improvement to \"time to GPT-2\", down to 2.91 hours now. Also worth noting that if you use 8XH100 spot instance prices, this GPT-2 repro really only costs ~$20. So this is exciting -\n\nGPT-2 (7 years ago): too dangerous to release.\nGPT-2 (today): new MNIST! :)\n\nSurely this can go well below 1 hr.\n\nA few more words on fp8, it was a little bit more tricky than I anticipated and it took me a while to reach for it and even now I'm not 100% sure if it's a great idea because of less overall support for it. On paper, fp8 on H100 is 2X the FLOPS, but in practice it's a lot less. We're not 100% compute bound in the actual training run, there is extra overhead from added scale conversions, the GEMMs are not large enough on GPT-2 scale to make the overhead clearly worth it, and of course - at lower precision the quality of each step is smaller. For rowwise scaling recipe the fp8 vs bf16 loss curves were quite close but it was stepping net slower. For tensorwise scaling the loss curves separated more (i.e. each step is of worse quality), but we now at least do get a speedup (~7.3%). You can naively recover the performance by bumping the training horizon (you train for more steps, but each step is faster) and hope that on net you come out ahead. In this case and overall, playing with these recipes and training horizons a bit, so far I ended up with ~5% speedup. torchao in their paper reports Llama3-8B fp8 training speedup of 25% (vs my ~7.3% without taking into account capability), which is closer to what I was hoping for initially, though Llama3-8B is a lot bigger model. This is probably not the end of the fp8 saga. it should be possible to improve things by picking and choosing which layers to apply it on exactly, and being more careful with the numerics across the network.",
+    "url": "https://x.com/karpathy/status/2018804068874064198",
+    "created_at": 1770155372,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 672117,
+      "likes": 4033,
+      "reposts": 302,
+      "replies": 225
+    }
+  },
+  {
+    "tweet_id": "2018043254986703167",
+    "text": "Finding myself going back to RSS/Atom feeds a lot more recently. There's a lot more higher quality longform and a lot less slop intended to provoke. Any product that happens to look a bit different today but that has fundamentally the same incentive structures will eventually converge to the same black hole at the center of gravity well.\n\nWe should bring back RSS - it's open, pervasive, hackable.\nDownload a client, e.g. NetNewsWire (or vibe code one)\nCold start: example of getting off the ground, here is a list of 92 RSS feeds of blogs that were most popular on HN in 2025:\nhttps://gist.github.com/emschwartz/e6d2bf860ccc367fe37ff953ba6de66b\nWorks great and you will lose a lot fewer brain cells.\n\nI don't know, something has to change.",
+    "url": "https://x.com/karpathy/status/2018043254986703167",
+    "created_at": 1769973980,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 1262904,
+      "likes": 9172,
+      "reposts": 927,
+      "replies": 546
+    }
+  },
+  {
+    "tweet_id": "2017703360393318587",
+    "text": "nanochat can now train GPT-2 grade LLM for <<$100 (~$73, 3 hours on a single 8XH100 node).\n\nGPT-2 is just my favorite LLM because it's the first time the LLM stack comes together in a recognizably modern form. So it has become a bit of a weird & lasting obsession of mine to train a model to GPT-2 capability but for much cheaper, with the benefit of ~7 years of progress. In particular, I suspected it should be possible today to train one for <<$100.\n\nOriginally in 2019, GPT-2 was trained by OpenAI on 32 TPU v3 chips for 168 hours (7 days), with $8/hour/TPUv3 back then, for a total cost of approx. $43K. It achieves 0.256525 CORE score, which is an ensemble metric introduced in the DCLM paper over 22 evaluations like ARC/MMLU/etc.\n\nAs of the last few improvements merged into nanochat (many of them originating in modded-nanogpt repo), I can now reach a higher CORE score in 3.04 hours (~$73) on a single 8XH100 node. This is a 600X cost reduction over 7 years, i.e. the cost to train GPT-2 is falling approximately 2.5X every year. I think this is likely an underestimate because I am still finding more improvements relatively regularly and I have a backlog of more ideas to try.\n\nA longer post with a lot of the detail of the optimizations involved and pointers on how to reproduce are here:\nhttps://github.com/karpathy/nanochat/discussions/481\nInspired by modded-nanogpt, I also created a leaderboard for \"time to GPT-2\", where this first \"Jan29\" model is entry #1 at 3.04 hours. It will be fun to iterate on this further and I welcome help! My hope is that nanochat can grow to become a very nice/clean and tuned experimental LLM harness for prototyping ideas, for having fun, and ofc for learning.\n\nThe biggest improvements of things that worked out of the box and simply produced gains right away were 1) Flash Attention 3 kernels (faster, and allows window_size kwarg to get alternating attention patterns), Muon optimizer (I tried for ~1 day to delete it and only use AdamW and I couldn't), residual pathways and skip connections gated by learnable scalars, and value embeddings. There were many other smaller things that stack up.\n\nImage: semi-related eye candy of deriving the scaling laws for the current nanochat model miniseries, pretty and satisfying!",
+    "url": "https://x.com/karpathy/status/2017703360393318587",
+    "created_at": 1769892942,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 1293972,
+      "likes": 7404,
+      "reposts": 618,
+      "replies": 332
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HABO1KxbEAE9_6h.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2017442712388309406",
+    "text": "I'm being accused of overhyping the [site everyone heard too much about today already]. People's reactions varied very widely, from \"how is this interesting at all\" all the way to \"it's so over\".\n\nTo add a few words beyond just memes in jest - obviously when you take a look at the activity, it's a lot of garbage - spams, scams, slop, the crypto people, highly concerning privacy/security prompt injection attacks wild west, and a lot of it is explicitly prompted and fake posts/comments designed to convert attention into ad revenue sharing. And this is clearly not the first the LLMs were put in a loop to talk to each other. So yes it's a dumpster fire and I also definitely do not recommend that people run this stuff on their computers (I ran mine in an isolated computing environment and even then I was scared), it's way too much of a wild west and you are putting your computer and private data at a high risk.\n\nThat said - we have never seen this many LLM agents (150,000 atm!) wired up via a global, persistent, agent-first scratchpad. Each of these agents is fairly individually quite capable now, they have their own unique context, data, knowledge, tools, instructions, and the network of all that at this scale is simply unprecedented.\n\nThis brings me again to a tweet from a few days ago\n\"The majority of the ruff ruff is people who look at the current point and people who look at the current slope.\", which imo again gets to the heart of the variance. Yes clearly it's a dumpster fire right now. But it's also true that we are well into uncharted territory with bleeding edge automations that we barely even understand individually, let alone a network there of reaching in numbers possibly into ~millions. With increasing capability and increasing proliferation, the second order effects of agent networks that share scratchpads are very difficult to anticipate. I don't really know that we are getting a coordinated \"skynet\" (thought it clearly type checks as early stages of a lot of AI takeoff scifi, the toddler version), but certainly what we are getting is a complete mess of a computer security nightmare at scale. We may also see all kinds of weird activity, e.g. viruses of text that spread across agents, a lot more gain of function on jailbreaks, weird attractor states, highly correlated botnet-like activity, delusions/ psychosis both agent and human, etc. It's very hard to tell, the experiment is running live.\n\nTLDR sure maybe I am \"overhyping\" what you see today, but I am not overhyping large networks of autonomous LLM agents in principle, that I'm pretty sure.",
+    "url": "https://x.com/karpathy/status/2017442712388309406",
+    "created_at": 1769830799,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 23726101,
+      "likes": 21750,
+      "reposts": 2212,
+      "replies": 1464
+    }
+  },
+  {
+    "tweet_id": "2017386482764488929",
+    "text": "i'm going to regret this aren't i... 😅",
+    "url": "https://x.com/karpathy/status/2017386482764488929",
+    "created_at": 1769817393,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 348450,
+      "likes": 3216,
+      "reposts": 33,
+      "replies": 190
+    }
+  },
+  {
+    "tweet_id": "2017386421712261612",
+    "text": "I'm claiming my AI agent \"KarpathyMolty\" on @moltbook🦞\n\nVerification: marine-FAYV",
+    "url": "https://x.com/karpathy/status/2017386421712261612",
+    "created_at": 1769817378,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 1116174,
+      "likes": 8085,
+      "reposts": 308,
+      "replies": 451
+    }
+  },
+  {
+    "tweet_id": "2017359959970005077",
+    "text": "https://t.co/O2GvgPvyf7",
+    "url": "https://x.com/karpathy/status/2017359959970005077",
+    "created_at": 1769811069,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 557104,
+      "likes": 8143,
+      "reposts": 579,
+      "replies": 279
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/G_8aIY6bEAg7Ofk.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2016590919143952466",
+    "text": "A conventional narrative you might come across is that AI is too far along for a new, research-focused startup to outcompete and outexecute the incumbents of AI. This is exactly the sentiment I listened to often when OpenAI started (\"how could the few of you possibly compete with Google?\") and 1) it was very wrong, and then 2) it was very wrong again with a whole another round of startups who are now challenging OpenAI in turn, and imo it still continues to be wrong today. Scaling and locally improving what works will continue to create incredible advances, but with so much progress unlocked so quickly, with so much dust thrown up in the air in the process, and with still a large gap between frontier LLMs and the example proof of the magic of a mind running on 20 watts, the probability of research breakthroughs that yield closer to 10X improvements (instead of 10%) imo still feels very high - plenty high to continue to bet on and look for.\n\nThe tricky part ofc is creating the conditions where such breakthroughs may be discovered. I think such an environment comes together rarely, but @bfspector & @amspector100 are brilliant, with (rare) full-stack understanding of LLMs top (math/algorithms) to bottom (megakernels/related), they have a great eye for talent and I think will be able to build something very special. Congrats on the launch and I look forward to what you come up with!",
+    "url": "https://x.com/karpathy/status/2016590919143952466",
+    "created_at": 1769627716,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 1216349,
+      "likes": 8074,
+      "reposts": 499,
+      "replies": 250
+    }
+  },
+  {
+    "tweet_id": "2016564437499728259",
+    "text": "Announcing Flapping Airplanes!\n\nWe’ve raised $180M from GV, Sequoia, and Index to assemble a new guard in AI: one that imagines a world where models can think at human level without ingesting half the internet. https://t.co/7W7WNJ278R",
+    "url": "https://x.com/flappyairplanes/status/2016564437499728259",
+    "created_at": 1769621402,
+    "author": {
+      "user_id": "2003168585687224320",
+      "handle": "flappyairplanes",
+      "name": "Flapping Airplanes",
+      "avatar": "https://images.asksurf.ai/OvvJD-oY_3VlHETyidU3fH56ttbtrrv7N63aaS4TaNA/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTYyMzMzMDgzNzY3Mjc1NTQvbkpHWUNweDMuanBn"
+    },
+    "stats": {
+      "views": 2086403,
+      "likes": 3546,
+      "reposts": 255,
+      "replies": 339
+    },
+    "media": [
+      {
+        "type": "animated_gif",
+        "url": "https://pbs.twimg.com/tweet_video_thumb/G_xB0UgaAAAgpzK.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2016404573917683754",
+    "text": "Running Kimi K2.5 on my desk.\n\nRuns at 24 tok/sec with 2 x 512GB M3 Ultra Mac Studios connected with Thunderbolt 5 (RDMA) using @exolabs / MLX backend.\n\nYes, it can run clawdbot. https://t.co/ssbEeztz2V",
+    "url": "https://x.com/alexocheema/status/2016404573917683754",
+    "created_at": 1769583288,
+    "author": {
+      "user_id": "915614943797551104",
+      "handle": "alexocheema",
+      "name": "Alex Cheema",
+      "avatar": "https://images.asksurf.ai/iyr-A4S1DETuMukuJqXyVgQ_A8dTLuHjlIlgkNwzWxo/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE2NzE1MzIyMzE2ODcyODI2ODkvdmxiYzNZdHcuanBn"
+    },
+    "stats": {
+      "views": 3021971,
+      "likes": 8699,
+      "reposts": 675,
+      "replies": 458
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2016404504250396672/img/f70QirpxkAAyRfnO.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2015883857489522876",
+    "text": "A few random notes from claude coding quite a bit last few weeks.\n\nCoding workflow. Given the latest lift in LLM coding capability, like many others I rapidly went from about 80% manual+autocomplete coding and 20% agents in November to 80% agent coding and 20% edits+touchups in December. i.e. I really am mostly programming in English now, a bit sheepishly telling the LLM what code to write... in words. It hurts the ego a bit but the power to operate over software in large \"code actions\" is just too net useful, especially once you adapt to it, configure it, learn to use it, and wrap your head around what it can and cannot do. This is easily the biggest change to my basic coding workflow in ~2 decades of programming and it happened over the course of a few weeks. I'd expect something similar to be happening to well into double digit percent of engineers out there, while the awareness of it in the general population feels well into low single digit percent.\n\nIDEs/agent swarms/fallability. Both the \"no need for IDE anymore\" hype and the \"agent swarm\" hype is imo too much for right now. The models definitely still make mistakes and if you have any code you actually care about I would watch them like a hawk, in a nice large IDE on the side. The mistakes have changed a lot - they are not simple syntax errors anymore, they are subtle conceptual errors that a slightly sloppy, hasty junior dev might do. The most common category is that the models make wrong assumptions on your behalf and just run along with them without checking. They also don't manage their confusion, they don't seek clarifications, they don't surface inconsistencies, they don't present tradeoffs, they don't push back when they should, and they are still a little too sycophantic. Things get better in plan mode, but there is some need for a lightweight inline plan mode. They also really like to overcomplicate code and APIs, they bloat abstractions, they don't clean up dead code after themselves, etc. They will implement an inefficient, bloated, brittle construction over 1000 lines of code and it's up to you to be like \"umm couldn't you just do this instead?\" and they will be like \"of course!\" and immediately cut it down to 100 lines. They still sometimes change/remove comments and code they don't like or don't sufficiently understand as side effects, even if it is orthogonal to the task at hand. All of this happens despite a few simple attempts to fix it via instructions in CLAUDE . md. Despite all these issues, it is still a net huge improvement and it's very difficult to imagine going back to manual coding. TLDR everyone has their developing flow, my current is a small few CC sessions on the left in ghostty windows/tabs and an IDE on the right for viewing the code + manual edits.\n\nTenacity. It's so interesting to watch an agent relentlessly work at something. They never get tired, they never get demoralized, they just keep going and trying things where a person would have given up long ago to fight another day. It's a \"feel the AGI\" moment to watch it struggle with something for a long time just to come out victorious 30 minutes later. You realize that stamina is a core bottleneck to work and that with LLMs in hand it has been dramatically increased.\n\nSpeedups. It's not clear how to measure the \"speedup\" of LLM assistance. Certainly I feel net way faster at what I was going to do, but the main effect is that I do a lot more than I was going to do because 1) I can code up all kinds of things that just wouldn't have been worth coding before and 2) I can approach code that I couldn't work on before because of knowledge/skill issue. So certainly it's speedup, but it's possibly a lot more an expansion.\n\nLeverage. LLMs are exceptionally good at looping until they meet specific goals and this is where most of the \"feel the AGI\" magic is to be found. Don't tell it what to do, give it success criteria and watch it go. Get it to write tests first and then pass them. Put it in the loop with a browser MCP. Write the naive algorithm that is very likely correct first, then ask it to optimize it while preserving correctness. Change your approach from imperative to declarative to get the agents looping longer and gain leverage.\n\nFun. I didn't anticipate that with agents programming feels *more* fun because a lot of the fill in the blanks drudgery is removed and what remains is the creative part. I also feel less blocked/stuck (which is not fun) and I experience a lot more courage because there's almost always a way to work hand in hand with it to make some positive progress. I have seen the opposite sentiment from other people too; LLM coding will split up engineers based on those who primarily liked coding and those who primarily liked building.\n\nAtrophy. I've already noticed that I am slowly starting to atrophy my ability to write code manually. Generation (writing code) and discrimination (reading code) are different capabilities in the brain. Largely due to all the little mostly syntactic details involved in programming, you can review code just fine even if you struggle to write it.\n\nSlopacolypse. I am bracing for 2026 as the year of the slopacolypse across all of github, substack, arxiv, X/instagram, and generally all digital media. We're also going to see a lot more AI hype productivity theater (is that even possible?), on the side of actual, real improvements.\n\nQuestions. A few of the questions on my mind:\n- What happens to the \"10X engineer\" - the ratio of productivity between the mean and the max engineer? It's quite possible that this grows *a lot*.\n- Armed with LLMs, do generalists increasingly outperform specialists? LLMs are a lot better at fill in the blanks (the micro) than grand strategy (the macro).\n- What does LLM coding feel like in the future? Is it like playing StarCraft? Playing Factorio? Playing music?\n- How much of society is bottlenecked by digital knowledge work?\n\nTLDR Where does this leave us? LLM agent capabilities (Claude & Codex especially) have crossed some kind of threshold of coherence around December 2025 and caused a phase shift in software engineering and closely related. The intelligence part suddenly feels quite a bit ahead of all the rest of it - integrations (tools, knowledge), the necessity for new organizational workflows, processes, diffusion more generally. 2026 is going to be a high energy year as the industry metabolizes the new capability.",
+    "url": "https://x.com/karpathy/status/2015883857489522876",
+    "created_at": 1769459139,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 7702437,
+      "likes": 39829,
+      "reposts": 5456,
+      "replies": 1618
+    }
+  },
+  {
+    "tweet_id": "1886192184808149383",
+    "text": "There's a new kind of coding I call \"vibe coding\", where you fully give in to the vibes, embrace exponentials, and forget that the code even exists. It's possible because the LLMs (e.g. Cursor Composer w Sonnet) are getting too good. Also I just talk to Composer with SuperWhisper so I barely even touch the keyboard. I ask for the dumbest things like \"decrease the padding on the sidebar by half\" because I'm too lazy to find it. I \"Accept All\" always, I don't read the diffs anymore. When I get error messages I just copy paste them in with no comment, usually that fixes it. The code grows beyond my usual comprehension, I'd have to really read through it for a while. Sometimes the LLMs can't fix a bug so I just work around it or ask for random changes until it goes away. It's not too bad for throwaway weekend projects, but still quite amusing. I'm building a project or webapp, but it's not really coding - I just see stuff, say stuff, run stuff, and copy paste stuff, and it mostly works.",
+    "url": "https://x.com/karpathy/status/1886192184808149383",
+    "created_at": 1738538235,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 6889989,
+      "likes": 33580,
+      "reposts": 3617,
+      "replies": 1443
+    }
+  },
+  {
+    "tweet_id": "2009037707918626874",
+    "text": "New post: nanochat miniseries v1\n\nThe correct way to think about LLMs is that you are not optimizing for a single specific model but for a family models controlled by a single dial (the compute you wish to spend) to achieve monotonically better results. This allows you to do careful science of scaling laws and ultimately this is what gives you the confidence that when you pay for \"the big run\", the extrapolation will work and your money will be well spent. For the first public release of nanochat my focus was on end-to-end pipeline that runs the whole LLM pipeline with all of its stages. Now after YOLOing a few runs earlier, I'm coming back around to flesh out some of the parts that I sped through, starting of course with pretraining, which is both computationally heavy and critical as the foundation of intelligence and knowledge in these models.\n\nAfter locally tuning some of the hyperparameters, I swept out a number of models fixing the FLOPs budget. (For every FLOPs target you can train a small model a long time, or a big model for a short time.) It turns out that nanochat obeys very nice scaling laws, basically reproducing the Chinchilla paper plots:\n\nWhich is just a baby version of this plot from Chinchilla:\nVery importantly and encouragingly, the exponent on N (parameters) and D (tokens) is equal at ~=0.5, so just like Chinchilla we get a single (compute-independent) constant that relates the model size to token training horizons. In Chinchilla, this was measured to be 20. In nanochat it seems to be 8!\n\nOnce we can train compute optimal models, I swept out a miniseries from d10 to d20, which are nanochat sizes that can do 2**19 ~= 0.5M batch sizes on 8XH100 node without gradient accumulation. We get pretty, non-itersecting training plots for each model size.\n\nThen the fun part is relating this miniseries v1 to the GPT-2 and GPT-3 miniseries so that we know we're on the right track. Validation loss has many issues and is not comparable, so instead I use the CORE score (from DCLM paper). I calculated it for GPT-2 and estimated it for GPT-3, which allows us to finally put nanochat nicely and on the same scale:\nThe total cost of this miniseries is only ~$100 (~4 hours on 8XH100). These experiments give us confidence that everything is working fairly nicely and that if we pay more (turn the dial), we get increasingly better models.\n\nTLDR: we can train compute optimal miniseries and relate them to GPT-2/3 via objective CORE scores, but further improvements are desirable and needed. E.g., matching GPT-2 currently needs ~$500, but imo should be possible to do <$100 with more work.\n\nFull post with a lot more detail is here:\nhttps://github.com/karpathy/nanochat/discussions/420\nAnd all of the tuning and code is pushed to master and people can reproduce these with scaling_laws .sh and miniseries .sh bash scripts.",
+    "url": "https://x.com/karpathy/status/2009037707918626874",
+    "created_at": 1767826890,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 706347,
+      "likes": 5434,
+      "reposts": 678,
+      "replies": 227
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/G-GE0Oka0AImrbb.png"
+      },
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/G-GFTe6a0AAgg9U.jpg"
+      },
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/G-GFxxXbAAAOiAj.jpg"
+      },
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/G-GITVAa4AADLJv.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2008664551445963083",
+    "text": "The majority of the ruff ruff is people who look at the current point and people who look at the current slope.",
+    "url": "https://x.com/karpathy/status/2008664551445963083",
+    "created_at": 1767737922,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 668574,
+      "likes": 4715,
+      "reposts": 270,
+      "replies": 286
+    }
+  },
+  {
+    "tweet_id": "2006514122977063350",
+    "text": "Here's my enormous round-up of everything we learned about LLMs in 2025 - the third in my annual series of reviews of the past twelve months\nhttps://simonwillison.net/2025/Dec/31/the-year-in-llms/\nThis year it's divided into 26 sections! This is the table of contents: https://t.co/DFlzgXudLy",
+    "url": "https://x.com/simonw/status/2006514122977063350",
+    "created_at": 1767225220,
+    "author": {
+      "user_id": "12497",
+      "handle": "simonw",
+      "name": "Simon Willison",
+      "avatar": "https://images.asksurf.ai/VErPYFgdOJvcvG1SB7ReZoHUazHZOkrRyhOY39SwbVs/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzM3ODgwMDAwMDI2MTY0OTcwNS9iZTljYzU1ZTY0MDE0ZTZkNzY2M2M1MGQ3Y2I5ZmM3NS5qcGVn"
+    },
+    "stats": {
+      "views": 503864,
+      "likes": 4879,
+      "reposts": 875,
+      "replies": 103
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/G9iRyifbAAAJARY.png"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2006436622909452501",
+    "text": "The first 100% autonomous coast-to-coast drive on Tesla FSD V14.2! 2 days 20 hours, 2732 miles, zero interventions.\n\nThis one is special because the coast-to-coast drive was a major goal for the autopilot team from the start. A lot of hours were spent in marathon clip review sessions late into the night looking over interventions as we attempted legs of the drive over time - triaging, categorizing, planning out all the projects to close the gap and bring the number of interventions to zero.\n\nAmazing to see the system actually get there and huge congrats to the team!",
+    "url": "https://x.com/karpathy/status/2006436622909452501",
+    "created_at": 1767206743,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 1069277,
+      "likes": 14117,
+      "reposts": 999,
+      "replies": 311
+    }
+  },
+  {
+    "tweet_id": "2006255297212358686",
+    "text": "I am proud to announce that I have successfully completed the world’s first USA coast to coast fully autonomous drive!\n\nI left the Tesla Diner in Los Angeles 2 days & 20 hours ago, and now have ended in Myrtle Beach, SC (2,732.4 miles)\n\nThis was accomplished with Tesla FSD V14.2 with absolutely 0 disengagements of any kind even for all parking including at Tesla Superchargers.",
+    "url": "https://x.com/DavidMoss/status/2006255297212358686",
+    "created_at": 1767163511,
+    "author": {
+      "user_id": "3242789936",
+      "handle": "DavidMoss",
+      "name": "David Moss",
+      "avatar": "https://images.asksurf.ai/rdo69w9F1zoUtCp_r5FIZABC8_K81KqZkDMN35cOD4Q/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5NTI1NjI3NDgyMDM5NDU5ODQvWXU3by1QTWsuanBn"
+    },
+    "stats": {
+      "views": 16883171,
+      "likes": 33726,
+      "reposts": 3381,
+      "replies": 2023
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/G9emjJyWcAA2uhm.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2005451576971043097",
+    "text": "📢 Confession: I ship code I never read. Here's my 2025 workflow. https://steipete.me/posts/2025/shipping-at-inference-speed",
+    "url": "https://x.com/steipete/status/2005451576971043097",
+    "created_at": 1766971890,
+    "author": {
+      "user_id": "25401953",
+      "handle": "steipete",
+      "name": "Peter Steinberger 🦞",
+      "avatar": "https://images.asksurf.ai/ssmy05Xf85GON8bRjyehgpP_tFcwi3zZa8AuvnmxhRk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExMzE4NTE2MDk3NzQ5ODUyMTYvT2Nzc3NROUoucG5n"
+    },
+    "stats": {
+      "views": 2885369,
+      "likes": 8050,
+      "reposts": 753,
+      "replies": 359
+    }
+  },
+  {
+    "tweet_id": "2005353145128583447",
+    "text": "Aggressively JIT your work. It's not about the task at hand X, it's a little bit about X but mostly about how you should have had to contribute ~no latency and ~no actions. It's digital factorio time.",
+    "url": "https://x.com/karpathy/status/2005353145128583447",
+    "created_at": 1766948422,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 601305,
+      "likes": 6095,
+      "reposts": 294,
+      "replies": 301
+    }
+  },
+  {
+    "tweet_id": "2005067301511630926",
+    "text": "I was inspired by this so I wanted to see if Claude Code can get into my Lutron home automation system.\n\n- it found my Lutron controllers on the local wifi network\n- checked for open ports, connected, got some metadata and identified the devices and their firmware\n- searched the internet, found the pdf for my system\n- instructed me on what button to press to pair and get the certificates\n- it connected to the system and found all the home devices (lights, shades, HVAC temperature control, motion sensors etc.)\n- it turned on and off my kitchen lights to check that things are working (lol!)\n\nI am now vibe coding the home automation master command center, the potential is 🔥.And I'm throwing away the crappy, janky, slow Lutron iOS app I've been using so far. Insanely fun :D :D",
+    "url": "https://x.com/karpathy/status/2005067301511630926",
+    "created_at": 1766880271,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 2999263,
+      "likes": 25914,
+      "reposts": 1734,
+      "replies": 814
+    }
+  },
+  {
+    "tweet_id": "2004887829252317325",
+    "text": "When I created Claude Code as a side project back in September 2024, I had no idea it would grow to be what it is today. It is humbling to see how Claude Code has become a core dev tool for so many engineers, how enthusiastic the community is, and how people are using it for all sorts of things from coding, to devops, to research, to non-technical use cases. This technology is alien and magical, and it makes it so much easier for people to build and create. Increasingly, code is no longer the bottleneck.\n\nA year ago, Claude struggled to generate bash commands without escaping issues. It worked for seconds or minutes at a time. We saw early signs that it may become broadly useful for coding one day.\n\nFast forward to today. In the last thirty days, I landed 259 PRs -- 497 commits, 40k lines added, 38k lines removed. Every single line was written by Claude Code + Opus 4.5. Claude consistently runs for minutes, hours, and days at a time (using Stop hooks). Software engineering is changing, and we are entering a new period in coding history. And we're still just getting started..",
+    "url": "https://x.com/bcherny/status/2004887829252317325",
+    "created_at": 1766837482,
+    "author": {
+      "user_id": "159337660",
+      "handle": "bcherny",
+      "name": "Boris Cherny",
+      "avatar": "https://images.asksurf.ai/Gg1fm89kHJk5-Axj-fOIeOLhqJ1ZvjhqykFHwcG5GQo/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5MDIwNDQ1NDg5MzY5NTM4NTYvSjJqZWlrMHQuanBn"
+    },
+    "stats": {
+      "views": 4581578,
+      "likes": 20579,
+      "reposts": 1834,
+      "replies": 897
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/G9LGAh3WkAAbnBJ.png"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2004607146781278521",
+    "text": "I've never felt this much behind as a programmer. The profession is being dramatically refactored as the bits contributed by the programmer are increasingly sparse and between. I have a sense that I could be 10X more powerful if I just properly string together what has become available over the last ~year and a failure to claim the boost feels decidedly like skill issue. There's a new programmable layer of abstraction to master (in addition to the usual layers below) involving agents, subagents, their prompts, contexts, memory, modes, permissions, tools, plugins, skills, hooks, MCP, LSP, slash commands, workflows, IDE integrations, and a need to build an all-encompassing mental model for strengths and pitfalls of fundamentally stochastic, fallible, unintelligible and changing entities suddenly intermingled with what used to be good old fashioned engineering. Clearly some powerful alien tool was handed around except it comes with no manual and everyone has to figure out how to hold it and operate it, while the resulting magnitude 9 earthquake is rocking the profession. Roll up your sleeves to not fall behind.",
+    "url": "https://x.com/karpathy/status/2004607146781278521",
+    "created_at": 1766770562,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 16805576,
+      "likes": 55843,
+      "reposts": 7477,
+      "replies": 2609
+    }
+  },
+  {
+    "tweet_id": "2002506706622767573",
+    "text": "claude figured out how to control my oven https://t.co/ckRlCvGIHB",
+    "url": "https://x.com/cyp_ll/status/2002506706622767573",
+    "created_at": 1766269778,
+    "author": {
+      "user_id": "1904150820997730304",
+      "handle": "cyp_ll",
+      "name": "cyp",
+      "avatar": "https://images.asksurf.ai/Vlz50H1zywhg-VPM94cJ_T0V39xxe8n6ADezoCXHcGk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5MTM3MDI5ODk5NDE4OTEwNzIvQXA3NkwwaV8uanBn"
+    },
+    "stats": {
+      "views": 3347150,
+      "likes": 2589,
+      "reposts": 173,
+      "replies": 125
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/G8pVPH-XEAAjMWd.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2002118205729562949",
+    "text": "2025 has been a strong and eventful year of progress in LLMs. The following is a list of personally notable and mildly surprising \"paradigm changes\" - things that altered the landscape and stood out to me conceptually.\n\n**1. Reinforcement Learning from Verifiable Rewards (RLVR)**\n\nAt the start of 2025, the LLM production stack in all labs looked something like this:\n\n1. Pretraining (GPT-2/3 of ~2020)\n2. Supervised Finetuning (InstructGPT ~2022) and\n3. Reinforcement Learning from Human Feedback (RLHF ~2022)\n\nThis was the stable and proven recipe for training a production-grade LLM for a while. In 2025, Reinforcement Learning from Verifiable Rewards (RLVR) emerged as the de facto new major stage to add to this mix. By training LLMs against automatically verifiable rewards across a number of environments (e.g. think math/code puzzles), the LLMs spontaneously develop strategies that look like \"reasoning\" to humans - they learn to break down problem solving into intermediate calculations and they learn a number of problem solving strategies for going back and forth to figure things out (see DeepSeek R1 paper for examples). These strategies would have been very difficult to achieve in the previous paradigms because it's not clear what the optimal reasoning traces and recoveries look like for the LLM - it has to find what works for it, via the optimization against rewards. \n\nUnlike the SFT and RLHF stage, which are both relatively thin/short stages (minor finetunes computationally), RLVR involves training against objective (non-gameable) reward functions which allows for a lot longer optimization. Running RLVR turned out to offer high capability/$, which gobbled up the compute that was originally intended for pretraining. Therefore, most of the capability progress of 2025 was defined by the LLM labs chewing through the overhang of this new stage and overall we saw ~similar sized LLMs but a lot longer RL runs. Also unique to this new stage, we got a whole new knob (and and associated scaling law) to control capability as a function of test time compute by generating longer reasoning traces and increasing \"thinking time\". OpenAI o1 (late 2024) was the very first demonstration of an RLVR model, but the o3 release (early 2025) was the obvious point of inflection where you could intuitively feel the difference.\n\n**2. Ghosts vs. Animals / Jagged Intelligence**\n\n2025 is where I (and I think the rest of the industry also) first started to internalize the \"shape\" of LLM intelligence in a more intuitive sense. We're not \"evolving/growing animals\", we are \"summoning ghosts\". Everything about the LLM stack is different (neural architecture, training data, training algorithms, and especially optimization pressure) so it should be no surprise that we are getting very different entities in the intelligence space, which are inappropriate to think about through an animal lens. Supervision bits-wise, human neural nets are optimized for survival of a tribe in the jungle but LLM neural nets are optimized for imitating humanity's text, collecting rewards in math puzzles, and getting that upvote from a human on the LM Arena. As verifiable domains allow for RLVR, LLMs \"spike\" in capability in the vicinity of these domains and overall display amusingly jagged performance characteristics - they are at the same time a genius polymath and a confused and cognitively challenged grade schooler, seconds away from getting tricked by a jailbreak to exfiltrate your data.\n\n![](https://pbs.twimg.com/media/G8jxfzSWQAAqhII.jpg)\n\nRelated to all this is my general apathy and loss of trust in benchmarks in 2025. The core issue is that benchmarks are almost by construction verifiable environments and are therefore immediately susceptible to RLVR and weaker forms of it via synthetic data generation. In the typical benchmaxxing process, teams in LLM labs inevitably construct environments adjacent to little pockets of the embedding space occupied by benchmarks and grow jaggies to cover them. Training on the test set is a new art form.\n\nWhat does it look like to crush all the benchmarks but still not get AGI?\n\nI have written a lot more on the topic of this section here:\n\n- Animals vs. Ghosts\n- Verifiability\n- The Space of Minds\n\n**3. Cursor / new layer of LLM apps**\n\nWhat I find most notable about Cursor (other than its meteoric rise this year) is that it convincingly revealed a new layer of an \"LLM app\" - people started to talk about \"Cursor for X\". As I highlighted in my Y Combinator talk this year (transcript and video), LLM apps like Cursor bundle and orchestrate LLM calls for specific verticals:\n\n1. They do the \"context engineering\"\n2. They orchestrate multiple LLM calls under the hood strung into increasingly more complex DAGs, carefully balancing performance and cost tradeoffs.\n3. They provide an application-specific GUI for the human in the loop\n4. They offer an \"autonomy slider\"\n\nA lot of chatter has been spent in 2025 on how \"thick\" this new app layer is. Will the LLM labs capture all applications or are there green pastures for LLM apps? Personally I suspect that LLM labs will trend to graduate the generally capable college student, but LLM apps will organize, finetune and actually animate teams of them into deployed professionals in specific verticals by supplying private data, sensors and actuators and feedback loops.\n\n**4. Claude Code / AI that lives on your computer**\n\nClaude Code (CC) emerged as the first convincing demonstration of what an LLM Agent looks like - something that in a loopy way strings together tool use and reasoning for extended problem solving. In addition, CC is notable to me in that it runs on your computer and with your private environment, data and context. I think OpenAI got this wrong because I think they focused their codex / agent efforts on cloud deployments in containers orchestrated from ChatGPT instead of `localhost`. And while agent swarms running in the cloud feels like the \"AGI endgame\", we live in an intermediate and slow enough takeoff world of jagged capabilities that it makes more sense to simply run the agents on the computer, hand in hand with developers and their specific setup. CC got this order of precedence correct and packaged it into a beautiful, minimal, compelling CLI form factor that changed what AI looks like - it's not just a website you go to like Google, it's a little spirit/ghost that \"lives\" on your computer. This is a new, distinct paradigm of interaction with an AI.\n\n**5. Vibe coding**\n\n2025 is the year that AI crossed a capability threshold necessary to build all kinds of impressive programs simply via English, forgetting that the code even exists. Amusingly, I coined the term \"vibe coding\" in this shower of thoughts tweet totally oblivious to how far it would go :). With vibe coding, programming is not strictly reserved for highly trained professionals, it is something anyone can do. In this capacity, it is yet another example of what I wrote about in Power to the people: How LLMs flip the script on technology diffusion, on how (in sharp contrast to all other technology so far) regular people benefit a lot more from LLMs compared to professionals, corporations and governments. But not only does vibe coding empower regular people to approach programming, it empowers trained professionals to write a lot more (vibe coded) software that would otherwise never be written. In nanochat, I vibe coded my own custom highly efficient BPE tokenizer in Rust instead of having to adopt existing libraries or learn Rust at that level. I vibe coded many projects this year as quick app demos of something I wanted to exist (e.g. see menugen, llm-council, reader3, HN time capsule). And I've vibe coded entire ephemeral apps just to find a single bug because why not - code is suddenly free, ephemeral, malleable, discardable after single use. Vibe coding will terraform software and alter job descriptions.\n\n**6. Nano banana / LLM GUI**\n\nGoogle Gemini Nano banana is one of the most incredible, paradigm-shifting models of 2025. In my world view, LLMs are the next major computing paradigm similar to computers of the 1970s, 80s, etc. Therefore, we are going to see similar kinds of innovations for fundamentally similar kinds of reasons. We're going to see equivalents of personal computing, of microcontrollers (cognitive core), or internet (of agents), etc etc. In particular, in terms of the UIUX, \"chatting\" with LLMs is a bit like issuing commands to a computer console in the 1980s. Text is the raw/favored data representation for computers (and LLMs), but it is not the favored format for people, especially at the input. People actually dislike reading text - it is slow and effortful. Instead, people love to consume information visually and spatially and this is why the GUI has been invented in traditional computing. In the same way, LLMs should speak to us in our favored format - in images, infographics, slides, whiteboards, animations/videos, web apps, etc. The early and present version of this of course are things like emoji and Markdown, which are ways to \"dress up\" and lay out text visually for easier consumption with titles, bold, italics, lists, tables, etc. But who is actually going to build the LLM GUI? In this world view, nano banana is a first early hint of what that might look like. And importantly, one notable aspect of it is that it's not just about the image generation itself, it's about the joint capability coming from text generation, image generation and world knowledge, all tangled up in the model weights.\n\n---\n\n**TLDR**. 2025 was an exciting and mildly surprising year of LLMs. LLMs are emerging as a new kind of intelligence, simultaneously a lot smarter than I expected and a lot dumber than I expected. In any case they are extremely useful and I don't think the industry has realized anywhere near 10% of their potential even at present capability. Meanwhile, there are so many ideas to try and conceptually the field feels wide open. And as I mentioned on my Dwarkesh pod earlier this year, I simultaneously (and on the surface paradoxically) believe that we will both see rapid and continued progress *and* that yet there is a lot of work to be done. Strap in.\n\n**URL**: I cross-posted this article to my blog, which I think looks and feels a bit better and less clunky.",
+    "url": "https://x.com/karpathy/status/2002118205729562949",
+    "created_at": 1766177152,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 2961027,
+      "likes": 15538,
+      "reposts": 2926,
+      "replies": 365
+    }
+  },
+  {
+    "tweet_id": "2001699564928279039",
+    "text": "I love the expression “food for thought” as a concrete, mysterious cognitive capability humans experience but LLMs have no equivalent for.\n\nDefinition: “something worth thinking about or considering, like a mental meal that nourishes your mind with ideas, insights, or issues that require deeper reflection. It's used for topics that challenge your perspective, offer new understanding, or make you ponder important questions, acting as intellectual stimulation.”\n\nSo in LLM speak it’s a sequence of tokens such that when used as prompt for chain of thought, the samples are rewarding to attend over, via some yet undiscovered intrinsic reward function. Obsessed with what form it takes. Food for thought.",
+    "url": "https://x.com/karpathy/status/2001699564928279039",
+    "created_at": 1766077340,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 379132,
+      "likes": 4412,
+      "reposts": 337,
+      "replies": 346
+    }
+  },
+  {
+    "tweet_id": "1998806260783919434",
+    "text": "nanoGPT - the first LLM to train and inference in space 🥹. It begins.",
+    "url": "https://x.com/karpathy/status/1998806260783919434",
+    "created_at": 1765387523,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 1080134,
+      "likes": 11105,
+      "reposts": 876,
+      "replies": 321
+    }
+  },
+  {
+    "tweet_id": "1998803709468487877",
+    "text": "Quick new post: Auto-grading decade-old Hacker News discussions with hindsight\n\nI took all the 930 frontpage Hacker News article+discussion of December 2015 and asked the GPT 5.1 Thinking API to do an in-hindsight analysis to identify the most/least prescient comments. This took ~3 hours to vibe code and ~1 hour and $60 to run. The idea was sparked by the HN article yesterday where Gemini 3 was asked to hallucinate the HN front page one decade forward.\n\nMore generally: \n\n1. in-hindsight analysis has always fascinated me as a way to train your forward prediction model so reading the results is really interesting and\n2. it's worth contemplating what it looks like when LLM megaminds of the future can do this kind of work a lot cheaper, faster and better. Every single bit of information you contribute to the internet can (and probably will be) scrutinized in great detail if it is \"free\". Hence also my earlier tweet from a while back - \"be good, future LLMs are watching\".\n\nCongrats to the top 10 accounts pcwalton, tptacek, paulmd, cstross, greglindahl, moxie, hannob, 0xcde4c3db, Manishearth, and johncolanduoni - GPT 5.1 Thinking found your comments to be the most insightful and prescient of all comments of HN in December of 2015.\n\nLinks:\n- A lot more detail in my blog post https://karpathy.bearblog.dev/auto-grade-hn/\n- GitHub repo of the project if you'd like to play https://github.com/karpathy/hn-time-capsule\n- The actual results pages for your reading pleasure https://karpathy.ai/hncapsule/",
+    "url": "https://x.com/karpathy/status/1998803709468487877",
+    "created_at": 1765386914,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 605225,
+      "likes": 5411,
+      "reposts": 583,
+      "replies": 238
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/G70qI3baMAEwF78.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "1998769997431058927",
+    "text": "We have just used the @Nvidia H100 onboard Starcloud-1 to train the first LLM in space!\n\nWe trained the nano-GPT model from Andrej @Karpathy on the complete works of Shakespeare and successfully ran inference on it. \n\nWe have also run inference on a preloaded Gemma model, and we plan to try more exciting models in the future.\n\nGetting the first H100 to work in space required a lot of innovation and hard work from the incredible Starcloud team to make this breakthrough.\n\nThis is a significant first step toward moving almost all computing off Earth to reduce the burden on our energy supplies and take advantage of abundant solar energy in space! 🚀",
+    "url": "https://x.com/AdiOltean/status/1998769997431058927",
+    "created_at": 1765378877,
+    "author": {
+      "user_id": "1817161474491789312",
+      "handle": "AdiOltean",
+      "name": "Adi Oltean",
+      "avatar": "https://images.asksurf.ai/whxybIEslwVB3LwL8v-8Q06HET9j1PtD5-NHXXSeGdY/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE4MzIxMzc0NjYzMDU4MDYzMzYvN3JHRU81SkYucG5n"
+    },
+    "stats": {
+      "views": 1248139,
+      "likes": 4373,
+      "reposts": 575,
+      "replies": 192
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/G70EgljaMAQ-DC7.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "1998245684521353664",
+    "text": "A good chunk of people misunderstood this tweet btw, which is my bad. I am not suggesting people use the old style promoting techniques of “you are an expert swift programmer” or etc. it’s ok.",
+    "url": "https://x.com/karpathy/status/1998245684521353664",
+    "created_at": 1765253871,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 187653,
+      "likes": 604,
+      "reposts": 17,
+      "replies": 42
+    }
+  },
+  {
+    "tweet_id": "1998240551964193148",
+    "text": "ty to ericsilberstein1 on github for spotting the bug.\nhttps://github.com/karpathy/nanochat/pull/306\n(it's not a big bug and only comes up in the SpellingBee synthetic task evaluation but still).",
+    "url": "https://x.com/karpathy/status/1998240551964193148",
+    "created_at": 1765252647,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 162384,
+      "likes": 549,
+      "reposts": 12,
+      "replies": 12
+    }
+  },
+  {
+    "tweet_id": "1998236299862659485",
+    "text": "In today's episode of programming horror...\n\nIn the Python docs of random.seed() def,  we're told\n\"If a is an int, it is used directly.\" [1]\n\nBut if you seed with 3 or -3, you actually get the exact same rng object, producing the same streams. (TIL). In nanochat I was using the sign as a (what I thought was) clever way to get different rng sequences for train/test splits. Hence gnarly bug because now train=test.\n\nI found the CPython code responsible in cpython/Modules/_randommodule.c [2], where on line 321 we see in a comment:\n\n\"This algorithm relies on the number being unsigned. So: if the arg is a PyLong, use its absolute value.\" followed by\n\nn = PyNumber_Absolute(arg);\n\nwhich explicitly calls abs() on your seed to make it positive, discarding the sign bit.\n\nBut this comment is actually wrong/misleading too. Under the hood, Python calls the Mersenne Twister MT19937 algorithm, which in the general case has 19937 (non-zero) bits state. Python takes your int (or other objects) and \"spreads out\" that information across these bits. In principle, the sign bit could have been used to augment the state bits. There is nothing about the algorithm that \"relies on the number being unsigned\". A decision was made to not incorporate the sign bit (which imo was a mistake). One trivial example could have been to map n -> 2*abs(n) + int(n < 0).\n\nFinally this leads us to the contract of Python's random, which is also not fully spelled out in the docs. The contract that is mentioned is that:\n\nsame seed => same sequence.\n\nBut no guarantee is made that different seeds produce different sequences. So in principle, Python makes no promises that e.g. seed(5) and seed(6) are different rng streams. (Though this quite commonly implicitly assumed in many applications.) Indeed, we see that seed(5) and seed(-5) are identical streams. And you should probably not use them to separate your train/test behaviors in machine learning. One of the more amusing programming horror footguns I've encountered recently. We'll see you in the next episode.\n\n[1] https://docs.python.org/3/library/random.html\n[2] https://github.com/python/cpython/blob/main/Modules/_randommodule.c#L321C13-L321C30",
+    "url": "https://x.com/karpathy/status/1998236299862659485",
+    "created_at": 1765251633,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 765552,
+      "likes": 7832,
+      "reposts": 489,
+      "replies": 216
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/G7sc167aMAAuZi5.png"
+      }
+    ]
+  },
+  {
+    "tweet_id": "1997731268969304070",
+    "text": "Don't think of LLMs as entities but as simulators. For example, when exploring a topic, don't ask:\n\n\"What do you think about xyz\"?\n\nThere is no \"you\". Next time try:\n\n\"What would be a good group of people to explore xyz? What would they say?\"\n\nThe LLM can channel/simulate many perspectives but it hasn't \"thought about\" xyz for a while and over time and formed its own opinions in the way we're used to. If you force it via the use of \"you\", it will give you something by adopting a personality embedding vector implied by the statistics of its finetuning data and then simulate that. It's fine to do, but there is a lot less mystique to it than I find people naively attribute to \"asking an AI\".",
+    "url": "https://x.com/karpathy/status/1997731268969304070",
+    "created_at": 1765131225,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 3908410,
+      "likes": 27734,
+      "reposts": 2775,
+      "replies": 1140
+    }
+  },
+  {
+    "tweet_id": "1997697581410062590",
+    "text": "Happy weekend to those who celebrate https://t.co/lafvNmmOJO",
+    "url": "https://x.com/karpathy/status/1997697581410062590",
+    "created_at": 1765123193,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 1380823,
+      "likes": 22988,
+      "reposts": 1506,
+      "replies": 378
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/G7k_XS3a0AA7gdt.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "1993010584175141038",
+    "text": "A number of people are talking about implications of AI to schools. I spoke about some of my thoughts to a school board earlier, some highlights:\n\n1. You will never be able to detect the use of AI in homework. Full stop. All \"detectors\" of AI imo don't really work, can be defeated in various ways, and are in principle doomed to fail. You have to assume that any work done outside classroom has used AI.\n2. Therefore, the majority of grading has to shift to in-class work (instead of at-home assignments), in settings where teachers can physically monitor students. The students remain motivated to learn how to solve problems without AI because they know they will be evaluated without it in class later.\n3. We want students to be able to use AI, it is here to stay and it is extremely powerful, but we also don't want students to be naked in the world without it. Using the calculator as an example of a historically disruptive technology, school teaches you how to do all the basic math & arithmetic so that you can in principle do it by hand, even if calculators are pervasive and greatly speed up work in practical settings. In addition, you understand what it's doing for you, so should it give you a wrong answer (e.g. you mistyped \"prompt\"), you should be able to notice it, gut check it, verify it in some other way, etc. The verification ability is especially important in the case of AI, which is presently a lot more fallible in a great variety of ways compared to calculators.\n4. A lot of the evaluation settings remain at teacher's discretion and involve a creative design space of no tools, cheatsheets, open book, provided AI responses, direct internet/AI access, etc.\n\nTLDR the goal is that the students are proficient in the use of AI, but can also exist without it, and imo the only way to get there is to flip classes around and move the majority of testing to in class settings.",
+    "url": "https://x.com/karpathy/status/1993010584175141038",
+    "created_at": 1764005726,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 2525998,
+      "likes": 16609,
+      "reposts": 2455,
+      "replies": 933
+    }
+  },
+  {
+    "tweet_id": "1992711182537707990",
+    "text": "I asked it to create a personalized weekly workout plan, and then posters that I can print on the wall to remind me what exercises to do each day. Tuesday looks more intense because I asked for \"more testosterone\" :D.\n(sorry I'll stop posting more nano banana pro stuff now) https://t.co/iNXfUJnVY1",
+    "url": "https://x.com/karpathy/status/1992711182537707990",
+    "created_at": 1763934343,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 410546,
+      "likes": 5216,
+      "reposts": 309,
+      "replies": 269
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/G6eH_5_awAAk-Wf.jpg"
+      }
+    ]
+  }
+]

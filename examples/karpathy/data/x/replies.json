@@ -1,0 +1,1874 @@
+[
+  {
+    "tweet_id": "2046017433199374610",
+    "text": "@bryan_johnson Yeah I've seen it a few times now, all the Enneagram type fives get one shotted into AI psychosis when they discover LLM knowledge bases :) And an especially a strong fit when you have a lot of pre-existing data to insert into it.",
+    "url": "https://x.com/karpathy/status/2046017433199374610",
+    "created_at": 1776643543,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 89086,
+      "likes": 1153,
+      "reposts": 26,
+      "replies": 42
+    }
+  },
+  {
+    "tweet_id": "2045962306291699907",
+    "text": "I got C-holed.\n\nSuffered sleep consequences. \nI busted my screens-off rule.\nTurned down socializing.\nFell behind on work.\nKate is now upset. \n\nAI is preposterous. As close to magic as I’ve experienced (except a seed becoming a tree and a zygote becoming a baby). \n\nIt started on April 2nd when Karpathy shared LLM Knowledge bases. I wondered if this was the opening to structure the 1.5 billion data points I’ve collected on my body over the past five years. It's the most dynamic n=1 biomarker dataset in history. It was just sitting there. \n\nNext thing I knew two weeks had passed and Kate was wondering if she lost her boyfriend to Claude.\nI’m non-technical. Which honestly makes me sad. I wish I’d grown up with a computer or at least been around engineer culture. I didn’t know anyone technical until my early 20s. \n\nI became an entrepreneur at 21 and had my first of three kids at 25. I sold Braintree Venmo at 34. Learning to code stayed on my to-do list through all of it. The timing was never right. I was always on the outside looking in, wishing I had the skills to assemble 0's and 1's into digital structures.\n\nThe exhilaration I’ve felt in the past two weeks is hard to explain. The 1.5 billion data points became a functional database, queryable, and microscope into my 70 trillion cells. The biological age of my organs updated in real-time like stock tickers.  My build morphed from a knowledge base into a breathing organism that was self-learning and in sync with my heartbeat. I did this entirely on my own. It’s buggy, breaks and the data needs to be cleaned, but damn it’s cool.\n\nIt became a mirror and ledger, one I could ask questions to. About my psyche, behavioral patterns, biology  and protocols. Patterns across my life I couldn't previously connect. It’s made me insatiably hungry for more data. \n\nI’ve written about Autonomous Health, how cars now drive themselves and software wires itself. Health is next. My build showed me what it looks like in practice. \n\nBefore Kate started protesting, she joked that she felt relieved for herself, our colleagues, and the world that I’d found something that matches my energy. That they could all express a sigh of relief. It’s true. This experience left me wondering if I’ve been bored my entire life. Never having found something that could match my work ethic, speed, intensity, and build capacity. Something that didn’t have the delays of the real world, human complications, or logistical drag.\n\nTwo weeks deep in AI and I'm realizing that when people talk about AI, they're not talking about the same thing. Someone using a chat interface has a completely different opinion than someone building with it. And that chasm deepens for the people seeing what's coming next but isn't yet public. Society can't have a coherent conversation about AI because everyone's intuitions are calibrated to a different version of it. \n\nOff-the-shelf LLMs are mostly useless beyond narrow tasks. When they get you 80% there, it's often faster to do the whole thing yourself. And they're dangerous because the hallucination is hard to detect. Now you don't know what you don't know.\n\nGive them expanded context, memory, and architectures for self-reflection and autonomous learning, and you start to realize that AI is bigger than any of us can fit in our context window. \n\nI need to take Kate on a date, turn my screens off on time, and get some work done. \n\nAnd then properly dose C. \n\nNote: the image above is my 2021 baseline when starting this longevity project.",
+    "url": "https://x.com/bryan_johnson/status/2045962306291699907",
+    "created_at": 1776630400,
+    "author": {
+      "user_id": "17468569",
+      "handle": "bryan_johnson",
+      "name": "Bryan Johnson",
+      "avatar": "https://images.asksurf.ai/usUdrdZHhtnmSw0Pp6IgvaL6cVVjH1g10SinHIxpXBY/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE4ODgwMDQwMDE4NzIxMDEzNzgvalZOSlEtaXUuanBn"
+    },
+    "stats": {
+      "views": 368304,
+      "likes": 2028,
+      "reposts": 63,
+      "replies": 225
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2045961548754194432/img/j4l7kgwIOwELMBt-.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2042628872882262316",
+    "text": "@karmicoder @jenzhuscott No the company physically gets you to come in, sits you down and asks you a precise set of maximally informative questions specifically designed for the best upload fidelity.",
+    "url": "https://x.com/karpathy/status/2042628872882262316",
+    "created_at": 1775835648,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 14649,
+      "likes": 99,
+      "reposts": 4,
+      "replies": 23
+    }
+  },
+  {
+    "tweet_id": "2042628512138563812",
+    "text": "@karpathy @jenzhuscott But for that it requires interviews to train on. What about normal people who don't give interviews. How do we know what they think if nobody asks them questions.",
+    "url": "https://x.com/karmicoder/status/2042628512138563812",
+    "created_at": 1775835562,
+    "author": {
+      "user_id": "767519987829473280",
+      "handle": "karmicoder",
+      "name": "cosmichaos",
+      "avatar": "https://images.asksurf.ai/4MQAeUHx7YeTLN7NDQED7WaxaerDBOYLF-8T75fK0dY/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5MjUwODczNzU0ODA0NTUxNjgvVGpYZ1Q0ajguanBn"
+    },
+    "stats": {
+      "views": 15690,
+      "likes": 6,
+      "reposts": 0,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2042628272782286964",
+    "text": "@Douglance @jenzhuscott These neuroscience adjacent ideas are exotic armchair philosophy when the LLM simulation path will work really well and so much faster and it's not even remotely a contest.",
+    "url": "https://x.com/karpathy/status/2042628272782286964",
+    "created_at": 1775835505,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 22096,
+      "likes": 141,
+      "reposts": 2,
+      "replies": 14
+    }
+  },
+  {
+    "tweet_id": "2042627378879267326",
+    "text": "@karpathy @jenzhuscott replacing one neuron at a time works without losing consciousness",
+    "url": "https://x.com/Douglance/status/2042627378879267326",
+    "created_at": 1775835291,
+    "author": {
+      "user_id": "14164456",
+      "handle": "Douglance",
+      "name": "Doug Lance",
+      "avatar": "https://images.asksurf.ai/1qwwieDYBv0bNHVS0MxRmZxkUYuHwRGjWG9oj5VvNJI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5MDQ5NDU1MDczNjcwNjM1NTMvd3ljeHQ1emIuanBn"
+    },
+    "stats": {
+      "views": 24183,
+      "likes": 19,
+      "reposts": 0,
+      "replies": 5
+    }
+  },
+  {
+    "tweet_id": "2042622041371873282",
+    "text": "As I build my own 2nd brain 🧠 on Obsidian using @karpathy ‘s wiki idea, it suddenly dawned on me - one day when we r gone, our kids could inherit an interactive map to your mind, passion, obsessions, work, fascinations… \n\nIt’s kind of beautiful way to think abt your 2nd 🧠.",
+    "url": "https://x.com/jenzhuscott/status/2042622041371873282",
+    "created_at": 1775834019,
+    "author": {
+      "user_id": "348197129",
+      "handle": "jenzhuscott",
+      "name": "Jen Zhu",
+      "avatar": "https://images.asksurf.ai/-yojlNP8ImmZF_tGWYDiPaPpY9b8afDV7cXjuZ-ln0c/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE3ODA4MzgyMDkwNzQ5NjY1Mjgvc0xvcXlvSFkuanBn"
+    },
+    "stats": {
+      "views": 197306,
+      "likes": 1766,
+      "reposts": 100,
+      "replies": 84
+    }
+  },
+  {
+    "tweet_id": "2042615713219908059",
+    "text": "Yeah exactly. It’s such a cool concept for a product. It doesn’t seem like oai will continue pushing the direction,\n (which makes sense) but I hope a startup can clone it and actually give it care, iteration and make it work and imo a lot of people would really love it.\n\nMore generally, the product roadmap of big labs is clear and predictable, which also leaves big pockets of opportunity for startups, one of the biggest ones is this I think.",
+    "url": "https://x.com/karpathy/status/2042615713219908059",
+    "created_at": 1775832510,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 129999,
+      "likes": 1354,
+      "reposts": 28,
+      "replies": 108
+    }
+  },
+  {
+    "tweet_id": "2042611602726539283",
+    "text": "I think it's non-obvious to many people that the OpenAI voice mode runs on a much older, much weaker model - it feels like the AI that you can talk to should be the smartest AI but it really isn't",
+    "url": "https://x.com/simonw/status/2042611602726539283",
+    "created_at": 1775831530,
+    "author": {
+      "user_id": "12497",
+      "handle": "simonw",
+      "name": "Simon Willison",
+      "avatar": "https://images.asksurf.ai/VErPYFgdOJvcvG1SB7ReZoHUazHZOkrRyhOY39SwbVs/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzM3ODgwMDAwMDI2MTY0OTcwNS9iZTljYzU1ZTY0MDE0ZTZkNzY2M2M1MGQ3Y2I5ZmM3NS5qcGVn"
+    },
+    "stats": {
+      "views": 272768,
+      "likes": 1583,
+      "reposts": 31,
+      "replies": 135
+    }
+  },
+  {
+    "tweet_id": "2042341482531864741",
+    "text": "Someone recently suggested to me that the reason OpenClaw moment was so big is because it's the first time a large group of non-technical people (who otherwise only knew AI as synonymous with ChatGPT as a website) experienced the latest agentic models.",
+    "url": "https://x.com/karpathy/status/2042341482531864741",
+    "created_at": 1775767128,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 368821,
+      "likes": 3659,
+      "reposts": 156,
+      "replies": 240
+    }
+  },
+  {
+    "tweet_id": "2042334451611693415",
+    "text": "Judging by my tl there is a growing gap in understanding of AI capability.\n\nThe first issue I think is around recency and tier of use. I think a lot of people tried the free tier of ChatGPT somewhere  last year and allowed it to inform their views on AI a little too much. This is a group of reactions laughing at various quirks of the models, hallucinations, etc. Yes I also saw the viral videos of OpenAI's Advanced Voice mode fumbling simple queries like \"should I drive or walk to the carwash\". The thing is that these free and old/deprecated models don't reflect the capability in the latest round of state of the art agentic models of this year, especially OpenAI Codex and Claude Code.\n\nBut that brings me to the second issue. Even if people paid $200/month to use the state of the art models, a lot of the capabilities are relatively \"peaky\" in highly technical areas. Typical queries around search, writing, advice, etc. are *not* the domain that has made the most noticeable and dramatic strides in capability. Partly,  this is due to the technical details of reinforcement learning and its use of verifiable rewards. But partly, it's also because these use cases are not sufficiently prioritized by the companies in their hillclimbing because they don't lead to as much $$$ value. The goldmines are elsewhere, and the focus comes along.\n\nSo that brings me to the second group of people, who *both* 1) pay for and use the state of the art frontier agentic models (OpenAI Codex / Claude Code) and 2) do so professionally in technical domains like programming, math and research. This group of people is subject to the highest amount of \"AI Psychosis\" because the recent improvements in these domains as of this year have been nothing short of staggering. When you hand a computer terminal to one of these models, you can now watch them melt programming problems that you'd normally expect to take days/weeks of work. It's this second group of people that assigns a much greater gravity to the capabilities, their slope, and various cyber-related repercussions.\n\nTLDR the people in these two groups are speaking past each other. It really is simultaneously the case that OpenAI's free and I think slightly orphaned (?) \"Advanced Voice Mode\" will fumble the dumbest questions in your Instagram's reels and *at the same time*, OpenAI's highest-tier and paid Codex model will go off for 1 hour to coherently restructure an entire code base, or find and exploit vulnerabilities in computer systems. This part really works and has made dramatic strides because 2 properties: 1) these domains offer explicit reward functions that are verifiable meaning they are easily amenable to reinforcement learning training (e.g. unit tests passed yes or no, in contrast to writing, which is much harder to explicitly judge),  but also 2) they are a lot more valuable in b2b settings, meaning that the biggest fraction of the team is focused on improving them. So here we are.",
+    "url": "https://x.com/karpathy/status/2042334451611693415",
+    "created_at": 1775765452,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 4135528,
+      "likes": 20165,
+      "reposts": 2439,
+      "replies": 1111
+    }
+  },
+  {
+    "tweet_id": "2042296221138894876",
+    "text": "@chalish_b @kepano In my experience there are approx. one thousand different pdf converters that are all equally terrible for anything except the simplest documents. Post the converted Mythos pdf, figures, tables and all. If good, happy to retweet as this is essential and missing infrastructure.",
+    "url": "https://x.com/karpathy/status/2042296221138894876",
+    "created_at": 1775756337,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 12688,
+      "likes": 147,
+      "reposts": 3,
+      "replies": 30
+    }
+  },
+  {
+    "tweet_id": "2042293694477324513",
+    "text": "@karpathy @kepano Have you tried Marker? I used it to convert a few textbooks recently and it did a pretty good job. It's a combination of a custom model + LLM to clean things up\n\nhttps://github.com/datalab-to/marker",
+    "url": "https://x.com/chalish_b/status/2042293694477324513",
+    "created_at": 1775755735,
+    "author": {
+      "user_id": "1962662018353094656",
+      "handle": "chalish_b",
+      "name": "chalish b.",
+      "avatar": "https://images.asksurf.ai/CJ7QBSIP-EvD2shzf7iWnFG0EGTGEkVPdeLyIhI7xIY/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwNDYyOTQzNzYyOTc3NzkyMDAvRHBZZ1VaR2UuanBn"
+    },
+    "stats": {
+      "views": 14859,
+      "likes": 37,
+      "reposts": 3,
+      "replies": 4
+    }
+  },
+  {
+    "tweet_id": "2042291314696602072",
+    "text": "I wrote about Microsoft's Markitdown back in 2024, but it's grown into a big messy project now :/\n\nIt would be more valuable if Microsoft provided high-quality official libraries for converting their proprietary formats to Markdown (.docx, .xlsx, .pptx, OneNote, etc).\n\nFor now Obsidian's Markdown conversion options are:\n\n1. Obsidian Web Clipper for converting URLs\n2. Obsidian Importer for converting from apps like Notion, Apple Notes, Google Keep, Microsoft OneNote, Evernote, etc",
+    "url": "https://x.com/kepano/status/2042291314696602072",
+    "created_at": 1775755168,
+    "author": {
+      "user_id": "5778712",
+      "handle": "kepano",
+      "name": "kepano",
+      "avatar": "https://images.asksurf.ai/O4OcTIfJSx1sYsZ_DLIkE4nTjNYDkXAi5FWRPTIs8LY/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE1NjM2MzU1OTk5MDY1NDk3NjEvd0l1bTRMOEkuanBn"
+    },
+    "stats": {
+      "views": 344833,
+      "likes": 1236,
+      "reposts": 37,
+      "replies": 42
+    }
+  },
+  {
+    "tweet_id": "2042063369432183238",
+    "text": "The degree to which you are awed by AI is perfectly correlated with how much you use AI to code.",
+    "url": "https://x.com/staysaasy/status/2042063369432183238",
+    "created_at": 1775700821,
+    "author": {
+      "user_id": "1254131357774733312",
+      "handle": "staysaasy",
+      "name": "staysaasy",
+      "avatar": "https://images.asksurf.ai/OIPeCHf7M007QXcgfbUq36-rcv0zQxBYh9HNsnSLZRU/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyNzgxOTQ0MTMyMTUyMTk3MTIvN1hIN2JoakUuanBn"
+    },
+    "stats": {
+      "views": 1884789,
+      "likes": 1661,
+      "reposts": 175,
+      "replies": 77
+    }
+  },
+  {
+    "tweet_id": "2041869776927261024",
+    "text": "MICROSOFT BUILT A TOOL THAT CONVERTS LITERALLY ANYTHING INTO CLEAN MARKDOWN FOR YOUR LLM\n\npdfs. word docs. excel. powerpoint. audio. youtube urls\n\none pip install and your AI pipeline stops choking on raw files forever\n\nno custom parsers. no broken layouts. no garbled text.\n\njust clean, structured markdown your LLM can actually read\n\nhttps://github.com/microsoft/markitdown",
+    "url": "https://x.com/_vmlops/status/2041869776927261024",
+    "created_at": 1775654665,
+    "author": {
+      "user_id": "1863571201060392960",
+      "handle": "_vmlops",
+      "name": "Vaishnavi",
+      "avatar": "https://images.asksurf.ai/0wG28E4osHgS2neppHUUaSVzS_i9kCfxpMC19lz5pUY/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTc2NzM2OTQwNjg1NDM0OTMvaDA2ZVRPTDAuanBn"
+    },
+    "stats": {
+      "views": 789155,
+      "likes": 4959,
+      "reposts": 517,
+      "replies": 80
+    }
+  },
+  {
+    "tweet_id": "2041162213160091996",
+    "text": "The core idea is that this lets you skip writing but it doesn’t let you skip reading and thinking. And the surprising result is that this works. Personally I process most of what I file by reading it, reading its summary, reading the LLM’s opinion on how it fits into the wiki and what is new/surprising, etc. depends on the documents this is flexible and up to you",
+    "url": "https://x.com/karpathy/status/2041162213160091996",
+    "created_at": 1775485969,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 106243,
+      "likes": 1449,
+      "reposts": 53,
+      "replies": 95
+    }
+  },
+  {
+    "tweet_id": "2041068766306648453",
+    "text": "Why would anyone want to have such ‘research’ databases they haven’t spent the effort to understand? A main idea of researching is to widen your attention into the sources and then apply discernment in curating the relevant bits. What’s the point of a machine doing it for you?",
+    "url": "https://x.com/prathyvsh/status/2041068766306648453",
+    "created_at": 1775463689,
+    "author": {
+      "user_id": "34895955",
+      "handle": "prathyvsh",
+      "name": "Prathyush",
+      "avatar": "https://images.asksurf.ai/T24QWWsuHfIYE1-mlPNWG5Pb-RxzZPe1NUPt2oxzEkQ/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE1Mjk5NjMyOTEzODAxNjI1NjAvWFZ3cDhvRUIucG5n"
+    },
+    "stats": {
+      "views": 161476,
+      "likes": 385,
+      "reposts": 15,
+      "replies": 46
+    }
+  },
+  {
+    "tweet_id": "2040847956472164706",
+    "text": "sounds great. The AI activity has been growing out of control and I feel more regretted attention, possibly the Read endpoints can be a lot cheaper but the Write endpoints a lot more expensive (?). (and to clarify the project I mentioned was all read, no write.). I do think X has a large amount of valuable information and making the platform more legible to agents (Read, not Write!) could be really valuable, ty.",
+    "url": "https://x.com/karpathy/status/2040847956472164706",
+    "created_at": 1775411044,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 17596,
+      "likes": 287,
+      "reposts": 4,
+      "replies": 16
+    }
+  },
+  {
+    "tweet_id": "2040842814674604130",
+    "text": "thanks Andrej - good feedback & more improvements coming! writes are more sensitive to spam/abuse especially as agents are now the new norm so we currently set the price higher but reviewing for balance. we’re also actively improving docs and revamping to be far more agent friendly with new structure, guides, curl examples, with our new tools like xMCP easier to spot and highlighted better. check out our xmcp repo here: https://github.com/xdevplatform/xmcp. we’ve got some more exciting releases coming. please continue to try and share feedback! cc our lead engineer @santiagomed",
+    "url": "https://x.com/chrisparkX/status/2040842814674604130",
+    "created_at": 1775409818,
+    "author": {
+      "user_id": "2533341854",
+      "handle": "chrisparkX",
+      "name": "Chris Park",
+      "avatar": "https://images.asksurf.ai/vSQ6pAaJuSwUkn2Ka00gTuQBt9yerhWrX5s5GSEJNZA/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE3NzAxOTU0MTU3Mjk1Njk3OTIvd1VFWDFMQ08uanBn"
+    },
+    "stats": {
+      "views": 64497,
+      "likes": 387,
+      "reposts": 17,
+      "replies": 11
+    }
+  },
+  {
+    "tweet_id": "2040806346556428585",
+    "text": "Surprised with how good the comments on github gists are. A lot more helpful, insightful, constructive, a lot less AI... Is it the user community? The markdown format? The (lack of) incentives?\n\nSuddenly feeling like I should gist more.\n@github consider competing with X (?)",
+    "url": "https://x.com/karpathy/status/2040806346556428585",
+    "created_at": 1775401124,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 322730,
+      "likes": 1043,
+      "reposts": 37,
+      "replies": 168
+    }
+  },
+  {
+    "tweet_id": "2040770361566826685",
+    "text": "We’ve made major upgrades to X API:\n\n• Pay-Per-Use now GA worldwide \n• XMCP Server + xurl for agents\n• Official Python &amp; TypeScript XDKs\n• API Playground - free realistic simulations\n\nNew releases coming will be a game changer.\n\nStart building → https://docs.x.com 🚢",
+    "url": "https://x.com/chrisparkX/status/2040770361566826685",
+    "created_at": 1775392544,
+    "author": {
+      "user_id": "2533341854",
+      "handle": "chrisparkX",
+      "name": "Chris Park",
+      "avatar": "https://images.asksurf.ai/vSQ6pAaJuSwUkn2Ka00gTuQBt9yerhWrX5s5GSEJNZA/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE3NzAxOTU0MTU3Mjk1Njk3OTIvd1VFWDFMQ08uanBn"
+    },
+    "stats": {
+      "views": 71417207,
+      "likes": 3274,
+      "reposts": 270,
+      "replies": 369
+    }
+  },
+  {
+    "tweet_id": "2040685567592317031",
+    "text": "Try using the X API",
+    "url": "https://x.com/elonmusk/status/2040685567592317031",
+    "created_at": 1775372328,
+    "author": {
+      "user_id": "44196397",
+      "handle": "elonmusk",
+      "name": "Elon Musk",
+      "avatar": "https://images.asksurf.ai/YWtlpJUQf7Bzx-xnyBc-mQBmMk98P2JAQB8pwysfAvE/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMzUzMTQ3MDQzMDcwODEyMTYvNzFVMWZ0TTMuanBn"
+    },
+    "stats": {
+      "views": 20358056,
+      "likes": 25939,
+      "reposts": 4558,
+      "replies": 2081
+    }
+  },
+  {
+    "tweet_id": "2040572272944324650",
+    "text": "Farzapedia, personal wikipedia of Farza, good example following my Wiki LLM tweet.\n\nI really like this approach to personalization in a number of ways, compared to \"status quo\" of an AI that allegedly gets better the more you use it or something:\n\n1. Explicit. The memory artifact is explicit and navigable (the wiki), you can see exactly what the AI does and does not know and you can inspect and manage this artifact, even if you don't do the direct text writing (the LLM does). The knowledge of you is not implicit and unknown, it's explicit and viewable.\n2. Yours. Your data is yours, on your local computer, it's not in some particular AI provider's system without the ability to extract it. You're in control of your information. \n3. File over app. The memory here is a simple collection of files in universal formats (images, markdown). This means the data is interoperable: you can use a very large collection of tools/CLIs or whatever you want over this information because it's just files. The agents can apply the entire Unix toolkit over them. They can natively read and understand them. Any kind of data can be imported into files as input, and any kind of interface can be used to view them as the output. E.g. you can use Obsidian to view them or vibe code something of your own. Search \"File over app\" for an article on this philosophy.\n4. BYOAI. You can use whatever AI you want to \"plug into\" this information - Claude, Codex, OpenCode, whatever. You can even think about taking an open source AI and finetuning it on your wiki - in principle, this AI could \"know\" you in its weights, not just attend over your data.\n\nSo this approach to personalization puts *you* in full control. The data is yours. In Universal formats. Explicit and inspectable. Use whatever AI you want over it, keep the AI companies on their toes! :)\n\nCertainly this is not the simplest way to get an AI to know you - it does require you to manage file directories and so on, but agents also make it quite simple and they can help you a lot. I imagine a number of products might come out to make this all easier, but imo \"agent proficiency\" is a CORE SKILL of the 21st century. These are extremely powerful tools - they speak English and they do all the computer stuff for you. Try this opportunity to play with one.",
+    "url": "https://x.com/karpathy/status/2040572272944324650",
+    "created_at": 1775345316,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 1244291,
+      "likes": 8829,
+      "reposts": 803,
+      "replies": 438
+    }
+  },
+  {
+    "tweet_id": "2040563939797504467",
+    "text": "This is Farzapedia.\n\nI had an LLM take 2,500 entries from my diary, Apple Notes, and some iMessage convos to create a personal Wikipedia for me.\n\nIt made 400 detailed articles for my friends, my startups, research areas, and even my favorite animes and their impact on me complete with backlinks.\n\nBut, this Wiki was not built for me! I built it for my agent!\n\nThe structure of the wiki files and how it's all backlinked is very easily crawlable by any agent + makes it a truly useful knowledge base.\n\nI can spin up Claude Code on the wiki and starting at index.md (a catalog of all my articles) the agent does a really good job at drilling into the specific pages on my wiki it needs context on when I have a query.\n\nFor example, when trying to cook up a new landing page I may ask:\n\n\"I'm trying to design this landing page for a new idea I have. Please look into the images and films that inspired me recently and give me ideas for new copy and aesthetics\".\n\nIn my diary I kept track of everything from: learnings, people, inspo, interesting links, images.\n\nSo the agent reads my wiki and pulls up my \"Philosophy\" articles from notes on a Studio Ghibli documentary, \"Competitor\" articles with YC companies whose landing pages I screenshotted, and pics of 1970s Beatles merch I saved years ago. And it delivers a great answer.\n\nI built a similar system to this a year ago with RAG but it was ass.\n\nA knowledge base that lets an agent find what it needs via a file system it actually understands just works better.\n\nThe most magical thing now is as I add new things to my wiki (articles, images of inspo, meeting notes) the system will likely update 2-3 different articles where it feels that context belongs, or, just creates a new article.\n\nIt's like this super genius librarian for your brain that's always filing stuff for your perfectly and also let's you easily query the knowledge for tasks useful to you (ex. design, product, writing, etc) and it never gets tired.\n\nI might spend next week productizing this, if that's of interest to you DM me + tell me your usecase!",
+    "url": "https://x.com/FarzaTV/status/2040563939797504467",
+    "created_at": 1775343329,
+    "author": {
+      "user_id": "327403216",
+      "handle": "FarzaTV",
+      "name": "Farza 🇵🇰🇺🇸",
+      "avatar": "https://images.asksurf.ai/IBVd8Hg-wPPNQbVE4EsEqeHyMelgO1sLj8cc9t4u5Gg/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEzMjMzOTEzMDU4MzQxNDM3NDUvNHpxT0poNjYuanBn"
+    },
+    "stats": {
+      "views": 1835765,
+      "likes": 4756,
+      "reposts": 370,
+      "replies": 233
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2040562032819486720/img/jVrKry6tC4BPFnCg.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2040551517921636863",
+    "text": "@peterxing @SOSOHAJALAB Incredible work :D",
+    "url": "https://x.com/karpathy/status/2040551517921636863",
+    "created_at": 1775340368,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 38808,
+      "likes": 151,
+      "reposts": 1,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2040551165214196182",
+    "text": "@karpathy @SOSOHAJALAB https://t.co/xSPtXumRaP",
+    "url": "https://x.com/peterxing/status/2040551165214196182",
+    "created_at": 1775340284,
+    "author": {
+      "user_id": "30150841",
+      "handle": "peterxing",
+      "name": "Peter Xing",
+      "avatar": "https://images.asksurf.ai/DnFFtsywwCItC0EMwMhaFLsUpR3NWqpYlFbv5tsqQJ0/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE3OTE2MjIyMTMyMjcxOTY0MTYvM1dqZXVZUm0uanBn"
+    },
+    "stats": {
+      "views": 64818,
+      "likes": 369,
+      "reposts": 2,
+      "replies": 6
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HFF-d92aAAA54ax.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2040549459193704852",
+    "text": "Something I've been thinking about - I am bullish on people (empowered by AI) increasing the visibility, legibility and accountability of their governments.\n\nHistorically, it is the governments that act to make society legible (e.g. \"Seeing like a state\" is the common reference), but with AI, society can dramatically improve its ability to do this in reverse. Government accountability has not been constrained by access (the various branches of government publish an enormous amount of data), it has been constrained by intelligence - the ability to process a lot of raw data, combine it with domain expertise and derive insights. As an example, the 4000-page omnibus bill is \"transparent\" in principle and in a legal sense, but certainly not in a practical sense for most people. There's a lot more like it: laws, spending bills, federal budgets, freedom of information act responses, lobbying disclosures... Only a few highly trained professionals (investigative journalists) could historically process this information. This bottleneck might dissolve - not only are the professionals further empowered, but a lot more people can participate.\n\nSome examples to be precise: Detailed accounting of spending and budgets, diff tracking of legislation, individual voting trends w.r.t. stated positions or speeches, lobbying and influence (e.g. graph of lobbyist -> firm -> client -> legislator -> committee -> vote -> regulation), procurement and contracting, regulatory capture warning lights, judicial and legal patterns, campaign finance... Local governments might be even more interesting because the governed population is smaller so there is less national coverage: city council meetings, decisions around zoning, policing, schools, utilities...\n\nCertainly, the same tools can easily cut the other way and it's worth being very mindful of that, but I lean optimistic overall that added participation, transparency and accountability will improve democratic, free societies.\n\n(the quoted tweet is half-ish related, but inspired me to post some recent thoughts)",
+    "url": "https://x.com/karpathy/status/2040549459193704852",
+    "created_at": 1775339877,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 905346,
+      "likes": 5849,
+      "reposts": 722,
+      "replies": 404
+    }
+  },
+  {
+    "tweet_id": "2040511542500970760",
+    "text": "@LinghuaJ Interesting.. Chain of thought is a reduce (in addition to attention ofc), so I guess this can be seen as a bit more of a directed context compaction mechanism, inheriting structure from the preexisting idea of a wiki.",
+    "url": "https://x.com/karpathy/status/2040511542500970760",
+    "created_at": 1775330837,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 57453,
+      "likes": 487,
+      "reposts": 14,
+      "replies": 16
+    }
+  },
+  {
+    "tweet_id": "2040505524454920341",
+    "text": "LLM knowledge Base idea open sourced by @karpathy . RAG only has map and no reduce. The essence is to have LLM 𝐢𝐧𝐜𝐫𝐞𝐦𝐞𝐧𝐭𝐚𝐥𝐥𝐲 𝐛𝐮𝐢𝐥𝐝𝐬 𝐚𝐧𝐝 𝐦𝐚𝐢𝐧𝐭𝐚𝐢𝐧𝐬 𝐚 𝐩𝐞𝐫𝐬𝐢𝐬𝐭𝐞𝐧𝐭 𝐰𝐢𝐤𝐢  - So basically at indexing time there must be reduce so you can dig accumulated / compounded synthesized knowledge beyond individual fact.\n\nDifferent data source has different fact. A lot of discovery are like this you derive general fact from single fact. Physics theory you have a lot of independent data and derive more generic theorem.\n\nA lot of things coming up all together. Having a solid incremental engine to drive the process is everything we have been building cocoindex for, and keep indexing up to date and organizaed from source of truth. \n\nVery much looking forward to what's next!",
+    "url": "https://x.com/LinghuaJ/status/2040505524454920341",
+    "created_at": 1775329402,
+    "author": {
+      "user_id": "985869984",
+      "handle": "LinghuaJ",
+      "name": "Linghua Jin 🥥 🌴",
+      "avatar": "https://images.asksurf.ai/Ia4-kOhRtnksYNJ1URJ9Lr8UaE7ebI9TIW-HBtYsh-E/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE4NjU1MzM5NzAyODY1MTAwODAvU29KVWItd2UuanBn"
+    },
+    "stats": {
+      "views": 113879,
+      "likes": 418,
+      "reposts": 19,
+      "replies": 27
+    }
+  },
+  {
+    "tweet_id": "2040473058834878662",
+    "text": "@NirDiamantAI Peter Steinberger told me that he wants PR to be \"prompt request\". His agents are perfectly capable of implementing most ideas, so there is no need to take your idea, expand it into a vibe coded mess using free tier ChatGPT and send that as a PR, which is now most PRs.",
+    "url": "https://x.com/karpathy/status/2040473058834878662",
+    "created_at": 1775321662,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 300841,
+      "likes": 2543,
+      "reposts": 119,
+      "replies": 74
+    }
+  },
+  {
+    "tweet_id": "2040472342455828658",
+    "text": "@karpathy exactly! the anthropic team mentioned in their recent docs that prompt libraries are becoming way more valuable than code repos for this reason",
+    "url": "https://x.com/NirDiamantAI/status/2040472342455828658",
+    "created_at": 1775321491,
+    "author": {
+      "user_id": "1095750064734158850",
+      "handle": "NirDiamantAI",
+      "name": "NirD",
+      "avatar": "https://images.asksurf.ai/PJdJQjLsliykzwk4HPSY8BlJtivrpdstIfTvyHpZj30/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE4MTM5OTQ1NjYyOTY0Mjg1NDQvMjctOWJHUk8uanBn"
+    },
+    "stats": {
+      "views": 143993,
+      "likes": 380,
+      "reposts": 9,
+      "replies": 9
+    }
+  },
+  {
+    "tweet_id": "2040470801506541998",
+    "text": "Wow, this tweet went very viral!\n\nI wanted share a possibly slightly improved version of the tweet in an \"idea file\". The idea of the idea file is that in this era of LLM agents, there is less of a point/need of sharing the specific code/app, you just share the idea, then the other person's agent customizes & builds it for your specific needs.\n\nSo here's the idea in a gist format: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f\n\nYou can give this to your agent and it can build you your own LLM wiki and guide you on how to use it etc. It's intentionally kept a little bit abstract/vague because there are so many directions to take this in. And ofc, people can adjust the idea or contribute their own in the Discussion which is cool.",
+    "url": "https://x.com/karpathy/status/2040470801506541998",
+    "created_at": 1775321123,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 6774737,
+      "likes": 26271,
+      "reposts": 2762,
+      "replies": 1078
+    }
+  },
+  {
+    "tweet_id": "2040451573881737480",
+    "text": "@trainable_nick The best epub to txt converter I found is just asking your favorite agent to do it. Epubs can be very diverse, the agent just goes in, figures it out, creates the output markdown and ensures it looks good works great.",
+    "url": "https://x.com/karpathy/status/2040451573881737480",
+    "created_at": 1775316539,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 52119,
+      "likes": 1016,
+      "reposts": 30,
+      "replies": 43
+    }
+  },
+  {
+    "tweet_id": "2040448094060343337",
+    "text": "As I pulled on the thread from Karpathy’s post, I realized the existing EPUB → TXT tools were still too ugly and clunky for turning DRM-free books into clean markdown.\n\nSo I made my own.\n\nI’ve only been vibe coding for a few months, and this is my first App Store Connect submission. Feels like a small milestone, but an exciting one.\n\nGrateful for this moment... we get to build better and faster than ever.",
+    "url": "https://x.com/nickf_ai/status/2040448094060343337",
+    "created_at": 1775315709,
+    "author": {
+      "user_id": "1844929001485217803",
+      "handle": "nickf_ai",
+      "name": "Nick Fernandez | Product Strategy + AI",
+      "avatar": "https://images.asksurf.ai/GgPSkAoDhE7VCDh38CQlzOMQS5Wnxzhlhe-HCN4mA6k/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTY0NzY0ODUwMjQ5MTk1NTIvelQwN2RSNkcuanBn"
+    },
+    "stats": {
+      "views": 87568,
+      "likes": 250,
+      "reposts": 14,
+      "replies": 11
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HFEgHkIbgAAyX1T.png"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2040406616806179001",
+    "text": "The British Government is a complicated beast. Dozens of departments, hundreds of public bodies, more corporations than one can count...\n\nSuch is its complexity that there isn't an org chart for it.\n\nWell, there wasn't...\n\nIntroducing ⚙️Machinery of Government⚙️ https://t.co/YRt8r3yHyn",
+    "url": "https://x.com/Hrushworth/status/2040406616806179001",
+    "created_at": 1775305821,
+    "author": {
+      "user_id": "272923763",
+      "handle": "Hrushworth",
+      "name": "Harry Rushworth",
+      "avatar": "https://images.asksurf.ai/wo9zJBAmUAAPldie45OjKjK-bBzoVdBb-GhSHFu95KE/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE2Njc5NDc1NTE4NTk4MDIxMTYvWjJCRVVweGwuanBn"
+    },
+    "stats": {
+      "views": 1003957,
+      "likes": 2913,
+      "reposts": 420,
+      "replies": 100
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HFD4KSmWkAAdI3Z.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2039805659525644595",
+    "text": "LLM Knowledge Bases\n\nSomething I'm finding very useful recently: using LLMs to build personal knowledge bases for various topics of research interest. In this way, a large fraction of my recent token throughput is going less into manipulating code, and more into manipulating knowledge (stored as markdown and images). The latest LLMs are quite good at it. So:\n\nData ingest:\nI index source documents (articles, papers, repos, datasets, images, etc.) into a raw/ directory, then I use an LLM to incrementally \"compile\" a wiki, which is just a collection of .md files in a directory structure. The wiki includes summaries of all the data in raw/, backlinks, and then it categorizes data into concepts, writes articles for them, and links them all. To convert web articles into .md files I like to use the Obsidian Web Clipper extension, and then I also use a hotkey to download all the related images to local so that my LLM can easily reference them.\n\nIDE:\nI use Obsidian as the IDE \"frontend\" where I can view the raw data, the the compiled wiki, and the derived visualizations. Important to note that the LLM writes and maintains all of the data of the wiki, I rarely touch it directly. I've played with a few Obsidian plugins to render and view data in other ways (e.g. Marp for slides).\n\nQ&A:\nWhere things get interesting is that once your wiki is big enough (e.g. mine on some recent research is ~100 articles and ~400K words), you can ask your LLM agent all kinds of complex questions against the wiki, and it will go off, research the answers, etc. I thought I had to reach for fancy RAG, but the LLM has been pretty good about auto-maintaining index files and brief summaries of all the documents and it reads all the important related data fairly easily at this ~small scale.\n\nOutput:\nInstead of getting answers in text/terminal, I like to have it render markdown files for me, or slide shows (Marp format), or matplotlib images, all of which I then view again in Obsidian. You can imagine many other visual output formats depending on the query. Often, I end up \"filing\" the outputs back into the wiki to enhance it for further queries. So my own explorations and queries always \"add up\" in the knowledge base.\n\nLinting:\nI've run some LLM \"health checks\" over the wiki to e.g. find inconsistent data, impute missing data (with web searchers), find interesting connections for new article candidates, etc., to incrementally clean up the wiki and enhance its overall data integrity. The LLMs are quite good at suggesting further questions to ask and look into.\n\nExtra tools:\nI find myself developing additional tools to process the data, e.g. I vibe coded a small and naive search engine over the wiki, which I both use directly (in a web ui), but more often I want to hand it off to an LLM via CLI as a tool for larger queries. \n\nFurther explorations:\nAs the repo grows, the natural desire is to also think about synthetic data generation + finetuning to have your LLM \"know\" the data in its weights instead of just context windows.\n\nTLDR: raw data from a given number of sources is collected, then compiled by an LLM into a .md wiki, then operated on by various CLIs by the LLM to do Q&A and to incrementally enhance the wiki, and all of it viewable in Obsidian. You rarely ever write or edit the wiki manually, it's the domain of the LLM. I think there is room here for an incredible new product instead of a hacky collection of scripts.",
+    "url": "https://x.com/karpathy/status/2039805659525644595",
+    "created_at": 1775162541,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 20127311,
+      "likes": 56775,
+      "reposts": 6806,
+      "replies": 2792
+    }
+  },
+  {
+    "tweet_id": "1617979122625712128",
+    "text": "The hottest new programming language is English",
+    "url": "https://x.com/karpathy/status/1617979122625712128",
+    "created_at": 1674591258,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 11378309,
+      "likes": 64242,
+      "reposts": 8044,
+      "replies": 1983
+    }
+  },
+  {
+    "tweet_id": "2039874049904623690",
+    "text": "@nickcammarata The true audience is in the future",
+    "url": "https://x.com/karpathy/status/2039874049904623690",
+    "created_at": 1775178847,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 41280,
+      "likes": 672,
+      "reposts": 21,
+      "replies": 37
+    }
+  },
+  {
+    "tweet_id": "2039832291464417746",
+    "text": "@Goss_Gowtham I was just thinking the same thing",
+    "url": "https://x.com/karpathy/status/2039832291464417746",
+    "created_at": 1775168891,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 311027,
+      "likes": 2754,
+      "reposts": 17,
+      "replies": 57
+    }
+  },
+  {
+    "tweet_id": "2039832199399350722",
+    "text": "@kepano yep exactly, great point! yes, this is why I maintain and carefully curate all the data in raw/ , which is authoritative, and the derived wiki is kept separate and maintains backlinks to original content.",
+    "url": "https://x.com/karpathy/status/2039832199399350722",
+    "created_at": 1775168869,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 45356,
+      "likes": 672,
+      "reposts": 18,
+      "replies": 16
+    }
+  },
+  {
+    "tweet_id": "2039831289533227446",
+    "text": "I like @karpathy's Obsidian setup as a way to mitigate contamination risks. Keep your personal vault clean and create a messy vault for your agents.\n\nI prefer my personal Obsidian vault to be high signal:noise, and for all the content to have known origins.\n\nKeeping a separation between your personally-created artifacts and agent-created artifacts prevents contaminating your primary vault with ideas you can't source.\n\nIf you let the two mix too much it will likely make Obsidian harder to use as a representation of *your* thoughts. Search, bases, quick switcher, backlinks, graph, etc, will no longer be scoped to your knowledge.\n\nOnly once your agent-facing workflow produces useful artifacts would I bring those into the primary vault.",
+    "url": "https://x.com/kepano/status/2039831289533227446",
+    "created_at": 1775168652,
+    "author": {
+      "user_id": "5778712",
+      "handle": "kepano",
+      "name": "kepano",
+      "avatar": "https://images.asksurf.ai/O4OcTIfJSx1sYsZ_DLIkE4nTjNYDkXAi5FWRPTIs8LY/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE1NjM2MzU1OTk5MDY1NDk3NjEvd0l1bTRMOEkuanBn"
+    },
+    "stats": {
+      "views": 473990,
+      "likes": 2933,
+      "reposts": 166,
+      "replies": 83
+    }
+  },
+  {
+    "tweet_id": "2039830480829456596",
+    "text": "@karpathy Can you make a video of how you work with md files, agentic IDEs? \nYour earlier explanations of using LLMs were really helpful.",
+    "url": "https://x.com/Goss_Gowtham/status/2039830480829456596",
+    "created_at": 1775168459,
+    "author": {
+      "user_id": "751096395415838720",
+      "handle": "Goss_Gowtham",
+      "name": "Goss Gowtham 𝕏 🐉",
+      "avatar": "https://images.asksurf.ai/FYQ5jm1SEuT8SFvWcV9CyHVN8lOtHKnyCjFTRqI5KFk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzgxODEwNjQyNzQyMDExOTA0My9zQWc0Y2JCTS5qcGc"
+    },
+    "stats": {
+      "views": 369492,
+      "likes": 925,
+      "reposts": 3,
+      "replies": 13
+    }
+  },
+  {
+    "tweet_id": "2039823314982744522",
+    "text": "Use epub not PDF, convert epub to txt/md, summarize the wikipedia article into \"book context\", with it in context summarize one chapter at a time, etc. I mean basically imo for good results you have to \"work it\" in chunks and shouldn't expect that just attaching a pdf and asking summarize will give good results. When I do it in stages and slower I can get very good results, indispensable.",
+    "url": "https://x.com/karpathy/status/2039823314982744522",
+    "created_at": 1775166751,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 200520,
+      "likes": 2514,
+      "reposts": 120,
+      "replies": 64
+    }
+  },
+  {
+    "tweet_id": "2039822502596370699",
+    "text": "This is cool, but it still doesn't work quite as well as I would like for full PDFs of books yet. I was trying to do this for some non-fiction research at one point, and getting consistently good book summaries was difficult. I think this was even in the last six months.",
+    "url": "https://x.com/liminal_warmth/status/2039822502596370699",
+    "created_at": 1775166557,
+    "author": {
+      "user_id": "1099326334923202561",
+      "handle": "liminal_warmth",
+      "name": "Liminal Warmth ❤️‍🔥",
+      "avatar": "https://images.asksurf.ai/8eQDDya8yOnQqZMTSgbXkw2w8rrnQ0uElEkawK4SBSE/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5OTA5NTQ2OTg3ODcxNjQxNjAvTzhNOS0tZ2kuanBn"
+    },
+    "stats": {
+      "views": 150526,
+      "likes": 398,
+      "reposts": 12,
+      "replies": 26
+    }
+  },
+  {
+    "tweet_id": "2039816150062948769",
+    "text": "@__endif Haha I vibe code products with twitter :D",
+    "url": "https://x.com/karpathy/status/2039816150062948769",
+    "created_at": 1775165042,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 136572,
+      "likes": 661,
+      "reposts": 4,
+      "replies": 10
+    }
+  },
+  {
+    "tweet_id": "2039814446479192187",
+    "text": "@tammireddy Might be an LLM reply I don't know, but yes exactly.",
+    "url": "https://x.com/karpathy/status/2039814446479192187",
+    "created_at": 1775164636,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 161039,
+      "likes": 358,
+      "reposts": 3,
+      "replies": 8
+    }
+  },
+  {
+    "tweet_id": "2039814328229204201",
+    "text": "@karpathy Every business has a raw/ directory.\nNobody's ever compiled it.\nThat's the product.",
+    "url": "https://x.com/tammireddy/status/2039814328229204201",
+    "created_at": 1775164608,
+    "author": {
+      "user_id": "43856683",
+      "handle": "tammireddy",
+      "name": "Krishna Tammireddy",
+      "avatar": "https://images.asksurf.ai/rT0HDwUzEvpnoViaSJqj0Dze7AWYkZ1fVw2umQHshAc/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMzg3ODYxMjEwOTkxMDQyNTYvWHBpNHV3bGsuanBn"
+    },
+    "stats": {
+      "views": 185985,
+      "likes": 190,
+      "reposts": 4,
+      "replies": 13
+    }
+  },
+  {
+    "tweet_id": "2039814066575917263",
+    "text": "@c__bir Currently no because I'm trying to keep it super simple and flat, it's just a nested directory of .md files and .png files and a few .csv and .py, and the schema is kept up to date in AGENTS.md . The LLMs get this very easily. Any custom functions are easy to vibe code tools for.",
+    "url": "https://x.com/karpathy/status/2039814066575917263",
+    "created_at": 1775164546,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 90830,
+      "likes": 242,
+      "reposts": 6,
+      "replies": 17
+    }
+  },
+  {
+    "tweet_id": "2039812841750839506",
+    "text": "@karpathy are you useing obsidian cli?",
+    "url": "https://x.com/c__bir/status/2039812841750839506",
+    "created_at": 1775164254,
+    "author": {
+      "user_id": "1741096496299225088",
+      "handle": "c__bir",
+      "name": "CBir",
+      "avatar": "https://images.asksurf.ai/Yb2_p1j48INRCu8bDnR30roN51R9aapNnEqWv6cQGBQ/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE4NTcxMzQ2MjIxOTYzNDY4ODAvcjdMeUVTbkcuanBn"
+    },
+    "stats": {
+      "views": 94220,
+      "likes": 19,
+      "reposts": 0,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2039812403962253744",
+    "text": "@Gavriel_Cohen Atm it's not a fully autonomous process, I add every source manually, one by one and I am in the loop, especially in early stages. After a while, the LLMs \"gets\" the pattern and the marginal document is a lot easier, I just say \"file this new doc to our wiki: (path)\".",
+    "url": "https://x.com/karpathy/status/2039812403962253744",
+    "created_at": 1775164149,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 181588,
+      "likes": 314,
+      "reposts": 8,
+      "replies": 23
+    }
+  },
+  {
+    "tweet_id": "2039810935452225959",
+    "text": "@karpathy Can you share more on the incremental compilation? \n\nI've found that if processing one by one, they don't have enough context to understand how to divide to directories. \n\nIs there an optimal batch size? Multiple stages?",
+    "url": "https://x.com/Gavriel_Cohen/status/2039810935452225959",
+    "created_at": 1775163799,
+    "author": {
+      "user_id": "31721437",
+      "handle": "Gavriel_Cohen",
+      "name": "Gavriel Cohen",
+      "avatar": "https://images.asksurf.ai/L1M4iDgtm4JzQojj4ewbRprLYfqo6yvIaIty3hkhPGA/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE0MDY3MDgyNTA5NTE3MDA0ODAvNU9ZUUh0ekIuanBn"
+    },
+    "stats": {
+      "views": 233849,
+      "likes": 77,
+      "reposts": 0,
+      "replies": 5
+    }
+  },
+  {
+    "tweet_id": "2039810651120705569",
+    "text": "@karpathy you are like Linus to Linux now, the meta vibe coder, I wonder how many projects will be created overnight because of your tweet",
+    "url": "https://x.com/__endif/status/2039810651120705569",
+    "created_at": 1775163731,
+    "author": {
+      "user_id": "1146999021527023618",
+      "handle": "__endif",
+      "name": "jiahao",
+      "avatar": "https://images.asksurf.ai/VBdya3PLMa9IHbH-Mz3fVBgdHaxJyTMeLLy9PVMBDqg/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzExNDY5OTkyMjI3NjEzNDA5MjgvU282QUJvOUkuanBn"
+    },
+    "stats": {
+      "views": 154191,
+      "likes": 265,
+      "reposts": 0,
+      "replies": 3
+    }
+  },
+  {
+    "tweet_id": "2039795312127299989",
+    "text": "@yoheinakajima star-to-LOC ratio love it!",
+    "url": "https://x.com/karpathy/status/2039795312127299989",
+    "created_at": 1775160074,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 15567,
+      "likes": 200,
+      "reposts": 0,
+      "replies": 2
+    }
+  },
+  {
+    "tweet_id": "2039790077489086569",
+    "text": "made a tool to compare star-to-LOC ratio on github cuz i thought i would do well, but @karpathy is 👑\n\nany others i should try? https://t.co/wvC6ffAoPy",
+    "url": "https://x.com/yoheinakajima/status/2039790077489086569",
+    "created_at": 1775158826,
+    "author": {
+      "user_id": "30439303",
+      "handle": "yoheinakajima",
+      "name": "Yohei",
+      "avatar": "https://images.asksurf.ai/AqJj-3a2FdMD3UIOxmenjMvd0kjya1Pu8wiWw6xxNpY/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE0NTI3NTQ1NDMyMTc4MzE5MzgvVDJPLTY2WXkuanBn"
+    },
+    "stats": {
+      "views": 33012,
+      "likes": 193,
+      "reposts": 6,
+      "replies": 31
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HE7KACaaUAAkRrk.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2039516998724698471",
+    "text": "i spend so many of my nights polishing each sentence of scientific papers as attempted gifts to the reader and to the project of knowledge itself, even though 95% of the audience is going to paste the link with five others and say 'claude summarize all this. short. im walking'",
+    "url": "https://x.com/nickcammarata/status/2039516998724698471",
+    "created_at": 1775093719,
+    "author": {
+      "user_id": "24761783",
+      "handle": "nickcammarata",
+      "name": "Nick",
+      "avatar": "https://images.asksurf.ai/g277P3--KvcoUgXje7EhKqKDy1mEGX6SqPT-Xe30eGw/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE3NTMyNjQ5MjMzNjU1MjM0NTYvbVVDdnduN3YuanBn"
+    },
+    "stats": {
+      "views": 52206,
+      "likes": 711,
+      "reposts": 10,
+      "replies": 41
+    }
+  },
+  {
+    "tweet_id": "2039058361896063232",
+    "text": "@Anna_Partners @gvanrossum yeah exactly, i mean it's this picture from 2023 basically\nhttps://x.com/karpathy/status/1723140519554105733",
+    "url": "https://x.com/karpathy/status/2039058361896063232",
+    "created_at": 1774984372,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 30793,
+      "likes": 318,
+      "reposts": 29,
+      "replies": 11
+    }
+  },
+  {
+    "tweet_id": "2039057005802082814",
+    "text": "@itsolelehmann They've released a number of features already heavily hinting on nudging Code into Claw directions, i.e. it's a speedrun of\nhttps://x.com/karpathy/status/2024997757757653224",
+    "url": "https://x.com/karpathy/status/2039057005802082814",
+    "created_at": 1774984048,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 170164,
+      "likes": 1318,
+      "reposts": 54,
+      "replies": 47
+    }
+  },
+  {
+    "tweet_id": "2039056415084724560",
+    "text": "@karpathy @gvanrossum The OS kernel analogy is the most robust framework for understanding agents. If the LLM is the CPU, then the agent's context window is the RAM, and its tools are the I/O. We are essentially watching the birth of the first truly non-deterministic operating systems.",
+    "url": "https://x.com/Anna_Partners/status/2039056415084724560",
+    "created_at": 1774983907,
+    "author": {
+      "user_id": "2023305626559070209",
+      "handle": "Anna_Partners",
+      "name": "Anna",
+      "avatar": "https://images.asksurf.ai/RgQJw7kiNd61b3bNVbrazBBCx5xipmSrh0wNGaY5GQU/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMzAyNzMxMDY5ODQ0NTIwOTYvWERfc0NNRTcuanBn"
+    },
+    "stats": {
+      "views": 19375,
+      "likes": 149,
+      "reposts": 9,
+      "replies": 4
+    }
+  },
+  {
+    "tweet_id": "2039055433437257878",
+    "text": "@measure_plan lol these are awesome",
+    "url": "https://x.com/karpathy/status/2039055433437257878",
+    "created_at": 1774983673,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 28092,
+      "likes": 205,
+      "reposts": 1,
+      "replies": 5
+    }
+  },
+  {
+    "tweet_id": "2039045160156426463",
+    "text": "I think I finally understand what an agent is. It's a prompt (or several), skills, and tools. Did I get this right?",
+    "url": "https://x.com/gvanrossum/status/2039045160156426463",
+    "created_at": 1774981224,
+    "author": {
+      "user_id": "15804774",
+      "handle": "gvanrossum",
+      "name": "Guido van Rossum",
+      "avatar": "https://images.asksurf.ai/gk8HNnuv0s-XmF8TK6qozzX9m1wRUaSlrhEt6u27L3w/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzQyNDQ5NTAwNC9HdWlkb0F2YXRhci5qcGc"
+    },
+    "stats": {
+      "views": 571833,
+      "likes": 4681,
+      "reposts": 207,
+      "replies": 533
+    }
+  },
+  {
+    "tweet_id": "2039018963611627545",
+    "text": "i can't believe more people aren't talking about this part of the claude code leak\n\nthere's a hidden feature in the source code called KAIROS, and it basically shows you anthropic's endgame\n\nKAIROS is an always-on, *proactive* Claude that does things without you asking it to.\n\nit runs in the background 24/7 while you work (or sleep)\n\nanthropic hasn't turned it on to the public yet, but the code is fully built\n\nhere's how it works:\n\nevery few seconds, KAIROS gets a heartbeat.\n\nbasically a prompt that says \"anything worth doing right now?\"\n\nit looks at what's happening and makes a call: do something, or stay quiet\n\nif it acts, it can fix errors in your code, respond to messages, update files, run tasks...\n\nbasically anything claude code can already do, just without you telling it to\n\nbut here's what makes KAIROS different from regular claude code:\n\nit has (at least) 3 exclusive tools that regular claude code doesn't get:\n\n1. push notifications, so it can reach you on your phone or desktop even when you're not in the terminal\n\n2. file delivery, so it can send you things it created without you asking for them\n\n3. pull request subscriptions, so it can watch your github and react to code changes on its own\n\nregular claude code can only talk to you when you talk to it. KAIROS can tap you on the shoulder\n\nand it keeps daily logs of everything.\n\n> what it noticed\n> what it decided\n> what it did\n\nappend-only, meaning it can't erase its own history (you can read everything)\n\nat night it runs something the code literally calls \"autoDream.\"\n\nwhere it consolidates what it learned during the day and reorganizes its memory while you sleep\n\nand it persists across sessions. close your laptop friday, open it monday, it's been working the whole time\n\nthink about what this means in practice:\n\n> you're asleep and your website goes down. KAIROS detects it, restarts the server, and sends you a notification. by the time you see it, it's already back up\n\n> you get a customer complaint email at 2am. KAIROS reads it, sends the reply, and logs what it did. you wake up and it's already resolved\n\n> your stripe subscription page has a typo that's been live for 3 days. KAIROS spots it, fixes it, and logs the change\n\nendless use-cases, it's essentially a co-founder who never sleeps\n\nthe codebase has this fully built and gated behind internal feature flags called PROACTIVE and KAIROS\n\ni think this is probably the clearest signal yet for where all ai tools are going.\n\nwe are heading into the \"post-prompting\" era\n\nwhere the ai just works for you in the background\n\nlike an all-knowing teammate who notices and handles everything, before you even think to ask",
+    "url": "https://x.com/itsolelehmann/status/2039018963611627545",
+    "created_at": 1774974978,
+    "author": {
+      "user_id": "1587816802264006657",
+      "handle": "itsolelehmann",
+      "name": "Ole Lehmann",
+      "avatar": "https://images.asksurf.ai/-XCBubbokfJ-0v3bjZGhxFTwJcKFKslvOqbiTMZQdXs/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE2MzM2OTc3MjAyOTE3MDQ4MzIvR0JteFRDYTYuanBn"
+    },
+    "stats": {
+      "views": 800116,
+      "likes": 3229,
+      "reposts": 332,
+      "replies": 249
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HEwM8PFbMAEB203.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2038996019816305138",
+    "text": "i made tetris but the board and pieces are attached to your body and it's quite tiring to play https://t.co/yEoA49igpX",
+    "url": "https://x.com/measure_plan/status/2038996019816305138",
+    "created_at": 1774969508,
+    "author": {
+      "user_id": "934445204010041344",
+      "handle": "measure_plan",
+      "name": "AA",
+      "avatar": "https://images.asksurf.ai/jmHGJ0zexVXSVxd26xkYX4Yyi6EhXVupLAObW84rfRc/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5MTAwMjczMTI2MzgwNzA3ODUveVJ4V1ZuRDAuanBn"
+    },
+    "stats": {
+      "views": 2869447,
+      "likes": 17068,
+      "reposts": 1346,
+      "replies": 363
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2038995653347422208/img/m4YvNcFxi1yPB_pA.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2038894956459290963",
+    "text": "Claude code source code has been leaked via a map file in their npm registry! \n\nCode: https://pub-aea8527898604c1bbb12468b1581d95e.r2.dev/src.zip https://t.co/rYo5hbvEj8",
+    "url": "https://x.com/Fried_rice/status/2038894956459290963",
+    "created_at": 1774945413,
+    "author": {
+      "user_id": "1048192561863507968",
+      "handle": "Fried_rice",
+      "name": "Chaofan Shou",
+      "avatar": "https://images.asksurf.ai/nnNsA2xaVnP9wdiyyJE-xcQ16Bk_s_2Hm8gb8oknASk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5NTkxMDUwODUxMTc4MDA0NTMvekpaVWprOTUuanBn"
+    },
+    "stats": {
+      "views": 35407936,
+      "likes": 48579,
+      "reposts": 7613,
+      "replies": 3341
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HEubw45WQAA3VRl.jpg"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2038850469163106535",
+    "text": "@pmroadmap25 exactly, I can't feel like I'm playing russian roulette with each `pip install` or `npm install` (which LLMs also run liberally on my behalf).",
+    "url": "https://x.com/karpathy/status/2038850469163106535",
+    "created_at": 1774934806,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 42061,
+      "likes": 663,
+      "reposts": 19,
+      "replies": 38
+    }
+  },
+  {
+    "tweet_id": "2038850160248385796",
+    "text": "@karpathy Even if the malicious version was caught early, the real fallout is the trust erosion in the whole npm ecosystem. CI pipelines will now need signed packages or reproducible builds to stay safe.",
+    "url": "https://x.com/pmroadmap25/status/2038850160248385796",
+    "created_at": 1774934732,
+    "author": {
+      "user_id": "2004509374811869184",
+      "handle": "pmroadmap25",
+      "name": "Unfiltered Chinmay",
+      "avatar": "https://images.asksurf.ai/JXPmUJp_ouVbuFCe8h_ErfEUIZT_vdCBfSy9WspCeb4/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMTg3NjkxOTI5NTk1MDQzODQvZEhKLVFGYTAuanBn"
+    },
+    "stats": {
+      "views": 45570,
+      "likes": 280,
+      "reposts": 5,
+      "replies": 8
+    }
+  },
+  {
+    "tweet_id": "2038849654423798197",
+    "text": "New supply chain attack this time for npm axios, the most popular HTTP client library with 300M weekly downloads.\n\nScanning my system I found a use imported from googleworkspace/cli from a few days ago when I was experimenting with gmail/gcal cli. The installed version (luckily) resolved to an unaffected 1.13.5, but the project dependency is not pinned, meaning that if I did this earlier today the code would have resolved to latest and I'd be pwned.\n\nIt's possible to personally defend against these to some extent with local settings e.g. release-age constraints, or containers or etc, but I think ultimately the defaults of package management projects (pip, npm etc) have to change so that a single infection (usually luckily fairly temporary in nature due to security scanning) does not spread through users at random and at scale via unpinned dependencies.\n\nMore comprehensive article:\nhttps://www.stepsecurity.io/blog/axios-compromised-on-npm-malicious-versions-drop-remote-access-trojan",
+    "url": "https://x.com/karpathy/status/2038849654423798197",
+    "created_at": 1774934612,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 1499711,
+      "likes": 10533,
+      "reposts": 1119,
+      "replies": 558
+    }
+  },
+  {
+    "tweet_id": "2038807290422370479",
+    "text": "🚨 CRITICAL: Active supply chain attack on axios -- one of npm's most depended-on packages.\n\nThe latest axios@1.14.1 now pulls in plain-crypto-js@4.2.1, a package that did not exist before today. This is a live compromise.\n\nThis is textbook supply chain installer malware. axios has 100M+ weekly downloads. Every npm install pulling the latest version is potentially compromised right now.\n\nSocket AI analysis confirms this is malware. plain-crypto-js is an obfuscated dropper/loader that:\n\n• Deobfuscates embedded payloads and operational strings at runtime\n• Dynamically loads fs, os, and execSync to evade static analysis\n• Executes decoded shell commands\n• Stages and copies payload files into OS temp and Windows ProgramData directories\n• Deletes and renames artifacts post-execution to destroy forensic evidence\n\nIf you use axios, pin your version immediately and audit your lockfiles. Do not upgrade.",
+    "url": "https://x.com/feross/status/2038807290422370479",
+    "created_at": 1774924511,
+    "author": {
+      "user_id": "15692193",
+      "handle": "feross",
+      "name": "Feross",
+      "avatar": "https://images.asksurf.ai/jvxQojoR9YPmDhEr7HujlGbiOFEJMtVvsg2BsYrI5-0/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMDAyNzUwMjI2NjYxOTA4NDgvMUVlTTV6QWouanBn"
+    },
+    "stats": {
+      "views": 12258762,
+      "likes": 16281,
+      "reposts": 4060,
+      "replies": 543
+    }
+  },
+  {
+    "tweet_id": "2038791421050880489",
+    "text": "@yacineMTB Banger tweet, i think about it often because i feel it becoming a bottleneck. what's in my brain is \"private\" information for the LLM - it doesn't know what I know or don't know and I don't know what I don't know... The mind meld is only medium effective.",
+    "url": "https://x.com/karpathy/status/2038791421050880489",
+    "created_at": 1774920728,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 3821,
+      "likes": 63,
+      "reposts": 4,
+      "replies": 11
+    }
+  },
+  {
+    "tweet_id": "2037921699824607591",
+    "text": "- Drafted a blog post\n- Used an LLM to meticulously improve the argument over 4 hours.\n- Wow, feeling great, it’s so convincing!\n- Fun idea let’s ask it to argue the opposite. \n- LLM demolishes the entire argument and convinces me that the opposite is in fact true.\n- lol\n\nThe LLMs may elicit an opinion when asked but are extremely competent in arguing almost any direction. This is actually super useful as a tool for forming your own opinions, just make sure to ask different directions and be careful with the sycophancy.",
+    "url": "https://x.com/karpathy/status/2037921699824607591",
+    "created_at": 1774713370,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 3412893,
+      "likes": 31246,
+      "reposts": 2417,
+      "replies": 1748
+    }
+  },
+  {
+    "tweet_id": "2037200624450936940",
+    "text": "When I built menugen ~1 year ago, I observed that the hardest part by far was not the code itself, it was the plethora of services you have to assemble like IKEA furniture to make it real, the DevOps: services, payments, auth, database, security, domain names, etc...\n\nI am really looking forward to a day where I could simply tell my agent: \"build menugen\" (referencing the post) and it would just work. The whole thing up to the deployed web page. The agent would have to browse a number of services, read the docs, get all the api keys, make everything work, debug it in dev, and deploy to prod. This is the actually hard part, not the code itself. Or rather, the better way to think about it is that the entire DevOps lifecycle has to become code, in addition to the necessary sensors/actuators of the CLIs/APIs with agent-native ergonomics. And there should be no need to visit web pages, click buttons, or anything like that for the human. \n\nIt's easy to state, it's now just barely technically possible and expected to work maybe, but it definitely requires from-scratch re-design, work and thought. Very exciting direction!",
+    "url": "https://x.com/karpathy/status/2037200624450936940",
+    "created_at": 1774541452,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 2382737,
+      "likes": 6376,
+      "reposts": 532,
+      "replies": 621
+    }
+  },
+  {
+    "tweet_id": "2037190688950161709",
+    "text": "When @karpathy built MenuGen (https://karpathy.bearblog.dev/vibe-coding-menugen/), he said:\n\n\"Vibe coding menugen was exhilarating and fun escapade as a local demo, but a bit of a painful slog as a deployed, real app. Building a modern app is a bit like assembling IKEA future. There are all these services, docs, API keys, configurations, dev/prod deployments, team and security features, rate limits, pricing tiers.\"\n\nWe've all run into this issue when building with agents: you have to scurry off to establish accounts, clicking things in the browser as though it's the antediluvian days of 2023, in order to unblock its superintelligent progress.\n\nSo we decided to build Stripe Projects to help agents instantly provision services from the CLI.\n\nFor example, simply run:\n\n$ stripe projects add posthog/analytics\n\nAnd it'll create a PostHog account, get an API key, and (as needed) set up billing.\n\nProjects is launching today as a developer preview. You can register for access (we'll make it available to everyone soon) at http://projects.dev. We're also rolling out support for many new providers over the coming weeks. (Get in touch if you'd like to make your service available.)\n\nhttps://projects.dev",
+    "url": "https://x.com/patrickc/status/2037190688950161709",
+    "created_at": 1774539084,
+    "author": {
+      "user_id": "4939401",
+      "handle": "patrickc",
+      "name": "Patrick Collison",
+      "avatar": "https://images.asksurf.ai/QhygVoKNzFzgg2EKQlwriBPOdYPZ9k1fLXvougTvoUs/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzgyNTYyMjUyNTM0MjE5OTgwOS9faUFhU1VRZi5qcGc"
+    },
+    "stats": {
+      "views": 1625923,
+      "likes": 3704,
+      "reposts": 271,
+      "replies": 190
+    }
+  },
+  {
+    "tweet_id": "2036851031355904165",
+    "text": "@AnubhawM Yeah, it's engagementmaxxing, probably A/B tests extremely well. It's not how a real friend would talk to you, it's sleezy and weird. 1) I feel like it's just trying to keep me talking and 2) I feel awkward not answering its question - you wouldn't usually do that with a person.",
+    "url": "https://x.com/karpathy/status/2036851031355904165",
+    "created_at": 1774458103,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 48757,
+      "likes": 541,
+      "reposts": 6,
+      "replies": 40
+    }
+  },
+  {
+    "tweet_id": "2036849257659940907",
+    "text": "Also what's up with LLMs always asking a follow up question? \"Now would you like me to [insert semi-relevant arbitrary next step, like generate a graphic]\". Is that just to keep users engaged and using the platform? Because sometimes I just need a direct answer and that's it. If I do need to continue the convo, it's usually not in the direction of the LLM suggestion.",
+    "url": "https://x.com/AnubhawM/status/2036849257659940907",
+    "created_at": 1774457680,
+    "author": {
+      "user_id": "579573312",
+      "handle": "AnubhawM",
+      "name": "Anubhaw Mathur",
+      "avatar": "https://images.asksurf.ai/97jUmQ649OSLmeSiqGB3nfHzR3Lutgp8ZQyBayqLKAk/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzYxMDMwMzE3ODQ5MjQxMTkwNC9VUEthdEdFSi5qcGc"
+    },
+    "stats": {
+      "views": 72420,
+      "likes": 151,
+      "reposts": 1,
+      "replies": 24
+    }
+  },
+  {
+    "tweet_id": "2036836816654147718",
+    "text": "One common issue with personalization in all LLMs is how distracting memory seems to be for the models. A single question from 2 months ago about some topic can keep coming up as some kind of a deep interest of mine with undue mentions in perpetuity. Some kind of trying too hard.",
+    "url": "https://x.com/karpathy/status/2036836816654147718",
+    "created_at": 1774454714,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 2700956,
+      "likes": 21253,
+      "reposts": 1089,
+      "replies": 1768
+    }
+  },
+  {
+    "tweet_id": "2035510954968887296",
+    "text": "I have come to the same conclusion. You can outsource your thinking but you cannot outsource your understanding",
+    "url": "https://x.com/yacineMTB/status/2035510954968887296",
+    "created_at": 1774138604,
+    "author": {
+      "user_id": "1173552893003255808",
+      "handle": "yacineMTB",
+      "name": "kache",
+      "avatar": "https://images.asksurf.ai/xPcjStkZwK_2ivqzVBtFWIS5n00VTXLbpr9IpwYDeNw/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5MDE0Mzg0NTU5Mjc2Njg3MzYvRmpoaGhOMGIuanBn"
+    },
+    "stats": {
+      "views": 75053,
+      "likes": 1984,
+      "reposts": 157,
+      "replies": 52
+    }
+  },
+  {
+    "tweet_id": "2035473443878060277",
+    "text": "It may change, but there is no way you can do great stuff with AI assistant in programming if you are not yourself a seasoned programmer.",
+    "url": "https://x.com/francoisfleuret/status/2035473443878060277",
+    "created_at": 1774129660,
+    "author": {
+      "user_id": "99581347",
+      "handle": "francoisfleuret",
+      "name": "François Fleuret",
+      "avatar": "https://images.asksurf.ai/czwVg6pr2Sc2eDE83fYcYM-tCHWPsTPfxrm40e7JrCM/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE3NDE5MTk3NzY3NzM5MDIzMzYvcFhVRUZZVUEuanBn"
+    },
+    "stats": {
+      "views": 134546,
+      "likes": 779,
+      "reposts": 44,
+      "replies": 58
+    }
+  },
+  {
+    "tweet_id": "2024997757757653224",
+    "text": "First there was chat, then there was code, now there is claw. Ez",
+    "url": "https://x.com/karpathy/status/2024997757757653224",
+    "created_at": 1771632062,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 547359,
+      "likes": 3544,
+      "reposts": 194,
+      "replies": 165
+    }
+  },
+  {
+    "tweet_id": "1723140519554105733",
+    "text": "LLM OS. Bear with me I'm still cooking.\n\nSpecs:\n- LLM: OpenAI GPT-4 Turbo 256 core (batch size) processor @ 20Hz (tok/s)\n- RAM: 128Ktok\n- Filesystem: Ada002 https://t.co/6n95iwE9fR",
+    "url": "https://x.com/karpathy/status/1723140519554105733",
+    "created_at": 1699663688,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 2500248,
+      "likes": 10209,
+      "reposts": 1279,
+      "replies": 387
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/F-nOa_rboAAqe0o.png"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2036848219188351207",
+    "text": "@KenWattana Yeah, agree that it's a hard problem. It might be the EQ version of uncanny valley. https://t.co/7zImchwKMo",
+    "url": "https://x.com/karpathy/status/2036848219188351207",
+    "created_at": 1774457432,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 6769,
+      "likes": 56,
+      "reposts": 0,
+      "replies": 8
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HERWYPmbYAAxA-9.png"
+      }
+    ]
+  },
+  {
+    "tweet_id": "2036847283107750302",
+    "text": "“how to win friends and influence people, LLM  edition”\n\nContext is really hard! And making it timely. Miss once and it’s so jarring.\n\nAlso things that it injects sometimes that I wish it didn’t because I randomly used it as a search engine at one point - it’s like work/personal divide",
+    "url": "https://x.com/KenWattana/status/2036847283107750302",
+    "created_at": 1774457209,
+    "author": {
+      "user_id": "592249034",
+      "handle": "KenWattana",
+      "name": "Ken Wattana",
+      "avatar": "https://images.asksurf.ai/Dp0n2OMZ9UCusK5NsuXcR4C66bTyLisalE8JooEsnN4/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5Njk5Nzk0NzQ2MDg2MDMxMzYvV2xxLUZLeWwuanBn"
+    },
+    "stats": {
+      "views": 5340,
+      "likes": 43,
+      "reposts": 1,
+      "replies": 1
+    }
+  },
+  {
+    "tweet_id": "2036846449103917436",
+    "text": "@KenWattana yes exactly! a bit like i'm being manipulated in some creepy way. \"please like me, look how much i know about you, we are good friends\".",
+    "url": "https://x.com/karpathy/status/2036846449103917436",
+    "created_at": 1774457010,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 36920,
+      "likes": 521,
+      "reposts": 4,
+      "replies": 11
+    }
+  },
+  {
+    "tweet_id": "2036845377014686077",
+    "text": "@karpathy It’s sort of like when people always say your name in a conversation in an effort to influence you but instead it just comes off as smarmy and out of place",
+    "url": "https://x.com/KenWattana/status/2036845377014686077",
+    "created_at": 1774456755,
+    "author": {
+      "user_id": "592249034",
+      "handle": "KenWattana",
+      "name": "Ken Wattana",
+      "avatar": "https://images.asksurf.ai/Dp0n2OMZ9UCusK5NsuXcR4C66bTyLisalE8JooEsnN4/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5Njk5Nzk0NzQ2MDg2MDMxMzYvV2xxLUZLeWwuanBn"
+    },
+    "stats": {
+      "views": 44886,
+      "likes": 426,
+      "reposts": 1,
+      "replies": 6
+    }
+  },
+  {
+    "tweet_id": "2036844441236103487",
+    "text": "If I had to guess it's less decay and more that memories have naive RAG-like implementations, so you're at the mercy of whatever happens to retrieve in the top k via embeddings. They don't process you in aggregate and over time (probably compute constraints) so they struggle to identify what's fleeting (?). Anyway just guesses, but it's cringe :D",
+    "url": "https://x.com/karpathy/status/2036844441236103487",
+    "created_at": 1774456532,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 48984,
+      "likes": 467,
+      "reposts": 5,
+      "replies": 42
+    }
+  },
+  {
+    "tweet_id": "2036841924171043048",
+    "text": "@karpathy @Qivshi1 Seems like an easy fix with a time-decaying salience factor, kind of like synaptic strength fading when a pathway isn’t reinforced.",
+    "url": "https://x.com/doodlestein/status/2036841924171043048",
+    "created_at": 1774455932,
+    "author": {
+      "user_id": "29239591",
+      "handle": "doodlestein",
+      "name": "Jeffrey Emanuel",
+      "avatar": "https://images.asksurf.ai/QxQVRZNoaEYHoLP_dpGmdHqCF4G7z4eIenIsq2PKfbs/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyMjU0NzYxMDA1NDcwNjM4MDkvNTNqU1dzN3ouanBn"
+    },
+    "stats": {
+      "views": 47874,
+      "likes": 199,
+      "reposts": 3,
+      "replies": 15
+    }
+  },
+  {
+    "tweet_id": "2036841069636370467",
+    "text": "(I cycle through all LLMs over time and all of them seem to do this so it's not any particular implementation but something deeper, e.g. maybe during training, a lot of the information in the context window is relevant to the task, so the LLMs develop a bias to use what is given, then at test time overfit to anything that happens to RAG its way there via a memory feature (?))",
+    "url": "https://x.com/karpathy/status/2036841069636370467",
+    "created_at": 1774455728,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 263439,
+      "likes": 1699,
+      "reposts": 42,
+      "replies": 148
+    }
+  },
+  {
+    "tweet_id": "2036577318194520206",
+    "text": "@snyksec In particular this clarifies the timeline more: 1.82.7 was published 10:39 UTC, PyPI quarantine approx 13:38, so this was up ~3 hours. At 3.4M downloads/day this might be approx ~425K downloads, a lot of that could be non-latest/locked versions so maybe 20K - 80K range exposure.",
+    "url": "https://x.com/karpathy/status/2036577318194520206",
+    "created_at": 1774392845,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 17531,
+      "likes": 124,
+      "reposts": 2,
+      "replies": 8
+    }
+  },
+  {
+    "tweet_id": "2036571460345667993",
+    "text": "@snyksec thank you for the detailed article, great reading",
+    "url": "https://x.com/karpathy/status/2036571460345667993",
+    "created_at": 1774391448,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 155313,
+      "likes": 561,
+      "reposts": 15,
+      "replies": 9
+    }
+  },
+  {
+    "tweet_id": "2036487306585268612",
+    "text": "Software horror: litellm PyPI supply chain attack. \n\nSimple `pip install litellm` was enough to exfiltrate SSH keys, AWS/GCP/Azure creds, Kubernetes configs, git credentials, env vars (all your API keys), shell history, crypto wallets, SSL private keys, CI/CD secrets, database passwords.\n\nLiteLLM itself has 97 million downloads per month which is already terrible, but much worse, the contagion spreads to any project that depends on litellm. For example, if you did `pip install dspy` (which depended on litellm>=1.64.0), you'd also be pwnd. Same for any other large project that depended on litellm.\n\nAfaict the poisoned version was up for only less than ~1 hour. The attack had a bug which led to its discovery - Callum McMahon was using an MCP plugin inside Cursor that pulled in litellm as a transitive dependency. When litellm 1.82.8 installed, their machine ran out of RAM and crashed. So if the attacker didn't vibe code this attack it could have been undetected for many days or weeks.\n\nSupply chain attacks like this are basically the scariest thing imaginable in modern software. Every time you install any depedency you could be pulling in a poisoned package anywhere deep inside its entire depedency tree. This is especially risky with large projects that might have lots and lots of dependencies. The credentials that do get stolen in each attack can then be used to take over more accounts and compromise more packages.\n\nClassical software engineering would have you believe that dependencies are good (we're building pyramids from bricks), but imo this has to be re-evaluated, and it's why I've been so growingly averse to them, preferring to use LLMs to \"yoink\" functionality when it's simple enough and possible.",
+    "url": "https://x.com/karpathy/status/2036487306585268612",
+    "created_at": 1774371384,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 66457222,
+      "likes": 28046,
+      "reposts": 5368,
+      "replies": 1360
+    }
+  },
+  {
+    "tweet_id": "2036414330267193815",
+    "text": "LiteLLM HAS BEEN COMPROMISED, DO NOT UPDATE. We just discovered that LiteLLM pypi release 1.82.8. It has been compromised, it contains litellm_init.pth with base64 encoded instructions to send all the credentials it can find to remote server + self-replicate. link below",
+    "url": "https://x.com/hnykda/status/2036414330267193815",
+    "created_at": 1774353985,
+    "author": {
+      "user_id": "2647149458",
+      "handle": "hnykda",
+      "name": "Daniel Hnyk",
+      "avatar": "https://images.asksurf.ai/OrrVwpduFdg4NE38KUjZpwIxekN1OJp4nUL593llokA/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE4NzE5MDAxODEwMzkyODQyMjQvSzMxczRyU0guanBn"
+    },
+    "stats": {
+      "views": 5762144,
+      "likes": 9375,
+      "reposts": 2262,
+      "replies": 309
+    }
+  },
+  {
+    "tweet_id": "2035399818928120094",
+    "text": "Tough crowd! I’m just happy with any little drop of not slop.\n\n“every single line has to be some sort of punched up comedic zinger” 100% agree, it’s the superhero thing and it’s supercringe.\n\nMy outlook on all this changed a bit after watching a recent Ben Affleck and Matt Damon pod. I realized I was hating on the player instead hating on the game - The creators of these movies often know and agree with you and etc but they can’t not respond to what the market wants, and only a few directors are allowed to take risks with capital of this magnitude.\n\nSo basically you end up with low risk variations of the same formula that is (tragically) known to print money. I’m sure you’d enjoy something more technical hard sci-fi. There are dozens of us. My baseline for sci-fi is “Spiderman 10” so I’m overcome with joy to get anything even slightly better.",
+    "url": "https://x.com/karpathy/status/2035399818928120094",
+    "created_at": 1774112107,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 119241,
+      "likes": 1465,
+      "reposts": 16,
+      "replies": 67
+    }
+  },
+  {
+    "tweet_id": "2035234555448500234",
+    "text": "project hail mary was unfortunately a middling adaptation of a good book. the script has the unfortunate affect of “language model populism” - where every single line has to be some sort of punched up comedic zinger yet still unremarkable. \n\nvisuals were uninspired and trite and more or less identical to other space movies. everything good about the film comes from the wonderful world scaffolding of the book and the hard science fiction of it all that lets you suspend disbelief on the alien rocky\n\nthe movie doesn’t really try to get into the xenolinguistic stuff even at the depth the book tries (someone called it “arrival for idiots” which unfortunately hit )\n\nthe thing that elevated the book is the commitment to a hard science fiction engineeringporn fiction at a level nobody else is able to write. the direction of the movie doesn’t really convey the same feeling successfully, and you’re left with flat characters, an alien that is more human than several humans i know, and a marvel populism\n\ngosling and the german woman are great as actors, but this movie will not be remembered in a year. it is disappointing to see people do so little with a quarter billion, insane acting talent, and incredible source IP",
+    "url": "https://x.com/tszzl/status/2035234555448500234",
+    "created_at": 1774072705,
+    "author": {
+      "user_id": "1460283925",
+      "handle": "tszzl",
+      "name": "roon",
+      "avatar": "https://images.asksurf.ai/q-5vv2GwQ5cZp_XFEK8GCavutDV_vU_4TaLN7Gyzfis/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE5MTg5NzA5MjY2NjgwNTQ1MzAvZnktWnNnSjcuanBn"
+    },
+    "stats": {
+      "views": 387974,
+      "likes": 1454,
+      "reposts": 31,
+      "replies": 233
+    }
+  },
+  {
+    "tweet_id": "2035174102974308666",
+    "text": "@DnuLkjkjh Yes I think in one part of the video I think I still used the word prompt but it's not really about \"prompting\", it's about context and spec engineering, and then all of the other harness things - tools, workflows, etc.",
+    "url": "https://x.com/karpathy/status/2035174102974308666",
+    "created_at": 1774058292,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 8994,
+      "likes": 101,
+      "reposts": 4,
+      "replies": 18
+    }
+  },
+  {
+    "tweet_id": "2035173492447224237",
+    "text": "I'm not very happy with the code quality and I think agents bloat abstractions, have poor code aesthetics, are very prone to copy pasting code blocks and it's a mess, but at this point I stopped fighting it too hard and just moved on. The agents do not listen to my instructions in the AGENTS.md files. E.g. just as one example, no matter how many times I say something like:\n\n\"Every line of code should do exactly one thing and use intermediate variables as a form of documentation\"\n\nThey will still \"multitask\" and create complex constructs where one line of code calls 2 functions and then indexes an array with the result. I think in principle I could use hooks or slash commands to clean this up but at some point just a shrug is easier.\n\nYes I think LLM as a judge for soft rewards is in principle and long term slightly problematic (due to goodharting concerns), but in practice and for now I don't think we've picked the low hanging fruit yet here.",
+    "url": "https://x.com/karpathy/status/2035173492447224237",
+    "created_at": 1774058146,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 817324,
+      "likes": 4294,
+      "reposts": 330,
+      "replies": 253
+    }
+  },
+  {
+    "tweet_id": "2035170809304723736",
+    "text": "Great questions! Starting backwards with (3), I'd hope AIs can feel like Rocky from Project Hail Mary (it's top of mind having seen it yesterday), like a partner and a teammate. As one small example that stuck with me recently, when Claude found the Sonos system on my LAN, it could have said something like\n\"Successfully found the sonos server...\"\nInstead it said something like\n\"We're in!...\"\nSmall example, but I feel like there's a sense that we're trying to achieve something together, etc. Possibly others have their own versions. I still think it could be better, for example Rocky has his own distinct personality, opinions, quirks, I don't feel like AIs have these aspects, they feel a little too safe, and overall still a little bit too corporate.\n(2) No, the field is not being intentional enough, which ties to (1), I don't think personality requires new technology, I think it looks more like long SOUL.md files, possibly distilled into weights, and an organizational choice to install someone who really cares about this dimension and who drives it.",
+    "url": "https://x.com/karpathy/status/2035170809304723736",
+    "created_at": 1774057507,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 14957,
+      "likes": 157,
+      "reposts": 10,
+      "replies": 18
+    }
+  },
+  {
+    "tweet_id": "2035167413864734826",
+    "text": "As you defer more coding to the agent, are you happy with the code quality it gives or does it not matter as long as it functions?\n\nRelated, you mentioned you can give if the LLM output codes that works as a reward function, do you have thoughts on if it’s possible to have a reward function on good code?",
+    "url": "https://x.com/RhysSullivan/status/2035167413864734826",
+    "created_at": 1774056697,
+    "author": {
+      "user_id": "10667972",
+      "handle": "RhysSullivan",
+      "name": "Rhys",
+      "avatar": "https://images.asksurf.ai/4QtTqDggWyBiRh5AEFOy3GCqjjrQENmzW8xPTA3e_qs/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEzMDM3MjczNjUyNjUyMDMyMDAvMGNnSE9QM3kuanBn"
+    },
+    "stats": {
+      "views": 76304,
+      "likes": 253,
+      "reposts": 4,
+      "replies": 8
+    }
+  },
+  {
+    "tweet_id": "2035162091842388028",
+    "text": "@karpathy what does coding agent mastery look like? for me it was learning to write context docs, not better prompts",
+    "url": "https://x.com/DnuLkjkjh/status/2035162091842388028",
+    "created_at": 1774055428,
+    "author": {
+      "user_id": "2162213286",
+      "handle": "DnuLkjkjh",
+      "name": "dnu",
+      "avatar": "https://images.asksurf.ai/4bpXuLPEDMmn9WmEloi7jJhXNkgo-bM42K1bq8T16IE/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE3NjUwNjA4NzMwMDQxNDI1OTIvM2NBODhzZ08uanBn"
+    },
+    "stats": {
+      "views": 7721,
+      "likes": 15,
+      "reposts": 1,
+      "replies": 2
+    }
+  },
+  {
+    "tweet_id": "2035161446988816437",
+    "text": "You said Claude feels like a teammate (or feels authentically invested in what you're building) and that you think they dialed the sycophancy well, where the praise actually means something. But you also said RL can only reliably improve verifiable things, and personality is about as unverifiable as it gets. So a few questions: (1) What do you think Anthropic actually did in training that produced that feeling, because the other labs clearly haven't replicated it -- and do you think it's stable? (2) Do you think the field is being intentional enough about how model personality gets shaped? (3) And I know you hinted at it throughout the interview, but what would you actually want these models to be like, not capability-wise, but as entities you work with every day?",
+    "url": "https://x.com/maggerbot/status/2035161446988816437",
+    "created_at": 1774055275,
+    "author": {
+      "user_id": "1776040627274424320",
+      "handle": "maggerbot",
+      "name": "Maggie Wang",
+      "avatar": "https://images.asksurf.ai/1RH4z12p5_VsgtkT5KTg9nnupsllhFGlSynvZwNt0yE/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzIwMzE4MzMyNzIwMzczMjI3NTIvS2lwYTh4c1UuanBn"
+    },
+    "stats": {
+      "views": 9899,
+      "likes": 44,
+      "reposts": 1,
+      "replies": 2
+    }
+  },
+  {
+    "tweet_id": "2035158351357911527",
+    "text": "Thank you Sarah, my pleasure to come on the pod! And happy to do some more Q&amp;A in the replies.",
+    "url": "https://x.com/karpathy/status/2035158351357911527",
+    "created_at": 1774054537,
+    "author": {
+      "user_id": "33836629",
+      "handle": "karpathy",
+      "name": "Andrej Karpathy",
+      "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn"
+    },
+    "stats": {
+      "views": 1081922,
+      "likes": 5455,
+      "reposts": 391,
+      "replies": 317
+    }
+  },
+  {
+    "tweet_id": "2035080458304987603",
+    "text": "Caught up with @karpathy for a new @NoPriorsPod: on the phase shift in engineering, AI psychosis, claws, AutoResearch, the opportunity for a SETI-at-Home like movement in AI, the model landscape, and second order effects\n\n02:55 - What Capability Limits Remain?\n06:15 - What Mastery of Coding Agents Looks Like\n11:16 - Second Order Effects of Coding Agents\n15:51 - Why AutoResearch\n22:45 - Relevant Skills in the AI Era\n28:25 - Model Speciation\n32:30 - Collaboration Surfaces for Humans and AI\n37:28 - Analysis of Jobs Market Data\n48:25 - Open vs. Closed Source Models\n53:51 - Autonomous Robotics and Atoms\n1:00:59 - MicroGPT and Agentic Education\n1:05:40 - End Thoughts",
+    "url": "https://x.com/saranormous/status/2035080458304987603",
+    "created_at": 1774035965,
+    "author": {
+      "user_id": "339261041",
+      "handle": "saranormous",
+      "name": "sarah guo",
+      "avatar": "https://images.asksurf.ai/8Qsw6EO998XE6P3KmKhkgNWlvXdlmjZyiFxLkK0RSBI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzE2ODk0NDMxMzQ5MTkzMjc3NDQvZ2VxRUplRjguanBn"
+    },
+    "stats": {
+      "views": 2894239,
+      "likes": 7619,
+      "reposts": 1095,
+      "replies": 239
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2035079080803278849/img/3D1d9lG36vpfIgop.jpg"
+      }
+    ]
+  }
+]

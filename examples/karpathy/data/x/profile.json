@@ -1,0 +1,15 @@
+{
+  "$schema": "https://api.asksurf.ai/schemas/DataObjectResponseXUser.json",
+  "data": {
+    "user_id": "33836629",
+    "handle": "karpathy",
+    "name": "Andrej Karpathy",
+    "avatar": "https://images.asksurf.ai/0tOHmzqXrteiQPpTinKULirCQR5THTmlw16ohe1EHFI/aHR0cHM6Ly9wYnMudHdpbWcuY29tL3Byb2ZpbGVfaW1hZ2VzLzEyOTY2NjcyOTQxNDgzODI3MjEvOVByNlhyUEIuanBn",
+    "followers_count": 0,
+    "following_count": 0
+  },
+  "meta": {
+    "credits_used": 2,
+    "cached": false
+  }
+}

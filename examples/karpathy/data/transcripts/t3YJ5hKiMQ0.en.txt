@@ -1,0 +1,1535 @@
+ 
+hi everyone today we are continuing our
+implementation of make more our favorite
+character level language model
+now you'll notice that the background
+behind me is different that's because I
+am in Kyoto and it is awesome so I'm in
+a hotel room here
+now over the last few lectures we've
+built up to this architecture that is a
+multi-layer perceptron character level
+language model so we see that it
+receives three previous characters and
+tries to predict the fourth character in
+a sequence using a very simple multi
+perceptron using one hidden layer of
+neurons with 10ational neuralities
+so we'd like to do now in this lecture
+is I'd like to complexify this
+architecture in particular we would like
+to take more characters in a sequence as
+an input not just three and in addition
+to that we don't just want to feed them
+all into a single hidden layer because
+that squashes too much information too
+quickly instead we would like to make a
+deeper model that progressively fuses
+this information to make its guess about
+the next character in a sequence
+and so we'll see that as we make this
+architecture more complex we're actually
+going to arrive at something that looks
+very much like a wavenet
+the witness is this paper published by
+the point in 2016 and it is also a
+language model basically but it tries to
+predict audio sequences instead of
+character level sequences or Word level
+sequences but fundamentally the modeling
+setup is identical it is an auto
+aggressive model and it tries to predict
+next character in a sequence and the
+architecture actually takes this
+interesting hierarchical sort of
+approach to predicting the next
+character in a sequence uh with the
+street-like structure and this is the
+architecture and we're going to
+implement it in the course of this video
+so let's get started so the starter code
+for part five is very similar to where
+we ended up in in part three recall that
+part four was the manual black
+replication exercise that is kind of an
+aside so we are coming back to part
+three copy pasting chunks out of it and
+that is our starter code for part five
+I've changed very few things otherwise
+so a lot of this should look familiar to
+if you've gone through part three so in
+particular very briefly we are doing
+Imports we are reading our our data set
+of words and we are processing their set
+of words into individual examples and
+none of this data generation code has
+changed and basically we have lots and
+lots of examples in particular we have
+to predict the fourth one and we've
+broken up every one of these words into
+little problems of given three
+characters predict the fourth one so
+this is our data set and this is what
+we're trying to get the neural lot to do
+now in part three we started to develop
+our code around these layer modules
+um that are for example like class
+linear and we're doing this because we
+want to think of these modules as
+building blocks and like a Lego building
+block bricks that we can sort of like
+stack up into neural networks and we can
+feed data between these layers and stack
+them up into a sort of graphs
+now we also developed these layers to
+have apis and signatures very similar to
+those that are found in pytorch so we
+have torch.nn and it's got all these
+layer building blocks that you would use
+in practice and we were developing all
+of these to mimic the apis of these so
+for example we have linear so there will
+also be a torch.nn.linear and its
+signature will be very similar to our
+signature and the functionality will be
+also quite identical as far as I'm aware
+so we have the linear layer with the
+Bass from 1D layer and the 10h layer
+that we developed previously
+and linear just as a matrix multiply in
+the forward pass of this module batch
+number of course is this crazy layer
+that we developed in the previous
+lecture and what's crazy about it is
+well there's many things number one it
+has these running mean and variances
+that are trained outside of back
+propagation they are trained using
+exponential moving average inside this
+layer when we call the forward pass
+in addition to that
+there's this training plug because the
+behavior of bathroom is different during
+train time and evaluation time and so
+suddenly we have to be very careful that
+bash form is in its correct state that
+it's in the evaluation state or training
+state so that's something to now keep
+track of something that sometimes
+introduces bugs
+uh because you forget to put it into the
+right mode and finally we saw that
+Bachelor couples the statistics or the
+the activations across the examples in
+the batch so normally we thought of the
+bat as just an efficiency thing but now
+we are coupling the computation across
+batch elements and it's done for the
+purposes of controlling the automation
+statistics as we saw in the previous
+video
+so it's a very weird layer at least a
+lot of bugs
+partly for example because you have to
+modulate the training in eval phase and
+so on
+um in addition for example you have to
+wait for uh the mean and the variance to
+settle and to actually reach a steady
+state and so um you have to make sure
+that you basically there's state in this
+layer and state is harmful uh usually
+now I brought out the generator object
+previously we had a generator equals g
+and so on inside these layers I've
+discarded that in favor of just
+initializing the torch RNG outside here
+use it just once globally just for
+Simplicity
+and then here we are starting to build
+out some of the neural network elements
+this should look very familiar we are we
+have our embedding table C and then we
+have a list of players and uh it's a
+linear feeds to Bachelor feeds to 10h
+and then a linear output layer and its
+weights are scaled down so we are not
+confidently wrong at the initialization
+we see that this is about 12 000
+parameters we're telling pytorch that
+the parameters require gradients
+the optimization is as far as I'm aware
+identical and should look very very
+familiar
+nothing changed here
+uh loss function looks very crazy we
+should probably fix this and that's
+because 32 batch elements are too few
+and so you can get very lucky lucky or
+unlucky in any one of these batches and
+it creates a very thick loss function
+um so we're going to fix that soon
+now once we want to evaluate the trained
+neural network we need to remember
+because of the bathroom layers to set
+all the layers to be training equals
+false so this only matters for the
+bathroom layer so far
+and then we evaluate
+we see that currently we have validation
+loss of 2.10 which is fairly good but
+there's still ways to go but even at
+model we actually get relatively
+name-like results that do not exist in a
+training set so for example Yvonne kilo
+Pros
+Alaia Etc so certainly not
+reasonable not unreasonable I would say
+but not amazing and we can still push
+this validation loss even lower and get
+much better samples that are even more
+name-like
+so let's improve this model
+okay first let's fix this graph because
+it is daggers in my eyes and I just
+can't take it anymore
+um so last I if you recall is a python
+list of floats so for example the first
+now what we'd like to do basically is we
+need to average up
+um some of these values to get a more
+sort of Representative uh value along
+the way so one way to do this is the
+following
+in part torch if I create for example
+a tensor of the first 10 numbers
+then this is currently a one-dimensional
+array but recall that I can view this
+array as two-dimensional so for example
+I can use it as a two by five array and
+this is a 2d tensor now two by five and
+you see what petroch has done is that
+the first row of this tensor is the
+first five elements and the second row
+is the second five elements
+I can also view it as a five by two as
+an example
+and then recall that I can also
+use negative one in place of one of
+these numbers
+and pytorch will calculate what that
+number must be in order to make the
+number of elements work out so this can
+be
+this or like that but it will work of
+course this would not work
+okay so this allows it to spread out
+some of the consecutive values into rows
+so that's very helpful because what we
+can do now is first of all we're going
+to create a torshot tensor out of the a
+list of floats
+and then we're going to view it as
+whatever it is but we're going to
+stretch it out into rows of 1000
+consecutive elements so the shape of
+this now becomes 200 by 1000. and each
+row is one thousand um consecutive
+elements in this list
+so that's very helpful because now we
+can do a mean along the rows
+and the shape of this will just be 200.
+and so we've taken basically the mean on
+every row so plt.plot of that should be
+something nicer
+much better
+so we see that we basically made a lot
+of progress and then here this is the
+learning rate Decay so here we see that
+the learning rate Decay subtracted a ton
+of energy out of the system and allowed
+us to settle into sort of the local
+minimum in this optimization
+so this is a much nicer plot let me come
+up and delete the monster and we're
+going to be using this going forward now
+next up what I'm bothered by is that you
+see our forward pass is a little bit
+gnarly and takes way too many lines of
+code
+so in particular we see that we've
+organized some of the layers inside the
+layers list but not all of them uh for
+no reason so in particular we see that
+we still have the embedding table a
+special case outside of the layers and
+in addition to that the viewing
+operation here is also outside of our
+layers so let's create layers for these
+and then we can add those layers to just
+our list
+so in particular the two things that we
+need is here we have this embedding
+table and we are indexing at the
+integers inside uh the batch XB uh
+inside the tensor xB
+so that's an embedding table lookup just
+done with indexing and then here we see
+that we have this view operation which
+if you recall from the previous video
+Simply rearranges the character
+embeddings and stretches them out into a
+row and effectively what print that does
+is the concatenation operation basically
+except it's free because viewing is very
+cheap in pytorch no no memory is being
+copied we're just re-representing how we
+view that tensor so let's create
+um
+modules for both of these operations the
+embedding operation and flattening
+operation
+so I actually wrote the code in just to
+save some time
+so we have a module embedding and a
+module pattern and both of them simply
+do the indexing operation in the forward
+pass and the flattening operation here
+and this C now will just become a salt
+dot weight inside an embedding module
+and I'm calling these layers
+specifically embedding a platinum
+because it turns out that both of them
+actually exist in pi torch so in
+phytorch we have n and Dot embedding and
+it also takes the number of embeddings
+and the dimensionality of the bedding
+just like we have here but in addition
+python takes in a lot of other keyword
+arguments that we are not using for our
+purposes yet
+and for flatten that also exists in
+pytorch and it also takes additional
+keyword arguments that we are not using
+so we have a very simple platform
+but both of them exist in pytorch
+they're just a bit more simpler and now
+that we have these we can simply take
+out some of these special cased
+um things so instead of C we're just
+going to have an embedding
+and of a cup size and N embed
+and then after the embedding we are
+going to flatten
+so let's construct those modules and now
+I can take out this the
+and here I don't have to special case
+anymore because now C is the embeddings
+weight and it's inside layers
+so this should just work
+and then here our forward pass
+simplifies substantially because we
+don't need to do these now outside of
+these layer outside and explicitly
+they're now inside layers
+so we can delete those
+but now to to kick things off we want
+this little X which in the beginning is
+just XB uh the tensor of integers
+specifying the identities of these
+characters at the input
+and so these characters can now directly
+feed into the first layer and this
+should just work
+so let me come here and insert a break
+because I just want to make sure that
+the first iteration of this runs and
+then there's no mistake so that ran
+properly and basically we substantially
+simplified the forward pass here okay
+I'm sorry I changed my microphone so
+hopefully the audio is a little bit
+better
+now one more thing that I would like to
+do in order to pytortify our code even
+further is that right now we are
+maintaining all of our modules in a
+naked list of layers and we can also
+simplify this uh because we can
+introduce the concept of Pi torch
+containers so in tors.nn which we are
+basically rebuilding from scratch here
+there's a concept of containers
+and these containers are basically a way
+of organizing layers into
+lists or dicts and so on so in
+particular there's a sequential which
+maintains a list of layers and is a
+module class in pytorch and it basically
+just passes a given input through all
+the layers sequentially exactly as we
+are doing here
+so let's write our own sequential
+I've written a code here and basically
+the code for sequential is quite
+straightforward we pass in a list of
+layers which we keep here and then given
+any input in a forward pass we just call
+all the layers sequentially and return
+the result in terms of the parameters
+it's just all the parameters of the
+child modules
+so we can run this and we can again
+simplify this substantially because we
+don't maintain this naked list of layers
+we now have a notion of a model which is
+a module and in particular is a
+sequential of all these layers
+and now parameters are simply just a
+model about parameters
+and so that list comprehension now lives
+here
+and then here we are press here we are
+doing all the things we used to do
+now here the code again simplifies
+substantially because we don't have to
+do this forwarding here instead of just
+call the model on the input data and the
+input data here are the integers inside
+xB so we can simply do logits which are
+the outputs of our model are simply the
+model called on xB
+and then the cross entropy here takes
+the logits and the targets
+so this simplifies substantially
+and then this looks good so let's just
+make sure this runs that looks good
+now here we actually have some work to
+do still here but I'm going to come back
+later for now there's no more layers
+there's a model that layers but it's not
+a to access attributes of these classes
+directly so we'll come back and fix this
+later
+and then here of course this simplifies
+substantially as well because logits are
+the model called on x
+and then these low Jets come here
+so we can evaluate the train and
+validation loss which currently is
+terrible because we just initialized the
+neural net and then we can also sample
+from the model and this simplifies
+dramatically as well
+because we just want to call the model
+onto the context and outcome logits
+and these logits go into softmax and get
+the probabilities Etc so we can sample
+from this model
+what did I screw up
+okay so I fixed the issue and we now get
+the result that we expect which is
+gibberish because the model is not
+trained because we re-initialize it from
+scratch
+the problem was that when I fixed this
+cell to be modeled out layers instead of
+just layers I did not actually run the
+cell and so our neural net was in a
+training mode and what caused the issue
+here is the bathroom layer as bathroom
+layer of the likes to do because
+Bachelor was in a training mode and here
+we are passing in an input which is a
+batch of just a single example made up
+of the context
+and so if you are trying to pass in a
+single example into a bash Norm that is
+in the training mode you're going to end
+up estimating the variance using the
+input and the variance of a single
+number is is not a number because it is
+a measure of a spread so for example the
+variance of just the single number five
+you can see is not a number and so
+that's what happened in the master
+basically caused an issue and then that
+polluted all of the further processing
+so all that we have to do was make sure
+that this runs and we basically made the
+issue of
+again we didn't actually see the issue
+with the loss we could have evaluated
+the loss but we got the wrong result
+because basharm was in the training mode
+and uh and so we still get a result it's
+just the wrong result because it's using
+the uh sample statistics of the batch
+whereas we want to use the running mean
+and running variants inside the bachelor
+and so
+again an example of introducing a bug
+inline because we did not properly
+maintain the state of what is training
+or not okay so I Rewritten everything
+and here's where we are as a reminder we
+have the training loss of 2.05 and
+validation 2.10
+now because these losses are very
+similar to each other we have a sense
+that we are not overfitting too much on
+this task and we can make additional
+progress in our performance by scaling
+up the size of the neural network and
+making everything bigger and deeper
+now currently we are using this
+architecture here where we are taking in
+some number of characters going into a
+single hidden layer and then going to
+the prediction of the next character
+the problem here is we don't have a
+naive way of making this bigger in a
+productive way we could of course use
+our layers sort of building blocks and
+materials to introduce additional layers
+here and make the network deeper but it
+is still the case that we are crushing
+all of the characters into a single
+layer all the way at the beginning
+and even if we make this a bigger layer
+and add neurons it's still kind of like
+silly to squash all that information so
+fast in a single step
+so we'd like to do instead is we'd like
+our Network to look a lot more like this
+in the wavenet case so you see in the
+wavenet when we are trying to make the
+prediction for the next character in the
+sequence it is a function of the
+previous characters that are feeding
+that feed in but not all of these
+different characters are not just
+crushed to a single layer and then you
+have a sandwich they are crushed slowly
+so in particular we take two characters
+and we fuse them into sort of like a
+diagram representation and we do that
+for all these characters consecutively
+and then we take the bigrams and we fuse
+those into four character level chunks
+and then we fuse that again and so we do
+that in this like tree-like hierarchical
+manner so we fuse the information from
+the previous context slowly into the
+network as it gets deeper and so this is
+the kind of architecture that we want to
+implement
+now in the wave Nets case this is a
+visualization of a stack of dilated
+causal convolution layers and this makes
+it sound very scary but actually the
+idea is very simple and the fact that
+it's a dilated causal convolution layer
+is really just an implementation detail
+to make everything fast we're going to
+see that later but for now let's just
+keep the basic idea of it which is this
+Progressive Fusion so we want to make
+the network deeper and at each level we
+want to fuse only two consecutive
+elements two characters then two bigrams
+then two four grams and so on so let's
+unplant this okay so first up let me
+scroll to where we built the data set
+and let's change the block size from 3
+to 8. so we're going to be taking eight
+characters of context to predict the
+ninth character so the data set now
+looks like this we have a lot more
+context feeding in to predict any next
+character in a sequence and these eight
+characters are going to be processed in
+this tree like structure
+now if we scroll here everything here
+should just be able to work so we should
+be able to redefine the network
+you see the number of parameters has
+increased by 10 000 and that's because
+the block size has grown so this first
+linear layer is much much bigger our
+linear layer now takes eight characters
+into this middle layer so there's a lot
+more parameters there but this should
+just run let me just break right after
+the very first iteration so you see that
+this runs just fine it's just that this
+network doesn't make too much sense
+we're crushing way too much information
+way too fast
+so let's now come in and see how we
+could try to implement the hierarchical
+scheme now before we dive into the
+detail of the re-implementation here I
+was just curious to actually run it and
+see where we are in terms of the
+Baseline performance of just lazily
+scaling up the context length so I'll
+let it run we get a nice loss curve and
+then evaluating the loss we actually see
+quite a bit of improvement just from
+increasing the context line length so I
+started a little bit of a performance
+log here and previously where we were is
+we were getting a performance of 2.10 on
+the validation loss and now simply
+scaling up the contact length from 3 to
+quite a bit of an improvement here and
+also when you sample from the model you
+see that the names are definitely
+improving qualitatively as well
+so we could of course spend a lot of
+time here tuning
+um uh tuning things and making it even
+bigger and scaling up the network
+further even with the simple
+um sort of setup here but let's continue
+and let's Implement here model and treat
+this as just a rough Baseline
+performance but there's a lot of
+optimization like left on the table in
+terms of some of the hyper parameters
+that you're hopefully getting a sense of
+now okay so let's scroll up now
+and come back up and what I've done here
+is I've created a bit of a scratch space
+for us to just like look at the forward
+pass of the neural net and inspect the
+shape of the tensor along the way as the
+neural net uh forwards so here I'm just
+temporarily for debugging creating a
+batch of just say four examples so four
+random integers then I'm plucking out
+those rows from our training set
+and then I'm passing into the model the
+input xB
+now the shape of XB here because we have
+only four examples is four by eight and
+this eight is now the current block size
+so uh inspecting XP we just see that we
+have four examples each one of them is a
+row of xB
+and we have eight characters here and
+this integer tensor just contains the
+identities of those characters
+so the first layer of our neural net is
+the embedding layer so passing XB this
+integer tensor through the embedding
+layer creates an output that is four by
+eight by ten
+so our embedding table has for each
+character a 10-dimensional vector that
+we are trying to learn
+and so what the embedding layer does
+here is it plucks out the embedding
+Vector for each one of these integers
+and organizes it all in a four by eight
+by ten tensor now
+so all of these integers are translated
+into 10 dimensional vectors inside this
+three-dimensional tensor now
+passing that through the flattened layer
+as you recall what this does is it views
+this tensor as just a 4 by 80 tensor and
+what that effectively does is that all
+these 10 dimensional embeddings for all
+these eight characters just end up being
+stretched out into a long row
+and that looks kind of like a
+concatenation operation basically so by
+viewing the tensor differently we now
+have a four by eighty and inside this 80
+it's all the 10 dimensional uh
+vectors just uh concatenate next to each
+other
+and then the linear layer of course
+takes uh 80 and creates 200 channels
+just via matrix multiplication
+so so far so good now I'd like to show
+you something surprising
+let's look at the insides of the linear
+layer and remind ourselves how it works
+the linear layer here in the forward
+pass takes the input X multiplies it
+with a weight and then optionally adds
+bias and the weight here is
+two-dimensional as defined here and the
+bias is one dimensional here
+so effectively in terms of the shapes
+involved what's happening inside this
+linear layer looks like this right now
+and I'm using random numbers here but
+I'm just illustrating the shapes and
+what happens
+basically a 4 by 80 input comes into the
+linear layer that's multiplied by this
+there's a plus 200 bias and the shape of
+the whole thing that comes out of the
+linear layer is four by two hundred as
+we see here
+now notice here by the way that this
+here will create a 4x200 tensor and then
+plus 200 there's a broadcasting
+happening here about 4 by 200 broadcasts
+with 200 uh so everything works here
+so now the surprising thing that I'd
+like to show you that you may not expect
+is that this input here that is being
+multiplied uh doesn't actually have to
+be two-dimensional this Matrix multiply
+operator in pytorch is quite powerful
+and in fact you can actually pass in
+higher dimensional arrays or tensors and
+everything works fine so for example
+this could be four by five by eighty and
+the result in that case will become four
+by five by two hundred
+you can add as many dimensions as you
+like on the left here
+and so effectively what's happening is
+that the matrix multiplication only
+works on the last Dimension and the
+dimensions before it in the input tensor
+are left unchanged
+so that is basically these um these
+dimensions on the left are all treated
+as just a batch Dimension so we can have
+multiple batch dimensions and then in
+parallel over all those Dimensions we
+are doing the matrix multiplication on
+the last dimension
+so this is quite convenient because we
+can use that in our Network now
+because remember that we have these
+eight characters coming in
+and we don't want to now uh flatten all
+of it out into a large eight-dimensional
+vector
+because we don't want to Matrix multiply
+into a weight Matrix multiply
+immediately instead we want to group
+these
+like this
+so every consecutive two elements
+one two and three and four and five and
+six and seven and eight all of these
+should be now
+basically flattened out and multiplied
+by weight Matrix but all of these four
+groups here we'd like to process in
+parallel so it's kind of like a batch
+Dimension that we can introduce
+and then we can in parallel basically
+process all of these uh bigram groups in
+the four batch dimensions of an
+individual example and also over the
+actual batch dimension of the you know
+four examples in our example here so
+let's see how that works effectively
+what we want is right now we take a 4 by
+and multiply it by 80 by 200
+to in the linear layer this is what
+happens
+but instead what we want is we don't
+want 80 characters or 80 numbers to come
+in we only want two characters to come
+in on the very first layer and those two
+characters should be fused
+so in other words we just want 20 to
+come in right 20 numbers would come in
+and here we don't want a 4 by 80 to feed
+into the linear layer we actually want
+these groups of two to feed in so
+instead of four by eighty we want this
+to be a 4 by 4 by 20.
+so these are the four groups of two and
+each one of them is ten dimensional
+so what we want is now is we need to
+change the flattened layer so it doesn't
+output a four by eighty but it outputs a
+four by four by Twenty where basically
+these um
+every two consecutive characters are uh
+packed in on the very last Dimension and
+then these four is the first batch
+Dimension and this four is the second
+batch Dimension referring to the four
+groups inside every one of these
+examples
+and then this will just multiply like
+this so this is what we want to get to
+so we're going to have to change the
+linear layer in terms of how many inputs
+it expects it shouldn't expect 80 it
+should just expect 20 numbers and we
+have to change our flattened layer so it
+doesn't just fully flatten out this
+entire example it needs to create a 4x4
+by 20 instead of four by eighty so let's
+see how this could be implemented
+basically right now we have an input
+that is a four by eight by ten that
+feeds into the flattened layer and
+currently the flattened layer just
+stretches it out so if you remember the
+implementation of flatten
+it takes RX and it just views it as
+whatever the batch Dimension is and then
+negative one
+so effectively what it does right now is
+it does e dot view of 4 negative one and
+the shape of this of course is 4 by 80.
+so that's what currently happens and we
+instead want this to be a four by four
+by Twenty where these consecutive
+ten-dimensional vectors get concatenated
+so you know how in Python you can take a
+list of range of 10
+so we have numbers from zero to nine and
+we can index like this to get all the
+even parts
+and we can also index like starting at
+one and going in steps up two to get all
+the odd parts
+so one way to implement this it would be
+as follows we can take e and we can
+index into it for all the batch elements
+and then just even elements in this
+Dimension so at indexes 0 2 4 and 8.
+and then all the parts here from this
+last dimension
+and this gives us the even characters
+and then here
+this gives us all the odd characters and
+basically what we want to do is we make
+sure we want to make sure that these get
+concatenated in pi torch and then we
+want to concatenate these two tensors
+along the second dimension
+so this and the shape of it would be
+four by four by Twenty this is
+definitely the result we want we are
+explicitly grabbing the even parts and
+the odd parts and we're arranging those
+four by four by ten right next to each
+other and concatenate
+so this works but it turns out that what
+also works is you can simply use a view
+again and just request the right shape
+and it just so happens that in this case
+those vectors will again end up being
+arranged in exactly the way we want so
+in particular if we take e and we just
+view it as a four by four by Twenty
+which is what we want
+we can check that this is exactly equal
+to but let me call this this is the
+explicit concatenation I suppose
+so explosives dot shape is 4x4 by 20. if
+you just view it as 4x4 by 20 you can
+check that when you compare to explicit
+uh you got a big this is element wise
+operation so making sure that all of
+them are true that is the truth so
+basically long story short we don't need
+to make an explicit call to concatenate
+Etc we can simply take this input tensor
+to flatten and we can just view it in
+whatever way we want
+and in particular you don't want to
+stretch things out with negative one we
+want to actually create a
+three-dimensional array and depending on
+how many vectors that are consecutive we
+want to
+um fuse like for example two then we can
+just simply ask for this Dimension to be
+use a negative 1 here and python will
+figure out how many groups it needs to
+pack into this additional batch
+dimension
+so let's now go into flatten and
+implement this okay so I scroll up here
+to flatten and what we'd like to do is
+we'd like to change it now so let me
+create a Constructor and take the number
+of elements that are consecutive that we
+would like to concatenate now in the
+last dimension of the output
+so here we're just going to remember
+solve.n equals n
+and then I want to be careful here
+because pipe pytorch actually has a
+torch to flatten and its keyword
+arguments are different and they kind of
+like function differently so R flatten
+is going to start to depart from patreon
+flatten so let me call it flat flatten
+consecutive or something like that just
+to make sure that our apis are about
+equal
+so this uh basically flattens only some
+n consecutive elements and puts them
+into the last dimension
+now here the shape of X is B by T by C
+so let me
+pop those out into variables and recall
+that in our example down below B was 4 T
+was 8 and C was 10.
+now instead of doing x dot view of B by
+right this is what we had before
+we want this to be B by
+um negative 1 by
+and basically here we want c times n
+that's how many consecutive elements we
+want
+and here instead of negative one I don't
+super love the use of negative one
+because I like to be very explicit so
+that you get error messages when things
+don't go according to your expectation
+so what do we expect here we expect this
+to become t
+divide n using integer division here
+so that's what I expect to happen
+and then one more thing I want to do
+here is remember previously all the way
+in the beginning n was three and uh
+basically we're concatenating
+um all the three characters that existed
+there
+so we basically are concatenated
+everything
+and so sometimes I can create a spurious
+dimension of one here so if it is the
+case that x dot shape at one is one then
+it's kind of like a spurious dimension
+um so we don't want to return a
+three-dimensional tensor with a one here
+we just want to return a two-dimensional
+tensor exactly as we did before
+so in this case basically we will just
+say x equals x dot squeeze that is a
+pytorch function
+and squeeze takes a dimension that it
+either squeezes out all the dimensions
+of a tensor that are one or you can
+specify the exact Dimension that you
+want to be squeezed and again I like to
+be as explicit as possible always so I
+expect to squeeze out the First
+Dimension only
+of this tensor
+this three-dimensional tensor and if
+this Dimension here is one then I just
+want to return B by c times n
+and so self dot out will be X and then
+we return salt dot out
+so that's the candidate implementation
+and of course this should be self.n
+instead of just n
+so let's run
+and let's come here now
+and take it for a spin so flatten
+consecutive
+and in the beginning let's just use
+eight so this should recover the
+previous Behavior so flagging
+consecutive of eight uh which is the
+current block size
+we can do this uh that should recover
+the previous Behavior
+so we should be able to run the model
+and here we can inspect I have a little
+code snippet here where I iterate over
+all the layers I print the name of this
+class and the shape
+and so we see the shapes as we expect
+them after every single layer in the top
+bit so now let's try to restructure it
+using our flattened consecutive and do
+it hierarchically so in particular
+we want to flatten consecutive not just
+not block size but just two
+and then we want to process this with
+linear now then the number of inputs to
+this linear will not be an embed times
+block size it will now only be n embed
+times two
+this goes through the first layer and
+now we can in principle just copy paste
+this
+now the next linear layer should expect
+and hidden times two
+and the last piece of it should expect
+and it enters 2 again
+so this is sort of like the naive
+version of it
+so running this we now have a much much
+bigger model
+and we should be able to basically just
+forward the model
+and now we can inspect uh the numbers in
+between
+so four byte by 20
+was Platinum consecutively into four by
+four by Twenty
+this was projected into four by four by
+two hundred
+and then bash storm just worked out of
+the box we have to verify that bastron
+does the correct thing even though it
+takes a three-dimensional impedance that
+are two dimensional input
+then we have 10h which is element wise
+then we crushed it again so if we
+flatten consecutively and ended up with
+a four by two by 400 now
+then linear brought it back down to 200
+batch room 10h and lastly we get a 4 by
+consecutive for the last flatten here uh
+it squeezed out that dimension of one so
+we only ended up with four by four
+hundred and then linear Bachelor on 10h
+and uh the last linear layer to get our
+logents and so The Lodges end up in the
+same shape as they were before but now
+we actually have a nice three layer
+neural nut and it basically corresponds
+to whoops sorry it basically corresponds
+exactly to this network now except only
+this piece here because we only have
+three layers whereas here in this
+example there's uh four layers with the
+total receptive field size of 16
+characters instead of just eight
+characters so the block size here is 16.
+so this piece of it's basically
+implemented here
+um now we just have to kind of figure
+out some good Channel numbers to use
+here now in particular I changed the
+number of hidden units to be 68 in this
+architecture because when I use 68 the
+number of parameters comes out to be 22
+had before and we have the same amount
+of capacity at this neural net in terms
+of the number of parameters but the
+question is whether we are utilizing
+those parameters in a more efficient
+architecture so what I did then is I got
+rid of a lot of the debugging cells here
+and I rerun the optimization and
+scrolling down to the result we see that
+we get the identical performance roughly
+so our validation loss now is 2.029 and
+previously it was 2.027 so controlling
+for the number of parameters changing
+from the flat to hierarchical is not
+giving us anything yet
+that said there are two things
+um to point out number one we didn't
+really torture the um architecture here
+very much this is just my first guess
+and there's a bunch of hyper parameters
+search that we could do in order in
+terms of how we allocate uh our budget
+of parameters to what layers number two
+we still may have a bug inside the
+bachelor 1D layer so let's take a look
+at
+um uh that because it runs but does it
+do the right thing
+so I pulled up the layer inspector sort
+of that we have here and printed out the
+shape along the way and currently it
+looks like the batch form is receiving
+an input that is 32 by 4 by 68 right and
+here on the right I have the current
+implementation of Bachelor that we have
+right now
+now this bachelor assumed in the way we
+wrote it and at the time that X is
+two-dimensional so it was n by D where n
+was the batch size so that's why we only
+reduced uh the mean and the variance
+over the zeroth dimension but now X will
+basically become three-dimensional so
+what's happening inside the bachelor
+right now and how come it's working at
+all and not giving any errors the reason
+for that is basically because everything
+broadcasts properly but the bachelor is
+not doing what we need what we wanted to
+do
+so in particular let's basically think
+through what's happening inside the
+bathroom uh looking at what's what's do
+What's Happening Here
+I have the code here
+so we're receiving an input of 32 by 4
+by 68 and then we are doing uh here x
+dot mean here I have e instead of X but
+we're doing the mean over zero and
+that's actually giving us 1 by 4 by 68.
+so we're doing the mean only over the
+very first Dimension and it's giving us
+a mean and a variance that still
+maintain this Dimension here
+so these means are only taking over 32
+numbers in the First Dimension and then
+when we perform this everything
+broadcasts correctly still
+but basically what ends up happening is
+when we also look at the running mean
+the shape of it so I'm looking at the
+model that layers at three which is the
+first bathroom layer and they're looking
+at whatever the running mean became and
+its shape
+the shape of this running mean now is 1
+by 4 by 68.
+right instead of it being
+um you know just a size of dimension
+because we have 68 channels we expect to
+have 68 means and variances that we're
+maintaining but actually we have an
+array of 4 by 68 and so basically what
+this is telling us is this bash Norm is
+only
+this bachelor is currently working in
+parallel
+over
+so basically we are maintaining
+statistics for every one of these four
+positions individually and independently
+and instead what we want to do is we
+want to treat this four as a batch
+Dimension just like the zeroth dimension
+so as far as the bachelor is concerned
+it doesn't want to average we don't want
+to average over 32 numbers we want to
+now average over 32 times four numbers
+for every single one of these 68
+channels
+and uh so let me now
+remove this
+it turns out that when you look at the
+documentation of torch.mean
+so let's go to torch.me
+in one of its signatures when we specify
+the dimension
+we see that the dimension here is not
+just it can be in or it can also be a
+tuple of ins so we can reduce over
+multiple integers at the same time over
+multiple Dimensions at the same time so
+instead of just reducing over zero we
+can pass in a tuple 0 1.
+and here zero one as well and then
+what's going to happen is the output of
+course is going to be the same
+but now what's going to happen is
+because we reduce over 0 and 1 if we
+look at immin.shape
+we see that now we've reduced we took
+the mean over both the zeroth and the
+First Dimension
+so we're just getting 68 numbers and a
+bunch of spurious Dimensions here
+so now this becomes 1 by 1 by 68 and the
+running mean and the running variance
+analogously will become one by one by
+spurious Dimensions uh the current the
+current the correct thing will happen in
+that we are only maintaining means and
+variances for 64 sorry for 68 channels
+and we're not calculating the mean
+variance across 32 times 4 dimensions so
+that's exactly what we want and let's
+change the implementation of bash term
+two-dimensional or three-dimensional
+inputs and perform accordingly so at the
+end of the day the fix is relatively
+straightforward basically the dimension
+we want to reduce over is either 0 or
+the Tuple zero and one depending on the
+dimensionality of X so if x dot and dim
+is two so it's a two dimensional tensor
+then Dimension we want to reduce over is
+just the integer zero
+L if x dot ending is three so it's a
+three-dimensional tensor then the dims
+we're going to assume are zero and one
+that we want to reduce over and then
+here we just pass in dim
+and if the dimensionality of X is
+anything else we'll now get an error
+which is good
+um so that should be the fix now I want
+to point out one more thing we're
+actually departing from the API of Pi
+torch here a little bit because when you
+come to batch room 1D and pytorch you
+can scroll down and you can see that the
+input to this layer can either be n by C
+where n is the batch size and C is the
+number of features or channels or it
+actually does accept three-dimensional
+inputs but it expects it to be n by C by
+L
+where LSA like the sequence length or
+something like that
+so um
+this is problem because you see how C is
+nested here in the middle and so when it
+gets three-dimensional inputs this bash
+term layer will reduce over zero and two
+instead of zero and one so it basically
+Pi torch batch number one D layer
+assumes that c will always be the First
+Dimension whereas we'll we assume here
+that c is the last Dimension and there
+are some number of batch Dimensions
+beforehand
+it expects n by C or M by C by all we
+expect and by C or n by L by C
+and so it's a deviation
+I think it's okay I prefer it this way
+honestly so this is the way that we will
+keep it for our purposes
+so I redefined the layers re-initialize
+the neural net and did a single forward
+pass with a break just for one step
+looking at the shapes along the way
+they're of course identical all the
+shapes are the same but the way we see
+that things are actually working as we
+want them to now is that when we look at
+the bathroom layer the running mean
+shape is now one by one by 68. so we're
+only maintaining 68 means for every one
+of our channels and we're treating both
+the zeroth and the First Dimension as a
+batch Dimension which is exactly what we
+want so let me retrain the neural lot
+now okay so I retrained the neural net
+with the bug fix we get a nice curve and
+when we look at the validation
+performance we do actually see a slight
+Improvement so we went from 2.029 to
+bathroom was holding up us back like a
+little bit it looks like and we are
+getting a tiny Improvement now but it's
+not clear if this is statistical
+significant
+and the reason we slightly expect an
+improvement is because we're not
+maintaining so many different means and
+variances that are only estimated using
+using 32 numbers effectively now we are
+estimating them using 32 times 4 numbers
+so you just have a lot more numbers that
+go into any one estimate of the mean and
+variance and it allows things to be a
+bit more stable and less Wiggly inside
+those estimates of those statistics so
+pretty nice with this more General
+architecture in place we are now set up
+to push the performance further by
+increasing the size of the network so
+for example I bumped up the number of
+embeddings to 24 instead of 10 and also
+increased number of hidden units but
+using the exact same architecture we now
+have 76 000 parameters and the training
+takes a lot longer but we do get a nice
+curve and then when you actually
+evaluate the performance we are now
+getting validation performance of 1.993
+so we've crossed over the 2.0 sort of
+territory and right about 1.99 but we
+are starting to have to wait quite a bit
+longer and we're a little bit in the
+dark with respect to the correct setting
+of the hyper parameters here and the
+learning rates and so on because the
+experiments are starting to take longer
+to train and so we are missing sort of
+like an experimental harness on which we
+could run a number of experiments and
+really tune this architecture very well
+so I'd like to conclude now with a few
+notes we basically improved our
+performance from a starting of 2.1 down
+to 1.9 but I don't want that to be the
+focus because honestly we're kind of in
+the dark we have no experimental harness
+we're just guessing and checking and
+this whole thing is terrible we're just
+looking at the training loss normally
+you want to look at both the training
+and the validation loss together and the
+whole thing looks different if you're
+actually trying to squeeze out numbers
+that said we did implement this
+architecture from the wavenet paper but
+we did not implement this specific uh
+forward pass of it where you have a more
+complicated a linear layer sort of that
+is this gated linear layer kind of and
+there's residual connections and Skip
+connections and so on so we did not
+Implement that we just implemented this
+structure I would like to briefly hint
+or preview how what we've done here
+relates to convolutional neural networks
+as used in the wavenet paper and
+basically the use of convolutions is
+strictly for efficiency it doesn't
+actually change the model we've
+implemented
+so here for example
+let me look at a specific name to work
+with an example so there's a name in our
+training set and it's DeAndre and it has
+seven letters so that is eight
+independent examples in our model so all
+these rows here are independent examples
+of the Android
+now you can forward of course any one of
+these rows independently so I can take
+my model and call call it on any
+individual index notice by the way here
+I'm being a little bit tricky
+the reason for this is that extra at
+seven that shape is just
+um one dimensional array of eight so you
+can't actually call the model on it
+you're going to get an error because
+there's no batch dimension
+so when you do extra at
+a list of seven then the shape of this
+becomes one by eight so I get an extra
+batch dimension of one and then we can
+so
+that forwards a single example and you
+might imagine that you actually may want
+to forward all of these eight
+um at the same time
+so pre-allocating some memory and then
+doing a for Loop eight times and
+forwarding all of those eight here will
+give us all the logits in all these
+different cases
+now for us with the model as we've
+implemented it right now this is eight
+independent calls to our model
+but what convolutions allow you to do is
+it allow you to basically slide this
+model efficiently over the input
+sequence and so this for Loop can be
+done not outside in Python but inside of
+kernels in Cuda and so this for Loop
+gets hidden into the convolution
+so the convolution basically you can
+cover this it's a for Loop applying a
+little linear filter over space of some
+input sequence and in our case the space
+we're interested in is one dimensional
+and we're interested in sliding these
+filters over the input data
+so this diagram actually is fairly good
+as well
+basically what we've done is here they
+are highlighting in Black one individ
+one single sort of like tree of this
+calculation so just calculating the
+single output example here
+and so this is basically what we've
+implemented here we've implemented a
+single this black structure we've
+implemented that and calculated a single
+output like a single example
+but what collusions allow you to do is
+it allows you to take this black
+structure and kind of like slide it over
+the input sequence here and calculate
+all of these orange outputs at the same
+time or here that corresponds to
+calculating all of these outputs of
+um at all the positions of DeAndre at
+the same time
+and the reason that this is much more
+efficient is because number one as I
+mentioned the for Loop is inside the
+Cuda kernels in the sliding so that
+makes it efficient but number two notice
+the variable reuse here for example if
+we look at this circle this node here
+this node here is the right child of
+this node but is also the left child of
+the node here
+and so basically this node and its value
+is used twice
+and so right now in this naive way we'd
+have to recalculate it but here we are
+allowed to reuse it
+so in the convolutional neural network
+you think of these linear layers that we
+have up above as filters and we take
+these filters and they're linear filters
+and you slide them over input sequence
+and we calculate the first layer and
+then the second layer and then the third
+layer and then the output layer of the
+sandwich and it's all done very
+efficiently using these convolutions
+so we're going to cover that in a future
+video the second thing I hope you took
+away from this video is you've seen me
+basically Implement all of these layer
+Lego building blocks or module building
+blocks and I'm implementing them over
+here and we've implemented a number of
+layers together and we've also
+implemented these these containers and
+we've overall pytorchified our code
+quite a bit more
+now basically what we're doing here is
+we're re-implementing torch.nn which is
+the neural networks library on top of
+torch.tensor and it looks very much like
+this except it is much better because
+because it's in pi torch instead of
+jingling my Jupiter notebook so I think
+going forward I will probably have
+considered us having unlocked
+um torch.nn we understand roughly what's
+in there how these modules work how
+they're nested and what they're doing on
+top of torture tensor so hopefully we'll
+just uh we'll just switch over and
+continue and start using torch.net
+directly the next thing I hope you got a
+bit of a sense of is what the
+development process of building deep
+neural networks looks like which I think
+was relatively representative to some
+extent so number one we are spending a
+lot of time in the documentation page of
+pytorch and we're reading through all
+the layers looking at documentations
+where the shapes of the inputs what can
+they be what does the layer do and so on
+unfortunately I have to say the
+patreon's documentation is not are very
+good they spend a ton of time on
+Hardcore engineering of all kinds of
+distributed Primitives Etc but as far as
+I can tell no one is maintaining any
+documentation it will lie to you it will
+be wrong it will be incomplete it will
+be unclear so unfortunately it is what
+it is and you just kind of do your best
+um with what they've given us
+um number two
+uh the other thing that I hope you got a
+sense of is there's a ton of trying to
+make the shapes work and there's a lot
+of gymnastics around these
+multi-dimensional arrays and are they
+two-dimensional three-dimensional
+four-dimensional uh what layers take
+what shapes is it NCL or NLC and you're
+promoting and viewing and it just can
+get pretty messy and so that brings me
+to number three I very often prototype
+these layers and implementations in
+jupyter notebooks and make sure that all
+the shapes work out and I'm spending a
+lot of time basically babysitting the
+shapes and making sure everything is
+correct and then once I'm satisfied with
+the functionality in the Jupiter
+notebook I will take that code and copy
+paste it into my repository of actual
+code that I'm training with and so then
+I'm working with vs code on the side so
+I usually have jupyter notebook and vs
+code I develop in Jupiter notebook I
+paste into vs code and then I kick off
+experiments from from the reaper of
+course from the code repository so
+that's roughly some notes on the
+development process of working with
+neurons lastly I think this lecture
+unlocks a lot of potential further
+lectures because number one we have to
+convert our neural network to actually
+use these dilated causal convolutional
+layers so implementing the comnet number
+two potentially starting to get into
+what this means whatever residual
+connections and Skip connections and why
+are they useful
+number three we as I mentioned we don't
+have any experimental harness so right
+now I'm just guessing checking
+everything this is not representative of
+typical deep learning workflows you have
+to set up your evaluation harness you
+can kick off experiments you have lots
+of arguments that your script can take
+you're you're kicking off a lot of
+experimentation you're looking at a lot
+of plots of training and validation
+losses and you're looking at what is
+working and what is not working and
+you're working on this like population
+level and you're doing all these hyper
+parameter searches and so we've done
+none of that so far so how to set that
+up and how to make it good I think as a
+whole another topic number three we
+should probably cover recurring neural
+networks RNs lstm's grooves and of
+course Transformers so many uh places to
+go and we'll cover that in the future
+for now bye sorry I forgot to say that
+if you are interested I think it is kind
+of interesting to try to beat this
+number 1.993 because I really haven't
+tried a lot of experimentation here and
+there's quite a bit of fruit potentially
+to still purchase further so I haven't
+tried any other ways of allocating these
+channels in this neural net maybe the
+number of dimensions for the embedding
+is all wrong maybe it's possible to
+actually take the original network with
+just one hidden layer and make it big
+enough and actually beat my fancy
+hierarchical Network it's not obvious
+that would be kind of embarrassing if
+this did not do better even once you
+torture it a little bit maybe you can
+read the weight net paper and try to
+figure out how some of these layers work
+and Implement them yourselves using what
+we have
+and of course you can always tune some
+of the initialization or some of the
+optimization and see if you can improve
+it that way so I'd be curious if people
+can come up with some ways to beat this
+and yeah that's it for now bye

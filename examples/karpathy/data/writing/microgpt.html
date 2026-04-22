@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>microgpt</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Musings of a Computer Scientist.">
+    <link rel="canonical" href="http://karpathy.github.io/2026/02/12/microgpt/">
+    <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Andrej Karpathy blog posts" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-3698471-23', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+
+  <div class="wrap">
+
+    <div style="float:left; margin-top:10px; margin-right:10px;">
+    <a href="/feed.xml">
+      <img src="/assets/rssicon.svg" width="40">
+    </a>
+    </div>
+
+    <a class="site-title" href="/">Andrej Karpathy blog</a>
+    
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
+          <path fill="#505050" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
+            h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#505050" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
+            h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#505050" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
+            c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+        
+          <a class="page-link" href="/about/">About</a>
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrap">
+      <div class="post">
+
+  <header class="post-header">
+    <h1>microgpt</h1>
+    <p class="meta">Feb 12, 2026</p>
+  </header>
+
+  <article class="post-content">
+  <style>
+.post-header h1 {
+    font-size: 35px;
+}
+.post pre,
+.post code {
+    background-color: #fcfcfc;
+    font-size: 13px; /* make code smaller for this post... */
+}
+</style>
+
+<p>This is a brief guide to my new art project <a href="https://gist.github.com/karpathy/8627fe009c40f57531cb18360106ce95">microgpt</a>, a single file of 200 lines of pure Python with no dependencies that trains and inferences a GPT. This file contains the full algorithmic content of what is needed: dataset of documents, tokenizer, autograd engine, a GPT-2-like neural network architecture, the Adam optimizer, training loop, and inference loop. Everything else is just efficiency. I cannot simplify this any further. This script is the culmination of multiple projects (micrograd, makemore, nanogpt, etc.) and a decade-long obsession to simplify LLMs to their bare essentials, and I think it is beautiful 🥹. It even breaks perfectly across 3 columns:</p>
+
+<div class="imgcap">
+  <img src="/assets/microgpt.jpg" width="100%" style="display:block; margin:auto;" />
+</div>
+
+<p>Where to find it:</p>
+
+<ul>
+  <li>This GitHub gist has the full source code: <a href="https://gist.github.com/karpathy/8627fe009c40f57531cb18360106ce95">microgpt.py</a></li>
+  <li>It’s also available on this web page: <a href="https://karpathy.ai/microgpt.html">https://karpathy.ai/microgpt.html</a></li>
+  <li>Also available as a <a href="https://colab.research.google.com/drive/1vyN5zo6rqUp_dYNbT4Yrco66zuWCZKoN?usp=sharing">Google Colab notebook</a></li>
+  <li><strong>NEW</strong>: buy microgpt as a triptych on my art store at <a href="https://karpathy.art">karpathy.art</a> :)</li>
+</ul>
+
+<p>The following is my guide on stepping an interested reader through the code.</p>
+
+<h2 id="dataset">Dataset</h2>
+
+<p>The fuel of large language models is a stream of text data, optionally separated into a set of documents. In production-grade applications, each document would be an internet web page but for microgpt we use a simpler example of 32,000 names, one per line:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Let there be an input dataset `docs`: list[str] of documents (e.g. a dataset of names)
+</span><span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="s">'input.txt'</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">urllib.request</span>
+    <span class="n">names_url</span> <span class="o">=</span> <span class="s">'https://raw.githubusercontent.com/karpathy/makemore/refs/heads/master/names.txt'</span>
+    <span class="n">urllib</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">names_url</span><span class="p">,</span> <span class="s">'input.txt'</span><span class="p">)</span>
+<span class="n">docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span><span class="p">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s">'input.txt'</span><span class="p">).</span><span class="n">read</span><span class="p">().</span><span class="n">strip</span><span class="p">().</span><span class="n">split</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span> <span class="k">if</span> <span class="n">l</span><span class="p">.</span><span class="n">strip</span><span class="p">()]</span> <span class="c1"># list[str] of documents
+</span><span class="n">random</span><span class="p">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"num docs: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The dataset looks like this. Each name is a document:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>emma
+olivia
+ava
+isabella
+sophia
+charlotte
+mia
+amelia
+harper
+... (~32,000 names follow)
+</code></pre></div></div>
+
+<p>The goal of the model is to learn the patterns in the data and then generate similar new documents that share the statistical patterns within. As a preview, by the end of the script our model will generate (“hallucinate”!) new, plausible-sounding names. Skipping ahead, we’ll get:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sample  1: kamon
+sample  2: ann
+sample  3: karai
+sample  4: jaire
+sample  5: vialan
+sample  6: karia
+sample  7: yeran
+sample  8: anna
+sample  9: areli
+sample 10: kaina
+sample 11: konna
+sample 12: keylen
+sample 13: liole
+sample 14: alerin
+sample 15: earan
+sample 16: lenne
+sample 17: kana
+sample 18: lara
+sample 19: alela
+sample 20: anton
+</code></pre></div></div>
+
+<p>It doesn’t look like much, but from the perspective of a model like ChatGPT, your conversation with it is just a funny looking “document”. When you initialize the document with your prompt, the model’s response from its perspective is just a statistical document completion.</p>
+
+<h2 id="tokenizer">Tokenizer</h2>
+
+<p>Under the hood, neural networks work with numbers, not characters, so we need a way to convert text into a sequence of integer token ids and back. Production tokenizers like <a href="https://github.com/openai/tiktoken">tiktoken</a> (used by GPT-4) operate on chunks of characters for efficiency, but the simplest possible tokenizer just assigns one integer to each unique character in the dataset:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Let there be a Tokenizer to translate strings to discrete symbols and back
+</span><span class="n">uchars</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">docs</span><span class="p">)))</span> <span class="c1"># unique characters in the dataset become token ids 0..n-1
+</span><span class="n">BOS</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">uchars</span><span class="p">)</span> <span class="c1"># token id for the special Beginning of Sequence (BOS) token
+</span><span class="n">vocab_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">uchars</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># total number of unique tokens, +1 is for BOS
+</span><span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"vocab size: </span><span class="si">{</span><span class="n">vocab_size</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In the code above, we collect all unique characters across the dataset (which are just all the lowercase letters a-z), sort them, and each letter gets an id by its index. Note that the integer values themselves have no meaning at all; each token is just a separate discrete symbol. Instead of 0, 1, 2 they might as well be different emoji. In addition, we create one more special token called <code class="language-plaintext highlighter-rouge">BOS</code> (Beginning of Sequence), which acts as a delimiter: it tells the model “a new document starts/ends here”. Later during training, each document gets wrapped with <code class="language-plaintext highlighter-rouge">BOS</code> on both sides: <code class="language-plaintext highlighter-rouge">[BOS, e, m, m, a, BOS]</code>. The model learns that <code class="language-plaintext highlighter-rouge">BOS</code> initates a new name, and that another <code class="language-plaintext highlighter-rouge">BOS</code> ends it. Therefore, we have a final vocavulary of 27 (26 possible lowercase characters a-z and +1 for the BOS token).</p>
+
+<h2 id="autograd">Autograd</h2>
+
+<p>Training a neural network requires gradients: for each parameter in the model, we need to know “if I nudge this number up a little, does the loss go up or down, and by how much?”. The computation graph has many inputs (the model parameters and the input tokens) but funnels down to a single scalar output: the loss (we’ll define exactly what the loss is below). Backpropagation starts at that single output and works backwards through the graph, computing the gradient of the loss with respect to every input. It relies on the chain rule from calculus. In production, libraries like PyTorch handle this automatically. Here, we implement it from scratch in a single class called <code class="language-plaintext highlighter-rouge">Value</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Value</span><span class="p">:</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s">'data'</span><span class="p">,</span> <span class="s">'grad'</span><span class="p">,</span> <span class="s">'_children'</span><span class="p">,</span> <span class="s">'_local_grads'</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">(),</span> <span class="n">local_grads</span><span class="o">=</span><span class="p">()):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>                <span class="c1"># scalar value of this node calculated during forward pass
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">grad</span> <span class="o">=</span> <span class="mi">0</span>                   <span class="c1"># derivative of the loss w.r.t. this node, calculated in backward pass
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">_children</span> <span class="o">=</span> <span class="n">children</span>       <span class="c1"># children of this node in the computation graph
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">_local_grads</span> <span class="o">=</span> <span class="n">local_grads</span> <span class="c1"># local derivative of this node w.r.t. its children
+</span>
+    <span class="k">def</span> <span class="nf">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">other</span> <span class="o">=</span> <span class="n">other</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Value</span><span class="p">)</span> <span class="k">else</span> <span class="n">Value</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">data</span> <span class="o">+</span> <span class="n">other</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">other</span> <span class="o">=</span> <span class="n">other</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Value</span><span class="p">)</span> <span class="k">else</span> <span class="n">Value</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">data</span> <span class="o">*</span> <span class="n">other</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">),</span> <span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">data</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__pow__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span> <span class="k">return</span> <span class="n">Value</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">data</span><span class="o">**</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="p">(</span><span class="n">other</span> <span class="o">*</span> <span class="bp">self</span><span class="p">.</span><span class="n">data</span><span class="o">**</span><span class="p">(</span><span class="n">other</span><span class="o">-</span><span class="mi">1</span><span class="p">),))</span>
+    <span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">return</span> <span class="n">Value</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">data</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="bp">self</span><span class="p">.</span><span class="n">data</span><span class="p">,))</span>
+    <span class="k">def</span> <span class="nf">exp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">return</span> <span class="n">Value</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">data</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">data</span><span class="p">),))</span>
+    <span class="k">def</span> <span class="nf">relu</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">return</span> <span class="n">Value</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">data</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="p">,),</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">data</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">),))</span>
+    <span class="k">def</span> <span class="nf">__neg__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">def</span> <span class="nf">__radd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span> <span class="o">+</span> <span class="n">other</span>
+    <span class="k">def</span> <span class="nf">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="n">other</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">__rsub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span> <span class="k">return</span> <span class="n">other</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">__rmul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span> <span class="o">*</span> <span class="n">other</span>
+    <span class="k">def</span> <span class="nf">__truediv__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span> <span class="o">*</span> <span class="n">other</span><span class="o">**-</span><span class="mi">1</span>
+    <span class="k">def</span> <span class="nf">__rtruediv__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span> <span class="k">return</span> <span class="n">other</span> <span class="o">*</span> <span class="bp">self</span><span class="o">**-</span><span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">backward</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">topo</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="k">def</span> <span class="nf">build_topo</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+                <span class="n">visited</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">v</span><span class="p">.</span><span class="n">_children</span><span class="p">:</span>
+                    <span class="n">build_topo</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+                <span class="n">topo</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        <span class="n">build_topo</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">grad</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">topo</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">child</span><span class="p">,</span> <span class="n">local_grad</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">_children</span><span class="p">,</span> <span class="n">v</span><span class="p">.</span><span class="n">_local_grads</span><span class="p">):</span>
+                <span class="n">child</span><span class="p">.</span><span class="n">grad</span> <span class="o">+=</span> <span class="n">local_grad</span> <span class="o">*</span> <span class="n">v</span><span class="p">.</span><span class="n">grad</span>
+</code></pre></div></div>
+
+<p>I realize that this is the most mathematically and algorithmically intense part and I have a 2.5 hour video on it: <a href="https://www.youtube.com/watch?v=VMj-3S1tku0">micrograd video</a>. Briefly, a <code class="language-plaintext highlighter-rouge">Value</code> wraps a single scalar number (<code class="language-plaintext highlighter-rouge">.data</code>) and tracks how it was computed. Think of each operation as a little lego block: it takes some inputs, produces an output (the forward pass), and it knows how its output would change with respect to each of its inputs (the local gradient). That’s all the information autograd needs from each block. Everything else is just the chain rule, stringing the blocks together.</p>
+
+<p>Every time you do math with <code class="language-plaintext highlighter-rouge">Value</code> objects (add, multiply, etc.), the result is a new <code class="language-plaintext highlighter-rouge">Value</code> that remembers its inputs (<code class="language-plaintext highlighter-rouge">_children</code>) and the local derivative of that operation (<code class="language-plaintext highlighter-rouge">_local_grads</code>). For example, <code class="language-plaintext highlighter-rouge">__mul__</code> records that \(\frac{\partial(a \cdot b)}{\partial a} = b\) and \(\frac{\partial(a \cdot b)}{\partial b} = a\). The full set of lego blocks:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Operation</th>
+      <th>Forward</th>
+      <th>Local gradients</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">a + b</code></td>
+      <td>\(a + b\)</td>
+      <td>\(\frac{\partial}{\partial a} = 1, \quad \frac{\partial}{\partial b} = 1\)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">a * b</code></td>
+      <td>\(a \cdot b\)</td>
+      <td>\(\frac{\partial}{\partial a} = b, \quad \frac{\partial}{\partial b} = a\)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">a ** n</code></td>
+      <td>\(a^n\)</td>
+      <td>\(\frac{\partial}{\partial a} = n \cdot a^{n-1}\)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">log(a)</code></td>
+      <td>\(\ln(a)\)</td>
+      <td>\(\frac{\partial}{\partial a} = \frac{1}{a}\)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">exp(a)</code></td>
+      <td>\(e^a\)</td>
+      <td>\(\frac{\partial}{\partial a} = e^a\)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">relu(a)</code></td>
+      <td>\(\max(0, a)\)</td>
+      <td>\(\frac{\partial}{\partial a} = \mathbf{1}_{a &gt; 0}\)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The <code class="language-plaintext highlighter-rouge">backward()</code> method walks this graph in reverse topological order (starting from the loss, ending at the parameters), applying the chain rule at each step. If the loss is \(L\) and a node \(v\) has a child \(c\) with local gradient \(\frac{\partial v}{\partial c}\), then:</p>
+
+\[\frac{\partial L}{\partial c} \mathrel{+}= \frac{\partial v}{\partial c} \cdot \frac{\partial L}{\partial v}\]
+
+<p>This looks a bit scary if you’re not comfortable with your calculus, but this is literally just multiplying two numbers in an intuitive way. One way to see it looks as follows: “If a car travels twice as fast as a bicycle and the bicycle is four times as fast as a walking man, then the car travels 2 x 4 = 8 times as fast as the man.” The chain rule is the same idea: you multiply the rates of change along the path.</p>
+
+<p>We kick things off by setting <code class="language-plaintext highlighter-rouge">self.grad = 1</code> at the loss node, because \(\frac{\partial L}{\partial L} = 1\): the loss’s rate of change with respect to itself is trivially 1. From there, the chain rule just multiplies local gradients along every path back to the parameters.</p>
+
+<p>Note the += (accumulation, not assignment). When a value is used in multiple places in the graph (i.e. the graph branches), gradients flow back along each branch independently and must be summed. This is a consequence of the multivariable chain rule: if \(c\) contributes to \(L\) through multiple paths, the total derivative is the sum of contributions from each path.</p>
+
+<p>After <code class="language-plaintext highlighter-rouge">backward()</code> completes, every <code class="language-plaintext highlighter-rouge">Value</code> in the graph has a <code class="language-plaintext highlighter-rouge">.grad</code> containing \(\frac{\partial L}{\partial v}\), which tells us how the final loss would change if we nudged that value.</p>
+
+<p>Here’s a concrete example. Note that <code class="language-plaintext highlighter-rouge">a</code> is used twice (the graph branches), so its gradient is the sum of both paths:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="n">Value</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Value</span><span class="p">(</span><span class="mf">3.0</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>       <span class="c1"># c = 6.0
+</span><span class="n">L</span> <span class="o">=</span> <span class="n">c</span> <span class="o">+</span> <span class="n">a</span>       <span class="c1"># L = 8.0
+</span><span class="n">L</span><span class="p">.</span><span class="n">backward</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">grad</span><span class="p">)</span>   <span class="c1"># 4.0 (dL/da = b + 1 = 3 + 1, via both paths)
+</span><span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">grad</span><span class="p">)</span>   <span class="c1"># 2.0 (dL/db = a = 2)
+</span></code></pre></div></div>
+
+<p>This is exactly what PyTorch’s <code class="language-plaintext highlighter-rouge">.backward()</code> gives you:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">torch</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">c</span> <span class="o">+</span> <span class="n">a</span>
+<span class="n">L</span><span class="p">.</span><span class="n">backward</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">grad</span><span class="p">)</span>   <span class="c1"># tensor(4.)
+</span><span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">grad</span><span class="p">)</span>   <span class="c1"># tensor(2.)
+</span></code></pre></div></div>
+
+<p>This is the same algorithm that PyTorch’s <code class="language-plaintext highlighter-rouge">loss.backward()</code> runs, just on scalars instead of tensors (arrays of scalars) - algorithmically identical, significantly smaller and simpler, but of course a lot less efficient.</p>
+
+<p>Let’s spell what the <code class="language-plaintext highlighter-rouge">.backward()</code> gives us above. Autograd calculated that if <code class="language-plaintext highlighter-rouge">L = a*b + a</code>, and <code class="language-plaintext highlighter-rouge">a=2</code> and <code class="language-plaintext highlighter-rouge">b=3</code>, then <code class="language-plaintext highlighter-rouge">a.grad = 4.0</code> is telling us about the local influence of <code class="language-plaintext highlighter-rouge">a</code> on <code class="language-plaintext highlighter-rouge">L</code>. If you wiggle the inmput <code class="language-plaintext highlighter-rouge">a</code>, in what direction is <code class="language-plaintext highlighter-rouge">L</code> changing? Here, the derivative of <code class="language-plaintext highlighter-rouge">L</code> w.r.t. <code class="language-plaintext highlighter-rouge">a</code> is 4.0, meaning that if we increase <code class="language-plaintext highlighter-rouge">a</code> by a tiny amount (say 0.001), <code class="language-plaintext highlighter-rouge">L</code> would increase by about 4x that (0.004). Similarly, <code class="language-plaintext highlighter-rouge">b.grad = 2.0</code> means the same nudge to <code class="language-plaintext highlighter-rouge">b</code> would increase <code class="language-plaintext highlighter-rouge">L</code> by about 2x that (0.002). In other words, these gradients tell us the direction (positive or negative depending on the sign), and the steepness (the magnitude) of the influence of each individual input on the final output (the loss). This then allows us to interately nudge the parameters of our neural network to lower the loss, and hence improve its predictions.</p>
+
+<h2 id="parameters">Parameters</h2>
+
+<p>The parameters are the knowledge of the model. They are a large collection of floating point numbers (wrapped in <code class="language-plaintext highlighter-rouge">Value</code> for autograd) that start out random and are iteratively optimized during training. The exact role of each parameter will make more sense once we define the model architecture below, but for now we just need to initialize them:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_embd</span> <span class="o">=</span> <span class="mi">16</span>     <span class="c1"># embedding dimension
+</span><span class="n">n_head</span> <span class="o">=</span> <span class="mi">4</span>      <span class="c1"># number of attention heads
+</span><span class="n">n_layer</span> <span class="o">=</span> <span class="mi">1</span>     <span class="c1"># number of layers
+</span><span class="n">block_size</span> <span class="o">=</span> <span class="mi">16</span> <span class="c1"># maximum sequence length
+</span><span class="n">head_dim</span> <span class="o">=</span> <span class="n">n_embd</span> <span class="o">//</span> <span class="n">n_head</span> <span class="c1"># dimension of each head
+</span><span class="n">matrix</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">nout</span><span class="p">,</span> <span class="n">nin</span><span class="p">,</span> <span class="n">std</span><span class="o">=</span><span class="mf">0.08</span><span class="p">:</span> <span class="p">[[</span><span class="n">Value</span><span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="n">gauss</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">std</span><span class="p">))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nin</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nout</span><span class="p">)]</span>
+<span class="n">state_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s">'wte'</span><span class="p">:</span> <span class="n">matrix</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">n_embd</span><span class="p">),</span> <span class="s">'wpe'</span><span class="p">:</span> <span class="n">matrix</span><span class="p">(</span><span class="n">block_size</span><span class="p">,</span> <span class="n">n_embd</span><span class="p">),</span> <span class="s">'lm_head'</span><span class="p">:</span> <span class="n">matrix</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">n_embd</span><span class="p">)}</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_layer</span><span class="p">):</span>
+    <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s">'layer</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s">.attn_wq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="n">n_embd</span><span class="p">,</span> <span class="n">n_embd</span><span class="p">)</span>
+    <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s">'layer</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s">.attn_wk'</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="n">n_embd</span><span class="p">,</span> <span class="n">n_embd</span><span class="p">)</span>
+    <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s">'layer</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s">.attn_wv'</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="n">n_embd</span><span class="p">,</span> <span class="n">n_embd</span><span class="p">)</span>
+    <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s">'layer</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s">.attn_wo'</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="n">n_embd</span><span class="p">,</span> <span class="n">n_embd</span><span class="p">)</span>
+    <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s">'layer</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s">.mlp_fc1'</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">n_embd</span><span class="p">,</span> <span class="n">n_embd</span><span class="p">)</span>
+    <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s">'layer</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s">.mlp_fc2'</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="n">n_embd</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">n_embd</span><span class="p">)</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">mat</span> <span class="ow">in</span> <span class="n">state_dict</span><span class="p">.</span><span class="n">values</span><span class="p">()</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">mat</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">row</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"num params: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">params</span><span class="p">)</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Each parameter is initialized to a small random number drawn from a Gaussian distribution. The <code class="language-plaintext highlighter-rouge">state_dict</code> organizes them into named matrices (borrowing PyTorch’s terminology): embedding tables, attention weights, MLP weights, and a final output projection. We also flatten all parameters into a single list <code class="language-plaintext highlighter-rouge">params</code> so the optimizer can loop over them later. In our tiny model this comes out to 4,192 parameters. GPT-2 had 1.6 billion, and modern LLMs have hundreds of billions.</p>
+
+<h2 id="architecture">Architecture</h2>
+
+<p>The model architecture is a stateless function: it takes a token, a position, the parameters, and the cached keys/values from previous positions, and returns logits (scores) over what token the model things should come next in the sequence. We follow GPT-2 with minor simplifications: RMSNorm instead of LayerNorm, no biases, and ReLU instead of GeLU. First, three small helper functions:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">linear</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nb">sum</span><span class="p">(</span><span class="n">wi</span> <span class="o">*</span> <span class="n">xi</span> <span class="k">for</span> <span class="n">wi</span><span class="p">,</span> <span class="n">xi</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">wo</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span> <span class="k">for</span> <span class="n">wo</span> <span class="ow">in</span> <span class="n">w</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">linear</code> is a matrix-vector multiply. It takes a vector <code class="language-plaintext highlighter-rouge">x</code> and a weight matrix <code class="language-plaintext highlighter-rouge">w</code>, and computes one dot product per row of <code class="language-plaintext highlighter-rouge">w</code>. This is the fundamental building block of neural networks: a learned linear transformation.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">softmax</span><span class="p">(</span><span class="n">logits</span><span class="p">):</span>
+    <span class="n">max_val</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">val</span><span class="p">.</span><span class="n">data</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">logits</span><span class="p">)</span>
+    <span class="n">exps</span> <span class="o">=</span> <span class="p">[(</span><span class="n">val</span> <span class="o">-</span> <span class="n">max_val</span><span class="p">).</span><span class="n">exp</span><span class="p">()</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">logits</span><span class="p">]</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">exps</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">e</span> <span class="o">/</span> <span class="n">total</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">exps</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">softmax</code> converts a vector of raw scores (logits), which can range from \(-\infty\) to \(+\infty\), into a probability distribution: all values end up in \([0, 1]\) and sum to 1. We subtract the max first for numerical stability (it doesn’t change the result mathematically, but prevents overflow in <code class="language-plaintext highlighter-rouge">exp</code>).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">rmsnorm</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">ms</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">xi</span> <span class="o">*</span> <span class="n">xi</span> <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">scale</span> <span class="o">=</span> <span class="p">(</span><span class="n">ms</span> <span class="o">+</span> <span class="mf">1e-5</span><span class="p">)</span> <span class="o">**</span> <span class="o">-</span><span class="mf">0.5</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">xi</span> <span class="o">*</span> <span class="n">scale</span> <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">rmsnorm</code> (Root Mean Square Normalization) rescales a vector so its values have unit root-mean-square. This keeps activations from growing or shrinking as they flow through the network, which stabilizes training. It’s a simpler variant of the LayerNorm used in the original GPT-2.</p>
+
+<p>Now the model itself:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">gpt</span><span class="p">(</span><span class="n">token_id</span><span class="p">,</span> <span class="n">pos_id</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+    <span class="n">tok_emb</span> <span class="o">=</span> <span class="n">state_dict</span><span class="p">[</span><span class="s">'wte'</span><span class="p">][</span><span class="n">token_id</span><span class="p">]</span> <span class="c1"># token embedding
+</span>    <span class="n">pos_emb</span> <span class="o">=</span> <span class="n">state_dict</span><span class="p">[</span><span class="s">'wpe'</span><span class="p">][</span><span class="n">pos_id</span><span class="p">]</span> <span class="c1"># position embedding
+</span>    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span> <span class="o">+</span> <span class="n">p</span> <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">tok_emb</span><span class="p">,</span> <span class="n">pos_emb</span><span class="p">)]</span> <span class="c1"># joint token and position embedding
+</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">rmsnorm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">li</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_layer</span><span class="p">):</span>
+        <span class="c1"># 1) Multi-head attention block
+</span>        <span class="n">x_residual</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">rmsnorm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="n">linear</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s">'layer</span><span class="si">{</span><span class="n">li</span><span class="si">}</span><span class="s">.attn_wq'</span><span class="p">])</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">linear</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s">'layer</span><span class="si">{</span><span class="n">li</span><span class="si">}</span><span class="s">.attn_wk'</span><span class="p">])</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">linear</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s">'layer</span><span class="si">{</span><span class="n">li</span><span class="si">}</span><span class="s">.attn_wv'</span><span class="p">])</span>
+        <span class="n">keys</span><span class="p">[</span><span class="n">li</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+        <span class="n">values</span><span class="p">[</span><span class="n">li</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        <span class="n">x_attn</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_head</span><span class="p">):</span>
+            <span class="n">hs</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">head_dim</span>
+            <span class="n">q_h</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="n">hs</span><span class="p">:</span><span class="n">hs</span><span class="o">+</span><span class="n">head_dim</span><span class="p">]</span>
+            <span class="n">k_h</span> <span class="o">=</span> <span class="p">[</span><span class="n">ki</span><span class="p">[</span><span class="n">hs</span><span class="p">:</span><span class="n">hs</span><span class="o">+</span><span class="n">head_dim</span><span class="p">]</span> <span class="k">for</span> <span class="n">ki</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">[</span><span class="n">li</span><span class="p">]]</span>
+            <span class="n">v_h</span> <span class="o">=</span> <span class="p">[</span><span class="n">vi</span><span class="p">[</span><span class="n">hs</span><span class="p">:</span><span class="n">hs</span><span class="o">+</span><span class="n">head_dim</span><span class="p">]</span> <span class="k">for</span> <span class="n">vi</span> <span class="ow">in</span> <span class="n">values</span><span class="p">[</span><span class="n">li</span><span class="p">]]</span>
+            <span class="n">attn_logits</span> <span class="o">=</span> <span class="p">[</span><span class="nb">sum</span><span class="p">(</span><span class="n">q_h</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">k_h</span><span class="p">[</span><span class="n">t</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">head_dim</span><span class="p">))</span> <span class="o">/</span> <span class="n">head_dim</span><span class="o">**</span><span class="mf">0.5</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">k_h</span><span class="p">))]</span>
+            <span class="n">attn_weights</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">attn_logits</span><span class="p">)</span>
+            <span class="n">head_out</span> <span class="o">=</span> <span class="p">[</span><span class="nb">sum</span><span class="p">(</span><span class="n">attn_weights</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">*</span> <span class="n">v_h</span><span class="p">[</span><span class="n">t</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v_h</span><span class="p">)))</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">head_dim</span><span class="p">)]</span>
+            <span class="n">x_attn</span><span class="p">.</span><span class="n">extend</span><span class="p">(</span><span class="n">head_out</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">linear</span><span class="p">(</span><span class="n">x_attn</span><span class="p">,</span> <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s">'layer</span><span class="si">{</span><span class="n">li</span><span class="si">}</span><span class="s">.attn_wo'</span><span class="p">])</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x_residual</span><span class="p">)]</span>
+        <span class="c1"># 2) MLP block
+</span>        <span class="n">x_residual</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">rmsnorm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">linear</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s">'layer</span><span class="si">{</span><span class="n">li</span><span class="si">}</span><span class="s">.mlp_fc1'</span><span class="p">])</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">xi</span><span class="p">.</span><span class="n">relu</span><span class="p">()</span> <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">linear</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">state_dict</span><span class="p">[</span><span class="sa">f</span><span class="s">'layer</span><span class="si">{</span><span class="n">li</span><span class="si">}</span><span class="s">.mlp_fc2'</span><span class="p">])</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x_residual</span><span class="p">)]</span>
+
+    <span class="n">logits</span> <span class="o">=</span> <span class="n">linear</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">state_dict</span><span class="p">[</span><span class="s">'lm_head'</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">logits</span>
+</code></pre></div></div>
+
+<p>The function processes one token (of id <code class="language-plaintext highlighter-rouge">token_id</code>) at a specific position in time (<code class="language-plaintext highlighter-rouge">pos_id</code>), and some context
+from the previous iterations summarized by the activations in <code class="language-plaintext highlighter-rouge">keys</code> and <code class="language-plaintext highlighter-rouge">values</code>, known as the KV Cache. Here’s what happens step by step:</p>
+
+<p><strong>Embeddings.</strong> The neural network can’t process a raw token id like 5 directly. It can only work with vectors (lists of numbers). So we associate a learned vector with each possible token, and feed that in as its neural signature. The token id and position id each look up a row from their respective embedding tables (<code class="language-plaintext highlighter-rouge">wte</code> and <code class="language-plaintext highlighter-rouge">wpe</code>). These two vectors are added together, giving the model a representation that encodes both <em>what</em> the token is and <em>where</em> it is in the sequence. Modern LLMs usually skip the position embedding and introduce other relative-based positioning schemes, e.g. RoPE.</p>
+
+<p><strong>Attention block.</strong> The current token is projected into three vectors: a query (Q), a key (K), and a value (V). Intuitively, the query says “what am I looking for?”, the key says “what do I contain?”, and the value says “what do I offer if selected?”. For example, in the name “emma”, when the model is at the second “m” and trying to predict what comes next, it might learn a query like “what vowels appeared recently?” The earlier “e” would have a key that matches this query well, so it gets a high attention weight, and its value (information about being a vowel) flows into the current position. The key and value are appended to the KV cache so previous positions are available. Each attention head computes dot products between its query and all cached keys (scaled by \(\sqrt{d_{head}}\)), applies softmax to get attention weights, and takes a weighted sum of the cached values. The outputs of all heads are concatenated and projected through <code class="language-plaintext highlighter-rouge">attn_wo</code>. It’s worth emphasizing that the Attention block is the exact and only place where a token at position <code class="language-plaintext highlighter-rouge">t</code> gets to “look” at tokens in the past <code class="language-plaintext highlighter-rouge">0..t-1</code>. Attention is a token communication mechanism.</p>
+
+<p><strong>MLP block.</strong>  MLP is short for “multilayer perceptron”, it is a two-layer feed-forward network: project up to 4x the embedding dimension, apply ReLU, project back down. This is where the model does most of its “thinking” per position. Unlike attention, this computation is fully local to time <code class="language-plaintext highlighter-rouge">t</code>. The Transformer intersperses communication (Attention) with computation (MLP).</p>
+
+<p><strong>Residual connections.</strong> Both the attention and MLP blocks add their output back to their input (<code class="language-plaintext highlighter-rouge">x = [a + b for ...]</code>). This lets gradients flow directly through the network and makes deeper models trainable.</p>
+
+<p><strong>Output.</strong> The final hidden state is projected to vocabulary size by <code class="language-plaintext highlighter-rouge">lm_head</code>, producing one logit per token in the vocabulary. In our case, that’s just 27 numbers. Higher logit = the model thinks that corresponding token is more likely to come next.</p>
+
+<p>You might notice that we’re using a KV cache during training, which is unusual. People typically associate the KV cache with inference only. But the KV cache is conceptually always there, even during training. In production implementations, it’s just hidden inside the highly vectorized attention computation that processes all positions in the sequence simultaneously. Since microgpt processes one token at a time (no batch dimension, no parallel time steps), we build the KV cache explicitly. And unlike the typical inference setting where the KV cache holds detached tensors, here the cached keys and values are live <code class="language-plaintext highlighter-rouge">Value</code> nodes in the computation graph, so we actually backpropagate through them.</p>
+
+<h2 id="training-loop">Training loop</h2>
+
+<p>Now we wire everything together. The training loop repeatedly: (1) picks a document, (2) runs the model forward over its tokens, (3) computes a loss, (4) backpropagates to get gradients, and (5) updates the parameters.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Let there be Adam, the blessed optimizer and its buffers
+</span><span class="n">learning_rate</span><span class="p">,</span> <span class="n">beta1</span><span class="p">,</span> <span class="n">beta2</span><span class="p">,</span> <span class="n">eps_adam</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">,</span> <span class="mf">1e-8</span>
+<span class="n">m</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">params</span><span class="p">)</span> <span class="c1"># first moment buffer
+</span><span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">params</span><span class="p">)</span> <span class="c1"># second moment buffer
+</span>
+<span class="c1"># Repeat in sequence
+</span><span class="n">num_steps</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># number of training steps
+</span><span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_steps</span><span class="p">):</span>
+
+    <span class="c1"># Take single document, tokenize it, surround it with BOS special token on both sides
+</span>    <span class="n">doc</span> <span class="o">=</span> <span class="n">docs</span><span class="p">[</span><span class="n">step</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">docs</span><span class="p">)]</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">BOS</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">uchars</span><span class="p">.</span><span class="n">index</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">BOS</span><span class="p">]</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">block_size</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Forward the token sequence through the model, building up the computation graph all the way to the loss.
+</span>    <span class="n">keys</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_layer</span><span class="p">)],</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_layer</span><span class="p">)]</span>
+    <span class="n">losses</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">pos_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">token_id</span><span class="p">,</span> <span class="n">target_id</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="n">pos_id</span><span class="p">],</span> <span class="n">tokens</span><span class="p">[</span><span class="n">pos_id</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">logits</span> <span class="o">=</span> <span class="n">gpt</span><span class="p">(</span><span class="n">token_id</span><span class="p">,</span> <span class="n">pos_id</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+        <span class="n">probs</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">logits</span><span class="p">)</span>
+        <span class="n">loss_t</span> <span class="o">=</span> <span class="o">-</span><span class="n">probs</span><span class="p">[</span><span class="n">target_id</span><span class="p">].</span><span class="n">log</span><span class="p">()</span>
+        <span class="n">losses</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">loss_t</span><span class="p">)</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="nb">sum</span><span class="p">(</span><span class="n">losses</span><span class="p">)</span> <span class="c1"># final average loss over the document sequence. May yours be low.
+</span>
+    <span class="c1"># Backward the loss, calculating the gradients with respect to all model parameters.
+</span>    <span class="n">loss</span><span class="p">.</span><span class="n">backward</span><span class="p">()</span>
+
+    <span class="c1"># Adam optimizer update: update the model parameters based on the corresponding gradients.
+</span>    <span class="n">lr_t</span> <span class="o">=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">step</span> <span class="o">/</span> <span class="n">num_steps</span><span class="p">)</span> <span class="c1"># linear learning rate decay
+</span>    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+        <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta1</span> <span class="o">*</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">beta1</span><span class="p">)</span> <span class="o">*</span> <span class="n">p</span><span class="p">.</span><span class="n">grad</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta2</span> <span class="o">*</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">beta2</span><span class="p">)</span> <span class="o">*</span> <span class="n">p</span><span class="p">.</span><span class="n">grad</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="n">m_hat</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">beta1</span> <span class="o">**</span> <span class="p">(</span><span class="n">step</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="n">v_hat</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">beta2</span> <span class="o">**</span> <span class="p">(</span><span class="n">step</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="n">p</span><span class="p">.</span><span class="n">data</span> <span class="o">-=</span> <span class="n">lr_t</span> <span class="o">*</span> <span class="n">m_hat</span> <span class="o">/</span> <span class="p">(</span><span class="n">v_hat</span> <span class="o">**</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="n">eps_adam</span><span class="p">)</span>
+        <span class="n">p</span><span class="p">.</span><span class="n">grad</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"step </span><span class="si">{</span><span class="n">step</span><span class="o">+</span><span class="mi">1</span><span class="si">:</span><span class="mi">4</span><span class="n">d</span><span class="si">}</span><span class="s"> / </span><span class="si">{</span><span class="n">num_steps</span><span class="si">:</span><span class="mi">4</span><span class="n">d</span><span class="si">}</span><span class="s"> | loss </span><span class="si">{</span><span class="n">loss</span><span class="p">.</span><span class="n">data</span><span class="si">:</span><span class="p">.</span><span class="mi">4</span><span class="n">f</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Let’s walk through each piece:</p>
+
+<p><strong>Tokenization.</strong> Each training step picks one document and wraps it with <code class="language-plaintext highlighter-rouge">BOS</code> on both sides: the name “emma” becomes <code class="language-plaintext highlighter-rouge">[BOS, e, m, m, a, BOS]</code>. The model’s job is to predict each next token given the tokens before it.</p>
+
+<p><strong>Forward pass and loss.</strong> We feed the tokens through the model one at a time, building up the KV cache as we go. At each position, the model outputs 27 logits, which we convert to probabilities via softmax. The loss at each position is the negative log probability of the correct next token: \(-\log p(\text{target})\). This is called the cross-entropy loss. Intuitively, the loss measures the degree of misprediction: how surprised the model is by what actually comes next. If the model assigns probability 1.0 to the correct token, it is not surprised at all and the loss is 0. If it assigns probability close to 0, the model is very surprised and the loss goes to \(+\infty\). We average the per-position losses across the document to get a single scalar loss.</p>
+
+<p><strong>Backward pass.</strong> One call to <code class="language-plaintext highlighter-rouge">loss.backward()</code> runs backpropagation through the entire computation graph, from the loss all the way back through softmax, the model, and into every parameter. After this, each parameter’s <code class="language-plaintext highlighter-rouge">.grad</code> tells us how to change it to reduce the loss.</p>
+
+<p><strong>Adam optimizer.</strong> We could just do <code class="language-plaintext highlighter-rouge">p.data -= lr * p.grad</code> (gradient descent), but Adam is smarter. It maintains two running averages per parameter: <code class="language-plaintext highlighter-rouge">m</code> tracks the mean of recent gradients (momentum, like a rolling ball), and <code class="language-plaintext highlighter-rouge">v</code> tracks the mean of recent squared gradients (adapting the learning rate per parameter). The <code class="language-plaintext highlighter-rouge">m_hat</code> and <code class="language-plaintext highlighter-rouge">v_hat</code> are bias corrections that account for the fact that <code class="language-plaintext highlighter-rouge">m</code> and <code class="language-plaintext highlighter-rouge">v</code> are initialized to zero and need a warmup. The learning rate decays linearly over training. After updating, we reset <code class="language-plaintext highlighter-rouge">.grad = 0</code> for the next step.</p>
+
+<p>Over 1,000 steps the loss decreases from around 3.3 (random guessing among 27 tokens: \(-\log(1/27) \approx 3.3\)) down to around 2.37. Lower is better, and the lowest possible is 0 (perfect predictions), so there’s still room to improve, but the model is clearly learning the statistical patterns of names.</p>
+
+<h2 id="inference">Inference</h2>
+
+<p>Once training is done, we can sample new names from the model. The parameters are frozen and we just run the forward pass in a loop, feeding each generated token back as the next input:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">temperature</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># in (0, 1], control the "creativity" of generated text, low to high
+</span><span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">--- inference (new, hallucinated names) ---"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">sample_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+    <span class="n">keys</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_layer</span><span class="p">)],</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_layer</span><span class="p">)]</span>
+    <span class="n">token_id</span> <span class="o">=</span> <span class="n">BOS</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">pos_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">block_size</span><span class="p">):</span>
+        <span class="n">logits</span> <span class="o">=</span> <span class="n">gpt</span><span class="p">(</span><span class="n">token_id</span><span class="p">,</span> <span class="n">pos_id</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+        <span class="n">probs</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">([</span><span class="n">l</span> <span class="o">/</span> <span class="n">temperature</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">logits</span><span class="p">])</span>
+        <span class="n">token_id</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="n">choices</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">),</span> <span class="n">weights</span><span class="o">=</span><span class="p">[</span><span class="n">p</span><span class="p">.</span><span class="n">data</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">probs</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">token_id</span> <span class="o">==</span> <span class="n">BOS</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">sample</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">uchars</span><span class="p">[</span><span class="n">token_id</span><span class="p">])</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"sample </span><span class="si">{</span><span class="n">sample_idx</span><span class="o">+</span><span class="mi">1</span><span class="si">:</span><span class="mi">2</span><span class="n">d</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>We start each sample with the <code class="language-plaintext highlighter-rouge">BOS</code> token, which tells the model “begin a new name”. The model produces 27 logits, we convert them to probabilities, and we randomly sample one token according to those probabilities. That token gets fed back in as the next input, and we repeat until the model produces <code class="language-plaintext highlighter-rouge">BOS</code> again (meaning “I’m done”) or we hit the maximum sequence length.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">temperature</code> parameter controls randomness. Before softmax, we divide the logits by the temperature. A temperature of 1.0 samples directly from the model’s learned distribution. Lower temperatures (like 0.5 here) sharpen the distribution, making the model more conservative and likely to pick its top choices. A temperature approaching 0 would always pick the single most likely token (greedy decoding). Higher temperatures flatten the distribution and produce more diverse but potentially less coherent output.</p>
+
+<h2 id="run-it">Run it</h2>
+
+<p>All you need is Python (no pip install, no dependencies):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python train.py
+</code></pre></div></div>
+
+<p>The script takes about 1 minute to run on my macbook. You’ll see the loss printed at each step:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>train.py
+num docs: 32033
+vocab size: 27
+num params: 4192
+step    1 / 1000 | loss 3.3660
+step    2 / 1000 | loss 3.4243
+step    3 / 1000 | loss 3.1778
+step    4 / 1000 | loss 3.0664
+step    5 / 1000 | loss 3.2209
+step    6 / 1000 | loss 2.9452
+step    7 / 1000 | loss 3.2894
+step    8 / 1000 | loss 3.3245
+step    9 / 1000 | loss 2.8990
+step   10 / 1000 | loss 3.2229
+step   11 / 1000 | loss 2.7964
+step   12 / 1000 | loss 2.9345
+step   13 / 1000 | loss 3.0544
+...
+</code></pre></div></div>
+
+<p>Watch it go down from ~3.3 (random) toward ~2.37. The lower this number is, the better the network’s predictions already were about what token comes next in the sequence. At the end of training, the knowledge of the stastical patterns of the training token sequences is distilled in the model parameters. Fixing these parameters, we can now generate new, hallucinated names. You’ll see (again):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sample  1: kamon
+sample  2: ann
+sample  3: karai
+sample  4: jaire
+sample  5: vialan
+sample  6: karia
+sample  7: yeran
+sample  8: anna
+sample  9: areli
+sample 10: kaina
+sample 11: konna
+sample 12: keylen
+sample 13: liole
+sample 14: alerin
+sample 15: earan
+sample 16: lenne
+sample 17: kana
+sample 18: lara
+sample 19: alela
+sample 20: anton
+</code></pre></div></div>
+
+<p>As an alternative to running the script on your computer, you may try to run it directly on this <a href="https://colab.research.google.com/drive/1vyN5zo6rqUp_dYNbT4Yrco66zuWCZKoN?usp=sharing">Google Colab notebook</a> and ask Gemini questions about it. Try playing with the script! You can try a different dataset. Or you can train for longer (increase <code class="language-plaintext highlighter-rouge">num_steps</code>) or increase the size of the model to get increasingly better results.</p>
+
+<h2 id="progression">Progression</h2>
+
+<p>To see the code built up piece by piece as layers of the onion, the advised progression looks something like this:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>File</th>
+      <th>What it adds</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">train0.py</code></td>
+      <td>Bigram count table — no neural net, no gradients</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">train1.py</code></td>
+      <td>MLP + manual gradients (numerical &amp; analytic) + SGD</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">train2.py</code></td>
+      <td>Autograd (Value class) — replaces manual gradients</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">train3.py</code></td>
+      <td>Position embeddings + single-head attention + rmsnorm + residuals</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">train4.py</code></td>
+      <td>Multi-head attention + layer loop — full GPT architecture</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">train5.py</code></td>
+      <td>Adam optimizer — this is <code class="language-plaintext highlighter-rouge">train.py</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>I created a Gist called <a href="https://gist.github.com/karpathy/561ac2de12a47cc06a23691e1be9543a">build_microgpt.py</a>, where in the Revisions you can see all of these versions and the diffs between each step. I think this might be one helpful way to step through the code base, where you add one component at a time.</p>
+
+<h2 id="real-stuff">Real stuff</h2>
+
+<p>microgpt contains the complete algorithmic essence of training and running a GPT. But between this and a production LLM like ChatGPT, there is a long list of things that change. None of them alter the core algorithm and the overall layout, but they are what makes it actually work at scale. Walking through the same sections in order:</p>
+
+<p><strong>Data.</strong> Instead of 32K short names, production models train on trillions of tokens of internet text: web pages, books, code, etc. The data is deduplicated, filtered for quality, and carefully mixed across domains.</p>
+
+<p><strong>Tokenizer.</strong> Instead of single characters, production models use subword tokenizers like BPE (Byte Pair Encoding), which learn to merge frequently co-occurring character sequences into single tokens. Common words like “the” become a single token, rare words get broken into pieces. This gives a vocabulary of ~100K tokens and is much more efficient because the model sees more content per position.</p>
+
+<p><strong>Autograd.</strong> microgpt operates on scalar <code class="language-plaintext highlighter-rouge">Value</code> objects in pure Python. Production systems use tensors (large multi-dimensional arrays of numbers) and run on GPUs/TPUs that perform billions of floating point operations per second. Libraries like PyTorch handle the autograd over tensors, and CUDA kernels like FlashAttention fuse multiple operations for speed. The math is identical, just corresponds to many scalars processed in parallel.</p>
+
+<p><strong>Architecture.</strong> microgpt has 4,192 parameters. GPT-4 class models have hundreds of billions. Overall it’s a very similar looking Transformer neural network, just much wider (embedding dimensions of 10,000+) and much deeper (100+ layers). Modern LLMs also incorporate a few more types of lego blocks and change their orders around: Examples include RoPE (Rotary Position Embeddings) instead of learned position embeddings, GQA (Grouped Query Attention) to reduce KV cache size, gated linear activations instead of ReLU, Mixture of Experts (MoE) layers, etc. But the core structure of Attention (communication) and MLP (computation) interspersed on a residual stream is well-preserved.</p>
+
+<p><strong>Training.</strong> Instead of one document per step, production training uses large batches (millions of tokens per step), gradient accumulation, mixed precision (float16/bfloat16), and careful hyperparameter tuning. Training a frontier model takes thousands of GPUs running for months.</p>
+
+<p><strong>Optimization.</strong> microgpt uses Adam with a simple linear learning rate decay and that’s about it. At scale, optimization becomes its own discipline. Models train in reduced precision (bfloat16 or even fp8) and across large GPU clusters for efficiency, which introduces its own numerical challenges. The optimizer settings (learning rate, weight decay, beta parameters, warmup schedule, decay schedule) must be tuned precisely, and the right values depend on model size, batch size, and dataset composition. Scaling laws (e.g. Chinchilla) guide how to allocate a fixed compute budget between model size and number of training tokens. Getting any of these details wrong at scale can waste millions of dollars of compute, so teams run extensive smaller-scale experiments to predict the right settings before committing to a full training run.</p>
+
+<p><strong>Post-training.</strong> The base model that comes out of training (called the “pretrained” model) is a document completer, not a chatbot. Turning it into ChatGPT happens in two stages. First, SFT (Supervised Fine-Tuning): you simply swap the documents for curated conversations and keep training. Algorithmically, nothing changes. Second, RL (Reinforcement Learning): the model generates responses, they get scored (by humans, another “judge” model, or an algorithm), and the model learns from that feedback. Fundamentally, the model is still training on documents, but those documents are now made up of tokens coming from the model itself.</p>
+
+<p><strong>Inference.</strong> Serving a model to millions of users requires its own engineering stack: batching requests together, KV cache management and paging (vLLM, etc.), speculative decoding for speed, quantization (running in int8/int4 instead of float16) to reduce memory, and distributing the model across multiple GPUs. Fundamentally, we are still predicting the next token in the sequence but with a lot of engineering spent on making it faster.</p>
+
+<p>All of these are important engineering and research contributions but if you understand microgpt, you understand the algorithmic essence.</p>
+
+<h2 id="faq">FAQ</h2>
+
+<p><strong>Does the model “understand” anything?</strong> That’s a philosophical question, but mechanically: no magic is happening. The model is a big math function that maps input tokens to a probability distribution over the next token. During training, the parameters are adjusted to make the correct next token more probable. Whether this constitutes “understanding” is up to you, but the mechanism is fully contained in the 200 lines above.</p>
+
+<p><strong>Why does it work?</strong> The model has thousands of adjustable parameters, and the optimizer nudges them a tiny bit each step to make the loss go down. Over many steps, the parameters settle into values that capture the statistical regularities of the data. For names, this means things like: names often start with consonants, “qu” tends to appear together, names rarely have three consonants in a row, etc. The model doesn’t learn explicit rules, it learns a probability distribution that happens to reflect them.</p>
+
+<p><strong>How is this related to ChatGPT?</strong> ChatGPT is this same core loop (predict next token, sample, repeat) scaled up enormously, with post-training to make it conversational. When you chat with it, the system prompt, your message, and its reply are all just tokens in a sequence. The model is completing the document one token at a time, same as microgpt completing a name.</p>
+
+<p><strong>What’s the deal with “hallucinations”?</strong> The model generates tokens by sampling from a probability distribution. It has no concept of truth, it only knows what sequences are statistically plausible given the training data. microgpt “hallucinating” a name like “karia” is the same phenomenon as ChatGPT confidently stating a false fact. Both are plausible-sounding completions that happen not to be real.</p>
+
+<p><strong>Why is it so slow?</strong> microgpt processes one scalar at a time in pure Python. A single training step takes seconds. The same math on a GPU processes millions of scalars in parallel and runs orders of magnitude faster.</p>
+
+<p><strong>Can I make it generate better names?</strong> Yes. Train longer (increase <code class="language-plaintext highlighter-rouge">num_steps</code>), make the model bigger (<code class="language-plaintext highlighter-rouge">n_embd</code>, <code class="language-plaintext highlighter-rouge">n_layer</code>, <code class="language-plaintext highlighter-rouge">n_head</code>), or use a larger dataset. These are the same knobs that matter at scale.</p>
+
+<p><strong>What if I change the dataset?</strong> The model will learn whatever patterns are in the data. Swap in a file of city names, Pokemon names, English words, or short poems, and the model will learn to generate those instead. The rest of the code doesn’t need to change.</p>
+
+  </article>
+
+  <!-- mathjax -->
+  
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+  
+  <!-- disqus comments -->
+ 
+ <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'karpathyblog'; // required: replace example with your forum shortname
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+  
+</div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrap">
+
+    <!-- <h2 class="footer-heading">Andrej Karpathy blog</h2> -->
+
+    <div class="footer-col-1 column">
+      <ul>
+        <li>Andrej Karpathy blog</li>
+        <!-- <li><a href="mailto:"></a></li> -->
+      </ul>
+    </div>
+
+    <div class="footer-col-2 column">
+      <ul>
+        <li>
+          <a href="https://github.com/karpathy">
+            <span class="icon github">
+              <svg version="1.1" class="github-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill-rule="evenodd" clip-rule="evenodd" fill="#C2C2C2" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761
+                c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32
+                c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472
+                c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037
+                C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65
+                c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261
+                c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082
+                c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129
+                c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+              </svg>
+            </span>
+            <span class="username">karpathy</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/karpathy">
+            <span class="icon twitter">
+              <svg version="1.1" class="twitter-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill="#C2C2C2" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27
+                c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767
+                c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206
+                C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271
+                c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469
+                c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+              </svg>
+            </span>
+            <span class="username">karpathy</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col-3 column">
+      <p class="text">Musings of a Computer Scientist.</p>
+    </div>
+
+  </div>
+
+</footer>
+
+
+    </body>
+</html>

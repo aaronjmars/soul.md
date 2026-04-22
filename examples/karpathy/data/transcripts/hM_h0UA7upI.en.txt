@@ -1,0 +1,1485 @@
+ 
+[Applause]
+hi listeners welcome back to no priors
+today we're hanging out with Andre
+karpathy who needs no introduction Andre
+is a renowned researcher beloved AI
+educator and cuber an early team member
+from open aai the lead for autopilot at
+Tesla and now working on AI for
+Education we'll talk to him about the
+state of research his new company and
+what we can expect from AI thanks for
+joining us today it's great to have you
+here thank you I'm happy to be here you
+led autopilot at Tesla and now like we
+actually have fully self-driving cars
+passenger vehicles on the road how do
+you read that in terms of where we are
+in the capability set how quickly we
+should see increased capability or
+pervasive passenger vehicles uh yes so I
+spent uh maybe five years on
+self-driving space I think it's
+fascinating space and um basically
+what's happening in the field right now
+is well um I do also think that I I draw
+a lot of like analogies I would say to
+AGI from Salt driving and maybe that's
+just because I'm familiar with it but I
+kind of feel like we've reached AGI a
+little bit in salt driving uh because
+there are systems today that you can
+basically take around and as a pain
+customer can take around here so weo in
+San Francisco here is of course very
+common probably you've taken weo I've
+taken in a bunch and it's amazing and it
+can drive youit all over it place and
+you're paying for it as a product what's
+interesting with weo is the first time I
+took weo was actually a decade ago
+almost exactly 2014 or so and it was a
+friend of mine who worked there and he
+gave me a demo and it drove me around
+the block 10 years ago and it was
+basically perfect dve drive 10 years ago
+and it took 10 years to go from like a
+demo that I had to a product I can pay
+for that's in a city scale and it's
+expanding Etc how much of that do you
+think was regulatory versus technology
+like when do you think the technology
+was ready is it I think technology
+you're just not seeing it in a single
+demo Drive of 30 minutes you're not
+running into all the stuff that they had
+to deal with deal with for a decade and
+so demo and product there's a massive
+Gap there and I think a lot of it also
+regulatory Etc uh but I do think that
+we've sort of like achieved AI in a soft
+having space in in that sense a little
+bit and yet I think there's what's
+really fascinating about it is the
+globalization hasn't happened at all so
+you have a demo and you can take it in a
+Seth but like the world hasn't changed
+yet and that going to take a long time
+and so going from a demo to an actual
+globalization of it I think there's a
+big gap there that's how it's related I
+would say to AGI because I suspect
+similar it will look in a similar way
+for AGI when we sort of get it and then
+staying for a minute in the Sal driving
+space uh I think people think that waymo
+is ahead of Tesla I think personally
+Tesla is ahead of wayo and I know it
+doesn't look like that but I'm still
+very uh bullish on Tesla and it sof
+driving program I think that Tesla has a
+software problem and I think weo has a
+hardware problem is the way I put it and
+I think software problems are much
+easier Tesla has deployment of all these
+cars on earth uh like at scale and I
+think uh way needs to get there and so
+uh the moment Tesla sort of like gets to
+the point where they can actually deploy
+this and it actually works I think it's
+going to be you know really incredible
+uh the latest builds I just drove
+yesterday I mean it's just driving me
+all over the place now they've made like
+really good improvements uh I would say
+very recently yeah I've been using it a
+lot recently and it actually works quite
+well it was it did some miraculous uh
+driving for me yesterday so I'm very
+impressed what the team is doing and so
+I still think that Tesla mostly has a
+software problem wayo mostly Hardware
+problem and so I think Tesla weo looks
+like it's winning kind of right now but
+I think when we look in 10 years and
+who's actually at scale and where most
+of the revenue is coming from I still
+think they're uh they're ahead in that
+sense how far away do you think we are
+from the software problem turning the
+corner in terms of getting to some
+equivalency because obviously to your
+point if you look at a way my car has a
+lot of very expensive liar and other
+sort of sensors built into the car so it
+can do what it does it sort of helps
+support the software system and so if
+you can just use cameras which is the
+Tesla approach then you effectively get
+rid of enormous cost complexity and you
+can do it in in many different types of
+cars when do you think that transition
+happens I mean mean in the next few
+years Ian I'm hoping like something like
+that but actually what's really
+interesting about that is I'm not sure
+that people are appreciating that Tesla
+actually does use a lot of expensive
+sensors they just do it at training time
+so there are a bunch of cars that drive
+around with Lars they do a bunch of
+stuff that like doesn't scale and they
+have extra sensors Etc and they do
+mapping and all all the stuff you're
+doing it at training time and then
+you're distilling that into a test time
+package that has deployed to the cars
+and is Vision only and it's like an
+Arbitrage on like sensors uh and like
+expense yeah and so I think it's
+actually kind of a brilliant strategy
+that I don't think it's fully
+appreciated and I think it's going to
+work out well because the pixels have
+the information and I think uh the
+network will be capable of doing that
+and yes at training time I think these
+sensors are really useful but I don't
+think they're as useful at tus time and
+I think you you don't it seems like the
+one other thing or transition that's
+happened is basically a move from a lot
+of um sort of uh Edge case designed
+turistic associated with it versus end
+to end deep learning and that's what
+other shift that's happened recently do
+you want to talk a little bit about that
+and sort of what that yeah I think that
+was always like the plan from the start
+I would say at Tesla as I was talking
+about how the neural nut can like eat
+through the stack because when I joined
+there was a ton of C++ code and now
+there's much much less C++ code uh in
+the test time package that runs in the
+car because uh there's still a ton of
+stuff in the in the back end uh that
+we're not talking about the neural net
+kind of like takes takes through the
+system so first it just does like a
+detection on the Image level then it
+does multiple images gives you
+prediction then multiple Imes over time
+give you a prediction and you're
+discarding C++ code and eventually
+you're just giving steering commands and
+so I think Tesla is kind of eating
+through the stack my understanding is
+that current Whos are actually like not
+that but that they've tried but they
+ended up like not doing that is my
+current understanding but I'm not sure
+because they don't talk about it but I
+do fundamentally believe in this
+approach um and I think um that's the
+last piece to fall if if you want to
+think about it that way and I do suspect
+that the endtoend systems for Tesla in
+like say 10 years it is just a neural
+nut I mean the the videos stream into a
+neural nut and commands come out you
+have to sort of build to build build up
+to it incrementally and uh do it piece
+by piece and even all the intermediate
+predictions and all the things that
+we've done I don't think they've
+actually like misled the development I
+think they're part of it uh because um
+there's a lot of solid reasons for this
+so so actually like in and driving when
+you're just imitating humans and so on
+you have very few bits of supervision to
+train a massive neural nut and it's too
+too few bits of signal to train so many
+billions of parameters and so these
+intermediate representations and so on
+help you develop the features and the
+detectors for everything and then it
+makes a much easier problem for the um
+end to end part of it and so I suspect
+although I don't know because I'm not
+part of the team but there's a ton of
+pre-training happening so that you can
+do the fine tuning for end to end and so
+basically I feel like it was necessary
+to eat through it incrementally and
+that's what Tesla has done I think is
+the right approach and it looks like
+it's working so I'm really looking
+forward if you had started end you
+wouldn't have had the data anyway that
+makes sense yeah so uh you worked on the
+um Tesla humanoid robot before you left
+uh I have so many questions but one is
+like starting here what transfers
+basically everything transfers and I
+don't think people appreciate it okay um
+that's a big claim like a cars are
+basically robots when you actually uh
+look at it um cars are robots and Tesla
+I don't think it's a car company I think
+this is misleading this is a robotics
+company robotics at Scale Company
+because I would say at scale is also
+like a whole separate variable they're
+not building a single thing they're
+building the machine that builds the
+thing which is a whole separate thing um
+and so I think robotics at scale um
+company uh is what Tesla is and I think
+uh in terms of the transfer from Cars to
+to humanoids it was not not that much
+work at all and in fact like the early
+versions of Optimus um the the robot uh
+it thought it was a car like because it
+had the exact same computer it had the
+exact same cameras it was really funny
+because we were running the car networks
+on the robot but it's walking around the
+office and so on and like it's trying to
+like recognize drivable space but it's
+all just walking space now I suppose but
+it actually kind of like generalized a
+little bit and there's some fine tuning
+necessary and so on but it thought it
+was driving but it's actually like
+moving through an environment is a
+reasonable way to think of this as like
+actually it's a robot many things
+transfer but you're just missing for
+example actuation and action data yeah
+you definitely miss some components but
+and the other part I would say is like
+like so much transfers like the speed
+with which Optimus was started I think
+to me was very impressive because the
+moment Elon said we're doing this uh
+just people just showed up with all the
+right tools and all the stuff just
+showed up so quickly and all these CAD
+models and all the supply chain stuff
+and I just felt like wow there's so much
+in-house expertise for building robotics
+at Tesla and like it's all the same
+tools and they're just like okay they're
+being reconfigured from a car like a
+Transformer the movie they're just being
+reconfigured and reshuffled but it's
+like the same thing and you need all the
+same components you need to think about
+all the same kinds of stuff both on the
+hardware side on the scale stuff and
+also on the brains and so for the brains
+there was also a ton of transfer not
+just of the specific networks but also
+all of the approach and labeling team
+and how it all coordinates and the
+approaches people are taking I just
+think there's a ton of transfer what do
+you think of the first application areas
+for humanoid robotics or human form
+stuff I think a lot of people have this
+vision of it like doing your laundry Etc
+I think that will come late I don't
+think b2c should be the right start
+point because I don't think we can have
+a robot like Crush grandma is how I it
+sort of I think it's like too much legal
+liability it's just like I don't think
+that's the right hug I mean it's just
+going to fall over or something like
+that you know like these things are not
+perfect yet and they require some amount
+of work so I think the best customer is
+yourself first and I think probably
+Tesla's going to do this uh I'm very
+bullish on Tesla if people can tell the
+first customer is yourself and you
+incubate it in the factory and so on
+doing maybe a lot of material handling
+Etc this way you don't have to create
+contracts working with third parties
+it's all really heavy there's lawyers
+involved like Etc you incubate it then
+you go I think B2B second uh and you go
+to other companies that have massive
+warehouses we can do Material Handling
+we're going to do all the stuff
+contracts get drafted up fences get put
+around all this kind of stuff and then
+once you incubate in companies I think
+that's when you start to go into the b2c
+applications I do think we'll see b2c uh
+robots also um like unit tree and so on
+are starting to come up with robots that
+I really want I got one you did yeah
+okay yeah the G1 yeah so I will probably
+buy one of those and there's probably
+going to be an ecosystem of people
+building on those platforms too but I
+think in terms of like what like wins at
+scale I would expect that kind of a
+approach I but in the beginning it's a
+lot of material handling and then going
+towards more and more HKC things that
+are more specific one one that I'm
+really um excited about is the n
+Freedman challenge of the leaf blower
+yeah uh like I would love for an
+optimist to walk down the street like
+tiptoe down the street and like pick up
+individual leaves so that we don't need
+like Lea blowers and I think this will
+work and it's an amazing task and so I
+would hope that that's one of the first
+applications even raking that should
+work too just very quietly yeah just
+quiet raking that's cute they uh I mean
+they do actually have like a machine
+that's working it's just not a humanoid
+can we talk about the humanoid thesis
+for a second because the the simplest
+version of this is like the world is
+built for humans and you build one set
+of Hardware the right thing to do is
+build a model that can do an increasing
+set of tasks in this set of Hardware I
+think there's a like another camp that
+believes like well like humans are not
+optimal for any given task right you can
+make them stronger or bigger or smaller
+or whatever and why shouldn't we do
+superhuman things like how do you think
+about this I think people are maybe
+under appreciating the complexity of any
+fixed cost that goes into any single
+platform uh I think there's a large cost
+you're paying for any single platform
+and so I think it makes a lot of sense
+to centralize that and have a single
+platform that can do all the things I
+would say the human note aspect is also
+very appealing because people can
+teleoperate it very easily and so it's a
+data collection thing that is extremely
+helpful uh because people will be able
+to obviously very easily teleoperate it
+I think that's usually overlooked
+there's of course the aspect you
+mentioned which is like the world design
+for humans Etc so I think that's also
+important I mean I think we'll have some
+variations on the humanoid uh platform
+but I think there is a large fixed cost
+to any platform and then I would say
+also one last dimension of it is you
+benefit a ton from like the transfer
+learning between the different tasks and
+in AI you really want the single neuron
+not that is multitasking doing lots of
+things that's where you're getting all
+the intelligence and capability from and
+that's also H that's also why language
+models are so interesting is because you
+have a single uh regime like a text um
+domain multitasking all these different
+problems and they're all sharing
+knowledge between each other and it's
+all coupled in a single neural nut and I
+think you want that kind of a platform
+and uh you know you want all the data
+you collect for Lea picking to benefit
+all the other tasks um if you're
+building a special purpose thing for any
+one thing you're not going to benefit
+from a lot of the transferring between
+all the other tasks if that makes sense
+yeah I think there's one um argument of
+like uh it seems I mean the G1 is like
+build a very capable humanoid robot
+under a certain bomb and like if you
+wanted to you know put an arm on Wheels
+I can do things like it's a like maybe
+there are cheaper approaches to a
+general platform at the beginning does
+that make sense to you uh cheaper
+approaches to a general platform from a
+hardware perspective uh yeah I think
+that makes sense yeah you put a wheel on
+it instead of a feet Etc I do feel like
+I wonder if it's taking you down like a
+local minimum a little bit I just feel
+like pick a platform make it perfect is
+like the long-term uh pretty good betat
+and then the other thing of course is
+like I just think it will be kind of
+like familiar to people and I think
+people will understand that maybe you
+want to talk to it and I feel like the
+co the psychological aspect also of it I
+think favors possibly the human platform
+unless people are like scared of it and
+would actually prefer a platform that is
+more abstract of like some but then I
+don't know if if
+just Monster doing stuff then I don't
+know if that's like more kind like it's
+interesting that I think that the other
+um form factor for the unitri is a dog
+right and it's almost a more friendlier
+familiar yeah but then people watch
+Black Mirror and suddenly the dog flips
+to like a scary thing like so it's hard
+to think through uh I just think
+psychologically it will be easy for
+people to understand what's happening
+and what do you think is missing in
+terms of um technological milestones for
+Progress relative to substantiating this
+future uh for robotics robtics yeah or
+the the humanoid robot or anything else
+human form yeah I don't know that I have
+like a really good window into it I do
+think that it is kind of interesting
+that like in the human for factor for
+for example for the lower body uh I
+don't know that you want to do imitation
+learning from like demonstration because
+for lower body it's all a lot of like
+inverted pendulum control and stuff like
+that it's for the upper body that you
+need a lot of like to operation and uh
+data collection and end to endend and
+Etc and so I think like everything
+becomes like very hybrid in that sense
+and I don't know how those systems
+interact when I when I talk to people
+working a lot of what they focus on is
+like actuation and you know manipulation
+and sort of digital manipulation and
+things like yeah I do expect in the
+beginning it's a lot of like
+teleoperation for uh getting stuff off
+the ground and imitating it and getting
+something that works 95% of the time and
+then talking about human to robot ratios
+and gradually having people who are
+supervisors of robots instead of doing
+the task directly and all this kind of
+stuff is going to happen over time and
+pretty gradually I don't know that
+there's like any individual impediments
+that I'm like really familiar with I
+just think it's a lot of grun grunt work
+a lot of like the tools are available
+Transformers are this beautiful like
+blob of tissue you can just get just
+arbitrary tasks and you just need the
+data you need to put it in the right
+form you need to train it you need to
+experiment with it you need to deploy it
+iterate on it that's just a lot of grunt
+work I don't know that I have a single
+individual thing that is like holding us
+back technically where are we in the
+state of large blob research large blob
+research yeah we're in a really good
+State uh so I think um I'm not sure if
+it's fully appreciated but like the
+transformer is like much more amazing
+it's not just like an it's not just
+another neural net it's like an amazing
+neural nut extremely General uh so for
+example example when people talk about
+the scaling loss in neural networks the
+scaling loss are actually a um a to a
+large extent a property of the
+Transformer before the Transformer
+people are playing with lstms and
+stacking them Etc you don't actually get
+like clean scaling loss and this thing
+doesn't actually train it doesn't
+actually work if the Transformer that
+was the first thing that actually just
+kind of like scales um and you get
+scaling losss and everything makes sense
+so this like general purpose training
+computer I think of it as kind of a
+computer but it's like a differentiable
+computer and you can just give it inputs
+and outputs and billions of it and can
+train with back propagation it actually
+kind of like arranges itself into a
+thing that does the task and so I think
+it's actually kind of like a magical
+thing that we've stumbled on in the
+algorithm space and I think there's a
+few individual innovations that went
+into it so you have the residual
+connections that was a piece that
+existed you have the layer
+normalizations uh that needs to slot in
+you have the attention block you have
+the lack of these like um uh saturating
+nonlinearities like tan hes and so on
+those are not present in the Transformer
+because they kill gradient signals so
+there's a few like there's four or five
+innovations that all existed and were're
+put together into this Transformer and
+that's what Google did with their paper
+and this thing actually trains uh and
+suddenly you get scaling laws and
+suddenly you have like this piece of
+tissue that just trains to a very large
+extent and so I it was a major unlock
+you feel like we are not near the limit
+of that unlock right because I think
+there is a discussion of of course like
+the data wall and how expensive another
+generation of scale would be like how do
+you think about that that's where you
+start to get into like I don't think
+that the neural network architecture is
+like holding us back fundamentally
+anymore it's like not the bottom leg
+whereas I think in the previous before
+Transformer it was a bottom leg but now
+it's not the bottom leg so now we're
+talking a lot more about what is the
+loss function what is the data set we're
+talking a lot more about those and those
+have become the bottlenecks almost um
+it's not the general piece of tissue
+that reconfigures based on whatever you
+want it to be and so that's where I
+think a lot of the activity has moved
+and that's why a lot of the companies
+and someone who are applying this
+technology like they're not thinking
+about the Transformer Mar they're not
+thinking about the architecture you know
+the Llama release uh like the the
+Transformer hasn't changed that much uh
+you know we've added the Rope positional
+and the Rope relative position en
+codings um that's like the major change
+everything else doesn't really matter
+too much it's like plus 3% on small few
+things uh but really it's like rope is
+the only thing that's slotted in and
+that's the Transformer as as it has
+changed since the last five years or
+something so there hasn't been that much
+Innovation on that everyone just takes
+it for granted let's train it Etc and
+then everyone's just innovating on the
+data set mostly and the loss function
+details uh so that's where all the
+activity has gone to right but what
+about the argument like in that domain
+that that was easier when we were taking
+internet data uhuh and we're out of
+internet data and so the questions are
+really around like synthetic data or
+more expensive data collection so I
+think that's a good point so that's
+where a lot of the activity is now in
+LMS so the internet data is like not the
+data you want for your Transformer it's
+like a nearest neighbor that actually
+gets you really far surprisingly but the
+internet data is a bunch of internet web
+pages right it's just like what you want
+is the inner thought monologue of your
+brain yeah that's the IDE trajectories
+in your brain the trajectories in your
+brain as you're doing problem solving if
+we had a billion of that like AGI is
+here roughly speaking I mean to a very
+large extent uh and we just don't have
+that so where a lot of activity is now I
+think is we the internet data that
+actually gets you like really close
+because it just so happens that internet
+has enough of reasoning traces in it and
+a bunch of knowledge and the Transformer
+just makes it work okay so I think a lot
+of activity now is around um refactoring
+the data set into these inner monologue
+uh formats and I think there's a ton of
+synthetic data generation that's helpful
+for that so what's interesting about
+that also is like the extent to which
+the current models are helping us create
+the Next Generation models and so it's
+kind of like you know the staircase of
+improv how much do you think synthetic
+data is or how far does that get us
+right because to your point on each data
+each model helps you train the
+subsequent model better at least create
+tools for it data labeling whatever may
+be part of it is synthetic data how
+important do you think the synthetic
+data pieces inred yeah I think is the
+only way we can like make progress is we
+have to make it work I think with
+synthetic data you just have to be
+careful uh because uh these models are
+silently collapsed is like one of the
+major issues so if you go to chpt and
+you ask it to give you a um a joke
+you'll notice that it only knows like
+three jokes that's like the only it
+gives you like one joke I think most of
+the time and sometimes it gives you like
+three jokes and it's because the models
+are collapsed and it's silent so when
+you're looking at any single individual
+output you're just seeing a single
+example but when you actually look at
+the distribution you'll notice that it's
+not a very diverse distribution it's
+silently collapsed when you're doing
+synthetic data generation this is a
+problem because you actually really want
+that entropy you want the diversity and
+the richness in your data set otherwise
+you're getting collapsed data sets and
+you can't see it when you look at any
+individual example but the distribution
+is has lost a ton of uh entropy and
+richness and so it silently gets worse
+and so that's why you have to be very
+careful and you have to make sure that
+you maintain your entropy in your data
+set and there's a ton of uh techniques
+for that as an example someone released
+this uh Persona data set as an example
+the Persona data set is a data set of 1
+billion um personalities like humans
+like backgrounds oh I'm a teacher or I'm
+an artist I live here I do this Etc and
+it's like little paragraphs of like um
+fictitious human background and what
+what you do when you do synthetic data
+generation is not only like oh complete
+this task and do it in this way but also
+imagine you're uh describing it to this
+person you put in this information and
+now you're forcing it to explore more of
+the space and you're getting some
+entropy so I think you have to be just
+very careful to inject the entropy
+maintain the distribution and that's the
+hard part uh that I think maybe maybe
+people aren't like sufficiently
+appreciating as much in general so I
+think basically synthetic data
+absolutely the future uh we're not going
+to run out of data is my impression I
+just think you have to be careful what
+do you think we are learning now about
+human cognition from this research I
+don't know if we're learn one could
+argue that like figuring out the shape
+of reasoning traces we want for example
+is um instructive to actually
+understanding how the brain works I
+would be careful with those analogies
+but in general I do think that it's um
+it's a very different kind of thing but
+I do think that there are some analogies
+you can draw so as an example uh I think
+Transformers are actually better than
+the human brain in a bunch of ways I
+think they're actually a lot more
+efficient system and the reason they
+don't work as good as the human brain is
+mostly data issue roughly speaking is
+the first story approximation I would
+say and actually like as an example like
+Transformer memorizing sequences is so
+much better than humans like if you give
+it a sequence and you do a single
+forward backward pass in that sequence
+then if you give it the first few
+elements it will complete the rest of
+the sequence it memorized that sequence
+and it's so good at it if you gave a
+human a single presentation of a
+sequence there's no way that you can
+remember that and so the Transformers is
+actually I do think there's a good
+chance that the gradient um Bas
+optimization the forward backward update
+that we do all the time for training
+neur NS is actually more efficient than
+the brain in some ways and these models
+are better they're just not um yet ready
+to shine but in a bunch of cognitive
+sort of aspects I think they might come
+out with the right inputs they will be
+better that that's generically true of
+computers for all sorts of applications
+right put memory to your point yeah
+exactly and I think human brains just
+have a lot of constraints you know the
+working memory is very small I think
+Transformers have a lot lot bigger
+working memory and will this will
+continue to be the case uh they're much
+more efficient Learners uh the human
+brains function under all kinds of
+constraints uh it's not obvious that the
+human R is back propagation right it's
+not obvious how that would work it's uh
+very stochastic sort of dynamic system
+it has all these constraints it works
+under so ambient conditions Etc so I I
+do think that what we have is actually
+potentially better than the brain um and
+it's just not there yet how do you think
+about um human augmentation with
+different AI systems over time do you
+think that's a likely direction do you
+think that's unlikely augmentation
+augmentation of people with AI models oh
+of course I mean but in in what sense
+maybe I think in general absolutely
+because I mean there's an abstract
+version of it you're using as a tool
+that's the the external version there's
+the you know the merger
+scenario you know a lot of people end up
+talking about yeah yeah I mean we're
+already kind of merging the thing is
+like there's a you know there's the io
+bottleneck but for the most part you
+know at your fingertips if you have any
+of these models you're that's a little
+bit different because I mean people have
+been making that argument for I think 40
+are just extension of human capabilities
+right yeah the computer is the bicycle
+for human mind exactly so um but there's
+a subset of the AI community that thinks
+that for example the way that we subsume
+some potential conflict with future AI
+or something else would be through some
+form of yeah like the neuralink pitch
+Etc exactly um yeah I don't I don't know
+what this merger looks like uh yet but I
+can definitely see that you want to
+decrease the iio to Tool use and I see
+this as kind of like an EXO cortex while
+building on top of our neocortex right
+and it's just the next layer and uh it
+just turns out to be in the cloud Etc
+but it is the next layer of the brain
+yeah accelerando uh book from the early
+basically everything is substantiated in
+a set of goggles that are
+computationally attached to your brain
+that you wear and then if you lose them
+you must feel like you're losing a part
+of your persona or memory I think that's
+very likely yeah and today the phone is
+already almost that and I think it's
+going to get worse when you put your
+techno stuff away from you you're just
+like naked human in nature as well you
+lose part of your intelligence it's very
+anxiety a very uh a very simple example
+of that is just Maps right so a lot of
+people now I've noticed can't actually
+navigate their City very well anymore
+because are always using turn BYT
+Direction and if we have this for
+example like Universal translator which
+I don't think is too far away like you
+lose the ability to speak to people who
+don't speak English if you just put your
+stuff away I'm very comfortable
+repurposing that part of my brain to do
+further research I don't know if you saw
+the video of like the kid that's has a
+magazine and is trying to like swipe on
+the magazine what's fascinating to me
+about it is like this kid doesn't
+understand what comes with nature and
+what's technology technology on top of
+the nature because it's made so
+transparent and I think this might look
+similar where people will just start
+assuming the tools and then when you
+take them away you realize like I guess
+like people don't know what's technology
+and what's not if you're wearing this
+thing that's always translating one or
+like doing stuff like that for you then
+um maybe people like lose the basic
+cognitive abilities may not exist I
+think exist yeah like by Nature we're
+going to specialize you can't understand
+people who speak Spanish like what the
+hell or like if when you go to objects
+like in Disney uh all the objects are
+alive and I think we are going to
+potentially come to that kind of a world
+where why an I talk to things like
+already today you can talk to Alexa and
+you can ask her for things and so on
+yeah I've seen some toy companies like
+that where they're basically trying to
+embed in LM in a toys that can interact
+with a child yeah isn't it strange that
+when you go to a door you can't just say
+open like what the hell um another
+favorite example of that I don't know if
+you saw either demolition men or iRobot
+people make fun of the idea that you uh
+yeah like you can't just talk to things
+and what the hell if we're talking about
+a um EXO cortex that feels like a pretty
+fundamentally um important thing to
+democratize access to how do you think
+like the current market structure of
+what's happening in llm research you
+know there's a small number of large
+Labs that actually have a shot at the
+Next Generation progressing training
+like how does that translate to what
+people have access to in the future so
+what you were kind of alluding to maybe
+is the state of the ecosystem right so
+we have kind of like an oligopoly of a
+few closed platforms and then we have an
+open platform that is kind of like
+behind so like metal Lama Etc and this
+is kind of like mirroring the open
+source uh kind of ecosystem I do think
+that when this stuff starts to when we
+start to think of it as like an
+exocortex uh so there's the there's a
+saying in cryp which is like not your
+keys not your not your tokens like is it
+the case that if it's like not your
+weights not your brain that's
+interesting because a company is
+effectively controlling your exocortex
+and therefore for part of it starts to
+feel kind of invasive if this is my
+exocortex I think people will care much
+more about ownership yes like you're
+yeah you're you realize you're renting
+your brain like it seems strange to rent
+your brain the thought experiment is
+like are you willing to give up
+ownership and control to rent a better
+brain because I am yeah yeah so I think
+that's the trade-off I think we'll see
+how that works but maybe it's possible
+to like by default use the closed
+versions because they're amazing but you
+have a fallback in various scenarios and
+I think that's kind of like the way
+things are shaping up today even right
+like um when apis go down on some of the
+Clos Source providers people start to
+implement fallbacks to like the open
+ecosystems for example that they fully
+control on they're in they feel
+empowered by that right so so maybe
+that's just the extension of what will
+look like for the brain is you fall back
+on the open source stuff um should
+anything happen but most of the time you
+actually so it's quite important that
+the open source stuff continues to
+progress I think so 100% and this is not
+like an obvious point or something that
+people maybe agree on right now but I
+think 100% I I guess one thing I've been
+wondering about a little bit is um what
+is the smallest performant model that
+you can get to in some sense either in
+parameter size or however you want to
+think about it and I'm a little bit
+curious about your view because youve
+thought a lot about both uh distillation
+small models you know I think it can be
+surprisingly small and I do think that
+the current models are wasting a ton of
+capacity remembering stuff that doesn't
+matter like they remember sha hases they
+remember like the ancient cuz the data
+set is not curated the best yeah exactly
+like and I think this will go away and I
+think we just need to get to the
+cognitive core and I think the cognitive
+core can be extremely small and it's
+just this thing that thinks and if it
+needs to look up information it knows
+how to use different tools is that like
+three billion parameters is that 20
+billion param I think even a billion
+billion suffices we'll probably get to
+that point and the models can be very
+very small and I think the reason they
+can be very small is fundamentally I
+think just like distillation works it
+maybe like the only thing I would say
+distillation works like surprisingly
+well distillation is where you get a
+really big model or a huge amount of
+computer something like that um
+supervising a very small model and uh
+you can actually um stuff a lot of
+capability into a very small level is
+there some sort of like uh mathematical
+representation of that or some
+information theoretical like formulation
+of that because it almost feels like you
+should be able to calculate that now in
+terms of what's the maybe maybe like one
+way to think about it is like you we go
+back to like the internet data set which
+is what we're working with the Internet
+is like
+information just like you know and I
+think most of it is not uh useful to the
+thinking part and it's like yeah I I
+guess maybe another way to frame the
+question is like is there a math
+mathematical representation of cognitive
+capability relative to model size or how
+do you capture cognition in terms of you
+know here's the Min or Max relative to
+what you're trying to accomplish and
+maybe there's no good way to represent
+that so I think maybe a billion
+parameters gets you sort of like a good
+cognitive core I think probably right I
+think even 1 billion is too much I don't
+know we'll see it's very exciting given
+if you think about uh well you know the
+question of like on an edge device
+versus on the cloud but and also this
+raw cost of using the model and
+everything yeah it's very exciting right
+but at less than a billion parameters I
+have my EXO cortex on a local device as
+well yeah and then probably it's not a
+single model right like it's interesting
+to me to think about what this will
+actually play out like um cuz I do think
+you want to benefit from parallelization
+you don't want to have a a sequential
+process you want to have a parallel
+process and I think companies to some
+extent are also kind of like uh um
+paralyzation of work and but they
+there's a hierarchy in a company because
+that's one way to you know you have the
+information processing and the
+reductions that need to happen within
+Organization for information so I think
+we'll probably end up with uh companies
+for ofms I think is not unlikely to me
+that you have models of different
+capabilities specialized to various uh
+unique domains maybe there's a
+programmer Etc and it will actually
+start to resemble companies to a very
+large extent so you have the programmer
+and the program manager and you know
+similar kinds of roles of llms working
+in parallel and coming together and
+orchestrating computation on your behalf
+so maybe it's not correct to think about
+it's more like a swarm your like an
+ecosystem it's like a biological
+ecosystem where you have specialized
+roles and niches I think you'll start to
+resemble that you have automatic
+escalation to other parts of the Swarm
+depending on the difficulty of the
+problem and the special the CEO is like
+a really brilliant uh Cloud Model but
+the Workhorse can be a lot cheaper maybe
+even open source models what not and my
+cost function is different from your
+cost function yeah so uh that could be
+interesting you left open AI you're
+working on education you've always been
+an educator like why why do this I would
+start with I've always been an educator
+and I love learning and I love teaching
+and uh so it's kind of just like a space
+that I've been very passionate about for
+a long time and then the other thing is
+I think one macro picture that's kind of
+driving me is I think there's a lot of
+activity in like Ai and um I think most
+of it is to kind of like replace or
+displace people I would say is in the of
+like Sliding Away the people but I'm
+always uh more interested in anything
+that kind of empowers people and I feel
+like I'm kind of on a high level like
+team human and I'm interested in things
+that AI can do to empower people and I
+don't want the future where people are
+kind of um on the side of automation I
+want people to be very in an empowered
+State and I want them to be amazing even
+much more amazing than today and then
+other aspects that I find very
+interesting is like how far can a person
+go if they have the perfect tutor for
+all the subjects and I think people
+could go really far if they had the
+perfect curriculum for any anything and
+I think we see that with um you know if
+you if some rich people maybe have um
+tutors and they do actually go really
+far um and so I think we can approach
+that with AI or even lock their pass it
+there's very clear literature on that
+actually from the 80s right we're
+one-on-one tutoring I think um he people
+get one standard deviation better than
+is it two yeah it's the bloom stuff yeah
+exactly there's a lot of really
+interesting uh precedence on that how do
+you actually view that as substantiating
+through the lens of AI or what's the
+first types of products that will really
+help with that or you know because
+there's books like the diamond age where
+they talk about the young ladi's
+Illustrated primer and all that kind of
+stuff so I would say I'm definitely
+inspired by aspects of of it so like in
+practice what uh what I'm doing is
+trying to currently build a single
+course and I want it to be just like the
+course you would go to if you want to
+learn AI I think the problem with uh
+basically is like I've already taught
+courses like I taught 231n at Stanford
+and that was the first deep learning
+class and was pretty successful but the
+question is like how do you actually
+like really scale these classes like how
+do you make it so that your target
+audience is maybe like 8 billion people
+on Earth and there also speaking
+different languages and there all
+different uh capability levels Etc so
+you and a single teacher doesn't scale
+to that audience and so the question is
+how do you use AI to serve like do the
+scaling of a really good teacher and so
+the way I'm thinking about it is the
+teacher is kind of doing a lot of the
+course creation and the curriculum
+because currently at current AI
+capability I I don't think the models
+are good enough to create a good course
+uh but I think they're good to become
+the front end to the student and uh
+interpret the course to them and so uh
+basically the teacher doesn't go to the
+people and the teacher is not the front
+end anymore the teacher is on the back
+end designing the materials in the
+course and the AI is the front end and
+it can speak all the different languages
+and it kind of like takes you through
+the course should I think of that as
+like like the TA type experience or is
+that not a good analogy here that is
+like one way I'm thinking about it is
+it's AI ta I'm mostly thinking of it as
+like this front end to the student and
+it's the thing that's actually
+interfacing with the student and uh
+taking them through the course and I
+think that's tractable today uh and it
+just doesn't exist and I think it can be
+made really good and then over time as
+the capability increases you would
+potentially uh refactor the setup uh in
+various ways I like to find things where
+like the AI capability today and having
+a good model of it and I think a lot of
+companies that maybe don't um don't
+quite understand intuitively where the
+capability is today and then they end up
+kind of like building things that are
+kind of like too ahead of what's what's
+available or maybe not ambitious enough
+and so I think uh I do think that this
+is kind of a sweet spot of what's
+possible and also really interesting and
+exciting so I want to go back to
+something you said that I think is very
+inspiring especially coming from like
+your background and understand of where
+exactly we are in research which is
+essentially like we do not know what the
+limits of human performance from a
+learning perspective are given much
+better tooling and I think there's like
+a very easy analogy to we just had the
+Olympics like a month ago right and you
+know a runner and it's the the very best
+mile time or pick any sport today is
+much better than it was putting aside
+performance enhancing drugs like 10
+years ago just because like you start
+training earlier you have a very
+different program we have much better
+scientific understanding we have
+Technique we have PE the fact that you
+believe like we can get much further as
+humans if we're starting with the
+Tooling in the curriculum is amazing
+yeah I think we haven't even scratched
+like what's possible at all so I think
+there's like two Dimensions basically to
+it is number one is the globalization
+dimension of like I want everyone to
+have really good education but the other
+one is like how far can a single person
+go I think both of those are very
+interesting and exciting usually when
+people talk about 101 learning they talk
+about the Adaptive aspect of it where
+you're a challenging person at the level
+that they're at do you think you can do
+that with AI today or is that something
+for the future and it's more today it's
+about reach and multiple languages and
+glob looking fruit this things like for
+example different languages super low
+hang fruit I think the current models
+are actually really good at translation
+basically and can Target the material
+and trans translate it like at the spot
+so I think a lot of things are ling
+fruit this adaptability to a person's
+background I think is like not at the
+low fruit but I don't think it's like
+too high up or too much away but there
+is something you definitely want because
+not everyone is coming in with the with
+um with the same background and also
+what's really helpful is like if you're
+familiar with some other disciplines in
+the past then it's really useful to make
+analogies the things you know and that's
+extremely powerful in education so
+that's definitely a dimension you want
+to take advantage of but I think that
+starts to get to the point where it's
+like not obvious and needs some work I
+think like the easy version of it is not
+too far where you can imagine just
+prompting model is like oh hey I know
+physics or I know this and you probably
+get something but I guess what I'm
+talking about is something that actually
+works not something that like you can
+demo and work sometimes so I just mean
+like it actually really works and in the
+way a person would yeah and that's the
+reason I was asking about adaptability
+because also people learn at different
+rates or certain things they find
+challenging that others don't or vice
+versa and so it's a little bit of how do
+you mod relative to that context and I
+guess you could have some reintroduction
+of what the person is good or bad at
+into the model over time as you that's
+the thing with AI I feel like a lot of
+them a lot of these capabilities are
+just kind of like prompt away so you
+always get like demos but like do you
+actually get a product you know what I
+mean so um so in this sense I would say
+the demo is near but the product is far
+so one thing we were talking about
+earlier which I think is really
+interesting is sort of lineages that
+happens in the research Community where
+you come from certain labs and everybody
+gossips about being from each other's
+Labs I think a very high proportion of
+noble Le actually used to work in a
+former mobal Orit lab so there's some
+propagation of I don't know if it's
+culture or knowledge or branding or what
+and in AI education Centric world how do
+you maintain lineage or does it not
+matter or how do you think about those
+aspects of propagation of network and
+knowledge I don't actually want to live
+in a world where lineage like matters
+too much right so I'm hoping that AI can
+help you destroy that structure a little
+bit it it feels like kind of gatekeeping
+by some finite U scarce resource which
+is like oh there's finite number of
+people who have this lineage Etc so I
+feel like it's a little bit of that
+aspect so I'm hoping it can destroy that
+it's definitely one piece like actual
+learning one piece pedigree right yeah
+uh well it's also the aggregation of
+it's a cluster effect right it's like
+why is all of the or much of the AI
+community in the Bay Area or why is most
+of the fintech community in New York
+yeah and so I think a lot of it is also
+just you're clustering really smart
+people with common interests and beliefs
+and then they kind of propagate from
+that Common Core and then they share
+knowledge in an interesting way you got
+arree a lot of that behavior is shifted
+online to some extent particularly for
+younger people I think one aspect of it
+is kind of like the educational aspect
+where like if you're part of a community
+today you're getting a ton of education
+and apprenticeship Etc which is
+extremely helpful and gets you to a
+point of empowered state in that area I
+think the other piece of it is like the
+cultural aspect of what you're motivated
+by and what you want to work on what
+does the culture prize and what are they
+put in the pedestal and what do they
+kind of like worship basically uh so in
+academic world for example is the H
+index everyone cares about the H index
+the amount of papers you publish Etc and
+I was part I was part of that community
+and I saw that and I feel like now I've
+come to different places and there's
+different Idols in all the different
+communities I think that has a massive
+impact of what people are motivated by
+and where they get their social status
+and what actually matters to them I also
+was I think part of different
+communities like growing up in Slovakia
+also a very different environment grow
+being in Canada also a very different
+environment What mattered
+there sorry thank you hockey hocky I
+would say as an example I would say in
+Canada um I was in University of Toronto
+and Toronto uh I don't think it's a very
+entrepreneurial pill uh environment it
+doesn't even occur to you that you
+should be starting companies I mean it's
+not something that people are doing you
+don't know friends who are doing it you
+don't know that you're supposed to be
+looking up to it people aren't like
+reading books about all the founders and
+talking about them it's just not a thing
+you aspire to or care about and uh what
+everyone is talking about oh is where
+are you getting your internship where
+are you going to work afterwards and
+it's just accepted that there's a bunch
+of set there's a fixed set of companies
+that you are supposed to pick from and
+just align yourself with one of them and
+that's like what you look up to or
+something like that so these cultural
+aspects are extremely strong and maybe
+actually the dominant variable because I
+almost feel like today already the
+education aspects I think is the easier
+one like a ton of stuff is already
+available Etc so I think mostly it's a
+cultural aspect that you're part of so
+on this point like one thing you and I
+were talking about a few weeks ago is
+and and I think you also posted online
+about this um there's a difference
+between learning and entertainment and
+learning is actually supposed to be hard
+and I think it relates to this question
+of like you know status um and what like
+status is a great motivator like who the
+idol is um how much do you think you can
+change in terms of um motiv
+through systems like this if that's like
+a a blocking Factor are you focused on
+um give people the resources such that
+they can get as far as possible in the
+sequence for their own capability as
+they can like further than any other
+point in history already inspirational
+or do you actually want to change how
+many people want to learn or at least
+bring themselves down the path want is a
+loaded word I would say like I want to
+make it much easier to learn and then
+maybe it is possible that maybe people
+don't want to learn I mean today for
+example people want to learn for
+practical reasons right like they want
+to get a job Etc which makes total sense
+so in a pre AGI Society education is
+useful and I think people will be
+motivated by that because they're um
+they're uh climbing up the ladder
+economically Etc I post AGI Society
+we're just all Society I think education
+is entertainment to a much larger extent
+including um like successful outcomes
+education right not just letting the
+content wash over you yes I think so
+outcomes being like understanding
+learning being able to contribute new
+knowledge or however you defined it I
+think it's not a uh an accident that if
+you go back 200 years 300 years the
+people who were doing science were
+nobility or people of wealth we will all
+be nobility learning with Andre yeah I
+do think that I see it very much
+equivalent to your quote earlier like I
+feel like learning something is kind of
+like going to the gym but for the brain
+right like it feels like going to the
+gym I mean going to the gym is fun uh
+people like to lift Etc some people
+don't go to the gym no no no some people
+do but it is it takes effort yeah yeah
+it takes effort but it's effort but it's
+also kind of fun and you also have a
+payoff of like you feel about yourself
+in various ways right and I think
+education is basically equivalent to
+that so that's what I mean when I say
+education should not be fun Etc I mean
+it is kind of fun but it's like a specif
+kind of fun I suppose right I do think
+that maybe in a post AGI world what I
+would hope happens is people actually
+they do go to the gym a lot not just
+physically but also mentally and uh is
+something that we look up to as being
+highly educated and also you know
+just just uh yeah can I ask you one last
+question about Eureka just because I
+think it would be interesting to people
+um like who is the audience for the
+first course the audience for for course
+I'm I'm mostly thinking of this as like
+an undergrad level course uh so if
+you're doing undergrad in technical area
+I think that would be kind of the ideal
+audience I do think that what we're
+seeing now is we have this like
+Antiquated concept of Education where
+you go through school and then you
+graduate and go to work right obviously
+this will totally break down especially
+in a society that's turning over so
+quickly that people are going to come
+back to school a lot more frequently as
+the technology changes very very quickly
+so it is kind of like undergrad level
+but I would say like anyone at that
+level at any age uh is kind of like in
+scope I think it will be very diverse in
+age as an example but I think it is
+mostly like uh people who are Technical
+and mostly want to mostly actually want
+to understand it uh to you know a good
+amount um Tech when can they take the
+course I was hoping it would be late
+this year I do have a lot of
+distractions that are piling on but I
+think probably early next year is kind
+of like the timeline yeah I'm trying to
+make it very very good um and uh yeah it
+just takes time to uh to get there so I
+have one last question actually that's
+pseudo related to that if you have
+little kids today what do you think they
+should study in order to have a useful
+future there's a correct answer in my
+mind and the correct answer is mostly
+like um I would say like math physics CS
+kind of disciplines and the reason I say
+that is because I think it helps um for
+just thinking skills it's just like the
+best thinking skill core uh is is my
+opinion and of course I have a specific
+background Etc so I would I would think
+this but but that's just my view on it I
+think like me taking physics classes and
+all these other classes just like shaped
+the way I think and I think it's very
+useful for problem solving in general
+Etc and so if we're in this world where
+pre AGI this is going to be useful post
+AGI you still want empowered humans who
+can function in any arbitrary capacity
+and so I just think that this is just
+the correct answer for people and what
+they should be doing and taking and it
+it's either useful or it's good and so I
+just think is the right answer and I
+think a lot of the other stuff you can
+tack on a bit later but the critical
+period where people have a lot of time
+and they have a lot of kind of like
+attention and and time I think it should
+be mostly spent on doing these kinds of
+uh simple manipulation heavy tasks and
+workloads not memory heavy tasks and
+workloads I did a a math degree and I
+felt like there was a a new Grove being
+carved into my brain as I was doing that
+and it's a harder Groove to carve later
+and I would of course put in a bunch of
+other stuff as well like I'm not opposed
+to all the other disciplines Etc I think
+it's actually beautiful to have a large
+diversity of of things but I do think
+one we're not efficient memorizers
+compared to our tools thank you for
+doing this so much fun great to be here
+find us on Twitter at no prior pod
+subscribe to our YouTube channel if you
+want to see our faces follow the show on
+Apple podcasts Spotify or wherever you
+listen that way you get a new episode
+every week and sign up for emails or
+find transcripts for every episode at
+no- pri.com
