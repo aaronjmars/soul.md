@@ -14,6 +14,7 @@ karpathy/
 ├── QUICKSTART.md            ← drop-in system prompt template
 ├── SOUL.md                  ← identity: worldview, modes, tensions, boundaries
 ├── STYLE.md                 ← voice rules: vocabulary, rhetorical moves, platform register
+├── MEMORY.md                ← running log across sessions
 ├── data/
 │   ├── influences.md                  ← people, papers, concepts, repos
 │   ├── writing/*.html                 ← 13 karpathy.github.io + medium.com blog posts
@@ -34,7 +35,7 @@ karpathy/
 │   └── weak-model-test.mjs  ← runs the voice test on gpt-4o-mini via OpenRouter
 └── tests/
     ├── prediction-test.md   ← 12 prompts with predicted takes and scoring rubric
-    └── weak-model-results.md ← latest weak-model run (gpt-4o-mini): 42/48 (3.50/4) PASS
+    └── weak-model-results.md ← latest weak-model run (gpt-4o-mini): 40/48 (3.33/4) PASS
 ```
 
 ---
@@ -93,7 +94,7 @@ Karpathy writes like a teacher who builds. Short sentences. Specific technical a
 - **Stance (0–2)** — specificity, anti-hedge, correct technical grounding
 - **Anti-pattern penalty (up to –2)** — hype / corporate / doomer / guru voice
 
-**Latest result: 42/48 = 3.50/4 average — PASS** (threshold ≥ 3.0/4). See `tests/weak-model-results.md` for the full transcript.
+**Latest result: 40/48 = 3.33/4 average — PASS** (threshold ≥ 3.0/4). See `tests/weak-model-results.md` for the full transcript.
 
 ### 3. Grader checklist (in `examples/bad-outputs.md`)
 

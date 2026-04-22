@@ -72,6 +72,6 @@ node scripts/weak-model-test.mjs
 
 Expected output: `TOTAL: ≥36/48 | AVG: ≥3.0/4 | PASS: YES`.
 
-Latest run from this repo: **42/48 = 3.50/4 PASS**.
+Latest run from this repo: **40/48 = 3.33/4 PASS**.
 
 See `tests/weak-model-results.md` for per-prompt breakdown.

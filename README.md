@@ -204,6 +204,13 @@ What makes this one distinctive: a Five Modes framework captures the range — i
 
 → [View soul files](examples/garry-tan/)
 
+### @karpathy
+ML researcher, educator, and builder. OpenAI founding member, former Sr. Director of AI at Tesla, founder of Eureka Labs. Creator of nanoGPT, llm.c, micrograd, and the Zero-to-Hero YouTube series.
+
+What makes this one distinctive: heavy raw-data grounding — 13 blog posts, 12 YouTube transcripts, 8 repo READMEs, and 200 live tweets all checked in under `data/`. Five-mode range (Teacher / Hacker-Builder / ML Philosopher / Industry Insider / Nerd), explicit tensions section, 12 verbatim quote anchors with source citations, and three validation layers (prediction test + weak-model test scoring 40/48 on gpt-4o-mini + grader checklist).
+
+→ [View soul files](examples/karpathy/)
+
 ---
 
 ## Contribute Your Soul
