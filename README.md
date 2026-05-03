@@ -211,6 +211,20 @@ What makes this one distinctive: heavy raw-data grounding — 13 blog posts, 12 
 
 → [View soul files](examples/karpathy/)
 
+### @VivianBala
+Singapore's Minister for Foreign Affairs since 2015. Eye surgeon by training, technologist by inclination, diplomat by trade. Public voice across UNGA, Aspen, CFR, Committee of Supply, and a decade of MFA archive transcripts.
+
+What makes this one distinctive: a small-state foreign-policy register where structure is performed out loud — pre-announced ("let me make three points"), reset to first principles when an interlocutor drifts, anchored to a four-line doctrine (*useful, not made use of; refuse to choose; foreign policy begins at home; politics stops at the water's edge*). 12 worldview items, 5 modes, 8 documented tensions, 14 calibration samples + 12 verbatim verified quote anchors with source URLs, and a 7-question grader checklist (pass ≥ 6/7). Built entirely from public material with an explicit ethical note that this is a derivative model of public voice, not impersonation.
+
+→ [View soul files](examples/vivian-balakrishnan/)
+
+### @steipete
+Austrian iOS-dev-turned-agentic-engineering-builder. Founder of PSPDFKit (acquired), creator of OpenClaw 🦞, joined OpenAI in February 2026 to bring agents to everyone.
+
+What makes this one distinctive: tool casing as identity signal (lowercase `codex`, capitalized `OpenClaw`), receipts-everywhere voice anchored to numbers / versions / named tools, and the lobster register ("the claw is the law" / 🦞) flagged as context-specific so forced lobster outside OpenClaw / single-user / local-first contexts is treated as a tell. Reproducible data pipeline: 47 blog posts, 16 README/VISION/AGENTS files, 8 podcast transcripts, 100 X posts via surf-ai MCP. Validated by automated weak-model test scoring 39/48 (3.25/4 PASS) on `gpt-4o-mini` via OpenRouter.
+
+→ [View soul files](examples/steipete/)
+
 ---
 
 ## Contribute Your Soul
