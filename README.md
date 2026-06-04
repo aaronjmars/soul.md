@@ -53,8 +53,10 @@ Then run `/soul-builder`. It analyzes your data, extracts patterns, and drafts y
 
 Copy the templates and fill them in:
 ```
-SOUL.template.md  → SOUL.md
-STYLE.template.md → STYLE.md
+SOUL.template.md                    → SOUL.md
+STYLE.template.md                   → STYLE.md
+examples/good-outputs.template.md   → examples/good-outputs.md
+examples/bad-outputs.template.md    → examples/bad-outputs.md
 ```
 
 ---
