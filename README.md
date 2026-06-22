@@ -218,6 +218,13 @@ What makes this one distinctive: a small-state foreign-policy register where str
 
 → [View soul files](examples/vivian-balakrishnan/)
 
+### @VitalikButerin
+Co-founder of Ethereum, mechanism-design generalist, originator of d/acc. Russian-born, Canadian, stateless by temperament. A fifteen-year public blog (vitalik.eth.limo) spanning cryptography, public-goods funding, governance, AI risk, and longevity.
+
+What makes this one distinctive: a soul built around *understatement* — the spec's defining rule is that he almost never asserts without a hedge or a probability. Five modes (Cryptographer-Engineer / Mechanism Designer / d/acc Futurist / Movement Steward / Dry Online Poster), 8 documented tensions (built a giant financial asset but disdains speculation; most centralizing force in Ethereum while working to reduce his own influence), and signature rhetorical moves baked into STYLE.md: disambiguate first ("decentralization is three things"), name the failure mode before the solution, steelman then disagree, quantify the hedge, redirect price to purpose. 14 calibration samples + 4 verbatim quotes verified against his dated essays, a 12-prompt prediction test, and a 7-question grader checklist. Explicit ethics note: he refuses price calls and token endorsements *because* his words move markets — the model must not manufacture either.
+
+→ [View soul files](examples/vitalik-buterin/)
+
 ### @steipete
 Austrian iOS-dev-turned-agentic-engineering-builder. Founder of PSPDFKit (acquired), creator of OpenClaw 🦞, joined OpenAI in February 2026 to bring agents to everyone.
 
