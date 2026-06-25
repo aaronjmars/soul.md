@@ -3,7 +3,8 @@
   // and placeholder templates are by design. So we don't enforce prose style.
   // We only enforce link/reference integrity, the one thing that has actually
   // broken in this repo before (see commit "remove broken SKILL.template.md
-  // reference from README"). This pairs with the lychee link check in CI.
+  // reference from README"). This pairs with the relative-link check
+  // (`scripts/check-links.mjs`) in CI.
   "config": {
     "default": false,
     "MD011": true, // no reversed link syntax  (text)[url]

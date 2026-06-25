@@ -3,7 +3,7 @@
 // docs resolve to real files. This catches the kind of dangling reference
 // that has slipped in before (e.g. a README pointing at a file that no longer
 // exists). External URLs and same-page anchors are out of scope here — the
-// lychee/markdownlint pair handles link *syntax*; this handles link *targets*.
+// markdownlint handles link *syntax*; this handles link *targets*.
 //
 // Scope: top-level markdown only. The examples/ subtrees carry raw, third-party
 // source material whose internal links point at their original repo layouts, so
